@@ -27,6 +27,9 @@ if ! $WP core is-installed 2>/dev/null; then
   $WP plugin install query-monitor --activate || echo "EuTeAjudo: warning: Query Monitor not installed"
 fi
 
+# Pretty permalinks need .htaccess on Apache (also used by /wp-json/ routes).
+[ -f wordpress/.htaccess ] || $WP rewrite flush --hard
+
 $WP theme is-active euteajudo 2>/dev/null || $WP theme activate euteajudo
 $WP plugin is-active euteajudo 2>/dev/null || $WP plugin activate euteajudo
 

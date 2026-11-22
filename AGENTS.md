@@ -58,6 +58,8 @@ ddev composer install                 # ferramentas de PHP (dentro do DDEV, PHP 
 
 Logs: `wordpress/wp-content/debug.log` (PHP e WordPress) e `ddev logs`.
 
+Segredos locais ficam em `.ddev/.env` (ignorado pelo git; o DDEV o carrega no container web; rodar `ddev restart` depois de editar). Hoje: `EUTEAJUDO_GOOGLE_CLIENT_ID` e `EUTEAJUDO_GOOGLE_CLIENT_SECRET`. Em produção, os mesmos nomes viram constantes no `wp-config.php` do servidor. Nunca colocar segredos em arquivos versionados nem no chat.
+
 Nunca editar à mão `theme/theme.json` nem `theme/assets/css/color-schemes.css`: mudar `design/tokens.json` e rodar `npm run build:theme`.
 
 ## Convenções de código

@@ -52,7 +52,8 @@
 		<exclude-pattern>tests/wp-tests-config.php</exclude-pattern>
 		<exclude-pattern>tests/bootstrap-integration.php</exclude-pattern>
 	</rule>
+	<!-- Tests set environment variables (e.g. OAuth credentials) on purpose. -->
 	<rule ref="WordPress.PHP.DiscouragedPHPFunctions.runtime_configuration_putenv">
-		<exclude-pattern>tests/bootstrap-integration.php</exclude-pattern>
+		<exclude-pattern>tests/*</exclude-pattern>
 	</rule>
 </ruleset>
