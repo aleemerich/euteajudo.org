@@ -1,0 +1,144 @@
+# Plano de implementação do MVP
+
+Base: [docs/mvp.md](mvp.md), [GLOSSARY.md](../GLOSSARY.md) e [docs/adr](adr/). Cada entrega termina com algo que funciona de ponta a ponta e tem testes automatizados. Identificadores de código seguem a linha _Código_ do glossário ([ADR 0006](adr/0006-codigo-em-ingles-documentacao-em-portugues.md)).
+
+```
+E0 → ID → E1 → E2 → E3 → E4 → E5 ─┐
+                            └→ E6 ─┼→ E8
+                       E2 → E7 ────┘
+```
+
+E4 e E5 são do Agente e ficam detalhadas no repositório privado `euteajudo.org-agente`. E5 e E6 podem andar em paralelo depois de E3. A parte B de E0 pode andar em paralelo com ID.
+
+## Pendências
+
+| # | Pendência | Situação |
+|---|---|---|
+| P1 | Ambiente local com as versões da hospedagem | Resolvida: DDEV com PHP 8.5, MySQL 5.7 e Apache ([ADR 0004](adr/0004-ddev-e-paridade-com-a-hospedagem.md)). |
+| P2 | Separar o que é público do que é do Agente | Resolvida: dois repositórios; pipeline e riscos no repositório privado. |
+| P3 | Login com Google: plugin pronto ou código próprio | Avaliar um plugin maduro e compatível com PHP 8.5; aceitar só se for possível impedir a gravação de nome e foto. Senão, código próprio com a biblioteca oficial do Google. (E1) |
+| P4 | Serviço de e-mail transacional | Escolher pelo plano gratuito e pela entregabilidade (ex.: Brevo, Amazon SES). (E7) |
+| P5 | Abilities API (núcleo do WordPress) como alternativa à REST nativa pura para os Agentes | Avaliar no início de E3. Se não simplificar, seguir com a REST nativa. |
+
+## E0. Fundação
+
+Objetivo: repositórios, regras e ambiente prontos antes de qualquer funcionalidade.
+
+**Parte A: estrutura e regras**
+- Pasta de trabalho `/mnt/dados/Dev/euteajudo.org` com `plataforma/` (repositório público `aleemerich/euteajudo.org`) e `agente/` (repositório privado `aleemerich/euteajudo.org-agente`).
+- Ajustes de git para o disco NTFS: `core.fileMode=false`, `safe.directory`, `.gitattributes` com `eol=lf`.
+- `AGENTS.md` e `CLAUDE.md` nos dois repositórios.
+- Skills de terceiros em `.claude/skills/`, com origem registrada em `SOURCES.md`.
+- Glossário com a linha _Código_; ADRs 0004 a 0006.
+
+**Parte B: ambiente e qualidade**
+- DDEV em `.ddev/` com as versões da hospedagem; WordPress baixado em pasta ignorada; plugin e tema montados; `WP_DEBUG_LOG` ligado; Query Monitor só local.
+- Esqueleto do plugin: cabeçalho, text domain `euteajudo`, namespace `EuTeAjudo\` com autoload PSR-4 do Composer, módulos (`Accounts`, `HelpRequests`, `Replies`, `Triage`, `SupportServices`, `Agents`, `Privacy`, `Notifications`, `Admin`), mecanismo de migração por versão.
+- Esqueleto do tema de blocos: `theme.json` e templates mínimos.
+- PHPUnit (unidade sem WordPress e integração com a suíte de testes do WordPress), PHPStan, PHPCS (WordPress Coding Standards e PHPCompatibility para PHP 8.5), Playwright com `@axe-core/playwright`, ESLint e Prettier pelo `@wordpress/scripts`.
+- Hook de pre-commit com as verificações rápidas e bloqueio de `.env` e de arquivos do Agente.
+- Script de dados de teste (WP-CLI) e comando de exportação do banco para `backups/`.
+- CI no GitHub Actions com a action oficial do DDEV.
+
+Pronto quando: `ddev start` sobe `https://euteajudo.ddev.site` com plugin e tema ativos, e um teste de cada tipo passa no CI.
+
+## ID. Identidade visual e tema
+
+Objetivo: identidade aprovada e aplicada como tokens e variações de estilo do tema.
+
+- Três direções de identidade (conceito, logo, paleta, tipografia, tom de voz), cada uma aplicada às telas Início, Desabafar, Conversa e Meus Pedidos, no celular e no desktop, em `design/propostas/`. Skills: `frontend-design`, `theme-factory`.
+- Revisão do mantenedor: aprova uma ou mais direções.
+- `design/identidade.md`, `design/tokens.json` (formato DTCG), `design/logo/`.
+- `theme/theme.json` gerado a partir dos tokens; as direções aprovadas viram `theme/styles/*.json`.
+- Skill do projeto `euteajudo-identity` (criada com `skill-creator`) com tokens, tom de voz e regras de uso para site, redes sociais e vídeos.
+- Kit de divulgação em `design/kit-social/` (modelos de post, capa de vídeo, legenda).
+
+Pronto quando: o mantenedor aprova a identidade e o tema exibe as variações aprovadas.
+
+## E1. Contas e Apelido
+
+Objetivo: qualquer pessoa cria conta e passa a existir só como "Amigo NNNNN".
+
+- Apelido aleatório de 5 dígitos, único, em `_eta_alias`, gravado no hook `user_register` (cobre cadastro, Google, painel e WP-CLI). `display_name` e `nickname` iguais ao Apelido.
+- Papéis `eta_friend` e `eta_agent`.
+- Páginas Entrar, Cadastrar, Recuperar senha e Confirmar e-mail ([ADR 0005](adr/0005-areas-publica-e-privada.md)); confirmação de e-mail obrigatória antes do primeiro Pedido.
+- Login com Google (P3), descartando nome e foto.
+- Declaração de 18 anos ou mais e consentimento destacado, com data e versão do texto aceito em `user_meta`. Quem informa menos de 18 vê o Encaminhamento ao Pode Falar e ao CVV e não cria conta.
+- Avatares desligados no site inteiro; `wp-admin` e barra de administração bloqueados para Amigos e Agentes.
+- Exclusão lógica: e-mail trocado por hash, conta marcada como excluída, sessão encerrada, novo cadastro permitido com o mesmo e-mail.
+
+Pronto quando: os testes E2E cobrem cadastro por e-mail, confirmação, exclusão e novo cadastro, e nenhuma tela ou resposta da API mostra nome ou e-mail.
+
+## E2. Pedido do Amigo (primeira fatia de ponta a ponta)
+
+Objetivo: o Amigo publica um Pedido, conversa nele e o encerra, ainda sem Agente.
+
+- CPT `eta_help_request` não público, com capabilities próprias e `post_name` aleatório.
+- Status `eta_awaiting_triage`, `eta_awaiting_reply`, `eta_in_conversation`, `eta_closed`, mudados por hooks ([ADR 0003](adr/0003-wordpress-classico-cpt-e-comentarios.md)).
+- Taxonomias `eta_category`, `eta_severity`, `eta_risk_signal`, com os termos iniciais.
+- Mascaramento de dados pessoais (telefone, e-mail, CPF, CEP, links) aplicado ao Pedido e às Respostas antes de gravar. É a parte com mais casos de teste de unidade.
+- Blocos dinâmicos com Interactivity API: Desabafar, Conversa (Respostas `eta_reply`, Agradecimento, Encerramento com motivo, reabertura) e Meus Pedidos.
+- Endereço `/meus-pedidos/{código}/` com 404 para quem não tem acesso ([ADR 0005](adr/0005-areas-publica-e-privada.md)).
+- Proteções do ADR 0003: feeds, sitemaps e busca sem Pedidos, sem e-mails nativos de comentário, sem IP e user agent nos comentários, sem Akismet.
+
+Pronto quando: o E2E cobre o caminho completo no tamanho de celular, e testes de integração provam que um Pedido não aparece para visitantes, para outros Amigos, nos feeds, na busca ou na REST sem autenticação.
+
+## E3. API para Agentes
+
+Objetivo: um cliente externo autenticado consegue fazer todo o trabalho de um Agente usando a REST nativa (P5).
+
+- Capabilities do papel `eta_agent`: ler Pedidos nos status abertos, gravar taxonomias e excerpt, publicar Respostas, gravar metadados de controle.
+- Application Password para o usuário do Agente, só por HTTPS.
+- CPT `eta_support_service`, não público, com campos em metadados e as mesmas taxonomias do Pedido.
+- Metadados registrados com `register_post_meta` e `show_in_rest`: reserva (validade de 10 minutos), contador de falhas, horário da próxima tentativa, data da última manifestação do autor.
+- Banco de Apelidos de Agente em `wp_options` sem autoload; um Apelido sorteado por Pedido.
+- Hook na publicação da Resposta do Agente: aplica o Apelido do Pedido e recusa se a Resposta do autor informada não for a última.
+- Registro da última consulta do Agente, para a tela de estado.
+
+Pronto quando: testes de integração simulam um Agente que lista pendências, reserva, grava Triagem e Resumo, publica Resposta, recebe recusa por conflito e vê o status mudar.
+
+## E4 e E5. Agente
+
+Detalhadas no repositório privado. A plataforma só precisa estar com a E3 pronta.
+
+## E6. Telas do Administrador
+
+Objetivo: operar o site pelo painel do WordPress.
+
+- Lista de Pedidos com filtros por Gravidade, Categoria, status, "sem Resposta há 24h" e "falha na verificação".
+- Leitura do Pedido com Triagem, Resumo e Respostas.
+- Edição de qualquer Pedido ou Resposta, com o original guardado em metadado.
+- Resposta com o próprio Apelido (padrão) ou com o Apelido do Agente do Pedido, com a autoria real em metadado.
+- Catálogo de Serviços de apoio pela interface nativa do CPT.
+- Estado do Agente: última consulta e tamanho da fila.
+- Agendamentos no WP-Cron: Encerramento automático após 30 dias com aviso ao autor; alerta de 24h sem Resposta de Agente; e-mail único por Pedido com falha na verificação.
+
+Pronto quando: os testes de integração cobrem a edição com auditoria, a Resposta com cada Apelido e os agendamentos.
+
+## E7. E-mail e operação
+
+Objetivo: o site roda na hospedagem compartilhada com e-mails confiáveis.
+
+- Plugin SMTP com o serviço transacional (P4), compatível com PHP 8.5. SPF, DKIM e DMARC no domínio.
+- E-mails neutros: confirmação de cadastro, Resposta nova, Encerramento automático, alertas ao Administrador.
+- Cron do cPanel chamando `wp-cron.php` com `ea-php85` a cada 5 minutos.
+- Instalação do WordPress em produção pelo cPanel; publicação do plugin e do tema por FTPS a partir do CI, com uma conta de FTP restrita ao `wp-content` do site.
+- Log do WordPress fora do `public_html` e acesso a arquivos `error_log` bloqueado no `.htaccess`.
+- Usuário de banco exclusivo do EuTeAjudo. Backup do banco conferido no painel da hospedagem.
+- Teste do Agente contra a REST de produção (ModSecurity).
+- Agente rodando na máquina do mantenedor contra o site publicado, com reinício automático.
+
+Pronto quando: um Pedido criado no site publicado recebe Resposta e o e-mail chega com remetente e assunto neutros.
+
+## E8. Lançamento
+
+Objetivo: abrir ao público.
+
+- Termos de uso, política de privacidade e texto do consentimento.
+- Textos de divulgação da IA no cadastro e na página do Pedido ([ADR 0002](adr/0002-divulgacao-da-ia-na-interface.md)).
+- Revisão do layout no celular, tablet e desktop, e de acessibilidade (contraste, teclado, leitor de tela).
+- Rodada de testes manuais com cadastros e fluxos simulados pelo mantenedor.
+- Validação do profissional concluída e ajustes aplicados.
+- Remoção do help.euteajudo.org antigo.
+
+Pronto quando: os itens acima estão feitos e o mantenedor aprova a abertura.

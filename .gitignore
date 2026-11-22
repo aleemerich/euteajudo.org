@@ -1,0 +1,31 @@
+# WordPress core and local environment (DDEV)
+/wordpress/
+/backups/
+.ddev/.homeadditions
+.ddev/.global_commands
+.ddev/db_snapshots/
+
+# Dependencies and builds
+/vendor/
+/node_modules/
+/plugin/vendor/
+/plugin/build/
+/theme/build/
+/test-results/
+/playwright-report/
+.phpunit.cache/
+.phpunit.result.cache
+
+# Secrets: never in this public repository
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Editors and OS
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+desktop.ini
