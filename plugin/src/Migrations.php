@@ -30,6 +30,10 @@ final class Migrations {
 			'0.3.0' => static function (): void {
 				add_option( Accounts\AliasRange::OPTION, Accounts\AliasRange::default()->to_option(), '', false );
 			},
+			'0.4.0' => static function (): void {
+				// Labels stored before plugin and theme had separate text domains may be untranslated.
+				Accounts\Aliases::refresh_all();
+			},
 		);
 	}
 }

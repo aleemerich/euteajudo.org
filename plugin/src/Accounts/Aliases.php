@@ -39,6 +39,21 @@ final class Aliases {
 	}
 
 	/**
+	 * Label as stored in user records: always in the site language, whatever language the
+	 * current request runs in (a visitor's browser, an administrator's own locale, WP-CLI).
+	 *
+	 * @param string $number Alias number.
+	 */
+	private static function stored_label( string $number ): string {
+		$switched = switch_to_locale( get_locale() );
+		$label    = self::label( $number );
+		if ( $switched ) {
+			restore_previous_locale();
+		}
+		return $label;
+	}
+
+	/**
 	 * Alias number of a user, or an empty string when none was assigned yet.
 	 *
 	 * @param int $user_id User ID.
@@ -59,6 +74,22 @@ final class Aliases {
 
 		// Run through wp_update_user so the filters below normalise every name field.
 		wp_update_user( array( 'ID' => $user_id ) );
+	}
+
+	/**
+	 * Rewrites the public name fields of every account from its alias, in the site language.
+	 */
+	public static function refresh_all(): void {
+		$user_ids = get_users(
+			array(
+				'fields'       => 'ID',
+				'meta_key'     => self::META, // phpcs:ignore WordPress.DB.SlowDBQuery.slow_db_query_meta_key -- One-off migration.
+				'meta_compare' => 'EXISTS',
+			)
+		);
+		foreach ( $user_ids as $user_id ) {
+			wp_update_user( array( 'ID' => (int) $user_id ) );
+		}
 	}
 
 	/**
@@ -93,7 +124,7 @@ final class Aliases {
 			$data['user_nicename'] = 'friend-pending-' . wp_generate_password( 8, false );
 			return $data;
 		}
-		$data['display_name']  = self::label( $number );
+		$data['display_name']  = self::stored_label( $number );
 		$data['user_nicename'] = 'friend-' . $number;
 		return $data;
 	}
@@ -108,7 +139,7 @@ final class Aliases {
 	 */
 	public static function filter_user_meta( array $meta, \WP_User $user, bool $update ): array {
 		$number             = $update ? self::number_of( $user->ID ) : '';
-		$meta['nickname']   = '' === $number ? '' : self::label( $number );
+		$meta['nickname']   = '' === $number ? '' : self::stored_label( $number );
 		$meta['first_name'] = '';
 		$meta['last_name']  = '';
 		return $meta;

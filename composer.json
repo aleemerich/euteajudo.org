@@ -55,8 +55,8 @@
 			"php -d error_reporting=24575 /usr/local/bin/wp --path=wordpress i18n make-pot plugin plugin/languages/euteajudo.pot --domain=euteajudo --skip-js",
 			"php -d error_reporting=24575 /usr/local/bin/wp --path=wordpress i18n update-po plugin/languages/euteajudo.pot plugin/languages",
 			"php -d error_reporting=24575 /usr/local/bin/wp --path=wordpress i18n make-mo plugin/languages",
-			"php -d error_reporting=24575 /usr/local/bin/wp --path=wordpress i18n make-pot theme theme/languages/euteajudo.pot --domain=euteajudo --skip-js",
-			"php -d error_reporting=24575 /usr/local/bin/wp --path=wordpress i18n update-po theme/languages/euteajudo.pot theme/languages",
+			"php -d error_reporting=24575 /usr/local/bin/wp --path=wordpress i18n make-pot theme theme/languages/euteajudo-theme.pot --domain=euteajudo-theme --skip-js",
+			"php -d error_reporting=24575 /usr/local/bin/wp --path=wordpress i18n update-po theme/languages/euteajudo-theme.pot theme/languages",
 			"php -d error_reporting=24575 /usr/local/bin/wp --path=wordpress i18n make-mo theme/languages"
 		]
 	}

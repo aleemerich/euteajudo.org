@@ -3,4 +3,4 @@ services:
   web:
     volumes:
       - ../plugin:/var/www/html/wordpress/wp-content/plugins/euteajudo
-      - ../theme:/var/www/html/wordpress/wp-content/themes/euteajudo
+      - ../theme:/var/www/html/wordpress/wp-content/themes/euteajudo-theme

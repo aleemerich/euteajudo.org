@@ -36,7 +36,7 @@ add_action( 'wp_enqueue_scripts', __NAMESPACE__ . '\enqueue_color_schemes' );
  * Adds theme supports and editor styles.
  */
 function setup(): void {
-	load_theme_textdomain( 'euteajudo', get_template_directory() . '/languages' );
+	load_theme_textdomain( 'euteajudo-theme', get_template_directory() . '/languages' );
 	add_editor_style( array( 'assets/css/color-schemes.css', 'assets/css/theme.css' ) );
 }
 add_action( 'after_setup_theme', __NAMESPACE__ . '\setup' );

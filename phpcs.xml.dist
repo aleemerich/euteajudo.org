@@ -30,6 +30,7 @@
 		<properties>
 			<property name="text_domain" type="array">
 				<element value="euteajudo"/>
+				<element value="euteajudo-theme"/>
 			</property>
 		</properties>
 	</rule>

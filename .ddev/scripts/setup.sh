@@ -30,7 +30,7 @@ fi
 # Pretty permalinks need .htaccess on Apache (also used by /wp-json/ routes).
 [ -f wordpress/.htaccess ] || $WP rewrite flush --hard
 
-$WP theme is-active euteajudo 2>/dev/null || $WP theme activate euteajudo
+$WP theme is-active euteajudo-theme 2>/dev/null || $WP theme activate euteajudo-theme
 $WP plugin is-active euteajudo 2>/dev/null || $WP plugin activate euteajudo
 
 echo "EuTeAjudo: ready at ${DDEV_PRIMARY_URL}"

@@ -93,6 +93,16 @@ final class AliasesTest extends TestCase {
 		$this->assertSame( get_option( 'admin_email' ), $recipient->address ?? null );
 	}
 
+	public function test_refresh_rewrites_stale_public_names_from_the_alias(): void {
+		global $wpdb;
+		$user_id = $this->new_user()->ID;
+		$wpdb->update( $wpdb->users, array( 'display_name' => 'Stale label' ), array( 'ID' => $user_id ) ); // phpcs:ignore WordPress.DB.DirectDatabaseQuery -- Simulates a label stored in the wrong language.
+
+		Aliases::refresh_all();
+
+		$this->assertSame( Aliases::label( Aliases::number_of( $user_id ) ), $this->reload( $user_id )->display_name );
+	}
+
 	public function test_backfill_gives_aliases_to_accounts_created_before_the_plugin(): void {
 		$user_id = $this->new_user( array( 'display_name' => 'Old Admin' ) )->ID;
 		delete_user_meta( $user_id, Aliases::META );
