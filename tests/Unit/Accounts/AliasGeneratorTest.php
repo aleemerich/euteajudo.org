@@ -10,6 +10,7 @@ declare(strict_types=1);
 namespace EuTeAjudo\Tests\Unit\Accounts;
 
 use EuTeAjudo\Accounts\AliasGenerator;
+use EuTeAjudo\Accounts\AliasRange;
 use EuTeAjudo\Accounts\AliasSpaceExhausted;
 use PHPUnit\Framework\TestCase;
 
@@ -30,27 +31,29 @@ final class AliasGeneratorTest extends TestCase {
 				unset( $min, $max );
 				return (int) array_shift( $draws );
 			},
-			static fn ( string $number ): bool => in_array( $number, $taken, true )
+			static fn ( string $number ): bool => in_array( $number, $taken, true ),
+			AliasRange::default()
 		);
 	}
 
-	public function test_returns_a_five_digit_number(): void {
+	public function test_returns_the_drawn_number(): void {
 		$this->assertSame( '48213', $this->generator( array( 48213 ) )->generate() );
 	}
 
-	public function test_draws_from_the_five_digit_range_without_leading_zeros(): void {
+	public function test_draws_from_the_configured_range(): void {
 		$bounds    = array();
 		$generator = new AliasGenerator(
 			static function ( int $min, int $max ) use ( &$bounds ): int {
 				$bounds = array( $min, $max );
 				return $min;
 			},
-			static fn (): bool => false
+			static fn (): bool => false,
+			new AliasRange( 4, 6 )
 		);
 
 		$generator->generate();
 
-		$this->assertSame( array( 10000, 99999 ), $bounds );
+		$this->assertSame( array( 1000, 999999 ), $bounds );
 	}
 
 	public function test_draws_again_when_the_number_is_taken(): void {

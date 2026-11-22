@@ -42,3 +42,13 @@ msgstr "Amigo %s"
 #: src/Privacy/UserDirectory.php:43
 msgid "Sorry, you are not allowed to list users."
 msgstr "Você não tem permissão para listar usuários."
+
+#: src/Accounts/Aliases.php:148
+msgid "EuTeAjudo: alias range widened"
+msgstr "EuTeAjudo: faixa de Apelidos ampliada"
+
+#. translators: 1: previous maximum digits, 2: new maximum digits.
+#: src/Accounts/Aliases.php:151
+#, php-format
+msgid "Aliases with up to %1$d digits were almost all taken, so new aliases can now have up to %2$d digits. Nothing else needs to be done."
+msgstr "Os Apelidos de até %1$d dígitos estavam quase todos ocupados, então os novos Apelidos podem ter até %2$d dígitos. Não é preciso fazer mais nada."

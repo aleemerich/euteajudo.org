@@ -10,6 +10,7 @@ declare(strict_types=1);
 namespace EuTeAjudo\Tests\Integration\Accounts;
 
 use EuTeAjudo\Accounts\Aliases;
+use EuTeAjudo\Accounts\AliasRange;
 use EuTeAjudo\Tests\Integration\TestCase;
 
 /**
@@ -28,7 +29,7 @@ final class AliasesTest extends TestCase {
 		)->ID;
 
 		$number = Aliases::number_of( $user_id );
-		$this->assertMatchesRegularExpression( '/^[1-9]\d{4}$/', $number );
+		$this->assertMatchesRegularExpression( '/^[1-9]\d{3,5}$/', $number );
 
 		$user  = $this->reload( $user_id );
 		$label = 'Friend ' . $number;
@@ -66,6 +67,30 @@ final class AliasesTest extends TestCase {
 		$this->assertSame( $label, $user->nickname );
 		$this->assertSame( '', $user->first_name );
 		$this->assertSame( '', $user->last_name );
+	}
+
+	public function test_full_range_widens_by_one_digit_and_warns_the_administrator(): void {
+		update_option(
+			AliasRange::OPTION,
+			array(
+				'min_digits' => 1,
+				'max_digits' => 1,
+			)
+		);
+		for ( $i = 0; $i < 9; $i++ ) {
+			$this->new_user();
+		}
+		reset_phpmailer_instance();
+
+		$number = Aliases::number_of( $this->new_user()->ID );
+
+		$this->assertSame( array( 1, 2 ), AliasRange::current()->to_array() );
+		$this->assertMatchesRegularExpression( '/^[1-9]\d?$/', $number );
+		$mailer = tests_retrieve_phpmailer_instance();
+		$this->assertInstanceOf( \MockPHPMailer::class, $mailer );
+		$recipient = $mailer->get_recipient( 'to' );
+		$this->assertIsObject( $recipient );
+		$this->assertSame( get_option( 'admin_email' ), $recipient->address ?? null );
 	}
 
 	public function test_backfill_gives_aliases_to_accounts_created_before_the_plugin(): void {

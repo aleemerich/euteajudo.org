@@ -27,6 +27,9 @@ final class Migrations {
 				update_option( 'show_avatars', 0 );
 				Accounts\Aliases::backfill();
 			},
+			'0.3.0' => static function (): void {
+				add_option( Accounts\AliasRange::OPTION, Accounts\AliasRange::default()->to_option(), '', false );
+			},
 		);
 	}
 }

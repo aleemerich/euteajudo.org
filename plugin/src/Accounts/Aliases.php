@@ -53,10 +53,8 @@ final class Aliases {
 	 * @param int $user_id User ID.
 	 */
 	public static function assign( int $user_id ): void {
-		$number = self::number_of( $user_id );
-		if ( '' === $number ) {
-			$number = self::generator()->generate();
-			update_user_meta( $user_id, self::META, $number );
+		if ( '' === self::number_of( $user_id ) ) {
+			update_user_meta( $user_id, self::META, self::draw() );
 		}
 
 		// Run through wp_update_user so the filters below normalise every name field.
@@ -117,9 +115,52 @@ final class Aliases {
 	}
 
 	/**
-	 * Generator wired to WordPress storage.
+	 * Draws a free alias number, widening the range by one digit when it is full.
+	 *
+	 * @throws AliasSpaceExhausted When the range is full and already at the maximum width.
 	 */
-	private static function generator(): AliasGenerator {
+	private static function draw(): string {
+		$range = AliasRange::current();
+		while ( true ) {
+			try {
+				return self::generator( $range )->generate();
+			} catch ( AliasSpaceExhausted $full ) {
+				$wider = $range->widened();
+				if ( null === $wider ) {
+					throw $full;
+				}
+				update_option( AliasRange::OPTION, $wider->to_option(), false );
+				self::notify_widening( $range, $wider );
+				$range = $wider;
+			}
+		}
+	}
+
+	/**
+	 * Tells the administrator that the alias range grew.
+	 *
+	 * @param AliasRange $from Previous range.
+	 * @param AliasRange $to   New range.
+	 */
+	private static function notify_widening( AliasRange $from, AliasRange $to ): void {
+		wp_mail(
+			(string) get_option( 'admin_email' ),
+			__( 'EuTeAjudo: alias range widened', 'euteajudo' ),
+			sprintf(
+				/* translators: 1: previous maximum digits, 2: new maximum digits. */
+				__( 'Aliases with up to %1$d digits were almost all taken, so new aliases can now have up to %2$d digits. Nothing else needs to be done.', 'euteajudo' ),
+				$from->max_digits,
+				$to->max_digits
+			)
+		);
+	}
+
+	/**
+	 * Generator wired to WordPress storage.
+	 *
+	 * @param AliasRange $range Numbers an alias may take.
+	 */
+	private static function generator( AliasRange $range ): AliasGenerator {
 		return new AliasGenerator(
 			static fn ( int $min, int $max ): int => random_int( $min, $max ),
 			static fn ( string $number ): bool => array() !== get_users(
@@ -129,7 +170,8 @@ final class Aliases {
 					'meta_key'   => self::META, // phpcs:ignore WordPress.DB.SlowDBQuery.slow_db_query_meta_key -- Uniqueness check on registration only.
 					'meta_value' => $number, // phpcs:ignore WordPress.DB.SlowDBQuery.slow_db_query_meta_value -- Same.
 				)
-			)
+			),
+			$range
 		);
 	}
 }
