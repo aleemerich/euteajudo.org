@@ -29,6 +29,7 @@ final class Dispatcher {
 		'sign_up'          => array( 'age', 'consent', 'method', 'email', 'password' ),
 		'password_request' => array( 'email' ),
 		'password_reset'   => array( 'login', 'key', 'password' ),
+		'delete_account'   => array( 'confirm' ),
 	);
 
 	/**
@@ -77,6 +78,10 @@ final class Dispatcher {
 		if ( is_user_logged_in() && Pages::is_current( array( Pages::SIGN_IN, Pages::SIGN_UP ) ) ) {
 			self::finish( home_url( '/' ) );
 		}
+
+		if ( ! is_user_logged_in() && Pages::is_current( array( Pages::ACCOUNT ) ) ) {
+			self::finish( Pages::url( Pages::SIGN_IN, array( 'redirect_to' => Pages::url( Pages::ACCOUNT ) ) ) );
+		}
 	}
 
 	/**
@@ -103,6 +108,7 @@ final class Dispatcher {
 			'sign_up'          => SignUp::handle( $input ),
 			'password_request' => PasswordReset::request( $input ),
 			'password_reset'   => PasswordReset::reset( $input ),
+			'delete_account'   => AccountForm::delete( $input ),
 		};
 	}
 

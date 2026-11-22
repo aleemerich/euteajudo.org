@@ -35,6 +35,8 @@ final class Messages {
 			'reset_link_invalid'   => __( 'This link is invalid or has expired. Ask for a new one below.', 'euteajudo' ),
 			'confirmation_invalid' => __( 'This confirmation link is invalid or has expired. Sign in to get a new one.', 'euteajudo' ),
 			'unexpected'           => __( 'Something went wrong. Try again in a few minutes.', 'euteajudo' ),
+			'delete_unconfirmed'   => __( 'Check the box to confirm that you want to delete your account.', 'euteajudo' ),
+			'delete_not_allowed'   => __( 'Accounts that manage the site cannot be deleted here.', 'euteajudo' ),
 			default                => '',
 		};
 	}

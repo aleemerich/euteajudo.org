@@ -18,7 +18,7 @@ use const EuTeAjudo\VERSION;
  */
 final class Blocks {
 
-	public const NAMES = array( 'sign-in', 'sign-up', 'password-request', 'password-reset', 'email-confirmation', 'account-link' );
+	public const NAMES = array( 'sign-in', 'sign-up', 'password-request', 'password-reset', 'email-confirmation', 'account-link', 'account' );
 
 	/**
 	 * Hooks block registration.

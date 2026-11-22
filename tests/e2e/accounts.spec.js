@@ -153,6 +153,64 @@ test.describe( 'Accounts', () => {
 		).toHaveText( /^Amigo \d+$/ );
 	} );
 
+	test( 'my account: appearance choice and account deletion', async ( {
+		page,
+		request,
+	}, testInfo ) => {
+		const email = uniqueEmail( testInfo, 'delete' );
+		await signUpWithEmail( page, email, 'long enough secret' );
+		await page.goto(
+			await linkFromLatestEmail( request, email, '/confirmar-e-mail/' )
+		);
+
+		await page.locator( '.eta-account-link .eta-alias' ).click();
+		await expect( page ).toHaveURL( /\/minha-conta\/$/ );
+		await expect( page.locator( '.eta-account .eta-lead' ) ).toHaveText(
+			/^Aqui você é Amigo \d+\.$/
+		);
+		await expect( page.getByText( /•••••@example\.org/ ) ).toBeVisible();
+
+		await page.getByLabel( 'Dia', { exact: true } ).check();
+		await page.reload();
+		await expect( page.locator( 'html' ) ).toHaveAttribute(
+			'data-eta-scheme',
+			'day'
+		);
+		await page.getByLabel( 'Automática (segue o seu aparelho)' ).check();
+		await expect( page.locator( 'html' ) ).not.toHaveAttribute(
+			'data-eta-scheme',
+			/./
+		);
+
+		await page
+			.getByRole( 'button', { name: 'Excluir minha conta' } )
+			.click();
+		await expect( page.getByRole( 'alert' ) ).toContainText(
+			'Marque a caixa'
+		);
+		await page.getByLabel( 'Entendo e quero excluir minha conta' ).check();
+		await page
+			.getByRole( 'button', { name: 'Excluir minha conta' } )
+			.click();
+		await expect( page.getByRole( 'status' ) ).toContainText(
+			'Sua conta foi excluída'
+		);
+
+		await page.getByLabel( 'E-mail' ).fill( email );
+		await page
+			.getByLabel( 'Senha', { exact: true } )
+			.fill( 'long enough secret' );
+		await page.getByRole( 'button', { name: 'Entrar' } ).click();
+		await expect( page.getByRole( 'alert' ) ).toContainText(
+			'E-mail ou senha não conferem'
+		);
+	} );
+
+	test( 'my account requires signing in', async ( { page } ) => {
+		await page.goto( '/minha-conta/' );
+		await expect( page ).toHaveURL( /\/entrar\/\?redirect_to=/ );
+	} );
+
 	for ( const path of [
 		'/entrar/',
 		'/criar-conta/',

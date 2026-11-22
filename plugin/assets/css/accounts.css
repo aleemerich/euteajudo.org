@@ -49,6 +49,7 @@
 	margin: var(--wp--preset--spacing--20) 0 0;
 }
 .eta-button {
+	box-sizing: border-box;
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -57,7 +58,8 @@
 	cursor: pointer;
 	text-decoration: none;
 }
-.eta-button-quiet {
+.eta-account .eta-button-quiet,
+.eta-account .eta-button-quiet.wp-element-button {
 	background: transparent;
 	color: var(--wp--preset--color--text);
 	border: 1px solid var(--wp--preset--color--line-strong);
@@ -132,7 +134,7 @@
 .eta-before legend + * {
 	clear: both;
 }
-.eta-form .eta-choice {
+.eta-account .eta-choice {
 	display: flex;
 	gap: 12px;
 	align-items: flex-start;
@@ -228,4 +230,11 @@
 .eta-note {
 	font-size: var(--wp--preset--font-size--small);
 	color: var(--wp--preset--color--text-muted);
+}
+
+.eta-account h2 {
+	margin-top: var(--wp--preset--spacing--60);
+}
+.eta-account .eta-alias {
+	text-decoration: none;
 }

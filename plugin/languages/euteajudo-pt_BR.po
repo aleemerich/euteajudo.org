@@ -58,14 +58,15 @@ msgid "Alias"
 msgstr "Apelido"
 
 #: blocks/account-link/render.php:16
+#: blocks/account/render.php:43
 msgid "Sign out"
 msgstr "Sair"
 
 #: blocks/account-link/render.php:18
 #: blocks/email-confirmation/render.php:30
-#: blocks/sign-in/render.php:34
+#: blocks/sign-in/render.php:37
 #: blocks/sign-up/render.php:39
-#: src/Accounts/Pages.php:123
+#: src/Accounts/Pages.php:125
 msgid "Sign in"
 msgstr "Entrar"
 
@@ -112,7 +113,7 @@ msgid "Ask for a new link"
 msgstr "Pedir um link novo"
 
 #: blocks/password-reset/render.php:30
-#: src/Accounts/Pages.php:126
+#: src/Accounts/Pages.php:128
 msgid "New password"
 msgstr "Nova senha"
 
@@ -129,21 +130,21 @@ msgstr "Salvar senha nova"
 msgid "Your password was changed. Sign in with the new password."
 msgstr "Sua senha foi alterada. Entre com a senha nova."
 
-#: blocks/sign-in/render.php:24
+#: blocks/sign-in/render.php:27
 msgid "Good to have you back."
 msgstr "Bom ter você de volta."
 
-#: blocks/sign-in/render.php:33
+#: blocks/sign-in/render.php:36
 #: blocks/sign-up/render.php:67
 msgid "Password"
 msgstr "Senha"
 
-#: blocks/sign-in/render.php:41
-#: src/Accounts/Pages.php:125
+#: blocks/sign-in/render.php:45
+#: src/Accounts/Pages.php:127
 msgid "Forgot password"
 msgstr "Esqueci minha senha"
 
-#: blocks/sign-in/render.php:42
+#: blocks/sign-in/render.php:46
 msgid "Don't have an account yet? Create account"
 msgstr "Ainda não tem conta? Criar conta"
 
@@ -222,7 +223,7 @@ msgid "Privacy policy"
 msgstr "Política de privacidade"
 
 #: blocks/sign-up/render.php:68
-#: src/Accounts/Pages.php:124
+#: src/Accounts/Pages.php:126
 msgid "Create account"
 msgstr "Criar conta"
 
@@ -245,7 +246,14 @@ msgid ""
 "%2$s\n"
 "\n"
 "If you did not create an account, you can ignore this message."
-msgstr "Olá, %1$s.\n\nPara confirmar este e-mail no EuTeAjudo.org, abra o link abaixo em até 48 horas:\n\n%2$s\n\nSe você não criou uma conta, pode ignorar esta mensagem."
+msgstr ""
+"Olá, %1$s.\n"
+"\n"
+"Para confirmar este e-mail no EuTeAjudo.org, abra o link abaixo em até 48 horas:\n"
+"\n"
+"%2$s\n"
+"\n"
+"Se você não criou uma conta, pode ignorar esta mensagem."
 
 #: src/Accounts/Forms/Messages.php:24
 msgid "Email or password does not match. Check and try again, or use \"Forgot password\"."
@@ -320,7 +328,16 @@ msgid ""
 "%2$s\n"
 "\n"
 "If it was not you, you can ignore this message. Nothing was changed."
-msgstr "Alguém tentou criar uma conta no EuTeAjudo.org com este e-mail, que já tem cadastro.\n\nSe foi você, entre aqui:\n%1$s\n\nEsqueceu a senha? Crie uma nova aqui:\n%2$s\n\nSe não foi você, pode ignorar esta mensagem. Nada foi alterado."
+msgstr ""
+"Alguém tentou criar uma conta no EuTeAjudo.org com este e-mail, que já tem cadastro.\n"
+"\n"
+"Se foi você, entre aqui:\n"
+"%1$s\n"
+"\n"
+"Esqueceu a senha? Crie uma nova aqui:\n"
+"%2$s\n"
+"\n"
+"Se não foi você, pode ignorar esta mensagem. Nada foi alterado."
 
 #: src/Accounts/Forms/Notices.php:46
 msgid "EuTeAjudo: create a new password"
@@ -335,29 +352,35 @@ msgid ""
 "%s\n"
 "\n"
 "If you did not ask for this, you can ignore this message. Your password stays the same."
-msgstr "Para criar uma senha nova no EuTeAjudo.org, abra o link abaixo:\n\n%s\n\nSe você não pediu isso, pode ignorar esta mensagem. Sua senha continua a mesma."
+msgstr ""
+"Para criar uma senha nova no EuTeAjudo.org, abra o link abaixo:\n"
+"\n"
+"%s\n"
+"\n"
+"Se você não pediu isso, pode ignorar esta mensagem. Sua senha continua a mesma."
 
-#: src/Accounts/Forms/View.php:53
+#: blocks/account/render.php:31
+#: src/Accounts/Forms/View.php:66
 msgid "Email"
 msgstr "E-mail"
 
-#: src/Accounts/Forms/View.php:69
+#: src/Accounts/Forms/View.php:82
 msgid "Show"
 msgstr "Mostrar"
 
-#: src/Accounts/Forms/View.php:69
+#: src/Accounts/Forms/View.php:82
 msgid "Hide"
 msgstr "Ocultar"
 
-#: src/Accounts/Forms/View.php:85
+#: src/Accounts/Forms/View.php:98
 msgid "Continue with Google"
 msgstr "Continuar com o Google"
 
-#: src/Accounts/Forms/View.php:92
+#: src/Accounts/Forms/View.php:105
 msgid "or with email"
 msgstr "ou com e-mail"
 
-#: src/Accounts/Pages.php:127
+#: src/Accounts/Pages.php:129
 msgid "Confirm email"
 msgstr "Confirmar e-mail"
 
@@ -419,4 +442,77 @@ msgstr "Formulário de cadastro"
 #: blocks/sign-up/block.json
 msgctxt "block description"
 msgid "Age, consent and account creation with email or Google."
+msgstr ""
+
+#. translators: %s: alias label, e.g. "Friend 48213".
+#: blocks/account/render.php:25
+#, php-format
+msgid "Here you are %s."
+msgstr "Aqui você é %s."
+
+#: blocks/account/render.php:33
+msgid "Only you see this email. It is used to sign in and to tell you when a reply arrives."
+msgstr "Só você vê este e-mail. Ele serve para entrar e para avisar quando chega uma resposta."
+
+#: blocks/account/render.php:36
+msgid "Appearance"
+msgstr "Aparência"
+
+#: blocks/account/render.php:37
+msgid "Automatic (follows your device)"
+msgstr "Automática (segue o seu aparelho)"
+
+#: blocks/account/render.php:38
+msgid "Night"
+msgstr "Noite"
+
+#: blocks/account/render.php:39
+msgid "Day"
+msgstr "Dia"
+
+#: blocks/account/render.php:40
+msgid "This choice is saved only in this browser."
+msgstr "Esta escolha fica salva só neste navegador."
+
+#: blocks/account/render.php:45
+msgid "Delete account"
+msgstr "Excluir conta"
+
+#: blocks/account/render.php:47
+#: src/Accounts/Forms/Messages.php:39
+msgid "Accounts that manage the site cannot be deleted here."
+msgstr "Contas que administram o site não podem ser excluídas aqui."
+
+#: blocks/account/render.php:49
+msgid "Your email is removed from the site and nobody can sign in to this account anymore. What you wrote stays under your alias, without your email. You can create a new account later; it gets a new alias."
+msgstr "Seu e-mail é removido do site e ninguém consegue mais entrar nesta conta. O que você escreveu continua com o seu Apelido, sem o seu e-mail. Você pode criar uma conta nova depois; ela recebe outro Apelido."
+
+#: blocks/account/render.php:51
+msgid "I understand and want to delete my account"
+msgstr "Entendo e quero excluir minha conta"
+
+#: blocks/account/render.php:52
+msgid "Delete my account"
+msgstr "Excluir minha conta"
+
+#: blocks/sign-in/render.php:23
+msgid "Your account was deleted."
+msgstr "Sua conta foi excluída."
+
+#: src/Accounts/Forms/Messages.php:38
+msgid "Check the box to confirm that you want to delete your account."
+msgstr "Marque a caixa para confirmar que quer excluir sua conta."
+
+#: src/Accounts/Pages.php:130
+msgid "My account"
+msgstr "Minha conta"
+
+#: blocks/account/block.json
+msgctxt "block title"
+msgid "My account"
+msgstr "Minha conta"
+
+#: blocks/account/block.json
+msgctxt "block description"
+msgid "Alias, email, appearance, sign out and account deletion."
 msgstr ""

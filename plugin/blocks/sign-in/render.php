@@ -19,6 +19,9 @@ $euteajudo_redirect = isset( $_GET['redirect_to'] ) ? esc_url_raw( wp_unslash( $
 	if ( 'password_changed' === Messages::current_step() ) {
 		echo View::notice( __( 'Your password was changed. Sign in with the new password.', 'euteajudo' ) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Escaped in View.
 	}
+	if ( 'account_deleted' === Messages::current_step() ) {
+		echo View::notice( __( 'Your account was deleted.', 'euteajudo' ) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Escaped in View.
+	}
 	echo View::error_notice(); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Escaped in View.
 	?>
 	<p class="eta-lead"><?php esc_html_e( 'Good to have you back.', 'euteajudo' ); ?></p>

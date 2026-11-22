@@ -45,6 +45,19 @@ final class View {
 	}
 
 	/**
+	 * Email with most of the local part hidden, e.g. "al•••••@gmail.com".
+	 *
+	 * @param string $email Email address.
+	 */
+	public static function masked_email( string $email ): string {
+		$at = strrpos( $email, '@' );
+		if ( false === $at ) {
+			return '';
+		}
+		return mb_substr( $email, 0, min( 2, $at ) ) . str_repeat( '•', 5 ) . substr( $email, $at );
+	}
+
+	/**
 	 * Labelled email field.
 	 *
 	 * @param string $id Field ID.

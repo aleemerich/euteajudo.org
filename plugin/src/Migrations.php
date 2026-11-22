@@ -45,6 +45,9 @@ final class Migrations {
 					Accounts\EmailConfirmation::mark_confirmed( (int) $user_id );
 				}
 			},
+			'0.7.0' => static function (): void {
+				Accounts\Pages::install(); // Adds "My account".
+			},
 		);
 	}
 }
