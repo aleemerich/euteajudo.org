@@ -32,24 +32,39 @@ Espaço anônimo onde Amigos desabafam e recebem Respostas de um Agente de IA (n
 
 ## Comandos
 
-Disponíveis a partir da E0 parte B:
+Primeira vez num clone novo:
+
+```bash
+git config core.hooksPath .githooks   # ativa o pre-commit
+npm ci                                # ferramentas de JavaScript (no host, Node 24)
+ddev start                            # sobe o site e instala o WordPress na primeira vez
+ddev composer install                 # ferramentas de PHP (dentro do DDEV, PHP 8.5)
+```
 
 | Comando | Faz |
 |---|---|
-| `ddev start` | Sobe o site em `https://euteajudo.ddev.site` |
+| `ddev start` | Sobe `https://euteajudo.ddev.site`. Na primeira vez baixa e instala o WordPress, ativa plugin e tema, instala o Query Monitor e cria o banco de testes. Admin local: `admin` / `admin` (só local). |
 | `ddev composer test:unit` | Testes de unidade (sem WordPress) |
-| `ddev composer test:integration` | Testes de integração (suíte de testes do WordPress, MySQL 5.7) |
-| `npm run test:e2e` | Playwright, celular primeiro, com verificação de acessibilidade |
-| `ddev composer lint` | PHPCS e PHPStan |
-| `npm run lint` / `npm run build` | ESLint, Prettier e build dos blocos (`@wordpress/scripts`) |
-| `ddev export-db --file=backups/db-$(date +%F).sql.gz` | Cópia do banco local |
+| `ddev composer test:integration` | Testes de integração (suíte de testes do WordPress, banco `wordpress_test`) |
+| `ddev composer test` | Os dois acima |
+| `ddev composer lint` | PHPCS (WordPress Coding Standards, PHPCompatibility 8.5) e PHPStan nível 8 |
+| `npm run build:theme` | Gera `theme/theme.json`, `theme/assets/css/color-schemes.css` e copia fontes e logo a partir de `design/` |
+| `npm run check:theme` | Falha se os arquivos gerados estiverem desatualizados em relação a `design/tokens.json` |
+| `npm run lint` / `npm run format` | ESLint e Prettier (`@wordpress/scripts`) |
+| `npm run test:e2e` | Playwright no celular e no desktop, com o Google Chrome instalado e verificação de acessibilidade (axe) |
+| `ddev wp ...` | WP-CLI no site local |
+| `ddev export-db --file=backups/db-$(date +%F).sql.gz` | Cópia do banco local (pasta ignorada pelo git) |
+
+Logs: `wordpress/wp-content/debug.log` (PHP e WordPress) e `ddev logs`.
+
+Nunca editar à mão `theme/theme.json` nem `theme/assets/css/color-schemes.css`: mudar `design/tokens.json` e rodar `npm run build:theme`.
 
 ## Convenções de código
 
 - **Código em inglês**: identificadores, comentários, mensagens de commit e textos-fonte da interface. Documentação do domínio em português ([ADR 0006](docs/adr/0006-english-code-portuguese-docs.md)).
 - **Nomes de pastas e arquivos em inglês**, sem acentos nem espaços, inclusive na documentação (ex.: `docs/plan.md`, `design/identity.md`). Só o conteúdo da documentação é em português.
 - **Nomes vêm do glossário**: use a linha _Código_ do termo. Não invente sinônimos (ex.: Pedido é sempre `help_request`, nunca `ticket` ou `post`).
-- Prefixo `eta_` em tudo o que é registrado no WordPress (post types, status, taxonomias, papéis, metadados com `_eta_`, opções, hooks próprios). Namespace PHP `EuTeAjudo\`, autoload PSR-4. Text domain `euteajudo`, tradução `pt_BR`.
+- Prefixo `eta_` em tudo o que é registrado no WordPress (post types, status, taxonomias, papéis, metadados com `_eta_`, opções). Hooks próprios, funções e constantes globais usam `euteajudo_` (o PHPCS exige prefixo de pelo menos 4 letras), mas o código fica em namespaces e quase não precisa de globais. Namespace PHP `EuTeAjudo\`, autoload PSR-4. Text domain `euteajudo`, tradução `pt_BR`.
 - Post type com até 20 caracteres; `post_status` cabe em 20 caracteres.
 - Segurança do WordPress sempre: capabilities em toda ação, nonces em formulários, sanitização na entrada, escape na saída, `$wpdb->prepare` em SQL.
 - Anonimato: nunca exibir nome ou e-mail; `display_name`, `nickname` e autor de comentário são sempre o Apelido. Ver as proteções obrigatórias do ADR 0003.

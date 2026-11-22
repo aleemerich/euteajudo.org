@@ -1,0 +1,28 @@
+#!/usr/bin/env bash
+# Fast checks before every commit. Enable once per clone: git config core.hooksPath .githooks
+set -euo pipefail
+
+staged=$(git diff --cached --name-only --diff-filter=ACMR)
+[ -z "$staged" ] && exit 0
+fail=0
+
+# 1. Secrets and private files never enter this public repository.
+blocked=$(printf '%s\n' "$staged" | grep -E '(^|/)\.env($|\.)|\.pem$|\.key$|(^|/)backups/' | grep -v '\.env\.example$' || true)
+if [ -n "$blocked" ]; then
+  echo "pre-commit: blocked files (secrets or local backups):"; printf '  %s\n' $blocked; fail=1
+fi
+if git diff --cached -U0 -- $staged ':!.githooks' | grep -E '^\+' | grep -qE 'sk-ant-[A-Za-z0-9_-]{10,}|sk-or-v1-[A-Za-z0-9]{10,}|AIza[0-9A-Za-z_-]{30,}|-----BEGIN [A-Z ]*PRIVATE KEY-----'; then
+  echo "pre-commit: a staged change looks like an API key or private key."; fail=1
+fi
+
+# 2. Agent internals belong to the private repository.
+if git diff --cached -U0 -- $staged ':!.githooks' | grep -E '^\+' | grep -qiE 'system prompt|prompt do agente|regras de conduta do agente'; then
+  echo "pre-commit: this looks like Agent prompt material; it belongs in the private agent repository."; fail=1
+fi
+
+# 3. Generated theme files must match design/tokens.json.
+if printf '%s\n' "$staged" | grep -qE '^(design/|theme/theme\.json|theme/assets/|scripts/build-theme\.mjs)'; then
+  node scripts/build-theme.mjs --check || { echo "pre-commit: run 'npm run build:theme' and stage the result."; fail=1; }
+fi
+
+exit $fail

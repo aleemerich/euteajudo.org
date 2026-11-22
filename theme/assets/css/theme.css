@@ -1,0 +1,10 @@
+/* Hand-written component styles. Colors and sizes always come from theme.json presets. */
+.eta-brand {
+	display: inline-block;
+	color: var(--wp--preset--color--text);
+	line-height: 0;
+}
+.eta-brand svg {
+	height: 32px;
+	width: auto;
+}

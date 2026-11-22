@@ -37,7 +37,7 @@ Objetivo: repositórios, regras e ambiente prontos antes de qualquer funcionalid
 - Esqueleto do tema de blocos: `theme.json` e templates mínimos.
 - PHPUnit (unidade sem WordPress e integração com a suíte de testes do WordPress), PHPStan, PHPCS (WordPress Coding Standards e PHPCompatibility para PHP 8.5), Playwright com `@axe-core/playwright`, ESLint e Prettier pelo `@wordpress/scripts`.
 - Hook de pre-commit com as verificações rápidas e bloqueio de `.env` e de arquivos do Agente.
-- Script de dados de teste (WP-CLI) e comando de exportação do banco para `backups/`.
+- Comando de exportação do banco para `backups/`. O script de dados de teste (WP-CLI) entra na E2, quando existirem Pedidos para criar.
 - CI no GitHub Actions com a action oficial do DDEV.
 
 Pronto quando: `ddev start` sobe `https://euteajudo.ddev.site` com plugin e tema ativos, e um teste de cada tipo passa no CI.
