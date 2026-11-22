@@ -4,7 +4,7 @@ Base: [docs/mvp.md](mvp.md), [GLOSSARY.md](../GLOSSARY.md) e [docs/adr](adr/). C
 
 ```
 E0 → ID → E1 → E2 → E3 → E4 → E5 ─┐
-                            └→ E6 ─┼→ E8
+                            └→ E6 ─┼→ R1 → E8
                        E2 → E7 ────┘
 ```
 
@@ -131,6 +131,17 @@ Objetivo: o site roda na hospedagem compartilhada com e-mails confiáveis.
 - Agente rodando na máquina do mantenedor contra o site publicado, com reinício automático.
 
 Pronto quando: um Pedido criado no site publicado recebe Resposta e o e-mail chega com remetente e assunto neutros.
+
+## R1. Revisão dos textos da interface
+
+Objetivo: o mantenedor revisa e ajusta todos os textos que as pessoas leem.
+
+- Fonte única dos textos: os arquivos de tradução `plugin/languages/euteajudo-pt_BR.po` e `theme/languages/euteajudo-theme-pt_BR.po` (os textos-fonte do código são em inglês; o que aparece no site é o `msgstr`), mais os e-mails e as páginas criadas pelas migrações.
+- Gerar uma lista navegável de todos os textos, agrupados por tela, para a revisão.
+- Aplicar os ajustes nos `.po`, compilar (`ddev composer i18n`) e conferir as telas.
+- Pode acontecer a qualquer momento depois da E2; obrigatória antes da E8.
+
+Pronto quando: o mantenedor aprova todos os textos.
 
 ## E8. Lançamento
 

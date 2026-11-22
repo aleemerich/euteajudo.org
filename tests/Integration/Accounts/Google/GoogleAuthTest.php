@@ -199,7 +199,7 @@ final class GoogleAuthTest extends TestCase {
 
 		$url = $this->return_from_google( $query['state'] );
 
-		$this->assertSame( '', $this->error_in( $url ) );
+		$this->assertSame( home_url( '/' ), $url, 'Without redirect_to, goes home (never to an empty URL).' );
 		$user = get_user_by( 'email', 'someone@example.org' );
 		$this->assertInstanceOf( \WP_User::class, $user );
 		$this->assertSame( array( Roles::FRIEND ), $user->roles );

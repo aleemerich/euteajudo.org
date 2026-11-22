@@ -38,6 +38,13 @@ final class Migrations {
 				// Logins of Friends and Agents become their alias ("amigo-48213").
 				Accounts\Aliases::refresh_all();
 			},
+			'0.6.0' => static function (): void {
+				Accounts\Pages::install();
+				// Accounts that already exist were created before email confirmation existed.
+				foreach ( get_users( array( 'fields' => 'ID' ) ) as $user_id ) {
+					Accounts\EmailConfirmation::mark_confirmed( (int) $user_id );
+				}
+			},
 		);
 	}
 }

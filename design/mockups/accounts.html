@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Prévia: Entrar e Cadastrar</title>
+<!-- Real theme files: Night/Day variables generated from design/tokens.json, self-hosted fonts. -->
+<link rel="stylesheet" href="../../theme/assets/css/color-schemes.css">
+<style>
+@font-face { font-family: "Atkinson Hyperlegible Next"; src: url(../../theme/assets/fonts/atkinson-hyperlegible-next-variable.woff2) format("woff2"); font-weight: 200 800; font-display: swap; }
+:root {
+	--wp--preset--color--focus: var(--eta-color-focus);
+	--wp--custom--touch-target: 48px;
+	--font: "Atkinson Hyperlegible Next", system-ui, sans-serif;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; }
+body { font-family: var(--font); background: var(--eta-color-background); color: var(--eta-color-text); line-height: 1.55; font-size: 17px; }
+.doc { max-width: 1400px; margin: 0 auto; padding: 24px 16px 64px; }
+.doc h1 { font-size: 1.75rem; margin: 0 0 6px; color: var(--eta-color-text-strong); }
+.doc > p { color: var(--eta-color-text-muted); max-width: 760px; margin: 0 0 16px; }
+.switch { display: flex; gap: 8px; margin: 12px 0 28px; flex-wrap: wrap; }
+.switch button { font: inherit; min-height: 40px; padding: 0 16px; border-radius: 12px; border: 1px solid var(--eta-color-line-strong); background: var(--eta-color-surface); color: var(--eta-color-text); cursor: pointer; }
+.switch button[aria-pressed="true"] { border-color: var(--eta-color-accent); font-weight: 700; }
+.frames { display: flex; gap: 28px; overflow-x: auto; padding-bottom: 16px; }
+figure { margin: 0; flex: none; width: 390px; max-width: 88vw; }
+figcaption { font-size: .9rem; color: var(--eta-color-text-muted); margin-top: 10px; }
+.dev { height: 800px; border-radius: 34px; border: 9px solid #1d1d1f; overflow: hidden; }
+.screen { height: 100%; overflow-y: auto; background: var(--eta-color-background); color: var(--eta-color-text); }
+.top { display: flex; align-items: center; justify-content: space-between; padding: 12px 20px; border-bottom: 1px solid var(--eta-color-line); }
+.top img { height: 30px; display: block; }
+.top a { color: var(--eta-color-text); font-weight: 600; text-decoration: none; font-size: .95rem; }
+main { padding: 24px 20px 40px; }
+h2 { font-size: 1.75rem; line-height: 1.15; margin: 0 0 8px; color: var(--eta-color-text-strong); }
+.lead { color: var(--eta-color-text-muted); margin: 0 0 20px; }
+label { display: block; font-weight: 600; margin: 16px 0 6px; }
+input[type=email], input[type=password], input[type=text] { width: 100%; min-height: 48px; font: inherit; color: var(--eta-color-text); background: var(--eta-color-field); border: 1px solid var(--eta-color-line-strong); border-radius: 12px; padding: 10px 14px; }
+.pw { position: relative; }
+.pw button { position: absolute; right: 6px; top: 6px; min-height: 36px; font: inherit; font-size: .9rem; background: none; border: 0; color: var(--eta-color-text-muted); cursor: pointer; padding: 0 10px; }
+.hint { font-size: .88rem; color: var(--eta-color-text-muted); margin: 6px 0 0; }
+.btn { box-shadow: var(--day-edge, none); display: flex; align-items: center; justify-content: center; width: 100%; min-height: 48px; margin-top: 20px; border: 0; border-radius: 12px; background: var(--eta-color-accent); color: var(--eta-color-on-accent); font: inherit; font-weight: 700; cursor: pointer; text-decoration: none; }
+.btn-quiet { background: transparent; color: var(--eta-color-text); border: 1px solid var(--eta-color-line-strong); font-weight: 600; }
+/* Google's own button style (brand guidelines): neutral surface, 4-colour G, "Continuar com o Google". */
+.google { display: flex; align-items: center; justify-content: center; gap: 12px; width: 100%; min-height: 48px; border-radius: 12px; border: 1px solid #747775; background: #fff; color: #1f1f1f; font: inherit; font-weight: 600; cursor: pointer; }
+.google svg { width: 20px; height: 20px; }
+.or { display: flex; align-items: center; gap: 12px; color: var(--eta-color-text-muted); font-size: .9rem; margin: 22px 0 4px; }
+.or::before, .or::after { content: ""; flex: 1; height: 1px; background: var(--eta-color-line); }
+.links { margin-top: 22px; display: grid; gap: 10px; font-size: .95rem; }
+.links a { color: var(--eta-color-text); }
+.error { border: 1px solid var(--eta-color-line-strong); border-left: 4px solid var(--eta-color-text-strong); border-radius: 12px; padding: 12px 14px; margin: 0 0 16px; background: var(--eta-color-surface); }
+.before { border: 1px solid var(--eta-color-line-strong); border-radius: 16px; padding: 16px; background: var(--eta-color-surface); margin-bottom: 22px; }
+.before h3 { margin: 0 0 4px; font-size: 1.05rem; color: var(--eta-color-text-strong); }
+.choice { display: flex; gap: 12px; align-items: flex-start; min-height: 48px; padding: 10px 0; font-weight: 400; margin: 0; }
+.choice input { width: 22px; height: 22px; margin: 2px 0 0; accent-color: var(--eta-color-text-strong); flex: none; }
+.choice a { color: var(--eta-color-text); }
+.center { text-align: left; }
+.window { width: 72px; height: 76px; border-radius: 12px; border: 4px solid var(--eta-color-text); position: relative; margin: 8px 0 22px; }
+.window::before, .window::after { content: ""; position: absolute; background: var(--eta-color-text); }
+.window::before { left: 50%; top: 0; bottom: 0; width: 3px; transform: translateX(-50%); }
+.window::after { top: 50%; left: 0; right: 0; height: 3px; transform: translateY(-50%); }
+.window i { position: absolute; left: 6px; top: 6px; width: 23px; height: 25px; border-radius: 3px; background: var(--eta-color-accent); }
+.services { display: grid; gap: 12px; margin-top: 18px; }
+.service { border: 1px solid var(--eta-color-line-strong); border-radius: 16px; padding: 14px 16px; background: var(--eta-color-surface); }
+.service b { display: block; color: var(--eta-color-text-strong); }
+.service p { margin: 4px 0 10px; font-size: .95rem; }
+.service .btn { margin-top: 0; }
+.note { font-size: .9rem; color: var(--eta-color-text-muted); }
+.btn-quiet { --day-edge: none; }
+:root[data-eta-scheme="day"] { --day-edge: inset 0 0 0 1px #B7790F; }
+</style>
+</head>
+<body>
+<div class="doc">
+	<h1>Prévia: Entrar e Cadastrar</h1>
+	<p>Telas no celular, com as cores e fontes reais do tema. Use os botões para ver a versão Noite e a versão Dia. Os botões e campos ainda não funcionam: é só para aprovar fluxo, textos e aparência.</p>
+	<div class="switch" role="group" aria-label="Versão de cor">
+		<button type="button" data-scheme="night" aria-pressed="true">Noite</button>
+		<button type="button" data-scheme="day" aria-pressed="false">Dia</button>
+	</div>
+
+	<div class="frames">
+
+	<figure><div class="dev"><div class="screen">
+		<header class="top"><img src="../logo/logo-mono.svg" alt="EuTeAjudo.org" style="filter:none"><a href="#">Criar conta</a></header>
+		<main>
+			<h2>Entrar</h2>
+			<p class="lead">Bom ter você de volta.</p>
+			<button class="google" type="button"><svg viewBox="0 0 48 48" aria-hidden="true"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg>Continuar com o Google</button>
+			<div class="or">ou com e-mail</div>
+			<label for="e1">E-mail</label>
+			<input id="e1" type="email" value="" autocomplete="email">
+			<label for="p1">Senha</label>
+			<div class="pw"><input id="p1" type="password" autocomplete="current-password"><button type="button">Mostrar</button></div>
+			<button class="btn" type="button">Entrar</button>
+			<div class="links"><a href="#">Esqueci minha senha</a><a href="#">Ainda não tem conta? Criar conta</a></div>
+		</main>
+	</div></div><figcaption>Entrar</figcaption></figure>
+
+	<figure><div class="dev"><div class="screen">
+		<header class="top"><img src="../logo/logo-mono.svg" alt="EuTeAjudo.org"><a href="#">Entrar</a></header>
+		<main>
+			<h2>Entrar</h2>
+			<div class="error" role="alert">E-mail ou senha não conferem. Confira e tente de novo, ou use "Esqueci minha senha".</div>
+			<label for="e2">E-mail</label>
+			<input id="e2" type="email" value="alguem@exemplo.com">
+			<label for="p2">Senha</label>
+			<div class="pw"><input id="p2" type="password" value="••••••••"><button type="button">Mostrar</button></div>
+			<button class="btn" type="button">Entrar</button>
+			<p class="note" style="margin-top:22px">Outras mensagens possíveis: "Essa conta do Google ainda não tem cadastro aqui. Crie sua conta para continuar." · "A conexão com o Google demorou demais. Tente de novo."</p>
+		</main>
+	</div></div><figcaption>Entrar, com erro</figcaption></figure>
+
+	<figure><div class="dev"><div class="screen">
+		<header class="top"><img src="../logo/logo-mono.svg" alt="EuTeAjudo.org"><a href="#">Entrar</a></header>
+		<main>
+			<h2>Criar conta</h2>
+			<p class="lead">Aqui você é só um Amigo com número, como Amigo 48213. Ninguém vê seu e-mail.</p>
+			<div class="before">
+				<h3>Antes de começar</h3>
+				<label class="choice"><input type="radio" name="age" checked> Tenho 18 anos ou mais</label>
+				<label class="choice"><input type="radio" name="age"> Tenho menos de 18 anos</label>
+				<label class="choice"><input type="checkbox" checked> <span>Concordo que o que eu escrever seja lido por uma inteligência artificial criada para acolher, inclusive em serviços fora do Brasil. Li os <a href="#">Termos de uso</a> e a <a href="#">Política de privacidade</a>.</span></label>
+			</div>
+			<button class="google" type="button"><svg viewBox="0 0 48 48" aria-hidden="true"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg>Continuar com o Google</button>
+			<div class="or">ou com e-mail</div>
+			<label for="e3">E-mail</label>
+			<input id="e3" type="email" autocomplete="email">
+			<label for="p3">Senha</label>
+			<div class="pw"><input id="p3" type="password" autocomplete="new-password"><button type="button">Mostrar</button></div>
+			<p class="hint">Pelo menos 10 caracteres.</p>
+			<button class="btn" type="button">Criar conta</button>
+			<div class="links"><a href="#">Já tem conta? Entrar</a></div>
+		</main>
+	</div></div><figcaption>Criar conta</figcaption></figure>
+
+	<figure><div class="dev"><div class="screen">
+		<header class="top"><img src="../logo/logo-mono.svg" alt="EuTeAjudo.org"><a href="#">Entrar</a></header>
+		<main>
+			<div class="window" aria-hidden="true"><i></i></div>
+			<h2>Quase lá</h2>
+			<p>Mandamos um link para <b>al•••••@gmail.com</b>. Abra o e-mail e toque em "Confirmar e-mail".</p>
+			<p class="note">O assunto é "EuTeAjudo: confirme seu e-mail". Se não aparecer em alguns minutos, olhe a pasta de spam.</p>
+			<button class="btn btn-quiet" type="button">Reenviar e-mail</button>
+			<p class="note" style="margin-top:22px">Você já está conectado como Amigo 48213. Para enviar um pedido, o e-mail precisa estar confirmado.</p>
+		</main>
+	</div></div><figcaption>Depois de criar conta com e-mail</figcaption></figure>
+
+	<figure><div class="dev"><div class="screen">
+		<header class="top"><img src="../logo/logo-mono.svg" alt="EuTeAjudo.org"><a href="#">Entrar</a></header>
+		<main>
+			<h2>Este espaço é para maiores de 18 anos</h2>
+			<p>Você merece ser ouvido agora. Estes serviços atendem quem tem menos de 18 anos, de graça e com pessoas preparadas:</p>
+			<div class="services">
+				<div class="service"><b>Pode Falar (UNICEF)</b><p>Para quem tem de 13 a 24 anos, por WhatsApp.</p><a class="btn" href="#">Abrir o Pode Falar</a></div>
+				<div class="service"><b>CVV</b><p>Qualquer idade, a qualquer hora, pelo telefone 188 ou pelo chat.</p><a class="btn btn-quiet" href="#">Ligar para o 188</a></div>
+			</div>
+		</main>
+	</div></div><figcaption>Quem marcou "menos de 18 anos"</figcaption></figure>
+
+	<figure><div class="dev"><div class="screen">
+		<header class="top"><img src="../logo/logo-mono.svg" alt="EuTeAjudo.org"><a href="#">Entrar</a></header>
+		<main>
+			<h2>Esqueci minha senha</h2>
+			<p class="lead">Informe o e-mail da sua conta. Se ele estiver cadastrado, enviamos um link para criar uma senha nova.</p>
+			<label for="e4">E-mail</label>
+			<input id="e4" type="email">
+			<button class="btn" type="button">Enviar link</button>
+			<p class="note" style="margin-top:22px">Conta criada com o Google? Volte e use "Continuar com o Google".</p>
+		</main>
+	</div></div><figcaption>Esqueci minha senha</figcaption></figure>
+
+	</div>
+</div>
+<script>
+// The logo SVG uses currentColor; as an <img> it cannot inherit it, so swap the file per scheme.
+const logos = () => document.querySelectorAll('.top img');
+function apply(scheme) {
+	document.documentElement.setAttribute('data-eta-scheme', scheme);
+	document.querySelectorAll('[data-scheme]').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.scheme === scheme)));
+	logos().forEach(img => { img.src = '../logo/' + (scheme === 'day' ? 'logo-day.svg' : 'logo-night.svg'); });
+}
+document.querySelectorAll('[data-scheme]').forEach(b => b.addEventListener('click', () => apply(b.dataset.scheme)));
+apply('night');
+</script>
+</body>
+</html>

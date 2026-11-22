@@ -34,7 +34,7 @@ msgid "EuTeAjudo.org"
 msgstr ""
 
 #. translators: %s: five-digit alias number.
-#: src/Accounts/Aliases.php:38
+#: src/Accounts/Aliases.php:40
 #, php-format
 msgid "Friend %s"
 msgstr "Amigo %s"
@@ -43,12 +43,12 @@ msgstr "Amigo %s"
 msgid "Sorry, you are not allowed to list users."
 msgstr "Você não tem permissão para listar usuários."
 
-#: src/Accounts/Aliases.php:179
+#: src/Accounts/Aliases.php:219
 msgid "EuTeAjudo: alias range widened"
 msgstr "EuTeAjudo: faixa de Apelidos ampliada"
 
 #. translators: 1: previous maximum digits, 2: new maximum digits.
-#: src/Accounts/Aliases.php:182
+#: src/Accounts/Aliases.php:222
 #, php-format
 msgid "Aliases with up to %1$d digits were almost all taken, so new aliases can now have up to %2$d digits. Nothing else needs to be done."
 msgstr "Os Apelidos de até %1$d dígitos estavam quase todos ocupados, então os novos Apelidos podem ter até %2$d dígitos. Não é preciso fazer mais nada."
@@ -56,3 +56,367 @@ msgstr "Os Apelidos de até %1$d dígitos estavam quase todos ocupados, então o
 #: src/Admin/UsersList.php:46
 msgid "Alias"
 msgstr "Apelido"
+
+#: blocks/account-link/render.php:16
+msgid "Sign out"
+msgstr "Sair"
+
+#: blocks/account-link/render.php:18
+#: blocks/email-confirmation/render.php:30
+#: blocks/sign-in/render.php:34
+#: blocks/sign-up/render.php:39
+#: src/Accounts/Pages.php:123
+msgid "Sign in"
+msgstr "Entrar"
+
+#. translators: %s: alias label, e.g. "Friend 48213".
+#: blocks/email-confirmation/render.php:22
+#, php-format
+msgid "Email confirmed. You are signed in as %s."
+msgstr "E-mail confirmado. Você entrou como %s."
+
+#: blocks/email-confirmation/render.php:27
+msgid "Go to the home page"
+msgstr "Ir para o início"
+
+#: blocks/email-confirmation/render.php:32
+msgid "Open the link we sent to your email to confirm it."
+msgstr "Abra o link que mandamos para o seu e-mail para confirmar."
+
+#: blocks/password-request/render.php:18
+msgid "If this email has an account, we sent a link to create a new password. Check your inbox and the spam folder."
+msgstr "Se esse e-mail tiver conta, mandamos um link para criar uma senha nova. Olhe a caixa de entrada e a pasta de spam."
+
+#: blocks/password-request/render.php:23
+msgid "Type the email of your account. If it is registered, we send a link to create a new password."
+msgstr "Informe o e-mail da sua conta. Se ele estiver cadastrado, mandamos um link para criar uma senha nova."
+
+#: blocks/password-request/render.php:28
+msgid "Send link"
+msgstr "Enviar link"
+
+#: blocks/password-request/render.php:32
+msgid "Account created with Google? Go back and use \"Continue with Google\"."
+msgstr "Conta criada com o Google? Volte e use \"Continuar com o Google\"."
+
+#: blocks/password-request/render.php:33
+msgid "Back to sign in"
+msgstr "Voltar para Entrar"
+
+#: blocks/password-reset/render.php:21
+msgid "Open this page from the link we sent to your email."
+msgstr "Abra esta página pelo link que mandamos para o seu e-mail."
+
+#: blocks/password-reset/render.php:22
+msgid "Ask for a new link"
+msgstr "Pedir um link novo"
+
+#: blocks/password-reset/render.php:30
+#: src/Accounts/Pages.php:126
+msgid "New password"
+msgstr "Nova senha"
+
+#: blocks/password-reset/render.php:30
+#: blocks/sign-up/render.php:67
+msgid "At least 10 characters."
+msgstr "Pelo menos 10 caracteres."
+
+#: blocks/password-reset/render.php:31
+msgid "Save new password"
+msgstr "Salvar senha nova"
+
+#: blocks/sign-in/render.php:20
+msgid "Your password was changed. Sign in with the new password."
+msgstr "Sua senha foi alterada. Entre com a senha nova."
+
+#: blocks/sign-in/render.php:24
+msgid "Good to have you back."
+msgstr "Bom ter você de volta."
+
+#: blocks/sign-in/render.php:33
+#: blocks/sign-up/render.php:67
+msgid "Password"
+msgstr "Senha"
+
+#: blocks/sign-in/render.php:41
+#: src/Accounts/Pages.php:125
+msgid "Forgot password"
+msgstr "Esqueci minha senha"
+
+#: blocks/sign-in/render.php:42
+msgid "Don't have an account yet? Create account"
+msgstr "Ainda não tem conta? Criar conta"
+
+#: blocks/sign-up/render.php:20
+msgid "This space is for people 18 and over"
+msgstr "Este espaço é para maiores de 18 anos"
+
+#: blocks/sign-up/render.php:21
+msgid "You deserve to be heard now. These services help people under 18, for free and with trained people:"
+msgstr "Você merece ser ouvido agora. Estes serviços atendem quem tem menos de 18 anos, de graça e com pessoas preparadas:"
+
+#: blocks/sign-up/render.php:24
+msgid "Pode Falar (UNICEF)"
+msgstr "Pode Falar (UNICEF)"
+
+#: blocks/sign-up/render.php:25
+msgid "For people aged 13 to 24, on WhatsApp."
+msgstr "Para quem tem de 13 a 24 anos, por WhatsApp."
+
+#: blocks/sign-up/render.php:26
+msgid "Open Pode Falar"
+msgstr "Abrir o Pode Falar"
+
+#: blocks/sign-up/render.php:29
+msgid "CVV"
+msgstr "CVV"
+
+#: blocks/sign-up/render.php:30
+msgid "Any age, any time, by phone at 188 or by chat."
+msgstr "Qualquer idade, a qualquer hora, pelo telefone 188 ou pelo chat."
+
+#: blocks/sign-up/render.php:31
+msgid "Call 188"
+msgstr "Ligar para o 188"
+
+#: blocks/sign-up/render.php:36
+msgid "Almost there"
+msgstr "Quase lá"
+
+#: blocks/sign-up/render.php:37
+msgid "We sent a link to the email you typed. Open the email and tap the link to confirm it. The link is valid for 48 hours."
+msgstr "Mandamos um link para o e-mail que você informou. Abra o e-mail e toque no link para confirmar. O link vale por 48 horas."
+
+#: blocks/sign-up/render.php:38
+msgid "The subject is \"EuTeAjudo: confirm your email\". If it does not arrive in a few minutes, check the spam folder. To get a new link, try to sign in."
+msgstr "O assunto é \"EuTeAjudo: confirme seu e-mail\". Se não chegar em alguns minutos, olhe a pasta de spam. Para receber um link novo, tente entrar."
+
+#: blocks/sign-up/render.php:42
+msgid "Here you are just a Friend with a number, like Friend 48213. Nobody sees your email."
+msgstr "Aqui você é só um Amigo com número, como Amigo 48213. Ninguém vê seu e-mail."
+
+#: blocks/sign-up/render.php:46
+msgid "Before you start"
+msgstr "Antes de começar"
+
+#: blocks/sign-up/render.php:47
+msgid "I am 18 or older"
+msgstr "Tenho 18 anos ou mais"
+
+#: blocks/sign-up/render.php:48
+msgid "I am under 18"
+msgstr "Tenho menos de 18 anos"
+
+#: blocks/sign-up/render.php:50
+msgid "I agree that what I write is read by an artificial intelligence made to welcome people, including services outside Brazil."
+msgstr "Concordo que o que eu escrever seja lido por uma inteligência artificial criada para acolher, inclusive em serviços fora do Brasil."
+
+#. translators: %s: link to the privacy policy.
+#: blocks/sign-up/render.php:55
+#, php-format
+msgid "I have read the %s."
+msgstr "Li a %s."
+
+#: blocks/sign-up/render.php:56
+msgid "Privacy policy"
+msgstr "Política de privacidade"
+
+#: blocks/sign-up/render.php:68
+#: src/Accounts/Pages.php:124
+msgid "Create account"
+msgstr "Criar conta"
+
+#: blocks/sign-up/render.php:72
+msgid "Already have an account? Sign in"
+msgstr "Já tem conta? Entrar"
+
+#: src/Accounts/EmailConfirmation.php:52
+msgid "EuTeAjudo: confirm your email"
+msgstr "EuTeAjudo: confirme seu e-mail"
+
+#. translators: 1: alias label, 2: confirmation link.
+#: src/Accounts/EmailConfirmation.php:55
+#, php-format
+msgid ""
+"Hello, %1$s.\n"
+"\n"
+"To confirm this email at EuTeAjudo.org, open the link below within 48 hours:\n"
+"\n"
+"%2$s\n"
+"\n"
+"If you did not create an account, you can ignore this message."
+msgstr "Olá, %1$s.\n\nPara confirmar este e-mail no EuTeAjudo.org, abra o link abaixo em até 48 horas:\n\n%2$s\n\nSe você não criou uma conta, pode ignorar esta mensagem."
+
+#: src/Accounts/Forms/Messages.php:24
+msgid "Email or password does not match. Check and try again, or use \"Forgot password\"."
+msgstr "E-mail ou senha não conferem. Confira e tente de novo, ou use \"Esqueci minha senha\"."
+
+#: src/Accounts/Forms/Messages.php:25
+msgid "Confirm your email first. We sent a new link to your inbox."
+msgstr "Confirme seu e-mail primeiro. Mandamos um link novo para sua caixa de entrada."
+
+#: src/Accounts/Forms/Messages.php:26
+msgid "Choose your age and accept the terms to continue."
+msgstr "Escolha sua idade e aceite os termos para continuar."
+
+#: src/Accounts/Forms/Messages.php:27
+msgid "Type a valid email address."
+msgstr "Informe um e-mail válido."
+
+#: src/Accounts/Forms/Messages.php:28
+msgid "Use at least 10 characters in the password."
+msgstr "Use pelo menos 10 caracteres na senha."
+
+#: src/Accounts/Forms/Messages.php:29
+msgid "This Google account has no account here yet. Create your account to continue."
+msgstr "Essa conta do Google ainda não tem cadastro aqui. Crie sua conta para continuar."
+
+#: src/Accounts/Forms/Messages.php:30
+msgid "Sign in with Google is not available right now. Use your email and password."
+msgstr "Entrar com o Google não está disponível agora. Use seu e-mail e senha."
+
+#: src/Accounts/Forms/Messages.php:31
+msgid "Sign in with Google was cancelled."
+msgstr "A entrada com o Google foi cancelada."
+
+#: src/Accounts/Forms/Messages.php:32
+msgid "This Google account does not have a verified email. Use another account, or your email and password."
+msgstr "Essa conta do Google não tem e-mail verificado. Use outra conta, ou seu e-mail e senha."
+
+#: src/Accounts/Forms/Messages.php:33
+msgid "Sign in with Google did not finish. Try again."
+msgstr "A entrada com o Google não terminou. Tente de novo."
+
+#: src/Accounts/Forms/Messages.php:34
+msgid "This page stayed open for too long. Try again."
+msgstr "Esta página ficou aberta por muito tempo. Tente de novo."
+
+#: src/Accounts/Forms/Messages.php:35
+msgid "This link is invalid or has expired. Ask for a new one below."
+msgstr "Este link é inválido ou venceu. Peça um novo abaixo."
+
+#: src/Accounts/Forms/Messages.php:36
+msgid "This confirmation link is invalid or has expired. Sign in to get a new one."
+msgstr "Este link de confirmação é inválido ou venceu. Entre para receber um novo."
+
+#: src/Accounts/Forms/Messages.php:37
+msgid "Something went wrong. Try again in a few minutes."
+msgstr "Algo deu errado. Tente de novo em alguns minutos."
+
+#: src/Accounts/Forms/Notices.php:27
+msgid "EuTeAjudo: account access"
+msgstr "EuTeAjudo: acesso à conta"
+
+#. translators: 1: sign-in page link, 2: password page link.
+#: src/Accounts/Forms/Notices.php:30
+#, php-format
+msgid ""
+"Someone tried to create an account at EuTeAjudo.org with this email, which already has one.\n"
+"\n"
+"If it was you, sign in here:\n"
+"%1$s\n"
+"\n"
+"Forgot your password? Create a new one here:\n"
+"%2$s\n"
+"\n"
+"If it was not you, you can ignore this message. Nothing was changed."
+msgstr "Alguém tentou criar uma conta no EuTeAjudo.org com este e-mail, que já tem cadastro.\n\nSe foi você, entre aqui:\n%1$s\n\nEsqueceu a senha? Crie uma nova aqui:\n%2$s\n\nSe não foi você, pode ignorar esta mensagem. Nada foi alterado."
+
+#: src/Accounts/Forms/Notices.php:46
+msgid "EuTeAjudo: create a new password"
+msgstr "EuTeAjudo: crie uma senha nova"
+
+#. translators: %s: reset link.
+#: src/Accounts/Forms/Notices.php:49
+#, php-format
+msgid ""
+"To create a new password at EuTeAjudo.org, open the link below:\n"
+"\n"
+"%s\n"
+"\n"
+"If you did not ask for this, you can ignore this message. Your password stays the same."
+msgstr "Para criar uma senha nova no EuTeAjudo.org, abra o link abaixo:\n\n%s\n\nSe você não pediu isso, pode ignorar esta mensagem. Sua senha continua a mesma."
+
+#: src/Accounts/Forms/View.php:53
+msgid "Email"
+msgstr "E-mail"
+
+#: src/Accounts/Forms/View.php:69
+msgid "Show"
+msgstr "Mostrar"
+
+#: src/Accounts/Forms/View.php:69
+msgid "Hide"
+msgstr "Ocultar"
+
+#: src/Accounts/Forms/View.php:85
+msgid "Continue with Google"
+msgstr "Continuar com o Google"
+
+#: src/Accounts/Forms/View.php:92
+msgid "or with email"
+msgstr "ou com e-mail"
+
+#: src/Accounts/Pages.php:127
+msgid "Confirm email"
+msgstr "Confirmar e-mail"
+
+#: blocks/account-link/block.json
+msgctxt "block title"
+msgid "Account link"
+msgstr "Link da conta"
+
+#: blocks/account-link/block.json
+msgctxt "block description"
+msgid "Sign in link, or the alias and sign out link."
+msgstr ""
+
+#: blocks/email-confirmation/block.json
+msgctxt "block title"
+msgid "Email confirmation"
+msgstr "Confirmação de e-mail"
+
+#: blocks/email-confirmation/block.json
+msgctxt "block description"
+msgid "Result of the email confirmation link."
+msgstr ""
+
+#: blocks/password-request/block.json
+msgctxt "block title"
+msgid "Forgot password form"
+msgstr "Formulário de senha esquecida"
+
+#: blocks/password-request/block.json
+msgctxt "block description"
+msgid "Asks for the email to send a password link."
+msgstr ""
+
+#: blocks/password-reset/block.json
+msgctxt "block title"
+msgid "New password form"
+msgstr "Formulário de senha nova"
+
+#: blocks/password-reset/block.json
+msgctxt "block description"
+msgid "Sets a new password from the emailed link."
+msgstr ""
+
+#: blocks/sign-in/block.json
+msgctxt "block title"
+msgid "Sign in form"
+msgstr "Formulário de entrada"
+
+#: blocks/sign-in/block.json
+msgctxt "block description"
+msgid "Email and password or Google sign-in."
+msgstr ""
+
+#: blocks/sign-up/block.json
+msgctxt "block title"
+msgid "Create account form"
+msgstr "Formulário de cadastro"
+
+#: blocks/sign-up/block.json
+msgctxt "block description"
+msgid "Age, consent and account creation with email or Google."
+msgstr ""

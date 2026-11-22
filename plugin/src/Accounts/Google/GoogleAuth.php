@@ -10,6 +10,9 @@ declare(strict_types=1);
 namespace EuTeAjudo\Accounts\Google;
 
 use EuTeAjudo\Accounts\Consent;
+use EuTeAjudo\Accounts\EmailConfirmation;
+use EuTeAjudo\Accounts\Pages;
+use EuTeAjudo\Accounts\Redirects;
 use EuTeAjudo\Accounts\Roles;
 
 /**
@@ -87,13 +90,24 @@ final class GoogleAuth {
 	 * @phpstan-param \WP_REST_Request<array<string, mixed>> $request
 	 */
 	public static function start( \WP_REST_Request $request ): \WP_REST_Response {
-		if ( '' === self::client_id() || '' === self::setting( 'EUTEAJUDO_GOOGLE_CLIENT_SECRET' ) ) {
-			return self::fail( 'not_configured' );
-		}
-
 		$intent = 'register' === $request->get_param( 'intent' ) ? 'register' : 'login';
 		if ( 'register' === $intent && ( '1' !== (string) $request->get_param( 'adult' ) || '1' !== (string) $request->get_param( 'consent' ) ) ) {
 			return self::fail( 'consent_required' );
+		}
+		return self::redirect( self::begin( $intent, (string) $request->get_param( 'redirect_to' ) ) );
+	}
+
+	/**
+	 * Prepares the authorization request and returns the Google URL to send the browser to, or
+	 * an error URL when sign in with Google is not configured. Callers check age and consent
+	 * before a registration.
+	 *
+	 * @param string $intent      "login" or "register".
+	 * @param string $redirect_to Where to go after signing in (same site only).
+	 */
+	public static function begin( string $intent, string $redirect_to ): string {
+		if ( '' === self::client_id() || '' === self::setting( 'EUTEAJUDO_GOOGLE_CLIENT_SECRET' ) ) {
+			return self::error_url( 'not_configured' );
 		}
 
 		$state    = Pkce::random_token();
@@ -104,28 +118,26 @@ final class GoogleAuth {
 			array(
 				'nonce'       => $nonce,
 				'verifier'    => $verifier,
-				'intent'      => $intent,
-				'redirect_to' => (string) $request->get_param( 'redirect_to' ),
+				'intent'      => 'register' === $intent ? 'register' : 'login',
+				'redirect_to' => $redirect_to,
 			),
 			self::TTL
 		);
 		self::set_state_cookie( $state, time() + self::TTL );
 
-		return self::redirect(
-			add_query_arg(
-				array(
-					'client_id'             => rawurlencode( self::client_id() ),
-					'redirect_uri'          => rawurlencode( self::callback_url() ),
-					'response_type'         => 'code',
-					'scope'                 => rawurlencode( 'openid email' ),
-					'state'                 => $state,
-					'nonce'                 => $nonce,
-					'code_challenge'        => Pkce::challenge( $verifier ),
-					'code_challenge_method' => 'S256',
-					'prompt'                => 'select_account',
-				),
-				self::AUTH_ENDPOINT
-			)
+		return add_query_arg(
+			array(
+				'client_id'             => rawurlencode( self::client_id() ),
+				'redirect_uri'          => rawurlencode( self::callback_url() ),
+				'response_type'         => 'code',
+				'scope'                 => rawurlencode( 'openid email' ),
+				'state'                 => $state,
+				'nonce'                 => $nonce,
+				'code_challenge'        => Pkce::challenge( $verifier ),
+				'code_challenge_method' => 'S256',
+				'prompt'                => 'select_account',
+			),
+			self::AUTH_ENDPOINT
 		);
 	}
 
@@ -173,7 +185,7 @@ final class GoogleAuth {
 		wp_set_current_user( $user_id );
 		wp_set_auth_cookie( $user_id, true, is_ssl() );
 
-		return self::redirect( wp_validate_redirect( (string) $pending['redirect_to'], home_url( '/' ) ) );
+		return self::redirect( Redirects::after_sign_in( (string) $pending['redirect_to'] ) );
 	}
 
 	/**
@@ -199,6 +211,7 @@ final class GoogleAuth {
 		$by_email = get_user_by( 'email', $token->email );
 		if ( $by_email instanceof \WP_User ) {
 			update_user_meta( $by_email->ID, self::SUBJECT_META, $token->subject );
+			EmailConfirmation::mark_confirmed( $by_email->ID );
 			return $by_email->ID;
 		}
 
@@ -219,6 +232,7 @@ final class GoogleAuth {
 		}
 		update_user_meta( $user_id, self::SUBJECT_META, $token->subject );
 		Consent::record( $user_id, time() );
+		EmailConfirmation::mark_confirmed( $user_id );
 		return $user_id;
 	}
 
@@ -310,6 +324,16 @@ final class GoogleAuth {
 	 * @param string $code Error code.
 	 */
 	private static function fail( string $code ): \WP_REST_Response {
-		return self::redirect( add_query_arg( 'eta_auth_error', $code, home_url( '/' ) ) );
+		return self::redirect( self::error_url( $code ) );
+	}
+
+	/**
+	 * Page that explains an error: the sign-up page for registration errors, else sign-in.
+	 *
+	 * @param string $code Error code.
+	 */
+	private static function error_url( string $code ): string {
+		$page = in_array( $code, array( 'consent_required', 'needs_registration' ), true ) ? Pages::SIGN_UP : Pages::SIGN_IN;
+		return Pages::url( $page, array( 'eta_auth_error' => $code ) );
 	}
 }
