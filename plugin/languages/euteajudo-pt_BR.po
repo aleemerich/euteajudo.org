@@ -52,3 +52,7 @@ msgstr "EuTeAjudo: faixa de Apelidos ampliada"
 #, php-format
 msgid "Aliases with up to %1$d digits were almost all taken, so new aliases can now have up to %2$d digits. Nothing else needs to be done."
 msgstr "Os Apelidos de até %1$d dígitos estavam quase todos ocupados, então os novos Apelidos podem ter até %2$d dígitos. Não é preciso fazer mais nada."
+
+#: src/Admin/UsersList.php:46
+msgid "Alias"
+msgstr "Apelido"

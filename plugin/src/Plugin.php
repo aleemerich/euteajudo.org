@@ -28,6 +28,7 @@ final class Plugin {
 		Accounts\Aliases::register();
 		Accounts\AdminAccess::register();
 		Accounts\Google\GoogleAuth::register();
+		Admin\UsersList::register();
 		Privacy\Avatars::register();
 		Privacy\UserDirectory::register();
 
