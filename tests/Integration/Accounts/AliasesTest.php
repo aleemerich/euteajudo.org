@@ -36,8 +36,32 @@ final class AliasesTest extends TestCase {
 		$this->assertSame( $label, $user->display_name );
 		$this->assertSame( $label, $user->nickname );
 		$this->assertSame( 'friend-' . $number, $user->user_nicename );
+		$this->assertSame( 'friend-' . $number, $user->user_login );
 		$this->assertSame( '', $user->first_name );
 		$this->assertSame( '', $user->last_name );
+	}
+
+	public function test_administrators_keep_the_login_they_chose(): void {
+		$admin = $this->new_user(
+			array(
+				'user_login' => 'site-owner',
+				'role'       => 'administrator',
+			)
+		);
+
+		$this->assertSame( 'site-owner', $this->reload( $admin->ID )->user_login );
+	}
+
+	public function test_login_is_kept_when_the_alias_login_already_belongs_to_someone_else(): void {
+		$user    = $this->new_user();
+		$wanted  = $this->reload( $user->ID )->user_login;
+		$another = $this->new_user();
+		update_user_meta( $another->ID, Aliases::META, Aliases::number_of( $user->ID ) );
+
+		Aliases::refresh_all();
+
+		$this->assertSame( $wanted, $this->reload( $user->ID )->user_login );
+		$this->assertNotSame( $wanted, $this->reload( $another->ID )->user_login );
 	}
 
 	public function test_aliases_are_unique(): void {

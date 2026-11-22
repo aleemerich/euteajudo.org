@@ -34,6 +34,10 @@ final class Migrations {
 				// Labels stored before plugin and theme had separate text domains may be untranslated.
 				Accounts\Aliases::refresh_all();
 			},
+			'0.5.0' => static function (): void {
+				// Logins of Friends and Agents become their alias ("amigo-48213").
+				Accounts\Aliases::refresh_all();
+			},
 		);
 	}
 }

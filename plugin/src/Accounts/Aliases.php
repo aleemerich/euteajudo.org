@@ -14,6 +14,8 @@ namespace EuTeAjudo\Accounts;
  *
  * The alias number lives in user meta; display_name, nickname and user_nicename are always derived
  * from it, and first_name/last_name are always empty, whatever path created or updated the user.
+ * For Friends and Agents the login is the alias too ("amigo-48213"); people who manage the site
+ * (anyone who can edit posts) keep the login they chose.
  */
 final class Aliases {
 
@@ -54,6 +56,15 @@ final class Aliases {
 	}
 
 	/**
+	 * URL-safe form of the alias in the site language ("amigo-48213"), used as login and nicename.
+	 *
+	 * @param string $number Alias number.
+	 */
+	private static function slug( string $number ): string {
+		return sanitize_title( self::stored_label( $number ) );
+	}
+
+	/**
 	 * Alias number of a user, or an empty string when none was assigned yet.
 	 *
 	 * @param int $user_id User ID.
@@ -74,6 +85,34 @@ final class Aliases {
 
 		// Run through wp_update_user so the filters below normalise every name field.
 		wp_update_user( array( 'ID' => $user_id ) );
+		self::sync_login( $user_id );
+	}
+
+	/**
+	 * Makes the login of a Friend or Agent equal to its alias slug.
+	 *
+	 * WordPress cannot change user_login through its user API, so this writes the column directly,
+	 * and only when no other account already has that login.
+	 *
+	 * @param int $user_id User ID.
+	 */
+	public static function sync_login( int $user_id ): void {
+		$user   = get_userdata( $user_id );
+		$number = self::number_of( $user_id );
+		if ( ! $user instanceof \WP_User || '' === $number || user_can( $user, 'edit_posts' ) ) {
+			return;
+		}
+		$login = self::slug( $number );
+		if ( $user->user_login === $login ) {
+			return;
+		}
+		$owner = username_exists( $login );
+		if ( false !== $owner && $owner !== $user_id ) {
+			return;
+		}
+		global $wpdb;
+		$wpdb->update( $wpdb->users, array( 'user_login' => $login ), array( 'ID' => $user_id ) ); // phpcs:ignore WordPress.DB.DirectDatabaseQuery -- The user API cannot change user_login; cache cleared below.
+		clean_user_cache( $user_id );
 	}
 
 	/**
@@ -89,6 +128,7 @@ final class Aliases {
 		);
 		foreach ( $user_ids as $user_id ) {
 			wp_update_user( array( 'ID' => (int) $user_id ) );
+			self::sync_login( (int) $user_id );
 		}
 	}
 
@@ -125,7 +165,7 @@ final class Aliases {
 			return $data;
 		}
 		$data['display_name']  = self::stored_label( $number );
-		$data['user_nicename'] = 'friend-' . $number;
+		$data['user_nicename'] = self::slug( $number );
 		return $data;
 	}
 

@@ -204,6 +204,7 @@ final class GoogleAuthTest extends TestCase {
 		$this->assertInstanceOf( \WP_User::class, $user );
 		$this->assertSame( array( Roles::FRIEND ), $user->roles );
 		$this->assertSame( Aliases::label( Aliases::number_of( $user->ID ) ), $user->display_name );
+		$this->assertSame( 'friend-' . Aliases::number_of( $user->ID ), $user->user_login );
 		$this->assertSame( '', $user->first_name );
 		$this->assertSame( '110169484474386276334', get_user_meta( $user->ID, GoogleAuth::SUBJECT_META, true ) );
 		$this->assertSame( Consent::VERSION, Consent::version_of( $user->ID ) );
