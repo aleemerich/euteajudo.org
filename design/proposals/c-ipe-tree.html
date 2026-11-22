@@ -1,0 +1,271 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ipê: proposta de identidade</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&display=swap" rel="stylesheet">
+<style>:root{--font-body:'Bricolage Grotesque',system-ui,sans-serif;--font-display:'Bricolage Grotesque',system-ui,sans-serif;--h-weight:800;--page-bg:#FFFFFF;--page-ink:#1B3A2D;--page-muted:#57695F;--page-line:#DDE6E0;--page-card:#F1F6F2}
+.screen{--bg:#FFFFFF;--surface:#F1F6F2;--ink:#1B3A2D;--ink-strong:#123024;--muted:#57695F;--line:#DDE6E0;--line-strong:#B9C8BF;--accent:#F5C518;--on-accent:#123024;--field-bg:#FFFFFF;--radius-btn:999px;--radius-field:14px;--radius-card:20px;--focus:#9C3D7A;--thanks-bg:#F4E3EE;--thanks-ink:#7E2F62;--new-dot:#9C3D7A;--new-ink:#7E2F62;--marker:#B58900}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--page-bg);color:var(--page-ink);font-family:var(--font-body);line-height:1.55}
+.wrap{max-width:1360px;margin:0 auto;padding:32px 16px 80px}
+.doc-head{max-width:760px}
+.doc-head .back-index{font-size:.9rem;color:var(--page-muted)}
+.doc-head h1{font-family:var(--font-display);font-size:clamp(2rem,6vw,3.4rem);line-height:1.05;margin:.3em 0 .3em;font-weight:var(--h-weight,700)}
+.doc-head .concept{font-size:1.1rem}
+.sec{margin-top:56px}
+.sec>h2{font-family:var(--font-display);font-size:1.5rem;margin:0 0 6px;font-weight:var(--h-weight,700)}
+.sec>p.lead{max-width:720px;color:var(--page-muted);margin:0 0 22px}
+.logo-row{display:flex;flex-wrap:wrap;gap:20px}
+.logo-tile{flex:1 1 280px;min-height:200px;border-radius:12px;display:flex;align-items:center;justify-content:center;padding:28px;border:1px solid var(--page-line)}
+.logo-tile svg{max-width:100%;height:auto}
+.logo-tile.big svg{width:340px}.logo-tile.sym svg{width:120px}
+.swatches{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:14px}
+.sw{border-radius:10px;overflow:hidden;border:1px solid var(--page-line);background:var(--page-card)}
+.sw .chip{height:84px}
+.sw .t{padding:10px 12px;font-size:.85rem}
+.sw .t b{display:block;font-size:.95rem}
+.sw code{font-size:.82rem}
+.type-spec{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
+.spec{border:1px solid var(--page-line);border-radius:12px;padding:22px;background:var(--page-card)}
+.spec .big{font-family:var(--font-display);font-size:2.6rem;line-height:1.05;margin:4px 0 10px;font-weight:var(--h-weight,700)}
+.spec p{margin:0 0 .6em}
+.tone{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+.tone div{border:1px solid var(--page-line);border-radius:12px;padding:18px;background:var(--page-card)}
+.tone h3{margin:0 0 6px;font-size:1rem}
+.tone p{margin:0;font-size:.95rem}
+.frames{display:flex;gap:28px;overflow-x:auto;padding:6px 4px 18px;scroll-snap-type:x mandatory}
+.phone{flex:none;width:390px;max-width:86vw;scroll-snap-align:start}
+.phone .dev{height:780px;border-radius:34px;border:9px solid #1d1d1f;overflow:hidden;background:#000}
+.phone .dev>.inner{height:100%;overflow-y:auto}
+.cap{font-size:.88rem;color:var(--page-muted);margin:10px 4px 0}
+.desks{display:grid;gap:28px}
+.desk-scroll{overflow-x:auto;padding-bottom:8px}
+.desk-wrap{width:calc(1280px * .62);height:calc(800px * .62);overflow:hidden;border-radius:10px;border:1px solid var(--page-line);box-shadow:0 1px 0 var(--page-line)}
+.desk{width:1280px;height:800px;transform:scale(.62);transform-origin:0 0;overflow-y:auto}
+
+.screen{container:scr/inline-size;background:var(--bg);color:var(--ink);font-family:var(--font-body);font-size:17px;line-height:1.55;min-height:100%;display:flex;flex-direction:column;-webkit-font-smoothing:antialiased}
+.screen *{box-sizing:border-box}
+.screen a{color:inherit}
+.screen .btn{color:var(--on-accent)}
+.screen h1,.screen h2{font-family:var(--font-display);color:var(--ink-strong,var(--ink));margin:0 0 .5em;line-height:1.15}
+.screen h1{font-size:1.75rem;font-weight:var(--h-weight,700)}
+.screen h2{font-size:1.25rem;font-weight:var(--h-weight,700)}
+.screen p{margin:0 0 1em}
+.topbar{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 20px;border-bottom:1px solid var(--line);background:var(--topbar-bg,var(--bg));position:relative}
+.brand{display:block;text-decoration:none}.brand svg{height:32px;width:auto;display:block}
+.topbar-right{display:flex;align-items:center;gap:20px}
+.topnav{display:none;gap:22px}.topnav a{text-decoration:none;color:var(--muted);font-size:.95rem}.topnav a[aria-current]{color:var(--ink);font-weight:600}
+.alias{font-size:.85rem;color:var(--muted);white-space:nowrap}
+.topbar-action{font-weight:600;text-decoration:none;font-size:.95rem}
+.content{padding:24px 20px 32px;flex:1;width:100%}
+.tabbar{position:sticky;bottom:0;display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line);background:var(--tab-bg,var(--surface));z-index:2}
+.tabbar a{padding:9px 4px 13px;text-align:center;font-size:.78rem;color:var(--muted);text-decoration:none;display:flex;flex-direction:column;align-items:center;gap:3px}
+.tabbar svg,.screen svg[aria-hidden]{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.tabbar a[aria-current]{color:var(--tab-active,var(--ink));font-weight:600}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 24px;border-radius:var(--radius-btn);background:var(--accent);color:var(--on-accent);font:inherit;font-weight:700;border:0;text-decoration:none;cursor:pointer}
+.btn-small{min-height:40px;padding:0 16px;font-size:.9rem}
+.btn-quiet{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:0 18px;border-radius:var(--radius-btn);background:transparent;color:var(--ink);border:1px solid var(--line-strong,var(--line));font:inherit;font-size:.92rem;cursor:pointer}
+.screen :focus-visible{outline:3px solid var(--focus);outline-offset:2px}
+.compose label,.reply-box label{display:block;font-weight:600;margin:18px 0 6px}
+.hint{font-weight:400;color:var(--muted);font-size:.9rem}
+.compose input,.screen textarea{width:100%;font:inherit;color:var(--ink);background:var(--field-bg);border:1px solid var(--line-strong,var(--line));border-radius:var(--radius-field);padding:12px 14px}
+.screen textarea{resize:vertical;line-height:1.6}
+.guides{color:var(--muted);font-size:.95rem;margin-top:10px}
+.note{font-size:.88rem;color:var(--muted)}
+.disclosure{font-size:.8rem;color:var(--muted);margin-top:28px;padding-top:14px;border-top:1px solid var(--line)}
+.back{display:inline-block;margin-bottom:14px;font-size:.92rem;color:var(--muted)}
+.back::before{content:"‹ "}
+.meta{color:var(--muted);font-size:.9rem}
+.msg{margin:22px 0;padding:18px;border-radius:var(--radius-card);background:var(--surface)}
+.msg-head{display:flex;justify-content:space-between;gap:10px;font-size:.85rem;color:var(--muted);margin-bottom:10px}
+.who{font-weight:700;color:var(--ink)}
+.signoff{display:none}
+.msg-actions{margin-top:6px}
+.btn-thanks[aria-pressed=true]{background:var(--thanks-bg);border-color:var(--thanks-bg);color:var(--thanks-ink)}
+.waiting{font-size:.9rem;color:var(--muted)}
+.reply-box .row{display:flex;flex-wrap:wrap;gap:12px;margin-top:12px}
+.list-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:12px}
+.list-head h1{margin:0}
+.requests{list-style:none;margin:0;padding:0}
+.requests li{border-bottom:1px solid var(--line)}
+.requests a{display:block;padding:16px 2px;text-decoration:none}
+.r-title{display:block;font-weight:600;margin-bottom:4px}
+.r-meta{display:flex;gap:12px;align-items:center;font-size:.85rem;color:var(--muted)}
+.status-new{color:var(--new-ink);font-weight:700}
+.status-new::before{content:"";display:inline-block;width:9px;height:9px;border-radius:50%;background:var(--new-dot);margin-right:6px;vertical-align:1px}
+.is-closed .r-title{color:var(--muted);font-weight:400}
+.empty-example{margin-top:28px;font-size:.9rem;color:var(--muted)}
+.home .how{margin-top:40px}
+.steps{padding-left:1.4em;margin:0}.steps li{margin-bottom:14px}.steps li::marker{font-weight:700;color:var(--marker,var(--ink))}
+.urgent{margin-top:36px;padding:18px;border-radius:var(--radius-card);background:var(--surface)}
+.urgent h2{font-size:1.05rem}.urgent p{margin:0}
+.sitefoot{display:flex;flex-wrap:wrap;gap:18px;padding:20px;border-top:1px solid var(--line);font-size:.85rem;color:var(--muted)}
+.sitefoot a{color:var(--muted)}
+@container scr (min-width: 900px){
+  .tabbar{display:none}
+  .topnav{display:flex}
+  .topbar{padding:16px 48px}
+  .content{max-width:720px;margin:0 auto;padding:48px 24px 64px}
+  .content.home{max-width:1120px}
+  .home .hero{display:grid;grid-template-columns:1.15fr .85fr;gap:56px;align-items:center;min-height:420px}
+  .home .how{display:grid;grid-template-columns:.6fr 1.4fr;gap:48px;margin-top:64px}
+  .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;padding:0;list-style-position:inside}
+  .urgent{display:flex;gap:24px;align-items:baseline;margin-top:48px}
+  .sitefoot{padding:24px 48px}
+  .screen h1{font-size:2.2rem}
+}
+
+.screen{overflow-x:hidden}
+.screen h1,.screen h2{letter-spacing:-.02em}
+.home .hero{position:relative}
+.bloom{width:200px;margin:-30px -76px 0 auto}
+.bloom svg{width:100%;height:auto;transform:rotate(14deg);display:block}
+.screen .display{font-size:2.6rem;line-height:1;letter-spacing:-.03em;font-variation-settings:"opsz" 96}
+.lede{font-size:1.08rem}
+.cta{display:flex;flex-wrap:wrap;align-items:center;gap:18px;margin-top:8px}
+.cta .link{font-weight:600}
+.msg-other{background:#F1F6F2}
+.msg-mine{background:#fff;border:1.5px solid #DDE6E0}
+.tabbar a[aria-current] svg{background:#F5C518;border-radius:999px;padding:3px 14px;width:52px;height:28px;color:#123024}
+.steps li::marker{color:#B58900}
+@container scr (min-width:900px){
+  .home .hero{grid-template-columns:1fr 1fr}
+  .bloom{order:2;width:640px;margin:-60px -260px -80px 0}
+  .hero-text{order:1}
+  .screen .display{font-size:4.6rem}
+}
+
+@media (prefers-reduced-motion: reduce){*{animation:none!important;transition:none!important}}</style></head>
+<body><div class="wrap">
+<header class="doc-head"><a class="back-index" href="index.html">Todas as propostas</a>
+<h1>Ipê</h1><p class="concept">O ipê floresce no auge da seca, quando quase tudo em volta parece sem vida. A metáfora fica na identidade e não no texto: o site não diz "vai passar", ele só mostra a flor. É a direção mais luminosa e mais brasileira: fundo branco, verde-mata, amarelo-ipê e um toque de ipê-roxo. A flor grande, recortada na borda da tela, é o único elemento ousado; o resto é limpo e direto.</p></header>
+<section class="sec"><h2>Logo</h2><p class="lead">Uma flor de ipê-amarelo com cinco pétalas levemente irregulares, como as de verdade, e o centro verde-mata. O símbolo funciona sozinho como ícone e avatar, e pode ganhar a versão roxa em campanhas.</p>
+<div class="logo-row"><div class="logo-tile big" style="background:#FFFFFF"><svg viewBox="0 0 410 96" role="img" aria-label="EuTeAjudo.org"><svg x="0" y="4" width="88" height="88" viewBox="0 0 100 100" width="110" role="img" aria-label="Flor de ipê"><path d="M50 50C31 40 31 13 47 6c3-1 4 2 6 1 15 6 14 31-3 43Z" fill="#F5C518" transform="rotate(0 50 50)"/><path d="M50 50C31 40 31 13 47 6c3-1 4 2 6 1 15 6 14 31-3 43Z" fill="#F5C518" transform="rotate(72 50 50)"/><path d="M50 50C31 40 31 13 47 6c3-1 4 2 6 1 15 6 14 31-3 43Z" fill="#F5C518" transform="rotate(144 50 50)"/><path d="M50 50C31 40 31 13 47 6c3-1 4 2 6 1 15 6 14 31-3 43Z" fill="#F5C518" transform="rotate(216 50 50)"/><path d="M50 50C31 40 31 13 47 6c3-1 4 2 6 1 15 6 14 31-3 43Z" fill="#F5C518" transform="rotate(288 50 50)"/><circle cx="50" cy="50" r="6" fill="#1B3A2D"/><path d="M50 50L50 30" stroke="#9A5B12" stroke-width="1.6" stroke-linecap="round" transform="rotate(0 50 50)"/><path d="M50 50L50 32" stroke="#9A5B12" stroke-width="1.6" stroke-linecap="round" transform="rotate(72 50 50)"/><path d="M50 50L50 31" stroke="#9A5B12" stroke-width="1.6" stroke-linecap="round" transform="rotate(144 50 50)"/><path d="M50 50L50 32" stroke="#9A5B12" stroke-width="1.6" stroke-linecap="round" transform="rotate(216 50 50)"/><path d="M50 50L50 30" stroke="#9A5B12" stroke-width="1.6" stroke-linecap="round" transform="rotate(288 50 50)"/></svg><text x="100" y="64" font-family="'Bricolage Grotesque', system-ui, sans-serif" font-size="48" font-weight="800" letter-spacing="-1" fill="#1B3A2D">eu te ajudo</text></svg></div>
+<div class="logo-tile big" style="background:#1B3A2D"><svg viewBox="0 0 410 96" role="img" aria-label="EuTeAjudo.org"><svg x="0" y="4" width="88" height="88" viewBox="0 0 100 100" width="110" role="img" aria-label="Flor de ipê"><path d="M50 50C31 40 31 13 47 6c3-1 4 2 6 1 15 6 14 31-3 43Z" fill="#F5C518" transform="rotate(0 50 50)"/><path d="M50 50C31 40 31 13 47 6c3-1 4 2 6 1 15 6 14 31-3 43Z" fill="#F5C518" transform="rotate(72 50 50)"/><path d="M50 50C31 40 31 13 47 6c3-1 4 2 6 1 15 6 14 31-3 43Z" fill="#F5C518" transform="rotate(144 50 50)"/><path d="M50 50C31 40 31 13 47 6c3-1 4 2 6 1 15 6 14 31-3 43Z" fill="#F5C518" transform="rotate(216 50 50)"/><path d="M50 50C31 40 31 13 47 6c3-1 4 2 6 1 15 6 14 31-3 43Z" fill="#F5C518" transform="rotate(288 50 50)"/><circle cx="50" cy="50" r="6" fill="#1B3A2D"/><path d="M50 50L50 30" stroke="#9A5B12" stroke-width="1.6" stroke-linecap="round" transform="rotate(0 50 50)"/><path d="M50 50L50 32" stroke="#9A5B12" stroke-width="1.6" stroke-linecap="round" transform="rotate(72 50 50)"/><path d="M50 50L50 31" stroke="#9A5B12" stroke-width="1.6" stroke-linecap="round" transform="rotate(144 50 50)"/><path d="M50 50L50 32" stroke="#9A5B12" stroke-width="1.6" stroke-linecap="round" transform="rotate(216 50 50)"/><path d="M50 50L50 30" stroke="#9A5B12" stroke-width="1.6" stroke-linecap="round" transform="rotate(288 50 50)"/></svg><text x="100" y="64" font-family="'Bricolage Grotesque', system-ui, sans-serif" font-size="48" font-weight="800" letter-spacing="-1" fill="#FFFFFF">eu te ajudo</text></svg></div>
+<div class="logo-tile sym" style="background:#FFFFFF"><svg viewBox="0 0 100 100" width="120" role="img" aria-label="Flor de ipê"><path d="M50 50C31 40 31 13 47 6c3-1 4 2 6 1 15 6 14 31-3 43Z" fill="#F5C518" transform="rotate(0 50 50)"/><path d="M50 50C31 40 31 13 47 6c3-1 4 2 6 1 15 6 14 31-3 43Z" fill="#F5C518" transform="rotate(72 50 50)"/><path d="M50 50C31 40 31 13 47 6c3-1 4 2 6 1 15 6 14 31-3 43Z" fill="#F5C518" transform="rotate(144 50 50)"/><path d="M50 50C31 40 31 13 47 6c3-1 4 2 6 1 15 6 14 31-3 43Z" fill="#F5C518" transform="rotate(216 50 50)"/><path d="M50 50C31 40 31 13 47 6c3-1 4 2 6 1 15 6 14 31-3 43Z" fill="#F5C518" transform="rotate(288 50 50)"/><circle cx="50" cy="50" r="6" fill="#1B3A2D"/><path d="M50 50L50 30" stroke="#9A5B12" stroke-width="1.6" stroke-linecap="round" transform="rotate(0 50 50)"/><path d="M50 50L50 32" stroke="#9A5B12" stroke-width="1.6" stroke-linecap="round" transform="rotate(72 50 50)"/><path d="M50 50L50 31" stroke="#9A5B12" stroke-width="1.6" stroke-linecap="round" transform="rotate(144 50 50)"/><path d="M50 50L50 32" stroke="#9A5B12" stroke-width="1.6" stroke-linecap="round" transform="rotate(216 50 50)"/><path d="M50 50L50 30" stroke="#9A5B12" stroke-width="1.6" stroke-linecap="round" transform="rotate(288 50 50)"/></svg></div></div></section>
+<section class="sec"><h2>Cores</h2><p class="lead">Branco de verdade, sem creme. O amarelo aparece só nos botões e no símbolo, com texto verde-mata por cima para manter o contraste. O roxo marca o que é pessoal: Resposta nova e Agradecimento.</p><div class="swatches"><div class="sw"><div class="chip" style="background:#1B3A2D"></div><div class="t"><b>Mata</b><code>#1B3A2D</code><br>Texto e logo</div></div><div class="sw"><div class="chip" style="background:#F5C518"></div><div class="t"><b>Ipê-amarelo</b><code>#F5C518</code><br>Botões e destaques</div></div><div class="sw"><div class="chip" style="background:#9C3D7A"></div><div class="t"><b>Ipê-roxo</b><code>#9C3D7A</code><br>Resposta nova, Agradecimento, foco</div></div><div class="sw"><div class="chip" style="background:#F1F6F2"></div><div class="t"><b>Sálvia</b><code>#F1F6F2</code><br>Cartões e Respostas</div></div><div class="sw"><div class="chip" style="background:#FFFFFF"></div><div class="t"><b>Branco</b><code>#FFFFFF</code><br>Fundo principal</div></div><div class="sw"><div class="chip" style="background:#57695F"></div><div class="t"><b>Folha seca</b><code>#57695F</code><br>Texto secundário</div></div></div></section>
+<section class="sec"><h2>Tipografia</h2><p class="lead">Uma família só, a Bricolage Grotesque: uma grotesca com personalidade e tamanho óptico, que fica expressiva nos títulos grandes (800) e tranquila no texto (400, 17 px).</p><div class="type-spec"><div class="spec"><div class="big" style="letter-spacing:-.02em">Pode chegar do jeito que está.</div><p>Bricolage Grotesque 800, título</p></div><div class="spec"><p>Escreva o que está acontecendo, sem se identificar. Uma resposta cuidadosa chega para você aqui.</p><p style="color:var(--page-muted);font-size:.9rem">Bricolage Grotesque 400, texto</p></div></div></section>
+<section class="sec"><h2>Tom de voz</h2><p class="lead">Direto e prático, sem frases de efeito: diz o próximo passo com palavras simples. Acolhe sem prometer.</p><div class="tone"><div><h3>Botões</h3><p>"Começar a escrever", "Enviar pedido", "Encerrar pedido".</p></div><div><h3>Espera</h3><p>"Pedido enviado. Assim que a resposta chegar, avisamos por e-mail."</p></div><div><h3>Erro</h3><p>"Faltou o texto. Escreva o que está acontecendo para enviar."</p></div><div><h3>Evitar</h3><p>Otimismo forçado ("vai passar", "seja forte"), exclamações, emojis e jargão.</p></div></div></section>
+<section class="sec"><h2>Telas no celular</h2><p class="lead">Role dentro de cada tela. As telas usam conteúdo de exemplo; o fluxo e os textos seguem as decisões do MVP.</p><div class="frames"><figure class="phone"><div class="dev"><div class="inner"><div class="screen screen-home">
+<header class="topbar"><a class="brand" href="#" aria-label="EuTeAjudo.org, início"><svg viewBox="0 0 410 96" height="30" role="img" aria-label="EuTeAjudo.org"><svg x="0" y="4" width="88" height="88" viewBox="0 0 100 100" width="110" role="img" aria-label="Flor de ipê"><path d="M50 50C31 40 31 13 47 6c3-1 4 2 6 1 15 6 14 31-3 43Z" fill="#F5C518" transform="rotate(0 50 50)"/><path d="M50 50C31 40 31 13 47 6c3-1 4 2 6 1 15 6 14 31-3 43Z" fill="#F5C518" transform="rotate(72 50 50)"/><path d="M50 50C31 40 31 13 47 6c3-1 4 2 6 1 15 6 14 31-3 43Z" fill="#F5C518" transform="rotate(144 50 50)"/><path d="M50 50C31 40 31 13 47 6c3-1 4 2 6 1 15 6 14 31-3 43Z" fill="#F5C518" transform="rotate(216 50 50)"/><path d="M50 50C31 40 31 13 47 6c3-1 4 2 6 1 15 6 14 31-3 43Z" fill="#F5C518" transform="rotate(288 50 50)"/><circle cx="50" cy="50" r="6" fill="#1B3A2D"/><path d="M50 50L50 30" stroke="#9A5B12" stroke-width="1.6" stroke-linecap="round" transform="rotate(0 50 50)"/><path d="M50 50L50 32" stroke="#9A5B12" stroke-width="1.6" stroke-linecap="round" transform="rotate(72 50 50)"/><path d="M50 50L50 31" stroke="#9A5B12" stroke-width="1.6" stroke-linecap="round" transform="rotate(144 50 50)"/><path d="M50 50L50 32" stroke="#9A5B12" stroke-width="1.6" stroke-linecap="round" transform="rotate(216 50 50)"/><path d="M50 50L50 30" stroke="#9A5B12" stroke-width="1.6" stroke-linecap="round" transform="rotate(288 50 50)"/></svg><text x="100" y="64" font-family="'Bricolage Grotesque', system-ui, sans-serif" font-size="48" font-weight="800" letter-spacing="-1" fill="#1B3A2D">eu te ajudo</text></svg></a><div class="topbar-right"><nav class="topnav topnav-public" aria-label="Principal"><a href="#">Como funciona</a><a href="#">Sobre</a><a href="#">Ajuda imediata</a></nav><a class="topbar-action" href="#">Entrar</a></div></header>
+<main class="content home">
+  <section class="hero"><div class="bloom" aria-hidden="true"><svg viewBox="0 0 100 100" width="600" role="img" aria-label="Flor de ipê"><path d="M50 50C31 40 31 13 47 6c3-1 4 2 6 1 15 6 14 31-3 43Z" fill="#F5C518" transform="rotate(0 50 50)"/><path d="M50 50C31 40 31 13 47 6c3-1 4 2 6 1 15 6 14 31-3 43Z" fill="#F5C518" transform="rotate(72 50 50)"/><path d="M50 50C31 40 31 13 47 6c3-1 4 2 6 1 15 6 14 31-3 43Z" fill="#F5C518" transform="rotate(144 50 50)"/><path d="M50 50C31 40 31 13 47 6c3-1 4 2 6 1 15 6 14 31-3 43Z" fill="#F5C518" transform="rotate(216 50 50)"/><path d="M50 50C31 40 31 13 47 6c3-1 4 2 6 1 15 6 14 31-3 43Z" fill="#F5C518" transform="rotate(288 50 50)"/><circle cx="50" cy="50" r="6" fill="#1B3A2D"/><path d="M50 50L50 30" stroke="#9A5B12" stroke-width="1.6" stroke-linecap="round" transform="rotate(0 50 50)"/><path d="M50 50L50 32" stroke="#9A5B12" stroke-width="1.6" stroke-linecap="round" transform="rotate(72 50 50)"/><path d="M50 50L50 31" stroke="#9A5B12" stroke-width="1.6" stroke-linecap="round" transform="rotate(144 50 50)"/><path d="M50 50L50 32" stroke="#9A5B12" stroke-width="1.6" stroke-linecap="round" transform="rotate(216 50 50)"/><path d="M50 50L50 30" stroke="#9A5B12" stroke-width="1.6" stroke-linecap="round" transform="rotate(288 50 50)"/></svg></div><div class="hero-text"><h1 class="display">Pode chegar do jeito que está.</h1><p class="lede">Escreva o que está acontecendo, sem se identificar. Uma resposta cuidadosa chega para você aqui.</p><div class="cta"><a class="btn" href="#">Começar a escrever</a><a class="link" href="#">Já tenho conta</a></div></div></section>
+  <section class="how">
+    <h2>Como funciona</h2>
+    <ol class="steps">
+      <li><strong>Crie uma conta só com e-mail.</strong> Aqui você vira um Amigo com número, como Amigo 48213. Ninguém sabe quem você é.</li>
+      <li><strong>Escreva o que está acontecendo.</strong> Do seu jeito, no seu tempo. Não precisa organizar nada.</li>
+      <li><strong>Receba uma resposta escrita com cuidado.</strong> Avisamos por e-mail, sem mostrar o conteúdo. Volte quando quiser.</li>
+    </ol>
+  </section>
+  <section class="urgent">
+    <h2>Precisa de ajuda agora?</h2>
+    <p>O CVV atende de graça, a qualquer hora, pelo telefone 188 ou pelo chat em cvv.org.br.</p>
+  </section>
+</main>
+<footer class="sitefoot"><a href="#">Sobre</a><a href="#">Termos de uso</a><a href="#">Privacidade</a></footer>
+</div></div></div><figcaption class="cap">Início (público)</figcaption></figure><figure class="phone"><div class="dev"><div class="inner"><div class="screen screen-write">
+<header class="topbar"><a class="brand" href="#" aria-label="EuTeAjudo.org, início"><svg viewBox="0 0 410 96" height="30" role="img" aria-label="EuTeAjudo.org"><svg x="0" y="4" width="88" height="88" viewBox="0 0 100 100" width="110" role="img" aria-label="Flor de ipê"><path d="M50 50C31 40 31 13 47 6c3-1 4 2 6 1 15 6 14 31-3 43Z" fill="#F5C518" transform="rotate(0 50 50)"/><path d="M50 50C31 40 31 13 47 6c3-1 4 2 6 1 15 6 14 31-3 43Z" fill="#F5C518" transform="rotate(72 50 50)"/><path d="M50 50C31 40 31 13 47 6c3-1 4 2 6 1 15 6 14 31-3 43Z" fill="#F5C518" transform="rotate(144 50 50)"/><path d="M50 50C31 40 31 13 47 6c3-1 4 2 6 1 15 6 14 31-3 43Z" fill="#F5C518" transform="rotate(216 50 50)"/><path d="M50 50C31 40 31 13 47 6c3-1 4 2 6 1 15 6 14 31-3 43Z" fill="#F5C518" transform="rotate(288 50 50)"/><circle cx="50" cy="50" r="6" fill="#1B3A2D"/><path d="M50 50L50 30" stroke="#9A5B12" stroke-width="1.6" stroke-linecap="round" transform="rotate(0 50 50)"/><path d="M50 50L50 32" stroke="#9A5B12" stroke-width="1.6" stroke-linecap="round" transform="rotate(72 50 50)"/><path d="M50 50L50 31" stroke="#9A5B12" stroke-width="1.6" stroke-linecap="round" transform="rotate(144 50 50)"/><path d="M50 50L50 32" stroke="#9A5B12" stroke-width="1.6" stroke-linecap="round" transform="rotate(216 50 50)"/><path d="M50 50L50 30" stroke="#9A5B12" stroke-width="1.6" stroke-linecap="round" transform="rotate(288 50 50)"/></svg><text x="100" y="64" font-family="'Bricolage Grotesque', system-ui, sans-serif" font-size="48" font-weight="800" letter-spacing="-1" fill="#1B3A2D">eu te ajudo</text></svg></a><div class="topbar-right"><nav class="topnav" aria-label="Principal"><a href="#" aria-current=page>Escrever</a><a href="#" >Meus pedidos</a><a href="#" >Conta</a></nav><span class="alias">Amigo 48213</span></div></header>
+<main class="content write">
+  <h1>O que está acontecendo?</h1>
+  <form class="compose" onsubmit="return false">
+    <label for="t-c-ipe-tree">Título <span class="hint">para você encontrar depois</span></label>
+    <input id="t-c-ipe-tree" type="text" value="Não consigo dormir desde que perdi o emprego">
+    <label for="b-c-ipe-tree">Seu texto</label>
+    <div class="paper">
+      <textarea id="b-c-ipe-tree" rows="9">Faz três semanas que fui demitido. Durante o dia eu até disfarço: mando currículo, arrumo a casa, saio para caminhar. Mas quando deito a cabeça não para. Conta de luz, aluguel, o que vou dizer pros meus pais.</textarea>
+    </div>
+    <p class="guides">Se ajudar, pense em: há quanto tempo isso acontece, o que você já tentou e do que sente que precisa agora.</p>
+    <p class="note">Telefones, e-mails e documentos são removidos antes de salvar. A resposta pode levar algumas horas; avisamos por e-mail.</p>
+    <button class="btn" type="submit">Enviar pedido</button>
+  </form>
+  <p class="disclosure">As respostas aqui são escritas por uma inteligência artificial criada para acolher. Se você corre risco agora, ligue 188.</p>
+</main>
+<nav class="tabbar" aria-label="Principal"><a href="#" aria-current="page"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20h4L19 9l-4-4L4 16v4Z"/><path d="M13.5 6.5l4 4"/></svg><span>Escrever</span></a><a href="#"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 6h12M8 12h12M8 18h12"/><circle cx="4" cy="6" r="1"/><circle cx="4" cy="12" r="1"/><circle cx="4" cy="18" r="1"/></svg><span>Meus pedidos</span></a><a href="#"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6"/></svg><span>Conta</span></a></nav>
+</div></div></div><figcaption class="cap">Escrever um pedido</figcaption></figure><figure class="phone"><div class="dev"><div class="inner"><div class="screen screen-convo">
+<header class="topbar"><a class="brand" href="#" aria-label="EuTeAjudo.org, início"><svg viewBox="0 0 410 96" height="30" role="img" aria-label="EuTeAjudo.org"><svg x="0" y="4" width="88" height="88" viewBox="0 0 100 100" width="110" role="img" aria-label="Flor de ipê"><path d="M50 50C31 40 31 13 47 6c3-1 4 2 6 1 15 6 14 31-3 43Z" fill="#F5C518" transform="rotate(0 50 50)"/><path d="M50 50C31 40 31 13 47 6c3-1 4 2 6 1 15 6 14 31-3 43Z" fill="#F5C518" transform="rotate(72 50 50)"/><path d="M50 50C31 40 31 13 47 6c3-1 4 2 6 1 15 6 14 31-3 43Z" fill="#F5C518" transform="rotate(144 50 50)"/><path d="M50 50C31 40 31 13 47 6c3-1 4 2 6 1 15 6 14 31-3 43Z" fill="#F5C518" transform="rotate(216 50 50)"/><path d="M50 50C31 40 31 13 47 6c3-1 4 2 6 1 15 6 14 31-3 43Z" fill="#F5C518" transform="rotate(288 50 50)"/><circle cx="50" cy="50" r="6" fill="#1B3A2D"/><path d="M50 50L50 30" stroke="#9A5B12" stroke-width="1.6" stroke-linecap="round" transform="rotate(0 50 50)"/><path d="M50 50L50 32" stroke="#9A5B12" stroke-width="1.6" stroke-linecap="round" transform="rotate(72 50 50)"/><path d="M50 50L50 31" stroke="#9A5B12" stroke-width="1.6" stroke-linecap="round" transform="rotate(144 50 50)"/><path d="M50 50L50 32" stroke="#9A5B12" stroke-width="1.6" stroke-linecap="round" transform="rotate(216 50 50)"/><path d="M50 50L50 30" stroke="#9A5B12" stroke-width="1.6" stroke-linecap="round" transform="rotate(288 50 50)"/></svg><text x="100" y="64" font-family="'Bricolage Grotesque', system-ui, sans-serif" font-size="48" font-weight="800" letter-spacing="-1" fill="#1B3A2D">eu te ajudo</text></svg></a><div class="topbar-right"><nav class="topnav" aria-label="Principal"><a href="#" >Escrever</a><a href="#" aria-current=page>Meus pedidos</a><a href="#" >Conta</a></nav><span class="alias">Amigo 48213</span></div></header>
+<main class="content convo">
+  <a class="back" href="#">Meus pedidos</a>
+  <h1>Não consigo dormir desde que perdi o emprego</h1>
+  <p class="meta">Você escreveu em 18 de novembro</p>
+  <article class="msg msg-mine msg-request"><p>Faz três semanas que fui demitido. Durante o dia eu até disfarço: mando currículo, arrumo a casa, saio para caminhar. Mas quando deito a cabeça não para. Conta de luz, aluguel, o que vou dizer pros meus pais.</p><p>Acordo às 3h e não durmo mais. Me sinto um peso para todo mundo.</p></article>
+  <article class="msg msg-other">
+    <header class="msg-head"><span class="who">Amigo 70295</span><time>18 de nov., 21h40</time></header>
+    <p>Oi, Amigo 48213. Obrigado por contar isso com tanto detalhe.</p><p>Perder o emprego mexe com muita coisa ao mesmo tempo: o dinheiro, a rotina e também a forma como a gente se enxerga. Faz sentido que o sono tenha ido embora junto. Pelo que você escreveu, o que mais pesa à noite é a sensação de estar parado enquanto as contas continuam chegando.</p><p>Você está carregando isso sozinho, ou tem alguém em casa com quem consegue falar sobre o assunto? Se quiser, posso te ajudar a separar o que dá para resolver nesta semana do que pode esperar. Às vezes ver isso escrito já tira um pouco do peso da madrugada.</p>
+    <p class="signoff">Amigo 70295</p>
+    <div class="msg-actions"><button class="btn-quiet btn-thanks" type="button" aria-pressed="true">Isso me ajudou</button></div>
+  </article>
+  <article class="msg msg-mine">
+    <header class="msg-head"><span class="who">Você</span><time>19 de nov., 7h12</time></header>
+    <p>Moro com minha namorada, mas não quero preocupar ela mais do que já está.</p>
+  </article>
+  <p class="waiting">Mensagem enviada. A resposta pode levar algumas horas.</p>
+  <form class="reply-box" onsubmit="return false">
+    <label for="r-c-ipe-tree">Responder</label>
+    <textarea id="r-c-ipe-tree" rows="3" placeholder="Escreva quando quiser"></textarea>
+    <div class="row"><button class="btn" type="submit">Enviar resposta</button><button class="btn-quiet" type="button">Encerrar pedido</button></div>
+  </form>
+  <p class="disclosure">As respostas aqui são escritas por uma inteligência artificial criada para acolher. Se você corre risco agora, ligue 188.</p>
+</main>
+<nav class="tabbar" aria-label="Principal"><a href="#"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20h4L19 9l-4-4L4 16v4Z"/><path d="M13.5 6.5l4 4"/></svg><span>Escrever</span></a><a href="#" aria-current="page"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 6h12M8 12h12M8 18h12"/><circle cx="4" cy="6" r="1"/><circle cx="4" cy="12" r="1"/><circle cx="4" cy="18" r="1"/></svg><span>Meus pedidos</span></a><a href="#"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6"/></svg><span>Conta</span></a></nav>
+</div></div></div><figcaption class="cap">Conversa</figcaption></figure><figure class="phone"><div class="dev"><div class="inner"><div class="screen screen-list">
+<header class="topbar"><a class="brand" href="#" aria-label="EuTeAjudo.org, início"><svg viewBox="0 0 410 96" height="30" role="img" aria-label="EuTeAjudo.org"><svg x="0" y="4" width="88" height="88" viewBox="0 0 100 100" width="110" role="img" aria-label="Flor de ipê"><path d="M50 50C31 40 31 13 47 6c3-1 4 2 6 1 15 6 14 31-3 43Z" fill="#F5C518" transform="rotate(0 50 50)"/><path d="M50 50C31 40 31 13 47 6c3-1 4 2 6 1 15 6 14 31-3 43Z" fill="#F5C518" transform="rotate(72 50 50)"/><path d="M50 50C31 40 31 13 47 6c3-1 4 2 6 1 15 6 14 31-3 43Z" fill="#F5C518" transform="rotate(144 50 50)"/><path d="M50 50C31 40 31 13 47 6c3-1 4 2 6 1 15 6 14 31-3 43Z" fill="#F5C518" transform="rotate(216 50 50)"/><path d="M50 50C31 40 31 13 47 6c3-1 4 2 6 1 15 6 14 31-3 43Z" fill="#F5C518" transform="rotate(288 50 50)"/><circle cx="50" cy="50" r="6" fill="#1B3A2D"/><path d="M50 50L50 30" stroke="#9A5B12" stroke-width="1.6" stroke-linecap="round" transform="rotate(0 50 50)"/><path d="M50 50L50 32" stroke="#9A5B12" stroke-width="1.6" stroke-linecap="round" transform="rotate(72 50 50)"/><path d="M50 50L50 31" stroke="#9A5B12" stroke-width="1.6" stroke-linecap="round" transform="rotate(144 50 50)"/><path d="M50 50L50 32" stroke="#9A5B12" stroke-width="1.6" stroke-linecap="round" transform="rotate(216 50 50)"/><path d="M50 50L50 30" stroke="#9A5B12" stroke-width="1.6" stroke-linecap="round" transform="rotate(288 50 50)"/></svg><text x="100" y="64" font-family="'Bricolage Grotesque', system-ui, sans-serif" font-size="48" font-weight="800" letter-spacing="-1" fill="#1B3A2D">eu te ajudo</text></svg></a><div class="topbar-right"><nav class="topnav" aria-label="Principal"><a href="#" >Escrever</a><a href="#" aria-current=page>Meus pedidos</a><a href="#" >Conta</a></nav><span class="alias">Amigo 48213</span></div></header>
+<main class="content list">
+  <div class="list-head"><h1>Meus pedidos</h1><a class="btn btn-small" href="#">Novo pedido</a></div>
+  <ul class="requests">
+    <li class="is-new"><a href="#"><span class="r-title">Não consigo dormir desde que perdi o emprego</span><span class="r-meta"><span class="status status-new">Resposta nova</span><time>18 de nov.</time></span></a></li>
+    <li><a href="#"><span class="r-title">Briga com minha irmã por causa da casa da nossa mãe</span><span class="r-meta"><span class="status">Aguardando resposta</span><time>2 de nov.</time></span></a></li>
+    <li class="is-closed"><a href="#"><span class="r-title">Ansiedade antes das provas</span><span class="r-meta"><span class="status">Encerrado</span><time>12 de out.</time></span></a></li>
+  </ul>
+  <p class="empty-example"><strong>Quando a lista estiver vazia:</strong> "Seus pedidos aparecem aqui. Comece pelo primeiro quando estiver pronto."</p>
+</main>
+<nav class="tabbar" aria-label="Principal"><a href="#"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20h4L19 9l-4-4L4 16v4Z"/><path d="M13.5 6.5l4 4"/></svg><span>Escrever</span></a><a href="#" aria-current="page"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 6h12M8 12h12M8 18h12"/><circle cx="4" cy="6" r="1"/><circle cx="4" cy="12" r="1"/><circle cx="4" cy="18" r="1"/></svg><span>Meus pedidos</span></a><a href="#"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6"/></svg><span>Conta</span></a></nav>
+</div></div></div><figcaption class="cap">Meus pedidos</figcaption></figure></div></section>
+<section class="sec"><h2>Telas no desktop</h2><p class="lead">As mesmas telas, em 1280 px de largura, reduzidas para caber aqui.</p><div class="desks"><figure><div class="desk-scroll"><div class="desk-wrap"><div class="desk"><div class="screen screen-home">
+<header class="topbar"><a class="brand" href="#" aria-label="EuTeAjudo.org, início"><svg viewBox="0 0 410 96" height="30" role="img" aria-label="EuTeAjudo.org"><svg x="0" y="4" width="88" height="88" viewBox="0 0 100 100" width="110" role="img" aria-label="Flor de ipê"><path d="M50 50C31 40 31 13 47 6c3-1 4 2 6 1 15 6 14 31-3 43Z" fill="#F5C518" transform="rotate(0 50 50)"/><path d="M50 50C31 40 31 13 47 6c3-1 4 2 6 1 15 6 14 31-3 43Z" fill="#F5C518" transform="rotate(72 50 50)"/><path d="M50 50C31 40 31 13 47 6c3-1 4 2 6 1 15 6 14 31-3 43Z" fill="#F5C518" transform="rotate(144 50 50)"/><path d="M50 50C31 40 31 13 47 6c3-1 4 2 6 1 15 6 14 31-3 43Z" fill="#F5C518" transform="rotate(216 50 50)"/><path d="M50 50C31 40 31 13 47 6c3-1 4 2 6 1 15 6 14 31-3 43Z" fill="#F5C518" transform="rotate(288 50 50)"/><circle cx="50" cy="50" r="6" fill="#1B3A2D"/><path d="M50 50L50 30" stroke="#9A5B12" stroke-width="1.6" stroke-linecap="round" transform="rotate(0 50 50)"/><path d="M50 50L50 32" stroke="#9A5B12" stroke-width="1.6" stroke-linecap="round" transform="rotate(72 50 50)"/><path d="M50 50L50 31" stroke="#9A5B12" stroke-width="1.6" stroke-linecap="round" transform="rotate(144 50 50)"/><path d="M50 50L50 32" stroke="#9A5B12" stroke-width="1.6" stroke-linecap="round" transform="rotate(216 50 50)"/><path d="M50 50L50 30" stroke="#9A5B12" stroke-width="1.6" stroke-linecap="round" transform="rotate(288 50 50)"/></svg><text x="100" y="64" font-family="'Bricolage Grotesque', system-ui, sans-serif" font-size="48" font-weight="800" letter-spacing="-1" fill="#1B3A2D">eu te ajudo</text></svg></a><div class="topbar-right"><nav class="topnav topnav-public" aria-label="Principal"><a href="#">Como funciona</a><a href="#">Sobre</a><a href="#">Ajuda imediata</a></nav><a class="topbar-action" href="#">Entrar</a></div></header>
+<main class="content home">
+  <section class="hero"><div class="bloom" aria-hidden="true"><svg viewBox="0 0 100 100" width="600" role="img" aria-label="Flor de ipê"><path d="M50 50C31 40 31 13 47 6c3-1 4 2 6 1 15 6 14 31-3 43Z" fill="#F5C518" transform="rotate(0 50 50)"/><path d="M50 50C31 40 31 13 47 6c3-1 4 2 6 1 15 6 14 31-3 43Z" fill="#F5C518" transform="rotate(72 50 50)"/><path d="M50 50C31 40 31 13 47 6c3-1 4 2 6 1 15 6 14 31-3 43Z" fill="#F5C518" transform="rotate(144 50 50)"/><path d="M50 50C31 40 31 13 47 6c3-1 4 2 6 1 15 6 14 31-3 43Z" fill="#F5C518" transform="rotate(216 50 50)"/><path d="M50 50C31 40 31 13 47 6c3-1 4 2 6 1 15 6 14 31-3 43Z" fill="#F5C518" transform="rotate(288 50 50)"/><circle cx="50" cy="50" r="6" fill="#1B3A2D"/><path d="M50 50L50 30" stroke="#9A5B12" stroke-width="1.6" stroke-linecap="round" transform="rotate(0 50 50)"/><path d="M50 50L50 32" stroke="#9A5B12" stroke-width="1.6" stroke-linecap="round" transform="rotate(72 50 50)"/><path d="M50 50L50 31" stroke="#9A5B12" stroke-width="1.6" stroke-linecap="round" transform="rotate(144 50 50)"/><path d="M50 50L50 32" stroke="#9A5B12" stroke-width="1.6" stroke-linecap="round" transform="rotate(216 50 50)"/><path d="M50 50L50 30" stroke="#9A5B12" stroke-width="1.6" stroke-linecap="round" transform="rotate(288 50 50)"/></svg></div><div class="hero-text"><h1 class="display">Pode chegar do jeito que está.</h1><p class="lede">Escreva o que está acontecendo, sem se identificar. Uma resposta cuidadosa chega para você aqui.</p><div class="cta"><a class="btn" href="#">Começar a escrever</a><a class="link" href="#">Já tenho conta</a></div></div></section>
+  <section class="how">
+    <h2>Como funciona</h2>
+    <ol class="steps">
+      <li><strong>Crie uma conta só com e-mail.</strong> Aqui você vira um Amigo com número, como Amigo 48213. Ninguém sabe quem você é.</li>
+      <li><strong>Escreva o que está acontecendo.</strong> Do seu jeito, no seu tempo. Não precisa organizar nada.</li>
+      <li><strong>Receba uma resposta escrita com cuidado.</strong> Avisamos por e-mail, sem mostrar o conteúdo. Volte quando quiser.</li>
+    </ol>
+  </section>
+  <section class="urgent">
+    <h2>Precisa de ajuda agora?</h2>
+    <p>O CVV atende de graça, a qualquer hora, pelo telefone 188 ou pelo chat em cvv.org.br.</p>
+  </section>
+</main>
+<footer class="sitefoot"><a href="#">Sobre</a><a href="#">Termos de uso</a><a href="#">Privacidade</a></footer>
+</div></div></div></div><figcaption class="cap">Início no desktop</figcaption></figure><figure><div class="desk-scroll"><div class="desk-wrap"><div class="desk"><div class="screen screen-convo">
+<header class="topbar"><a class="brand" href="#" aria-label="EuTeAjudo.org, início"><svg viewBox="0 0 410 96" height="30" role="img" aria-label="EuTeAjudo.org"><svg x="0" y="4" width="88" height="88" viewBox="0 0 100 100" width="110" role="img" aria-label="Flor de ipê"><path d="M50 50C31 40 31 13 47 6c3-1 4 2 6 1 15 6 14 31-3 43Z" fill="#F5C518" transform="rotate(0 50 50)"/><path d="M50 50C31 40 31 13 47 6c3-1 4 2 6 1 15 6 14 31-3 43Z" fill="#F5C518" transform="rotate(72 50 50)"/><path d="M50 50C31 40 31 13 47 6c3-1 4 2 6 1 15 6 14 31-3 43Z" fill="#F5C518" transform="rotate(144 50 50)"/><path d="M50 50C31 40 31 13 47 6c3-1 4 2 6 1 15 6 14 31-3 43Z" fill="#F5C518" transform="rotate(216 50 50)"/><path d="M50 50C31 40 31 13 47 6c3-1 4 2 6 1 15 6 14 31-3 43Z" fill="#F5C518" transform="rotate(288 50 50)"/><circle cx="50" cy="50" r="6" fill="#1B3A2D"/><path d="M50 50L50 30" stroke="#9A5B12" stroke-width="1.6" stroke-linecap="round" transform="rotate(0 50 50)"/><path d="M50 50L50 32" stroke="#9A5B12" stroke-width="1.6" stroke-linecap="round" transform="rotate(72 50 50)"/><path d="M50 50L50 31" stroke="#9A5B12" stroke-width="1.6" stroke-linecap="round" transform="rotate(144 50 50)"/><path d="M50 50L50 32" stroke="#9A5B12" stroke-width="1.6" stroke-linecap="round" transform="rotate(216 50 50)"/><path d="M50 50L50 30" stroke="#9A5B12" stroke-width="1.6" stroke-linecap="round" transform="rotate(288 50 50)"/></svg><text x="100" y="64" font-family="'Bricolage Grotesque', system-ui, sans-serif" font-size="48" font-weight="800" letter-spacing="-1" fill="#1B3A2D">eu te ajudo</text></svg></a><div class="topbar-right"><nav class="topnav" aria-label="Principal"><a href="#" >Escrever</a><a href="#" aria-current=page>Meus pedidos</a><a href="#" >Conta</a></nav><span class="alias">Amigo 48213</span></div></header>
+<main class="content convo">
+  <a class="back" href="#">Meus pedidos</a>
+  <h1>Não consigo dormir desde que perdi o emprego</h1>
+  <p class="meta">Você escreveu em 18 de novembro</p>
+  <article class="msg msg-mine msg-request"><p>Faz três semanas que fui demitido. Durante o dia eu até disfarço: mando currículo, arrumo a casa, saio para caminhar. Mas quando deito a cabeça não para. Conta de luz, aluguel, o que vou dizer pros meus pais.</p><p>Acordo às 3h e não durmo mais. Me sinto um peso para todo mundo.</p></article>
+  <article class="msg msg-other">
+    <header class="msg-head"><span class="who">Amigo 70295</span><time>18 de nov., 21h40</time></header>
+    <p>Oi, Amigo 48213. Obrigado por contar isso com tanto detalhe.</p><p>Perder o emprego mexe com muita coisa ao mesmo tempo: o dinheiro, a rotina e também a forma como a gente se enxerga. Faz sentido que o sono tenha ido embora junto. Pelo que você escreveu, o que mais pesa à noite é a sensação de estar parado enquanto as contas continuam chegando.</p><p>Você está carregando isso sozinho, ou tem alguém em casa com quem consegue falar sobre o assunto? Se quiser, posso te ajudar a separar o que dá para resolver nesta semana do que pode esperar. Às vezes ver isso escrito já tira um pouco do peso da madrugada.</p>
+    <p class="signoff">Amigo 70295</p>
+    <div class="msg-actions"><button class="btn-quiet btn-thanks" type="button" aria-pressed="true">Isso me ajudou</button></div>
+  </article>
+  <article class="msg msg-mine">
+    <header class="msg-head"><span class="who">Você</span><time>19 de nov., 7h12</time></header>
+    <p>Moro com minha namorada, mas não quero preocupar ela mais do que já está.</p>
+  </article>
+  <p class="waiting">Mensagem enviada. A resposta pode levar algumas horas.</p>
+  <form class="reply-box" onsubmit="return false">
+    <label for="r-c-ipe-tree">Responder</label>
+    <textarea id="r-c-ipe-tree" rows="3" placeholder="Escreva quando quiser"></textarea>
+    <div class="row"><button class="btn" type="submit">Enviar resposta</button><button class="btn-quiet" type="button">Encerrar pedido</button></div>
+  </form>
+  <p class="disclosure">As respostas aqui são escritas por uma inteligência artificial criada para acolher. Se você corre risco agora, ligue 188.</p>
+</main>
+<nav class="tabbar" aria-label="Principal"><a href="#"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20h4L19 9l-4-4L4 16v4Z"/><path d="M13.5 6.5l4 4"/></svg><span>Escrever</span></a><a href="#" aria-current="page"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 6h12M8 12h12M8 18h12"/><circle cx="4" cy="6" r="1"/><circle cx="4" cy="12" r="1"/><circle cx="4" cy="18" r="1"/></svg><span>Meus pedidos</span></a><a href="#"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6"/></svg><span>Conta</span></a></nav>
+</div></div></div></div><figcaption class="cap">Conversa no desktop</figcaption></figure></div></section>
+
+</div></body></html>

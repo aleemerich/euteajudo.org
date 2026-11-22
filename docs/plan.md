@@ -1,6 +1,6 @@
 # Plano de implementação do MVP
 
-Base: [docs/mvp.md](mvp.md), [GLOSSARY.md](../GLOSSARY.md) e [docs/adr](adr/). Cada entrega termina com algo que funciona de ponta a ponta e tem testes automatizados. Identificadores de código seguem a linha _Código_ do glossário ([ADR 0006](adr/0006-codigo-em-ingles-documentacao-em-portugues.md)).
+Base: [docs/mvp.md](mvp.md), [GLOSSARY.md](../GLOSSARY.md) e [docs/adr](adr/). Cada entrega termina com algo que funciona de ponta a ponta e tem testes automatizados. Identificadores de código seguem a linha _Código_ do glossário ([ADR 0006](adr/0006-english-code-portuguese-docs.md)).
 
 ```
 E0 → ID → E1 → E2 → E3 → E4 → E5 ─┐
@@ -14,7 +14,7 @@ E4 e E5 são do Agente e ficam detalhadas no repositório privado `euteajudo.org
 
 | # | Pendência | Situação |
 |---|---|---|
-| P1 | Ambiente local com as versões da hospedagem | Resolvida: DDEV com PHP 8.5, MySQL 5.7 e Apache ([ADR 0004](adr/0004-ddev-e-paridade-com-a-hospedagem.md)). |
+| P1 | Ambiente local com as versões da hospedagem | Resolvida: DDEV com PHP 8.5, MySQL 5.7 e Apache ([ADR 0004](adr/0004-ddev-and-hosting-parity.md)). |
 | P2 | Separar o que é público do que é do Agente | Resolvida: dois repositórios; pipeline e riscos no repositório privado. |
 | P3 | Login com Google: plugin pronto ou código próprio | Avaliar um plugin maduro e compatível com PHP 8.5; aceitar só se for possível impedir a gravação de nome e foto. Senão, código próprio com a biblioteca oficial do Google. (E1) |
 | P4 | Serviço de e-mail transacional | Escolher pelo plano gratuito e pela entregabilidade (ex.: Brevo, Amazon SES). (E7) |
@@ -25,7 +25,7 @@ E4 e E5 são do Agente e ficam detalhadas no repositório privado `euteajudo.org
 Objetivo: repositórios, regras e ambiente prontos antes de qualquer funcionalidade.
 
 **Parte A: estrutura e regras**
-- Pasta de trabalho `/mnt/dados/Dev/euteajudo.org` com `plataforma/` (repositório público `aleemerich/euteajudo.org`) e `agente/` (repositório privado `aleemerich/euteajudo.org-agente`).
+- Pasta de trabalho `/mnt/dados/Dev/euteajudo.org` com `platform/` (repositório público `aleemerich/euteajudo.org`) e `agent/` (repositório privado `aleemerich/euteajudo.org-agente`).
 - Ajustes de git para o disco NTFS: `core.fileMode=false`, `safe.directory`, `.gitattributes` com `eol=lf`.
 - `AGENTS.md` e `CLAUDE.md` nos dois repositórios.
 - Skills de terceiros em `.claude/skills/`, com origem registrada em `SOURCES.md`.
@@ -44,16 +44,18 @@ Pronto quando: `ddev start` sobe `https://euteajudo.ddev.site` com plugin e tema
 
 ## ID. Identidade visual e tema
 
-Objetivo: identidade aprovada e aplicada como tokens e variações de estilo do tema.
+Objetivo: identidade aprovada e aplicada como tokens no tema, nas versões Noite e Dia.
 
-- Três direções de identidade (conceito, logo, paleta, tipografia, tom de voz), cada uma aplicada às telas Início, Desabafar, Conversa e Meus Pedidos, no celular e no desktop, em `design/propostas/`. Skills: `frontend-design`, `theme-factory`.
+- Três direções de identidade (conceito, logo, paleta, tipografia, tom de voz), cada uma aplicada às telas Início, Desabafar, Conversa e Meus Pedidos, no celular e no desktop, em `design/proposals/`. Skills: `frontend-design`, `theme-factory`.
 - Revisão do mantenedor: aprova uma ou mais direções.
-- `design/identidade.md`, `design/tokens.json` (formato DTCG), `design/logo/`.
-- `theme/theme.json` gerado a partir dos tokens; as direções aprovadas viram `theme/styles/*.json`.
+- `design/identity.md`, `design/tokens.json` (formato DTCG), `design/logo/`.
+- Direção aprovada: **Luz acesa** ([design/identity.md](../design/identity.md)), com as versões Noite e Dia. A versão segue a escolha do visitante; sem escolha, a preferência do aparelho; sem preferência, Noite.
+- `theme/theme.json` gerado a partir dos tokens, com as cores apontando para variáveis de CSS que trocam entre Noite e Dia (feito junto com o esqueleto do tema, na E0 parte B).
+- Fontes servidas pelo tema (`design/fonts/web/`), nunca por terceiros.
 - Skill do projeto `euteajudo-identity` (criada com `skill-creator`) com tokens, tom de voz e regras de uso para site, redes sociais e vídeos.
-- Kit de divulgação em `design/kit-social/` (modelos de post, capa de vídeo, legenda).
+- Kit de divulgação em `design/social-kit/` (modelos de post, capa de vídeo, legenda).
 
-Pronto quando: o mantenedor aprova a identidade e o tema exibe as variações aprovadas.
+Pronto quando: o mantenedor aprova a identidade e o tema exibe as versões Noite e Dia.
 
 ## E1. Contas e Apelido
 
@@ -61,7 +63,7 @@ Objetivo: qualquer pessoa cria conta e passa a existir só como "Amigo NNNNN".
 
 - Apelido aleatório de 5 dígitos, único, em `_eta_alias`, gravado no hook `user_register` (cobre cadastro, Google, painel e WP-CLI). `display_name` e `nickname` iguais ao Apelido.
 - Papéis `eta_friend` e `eta_agent`.
-- Páginas Entrar, Cadastrar, Recuperar senha e Confirmar e-mail ([ADR 0005](adr/0005-areas-publica-e-privada.md)); confirmação de e-mail obrigatória antes do primeiro Pedido.
+- Páginas Entrar, Cadastrar, Recuperar senha e Confirmar e-mail ([ADR 0005](adr/0005-public-and-private-areas.md)); confirmação de e-mail obrigatória antes do primeiro Pedido.
 - Login com Google (P3), descartando nome e foto.
 - Declaração de 18 anos ou mais e consentimento destacado, com data e versão do texto aceito em `user_meta`. Quem informa menos de 18 vê o Encaminhamento ao Pode Falar e ao CVV e não cria conta.
 - Avatares desligados no site inteiro; `wp-admin` e barra de administração bloqueados para Amigos e Agentes.
@@ -74,11 +76,11 @@ Pronto quando: os testes E2E cobrem cadastro por e-mail, confirmação, exclusã
 Objetivo: o Amigo publica um Pedido, conversa nele e o encerra, ainda sem Agente.
 
 - CPT `eta_help_request` não público, com capabilities próprias e `post_name` aleatório.
-- Status `eta_awaiting_triage`, `eta_awaiting_reply`, `eta_in_conversation`, `eta_closed`, mudados por hooks ([ADR 0003](adr/0003-wordpress-classico-cpt-e-comentarios.md)).
+- Status `eta_awaiting_triage`, `eta_awaiting_reply`, `eta_in_conversation`, `eta_closed`, mudados por hooks ([ADR 0003](adr/0003-classic-wordpress-native-structures.md)).
 - Taxonomias `eta_category`, `eta_severity`, `eta_risk_signal`, com os termos iniciais.
 - Mascaramento de dados pessoais (telefone, e-mail, CPF, CEP, links) aplicado ao Pedido e às Respostas antes de gravar. É a parte com mais casos de teste de unidade.
 - Blocos dinâmicos com Interactivity API: Desabafar, Conversa (Respostas `eta_reply`, Agradecimento, Encerramento com motivo, reabertura) e Meus Pedidos.
-- Endereço `/meus-pedidos/{código}/` com 404 para quem não tem acesso ([ADR 0005](adr/0005-areas-publica-e-privada.md)).
+- Endereço `/meus-pedidos/{código}/` com 404 para quem não tem acesso ([ADR 0005](adr/0005-public-and-private-areas.md)).
 - Proteções do ADR 0003: feeds, sitemaps e busca sem Pedidos, sem e-mails nativos de comentário, sem IP e user agent nos comentários, sem Akismet.
 
 Pronto quando: o E2E cobre o caminho completo no tamanho de celular, e testes de integração provam que um Pedido não aparece para visitantes, para outros Amigos, nos feeds, na busca ou na REST sem autenticação.
@@ -135,7 +137,7 @@ Pronto quando: um Pedido criado no site publicado recebe Resposta e o e-mail che
 Objetivo: abrir ao público.
 
 - Termos de uso, política de privacidade e texto do consentimento.
-- Textos de divulgação da IA no cadastro e na página do Pedido ([ADR 0002](adr/0002-divulgacao-da-ia-na-interface.md)).
+- Textos de divulgação da IA no cadastro e na página do Pedido ([ADR 0002](adr/0002-ai-disclosure-in-the-interface.md)).
 - Revisão do layout no celular, tablet e desktop, e de acessibilidade (contraste, teclado, leitor de tela).
 - Rodada de testes manuais com cadastros e fluxos simulados pelo mantenedor.
 - Validação do profissional concluída e ajustes aplicados.

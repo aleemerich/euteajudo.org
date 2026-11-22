@@ -18,6 +18,10 @@ Third-party skills vendored into this repository. Do not edit them in place: upd
 
 The WordPress skills license is in `LICENSE-wordpress-agent-skills.txt`.
 
-Project skills (written for this project, editable): none yet. `euteajudo-identity` will be created after the visual identity is approved.
+Project skills (written for this project, editable):
+
+| Skill | Used for |
+|---|---|
+| euteajudo-identity | Applying the "Luz acesa" identity (tokens, Night/Day modes, logo, tone of voice) to the theme, interface copy, emails, social posts and video. Created 2026-11-22 with `skill-creator`; no eval set (subjective output). |
 
 Not vendored, available globally in Claude Code: `skill-creator` (used to create project skills).
