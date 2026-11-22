@@ -13,6 +13,8 @@ if [ ! -f wordpress/wp-includes/version.php ]; then
   echo "EuTeAjudo: downloading WordPress"
   $WP core download --skip-content
 fi
+# --skip-content leaves wp-content without uploads/, which WordPress and its test suite need.
+mkdir -p wordpress/wp-content/uploads
 
 if ! $WP core is-installed 2>/dev/null; then
   echo "EuTeAjudo: installing WordPress (local admin: admin / admin)"
