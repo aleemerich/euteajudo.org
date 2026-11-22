@@ -313,5 +313,9 @@ corepack_enable: false
 
 # EuTeAjudo: install and configure WordPress on the first start; idempotent afterwards.
 hooks:
+  # Create the mount points as the host user before Docker does it as root; otherwise WordPress
+  # cannot write to wp-content on Linux file systems with real permissions (CI, fresh clones).
+  pre-start:
+    - exec-host: mkdir -p wordpress/wp-content/plugins/euteajudo wordpress/wp-content/themes/euteajudo wordpress/wp-content/uploads
   post-start:
     - exec: bash /var/www/html/.ddev/scripts/setup.sh
