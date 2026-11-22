@@ -1,0 +1,14 @@
+# Static analysis for the plugin and theme. WordPress stubs come from szepeviktor/phpstan-wordpress.
+parameters:
+	level: 8
+	paths:
+		- plugin
+		- theme/functions.php
+		- theme/patterns
+		- tests
+	excludePaths:
+		- tests/wp-tests-config.php
+		- tests/bootstrap-integration.php
+	scanDirectories:
+		- vendor/wp-phpunit/wp-phpunit/includes
+	treatPhpDocTypesAsCertain: false

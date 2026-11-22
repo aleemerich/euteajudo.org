@@ -1,0 +1,22 @@
+{
+	"name": "euteajudo-platform",
+	"private": true,
+	"description": "EuTeAjudo.org WordPress plugin and theme: front-end tooling.",
+	"license": "GPL-2.0-or-later",
+	"type": "module",
+	"engines": {
+		"node": ">=24"
+	},
+	"scripts": {
+		"build:theme": "node scripts/build-theme.mjs",
+		"check:theme": "node scripts/build-theme.mjs --check",
+		"lint": "wp-scripts lint-js scripts tests/e2e playwright.config.js",
+		"format": "wp-scripts format scripts tests/e2e playwright.config.js",
+		"test:e2e": "playwright test"
+	},
+	"devDependencies": {
+		"@axe-core/playwright": "^4.14.0",
+		"@playwright/test": "^1.65.1",
+		"@wordpress/scripts": "^37.2.0"
+	}
+}
