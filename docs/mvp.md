@@ -26,11 +26,11 @@ Amigos desabafam de forma anônima e um Agente de IA responde a todos. Ajudadore
 - Ao publicar, o autor é avisado de que a Resposta pode demorar. Não há prazo prometido.
 - Meus Pedidos lista título, data, situação e indicador de Resposta nova.
 - O Pedido é visível ao autor, aos Agentes e ao Administrador. Resumo e Triagem são visíveis a todos, exceto o autor.
-- Áreas pública e privada, endereços e acesso: [ADR 0005](adr/0005-areas-publica-e-privada.md).
+- Áreas pública e privada, endereços e acesso: [ADR 0005](adr/0005-public-and-private-areas.md).
 
 ## Plataforma (este repositório, GPL-2.0-or-later)
 
-- WordPress clássico: tema de blocos próprio focado em celular, Interactivity API, plugin próprio. Ver [ADR 0003](adr/0003-wordpress-classico-cpt-e-comentarios.md).
+- WordPress clássico: tema de blocos próprio focado em celular, Interactivity API, plugin próprio. Ver [ADR 0003](adr/0003-classic-wordpress-native-structures.md).
 - Pedido como CPT `eta_help_request`, Resposta como comentário `eta_reply`, Resumo no `post_excerpt`.
 - Status do Pedido, mudados por hooks: `eta_awaiting_triage`, `eta_awaiting_reply`, `eta_in_conversation`, `eta_closed`.
 - Taxonomias não públicas `eta_category`, `eta_severity` e `eta_risk_signal`, editáveis no painel.
@@ -38,7 +38,7 @@ Amigos desabafam de forma anônima e um Agente de IA responde a todos. Ajudadore
 - Proteções de anonimato: sem Gravatar, sem e-mails nativos de comentário, sem gravar IP e user agent, sem Akismet.
 - Banco de Apelidos de Agente gerado aleatoriamente e guardado em `wp_options`. Cada Pedido sorteia um.
 - Triagem gravada pelo Agente: Categoria, Gravidade e sinais de risco (taxonomias) e Resumo (`post_excerpt`).
-- Hospedagem compartilhada cPanel (Apache, PHP 8.5, MySQL 5.7) e ambiente local DDEV com as mesmas versões ([ADR 0004](adr/0004-ddev-e-paridade-com-a-hospedagem.md)).
+- Hospedagem compartilhada cPanel (Apache, PHP 8.5, MySQL 5.7) e ambiente local DDEV com as mesmas versões ([ADR 0004](adr/0004-ddev-and-hosting-parity.md)).
 - Publicação por FTPS, sem SSH em produção.
 - E-mail por serviço transacional com plugin SMTP.
 - WP-Cron disparado pelas consultas do Agente e por um cron do cPanel que chama `wp-cron.php` a cada 5 minutos, independente do Agente, o que garante o alerta de fila parada.

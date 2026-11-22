@@ -1,0 +1,271 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Correspondência: proposta de identidade</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,600;0,7..72,700;1,7..72,400&display=swap" rel="stylesheet">
+<style>:root{--font-body:'Literata',Georgia,serif;--font-display:'Literata',Georgia,serif;--h-weight:600;--page-bg:#E6ECF3;--page-ink:#1B2A47;--page-muted:#56657F;--page-line:#C9D3E0;--page-card:#F6F8FB}
+.screen{--bg:#E6ECF3;--surface:#F7F9FC;--ink:#1B2A47;--muted:#56657F;--line:#CCD6E3;--line-strong:#A9B7CB;--accent:#24438F;--on-accent:#fff;--field-bg:#fff;--radius-btn:6px;--radius-field:4px;--radius-card:4px;--focus:#C9962E;--thanks-bg:#E3E9F6;--thanks-ink:#24438F;--new-dot:#B8323A;--new-ink:#B8323A;--marker:#B8323A;--topbar-bg:#F7F9FC}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--page-bg);color:var(--page-ink);font-family:var(--font-body);line-height:1.55}
+.wrap{max-width:1360px;margin:0 auto;padding:32px 16px 80px}
+.doc-head{max-width:760px}
+.doc-head .back-index{font-size:.9rem;color:var(--page-muted)}
+.doc-head h1{font-family:var(--font-display);font-size:clamp(2rem,6vw,3.4rem);line-height:1.05;margin:.3em 0 .3em;font-weight:var(--h-weight,700)}
+.doc-head .concept{font-size:1.1rem}
+.sec{margin-top:56px}
+.sec>h2{font-family:var(--font-display);font-size:1.5rem;margin:0 0 6px;font-weight:var(--h-weight,700)}
+.sec>p.lead{max-width:720px;color:var(--page-muted);margin:0 0 22px}
+.logo-row{display:flex;flex-wrap:wrap;gap:20px}
+.logo-tile{flex:1 1 280px;min-height:200px;border-radius:12px;display:flex;align-items:center;justify-content:center;padding:28px;border:1px solid var(--page-line)}
+.logo-tile svg{max-width:100%;height:auto}
+.logo-tile.big svg{width:340px}.logo-tile.sym svg{width:120px}
+.swatches{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:14px}
+.sw{border-radius:10px;overflow:hidden;border:1px solid var(--page-line);background:var(--page-card)}
+.sw .chip{height:84px}
+.sw .t{padding:10px 12px;font-size:.85rem}
+.sw .t b{display:block;font-size:.95rem}
+.sw code{font-size:.82rem}
+.type-spec{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
+.spec{border:1px solid var(--page-line);border-radius:12px;padding:22px;background:var(--page-card)}
+.spec .big{font-family:var(--font-display);font-size:2.6rem;line-height:1.05;margin:4px 0 10px;font-weight:var(--h-weight,700)}
+.spec p{margin:0 0 .6em}
+.tone{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+.tone div{border:1px solid var(--page-line);border-radius:12px;padding:18px;background:var(--page-card)}
+.tone h3{margin:0 0 6px;font-size:1rem}
+.tone p{margin:0;font-size:.95rem}
+.frames{display:flex;gap:28px;overflow-x:auto;padding:6px 4px 18px;scroll-snap-type:x mandatory}
+.phone{flex:none;width:390px;max-width:86vw;scroll-snap-align:start}
+.phone .dev{height:780px;border-radius:34px;border:9px solid #1d1d1f;overflow:hidden;background:#000}
+.phone .dev>.inner{height:100%;overflow-y:auto}
+.cap{font-size:.88rem;color:var(--page-muted);margin:10px 4px 0}
+.desks{display:grid;gap:28px}
+.desk-scroll{overflow-x:auto;padding-bottom:8px}
+.desk-wrap{width:calc(1280px * .62);height:calc(800px * .62);overflow:hidden;border-radius:10px;border:1px solid var(--page-line);box-shadow:0 1px 0 var(--page-line)}
+.desk{width:1280px;height:800px;transform:scale(.62);transform-origin:0 0;overflow-y:auto}
+
+.screen{container:scr/inline-size;background:var(--bg);color:var(--ink);font-family:var(--font-body);font-size:17px;line-height:1.55;min-height:100%;display:flex;flex-direction:column;-webkit-font-smoothing:antialiased}
+.screen *{box-sizing:border-box}
+.screen a{color:inherit}
+.screen .btn{color:var(--on-accent)}
+.screen h1,.screen h2{font-family:var(--font-display);color:var(--ink-strong,var(--ink));margin:0 0 .5em;line-height:1.15}
+.screen h1{font-size:1.75rem;font-weight:var(--h-weight,700)}
+.screen h2{font-size:1.25rem;font-weight:var(--h-weight,700)}
+.screen p{margin:0 0 1em}
+.topbar{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 20px;border-bottom:1px solid var(--line);background:var(--topbar-bg,var(--bg));position:relative}
+.brand{display:block;text-decoration:none}.brand svg{height:32px;width:auto;display:block}
+.topbar-right{display:flex;align-items:center;gap:20px}
+.topnav{display:none;gap:22px}.topnav a{text-decoration:none;color:var(--muted);font-size:.95rem}.topnav a[aria-current]{color:var(--ink);font-weight:600}
+.alias{font-size:.85rem;color:var(--muted);white-space:nowrap}
+.topbar-action{font-weight:600;text-decoration:none;font-size:.95rem}
+.content{padding:24px 20px 32px;flex:1;width:100%}
+.tabbar{position:sticky;bottom:0;display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line);background:var(--tab-bg,var(--surface));z-index:2}
+.tabbar a{padding:9px 4px 13px;text-align:center;font-size:.78rem;color:var(--muted);text-decoration:none;display:flex;flex-direction:column;align-items:center;gap:3px}
+.tabbar svg,.screen svg[aria-hidden]{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.tabbar a[aria-current]{color:var(--tab-active,var(--ink));font-weight:600}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 24px;border-radius:var(--radius-btn);background:var(--accent);color:var(--on-accent);font:inherit;font-weight:700;border:0;text-decoration:none;cursor:pointer}
+.btn-small{min-height:40px;padding:0 16px;font-size:.9rem}
+.btn-quiet{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:0 18px;border-radius:var(--radius-btn);background:transparent;color:var(--ink);border:1px solid var(--line-strong,var(--line));font:inherit;font-size:.92rem;cursor:pointer}
+.screen :focus-visible{outline:3px solid var(--focus);outline-offset:2px}
+.compose label,.reply-box label{display:block;font-weight:600;margin:18px 0 6px}
+.hint{font-weight:400;color:var(--muted);font-size:.9rem}
+.compose input,.screen textarea{width:100%;font:inherit;color:var(--ink);background:var(--field-bg);border:1px solid var(--line-strong,var(--line));border-radius:var(--radius-field);padding:12px 14px}
+.screen textarea{resize:vertical;line-height:1.6}
+.guides{color:var(--muted);font-size:.95rem;margin-top:10px}
+.note{font-size:.88rem;color:var(--muted)}
+.disclosure{font-size:.8rem;color:var(--muted);margin-top:28px;padding-top:14px;border-top:1px solid var(--line)}
+.back{display:inline-block;margin-bottom:14px;font-size:.92rem;color:var(--muted)}
+.back::before{content:"‹ "}
+.meta{color:var(--muted);font-size:.9rem}
+.msg{margin:22px 0;padding:18px;border-radius:var(--radius-card);background:var(--surface)}
+.msg-head{display:flex;justify-content:space-between;gap:10px;font-size:.85rem;color:var(--muted);margin-bottom:10px}
+.who{font-weight:700;color:var(--ink)}
+.signoff{display:none}
+.msg-actions{margin-top:6px}
+.btn-thanks[aria-pressed=true]{background:var(--thanks-bg);border-color:var(--thanks-bg);color:var(--thanks-ink)}
+.waiting{font-size:.9rem;color:var(--muted)}
+.reply-box .row{display:flex;flex-wrap:wrap;gap:12px;margin-top:12px}
+.list-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:12px}
+.list-head h1{margin:0}
+.requests{list-style:none;margin:0;padding:0}
+.requests li{border-bottom:1px solid var(--line)}
+.requests a{display:block;padding:16px 2px;text-decoration:none}
+.r-title{display:block;font-weight:600;margin-bottom:4px}
+.r-meta{display:flex;gap:12px;align-items:center;font-size:.85rem;color:var(--muted)}
+.status-new{color:var(--new-ink);font-weight:700}
+.status-new::before{content:"";display:inline-block;width:9px;height:9px;border-radius:50%;background:var(--new-dot);margin-right:6px;vertical-align:1px}
+.is-closed .r-title{color:var(--muted);font-weight:400}
+.empty-example{margin-top:28px;font-size:.9rem;color:var(--muted)}
+.home .how{margin-top:40px}
+.steps{padding-left:1.4em;margin:0}.steps li{margin-bottom:14px}.steps li::marker{font-weight:700;color:var(--marker,var(--ink))}
+.urgent{margin-top:36px;padding:18px;border-radius:var(--radius-card);background:var(--surface)}
+.urgent h2{font-size:1.05rem}.urgent p{margin:0}
+.sitefoot{display:flex;flex-wrap:wrap;gap:18px;padding:20px;border-top:1px solid var(--line);font-size:.85rem;color:var(--muted)}
+.sitefoot a{color:var(--muted)}
+@container scr (min-width: 900px){
+  .tabbar{display:none}
+  .topnav{display:flex}
+  .topbar{padding:16px 48px}
+  .content{max-width:720px;margin:0 auto;padding:48px 24px 64px}
+  .content.home{max-width:1120px}
+  .home .hero{display:grid;grid-template-columns:1.15fr .85fr;gap:56px;align-items:center;min-height:420px}
+  .home .how{display:grid;grid-template-columns:.6fr 1.4fr;gap:48px;margin-top:64px}
+  .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;padding:0;list-style-position:inside}
+  .urgent{display:flex;gap:24px;align-items:baseline;margin-top:48px}
+  .sitefoot{padding:24px 48px}
+  .screen h1{font-size:2.2rem}
+}
+
+.screen .topbar{padding-top:18px}
+.screen .topbar::before{content:"";position:absolute;left:0;right:0;top:0;height:6px;background:repeating-linear-gradient(-45deg,#B8323A 0 9px,#FFFFFF 9px 14px,#24438F 14px 23px,#FFFFFF 23px 28px)}
+.paper{border:7px solid transparent;border-image:repeating-linear-gradient(-45deg,#B8323A 0 9px,#FFFFFF 9px 14px,#24438F 14px 23px,#FFFFFF 23px 28px) 7;background:#fff}
+.paper textarea{border:0;border-radius:0;background:#fff repeating-linear-gradient(transparent 0,transparent calc(1.6em - 1px),#DCE3EE calc(1.6em - 1px),#DCE3EE 1.6em);background-attachment:local;line-height:1.6em;padding:6px 14px}
+.msg-other{background:#fff;padding:24px 22px 18px;box-shadow:0 1px 0 #CCD6E3,0 6px 18px -12px rgba(27,42,71,.35)}
+.msg-other .who{display:none}
+.msg-other .signoff{display:block;text-align:right;font-style:italic;margin:4px 0 6px}
+.msg-mine{background:transparent;border-left:3px solid #A9B7CB;border-radius:0;padding:4px 0 4px 16px}
+.urgent{border-left:4px solid #B8323A;border-radius:0}
+.screen .display{font-size:2.15rem;letter-spacing:-.01em;line-height:1.12}
+.lede{font-size:1.08rem}
+.cta{display:flex;flex-wrap:wrap;align-items:center;gap:18px;margin-top:8px}
+.cta .link{font-weight:600}
+.envelope{position:relative;background:#fff;padding:26px 24px 20px;border:9px solid transparent;border-image:repeating-linear-gradient(-45deg,#B8323A 0 9px,#FFFFFF 9px 14px,#24438F 14px 23px,#FFFFFF 23px 28px) 9;margin-top:30px;max-width:440px;transform:rotate(-1.2deg)}
+.stamp{position:absolute;top:12px;right:12px;width:66px;height:78px;background:#F4DEB0;outline:2px dashed #fff;outline-offset:-5px;display:grid;place-items:center}
+.addr{font-style:italic;color:#56657F;margin-bottom:18px}
+.letter{max-width:28ch}
+.sig{text-align:right;font-style:italic;margin:0}
+@container scr (min-width:900px){.screen .display{font-size:3.3rem}.envelope{margin-top:0}}
+
+@media (prefers-reduced-motion: reduce){*{animation:none!important;transition:none!important}}</style></head>
+<body><div class="wrap">
+<header class="doc-head"><a class="back-index" href="index.html">Todas as propostas</a>
+<h1>Correspondência</h1><p class="concept">Desabafar aqui é como escrever uma carta para alguém que você não conhece e que vai ler com atenção. A identidade vem da carta aérea: papel azulado, a borda listrada de vermelho e azul e o carimbo do correio. A Resposta chega como uma carta, assinada pelo Apelido de quem escreveu. O ritmo é calmo, de leitura.</p></header>
+<section class="sec"><h2>Logo</h2><p class="lead">O carimbo do correio, com o traço de uma letra cursiva no centro e as linhas onduladas de cancelamento. A faixa de carta aérea sublinha o nome. O símbolo sozinho funciona como ícone do site e avatar nas redes.</p>
+<div class="logo-row"><div class="logo-tile big" style="background:#F7F9FC"><svg viewBox="0 0 420 96" role="img" aria-label="EuTeAjudo.org"><g transform="translate(0 8)"><svg x="0" y="0" width="124" height="80" viewBox="0 0 124 80" width="120" role="img" aria-label="Carimbo do EuTeAjudo"><circle cx="40" cy="40" r="35" fill="none" stroke="#24438F" stroke-width="4"/><circle cx="40" cy="40" r="27" fill="none" stroke="#24438F" stroke-width="1.6"/><path d="M30 46c3-9 7-14 10-14s5 4 2 8-9 6-9 10 5 4 8 1" fill="none" stroke="#24438F" stroke-width="3" stroke-linecap="round"/><path d="M64 28q7-6 14 0t14 0t14 0t14 0" fill="none" stroke="#24438F" stroke-width="3" stroke-linecap="round"/><path d="M64 40q7-6 14 0t14 0t14 0t14 0" fill="none" stroke="#24438F" stroke-width="3" stroke-linecap="round"/><path d="M64 52q7-6 14 0t14 0t14 0t14 0" fill="none" stroke="#24438F" stroke-width="3" stroke-linecap="round"/></svg></g><text x="136" y="58" font-family="Literata, Georgia, serif" font-size="44" font-weight="600" fill="#1B2A47">eu te ajudo</text><text x="378" y="58" font-family="Literata, Georgia, serif" font-size="22" fill="#56657F">.org</text><rect x="138" y="72" width="230" height="7" fill="url(#am)"/><defs><pattern id="am" width="28" height="7" patternUnits="userSpaceOnUse" patternTransform="skewX(-45)"><rect width="9" height="7" fill="#B8323A"/><rect x="14" width="9" height="7" fill="#24438F"/></pattern></defs></svg></div>
+<div class="logo-tile big" style="background:#24438F"><svg viewBox="0 0 420 96" role="img" aria-label="EuTeAjudo.org"><g transform="translate(0 8)"><svg x="0" y="0" width="124" height="80" viewBox="0 0 124 80" width="120" role="img" aria-label="Carimbo do EuTeAjudo"><circle cx="40" cy="40" r="35" fill="none" stroke="#FFFFFF" stroke-width="4"/><circle cx="40" cy="40" r="27" fill="none" stroke="#FFFFFF" stroke-width="1.6"/><path d="M30 46c3-9 7-14 10-14s5 4 2 8-9 6-9 10 5 4 8 1" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round"/><path d="M64 28q7-6 14 0t14 0t14 0t14 0" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round"/><path d="M64 40q7-6 14 0t14 0t14 0t14 0" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round"/><path d="M64 52q7-6 14 0t14 0t14 0t14 0" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round"/></svg></g><text x="136" y="58" font-family="Literata, Georgia, serif" font-size="44" font-weight="600" fill="#FFFFFF">eu te ajudo</text><text x="378" y="58" font-family="Literata, Georgia, serif" font-size="22" fill="#C9D3E0">.org</text><rect x="138" y="72" width="230" height="7" fill="url(#am)"/><defs><pattern id="am" width="28" height="7" patternUnits="userSpaceOnUse" patternTransform="skewX(-45)"><rect width="9" height="7" fill="#B8323A"/><rect x="14" width="9" height="7" fill="#24438F"/></pattern></defs></svg></div>
+<div class="logo-tile sym" style="background:#F7F9FC"><svg viewBox="0 0 124 80" width="120" role="img" aria-label="Carimbo do EuTeAjudo"><circle cx="40" cy="40" r="35" fill="none" stroke="#24438F" stroke-width="4"/><circle cx="40" cy="40" r="27" fill="none" stroke="#24438F" stroke-width="1.6"/><path d="M30 46c3-9 7-14 10-14s5 4 2 8-9 6-9 10 5 4 8 1" fill="none" stroke="#24438F" stroke-width="3" stroke-linecap="round"/><path d="M64 28q7-6 14 0t14 0t14 0t14 0" fill="none" stroke="#24438F" stroke-width="3" stroke-linecap="round"/><path d="M64 40q7-6 14 0t14 0t14 0t14 0" fill="none" stroke="#24438F" stroke-width="3" stroke-linecap="round"/><path d="M64 52q7-6 14 0t14 0t14 0t14 0" fill="none" stroke="#24438F" stroke-width="3" stroke-linecap="round"/></svg></div></div></section>
+<section class="sec"><h2>Cores</h2><p class="lead">Claro e frio, sem o creme amarelado de papel antigo. O vermelho aparece pouco: na faixa aérea e no que pede atenção, como uma Resposta nova.</p><div class="swatches"><div class="sw"><div class="chip" style="background:#E6ECF3"></div><div class="t"><b>Papel aéreo</b><code>#E6ECF3</code><br>Fundo principal</div></div><div class="sw"><div class="chip" style="background:#1B2A47"></div><div class="t"><b>Tinta</b><code>#1B2A47</code><br>Texto</div></div><div class="sw"><div class="chip" style="background:#24438F"></div><div class="t"><b>Azul correio</b><code>#24438F</code><br>Botões, links, logo</div></div><div class="sw"><div class="chip" style="background:#B8323A"></div><div class="t"><b>Vermelho correio</b><code>#B8323A</code><br>Faixa aérea, Resposta nova, ajuda imediata</div></div><div class="sw"><div class="chip" style="background:#C9962E"></div><div class="t"><b>Selo</b><code>#C9962E</code><br>Foco do teclado, detalhes</div></div><div class="sw"><div class="chip" style="background:#FFFFFF"></div><div class="t"><b>Folha</b><code>#FFFFFF</code><br>Cartas e campos de texto</div></div></div></section>
+<section class="sec"><h2>Tipografia</h2><p class="lead">Uma família só, a Literata: uma serifada feita para leitura longa em tela, gratuita e com acentos completos. Os títulos usam o peso 600; o texto, o 400 em 17 px com entrelinha generosa.</p><div class="type-spec"><div class="spec"><div class="big">Escreva como quem escreve para um amigo.</div><p>Literata 600, título</p></div><div class="spec"><p>Perder o emprego mexe com muita coisa ao mesmo tempo: o dinheiro, a rotina e também a forma como a gente se enxerga.</p><p><i>Amigo 70295</i></p><p style="color:var(--page-muted);font-size:.9rem">Literata 400 e itálico, texto e assinatura</p></div></div></section>
+<section class="sec"><h2>Tom de voz</h2><p class="lead">Como uma carta escrita com tempo: frases completas, cumprimento pelo Apelido, nada de pressa nem de exclamação.</p><div class="tone"><div><h3>Botões</h3><p>"Começar a escrever", "Enviar pedido", "Encerrar pedido". O verbo diz o que acontece.</p></div><div><h3>Espera</h3><p>"Seu pedido foi enviado. A resposta chega por aqui, e avisamos por e-mail."</p></div><div><h3>Erro</h3><p>"O texto está vazio. Escreva algumas linhas para enviar o pedido."</p></div><div><h3>Evitar</h3><p>Promessas ("vai ficar tudo bem"), pontos de exclamação, emojis e termos técnicos.</p></div></div></section>
+<section class="sec"><h2>Telas no celular</h2><p class="lead">Role dentro de cada tela. As telas usam conteúdo de exemplo; o fluxo e os textos seguem as decisões do MVP.</p><div class="frames"><figure class="phone"><div class="dev"><div class="inner"><div class="screen screen-home">
+<header class="topbar"><a class="brand" href="#" aria-label="EuTeAjudo.org, início"><svg viewBox="0 0 250 44" role="img" aria-label="EuTeAjudo.org"><g transform="translate(0 2) scale(.5)"><svg x="0" y="0" width="124" height="80" viewBox="0 0 124 80" width="120" role="img" aria-label="Carimbo do EuTeAjudo"><circle cx="40" cy="40" r="35" fill="none" stroke="#24438F" stroke-width="4"/><circle cx="40" cy="40" r="27" fill="none" stroke="#24438F" stroke-width="1.6"/><path d="M30 46c3-9 7-14 10-14s5 4 2 8-9 6-9 10 5 4 8 1" fill="none" stroke="#24438F" stroke-width="3" stroke-linecap="round"/><path d="M64 28q7-6 14 0t14 0t14 0t14 0" fill="none" stroke="#24438F" stroke-width="3" stroke-linecap="round"/><path d="M64 40q7-6 14 0t14 0t14 0t14 0" fill="none" stroke="#24438F" stroke-width="3" stroke-linecap="round"/><path d="M64 52q7-6 14 0t14 0t14 0t14 0" fill="none" stroke="#24438F" stroke-width="3" stroke-linecap="round"/></svg></g><text x="70" y="30" font-family="Literata, Georgia, serif" font-size="25" font-weight="600" fill="#1B2A47">eu te ajudo</text></svg></a><div class="topbar-right"><nav class="topnav topnav-public" aria-label="Principal"><a href="#">Como funciona</a><a href="#">Sobre</a><a href="#">Ajuda imediata</a></nav><a class="topbar-action" href="#">Entrar</a></div></header>
+<main class="content home">
+  <section class="hero"><div class="hero-text"><h1 class="display">Escreva como quem escreve para um amigo.</h1><p class="lede">Ninguém aqui sabe quem você é. Você conta o que está vivendo e recebe uma resposta escrita com cuidado, só para você.</p><div class="cta"><a class="btn" href="#">Começar a escrever</a><a class="link" href="#">Já tenho conta</a></div></div><div class="envelope" aria-hidden="true"><div class="stamp"><svg viewBox="0 0 124 80" width="54" role="img" aria-label="Carimbo do EuTeAjudo"><circle cx="40" cy="40" r="35" fill="none" stroke="#24438F" stroke-width="4"/><circle cx="40" cy="40" r="27" fill="none" stroke="#24438F" stroke-width="1.6"/><path d="M30 46c3-9 7-14 10-14s5 4 2 8-9 6-9 10 5 4 8 1" fill="none" stroke="#24438F" stroke-width="3" stroke-linecap="round"/><path d="M64 28q7-6 14 0t14 0t14 0t14 0" fill="none" stroke="#24438F" stroke-width="3" stroke-linecap="round"/><path d="M64 40q7-6 14 0t14 0t14 0t14 0" fill="none" stroke="#24438F" stroke-width="3" stroke-linecap="round"/><path d="M64 52q7-6 14 0t14 0t14 0t14 0" fill="none" stroke="#24438F" stroke-width="3" stroke-linecap="round"/></svg></div><p class="addr">Para Amigo 48213</p><p class="letter">Oi, Amigo 48213. Obrigado por contar isso com tanto detalhe. Faz sentido que o sono tenha ido embora junto…</p><p class="sig">Amigo 70295</p></div></section>
+  <section class="how">
+    <h2>Como funciona</h2>
+    <ol class="steps">
+      <li><strong>Crie uma conta só com e-mail.</strong> Aqui você vira um Amigo com número, como Amigo 48213. Ninguém sabe quem você é.</li>
+      <li><strong>Escreva o que está acontecendo.</strong> Do seu jeito, no seu tempo. Não precisa organizar nada.</li>
+      <li><strong>Receba uma resposta escrita com cuidado.</strong> Avisamos por e-mail, sem mostrar o conteúdo. Volte quando quiser.</li>
+    </ol>
+  </section>
+  <section class="urgent">
+    <h2>Precisa de ajuda agora?</h2>
+    <p>O CVV atende de graça, a qualquer hora, pelo telefone 188 ou pelo chat em cvv.org.br.</p>
+  </section>
+</main>
+<footer class="sitefoot"><a href="#">Sobre</a><a href="#">Termos de uso</a><a href="#">Privacidade</a></footer>
+</div></div></div><figcaption class="cap">Início (público)</figcaption></figure><figure class="phone"><div class="dev"><div class="inner"><div class="screen screen-write">
+<header class="topbar"><a class="brand" href="#" aria-label="EuTeAjudo.org, início"><svg viewBox="0 0 250 44" role="img" aria-label="EuTeAjudo.org"><g transform="translate(0 2) scale(.5)"><svg x="0" y="0" width="124" height="80" viewBox="0 0 124 80" width="120" role="img" aria-label="Carimbo do EuTeAjudo"><circle cx="40" cy="40" r="35" fill="none" stroke="#24438F" stroke-width="4"/><circle cx="40" cy="40" r="27" fill="none" stroke="#24438F" stroke-width="1.6"/><path d="M30 46c3-9 7-14 10-14s5 4 2 8-9 6-9 10 5 4 8 1" fill="none" stroke="#24438F" stroke-width="3" stroke-linecap="round"/><path d="M64 28q7-6 14 0t14 0t14 0t14 0" fill="none" stroke="#24438F" stroke-width="3" stroke-linecap="round"/><path d="M64 40q7-6 14 0t14 0t14 0t14 0" fill="none" stroke="#24438F" stroke-width="3" stroke-linecap="round"/><path d="M64 52q7-6 14 0t14 0t14 0t14 0" fill="none" stroke="#24438F" stroke-width="3" stroke-linecap="round"/></svg></g><text x="70" y="30" font-family="Literata, Georgia, serif" font-size="25" font-weight="600" fill="#1B2A47">eu te ajudo</text></svg></a><div class="topbar-right"><nav class="topnav" aria-label="Principal"><a href="#" aria-current=page>Escrever</a><a href="#" >Meus pedidos</a><a href="#" >Conta</a></nav><span class="alias">Amigo 48213</span></div></header>
+<main class="content write">
+  <h1>O que está acontecendo?</h1>
+  <form class="compose" onsubmit="return false">
+    <label for="t-a-airmail">Título <span class="hint">para você encontrar depois</span></label>
+    <input id="t-a-airmail" type="text" value="Não consigo dormir desde que perdi o emprego">
+    <label for="b-a-airmail">Seu texto</label>
+    <div class="paper">
+      <textarea id="b-a-airmail" rows="9">Faz três semanas que fui demitido. Durante o dia eu até disfarço: mando currículo, arrumo a casa, saio para caminhar. Mas quando deito a cabeça não para. Conta de luz, aluguel, o que vou dizer pros meus pais.</textarea>
+    </div>
+    <p class="guides">Se ajudar, pense em: há quanto tempo isso acontece, o que você já tentou e do que sente que precisa agora.</p>
+    <p class="note">Telefones, e-mails e documentos são removidos antes de salvar. A resposta pode levar algumas horas; avisamos por e-mail.</p>
+    <button class="btn" type="submit">Enviar pedido</button>
+  </form>
+  <p class="disclosure">As respostas aqui são escritas por uma inteligência artificial criada para acolher. Se você corre risco agora, ligue 188.</p>
+</main>
+<nav class="tabbar" aria-label="Principal"><a href="#" aria-current="page"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20h4L19 9l-4-4L4 16v4Z"/><path d="M13.5 6.5l4 4"/></svg><span>Escrever</span></a><a href="#"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 6h12M8 12h12M8 18h12"/><circle cx="4" cy="6" r="1"/><circle cx="4" cy="12" r="1"/><circle cx="4" cy="18" r="1"/></svg><span>Meus pedidos</span></a><a href="#"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6"/></svg><span>Conta</span></a></nav>
+</div></div></div><figcaption class="cap">Escrever um pedido</figcaption></figure><figure class="phone"><div class="dev"><div class="inner"><div class="screen screen-convo">
+<header class="topbar"><a class="brand" href="#" aria-label="EuTeAjudo.org, início"><svg viewBox="0 0 250 44" role="img" aria-label="EuTeAjudo.org"><g transform="translate(0 2) scale(.5)"><svg x="0" y="0" width="124" height="80" viewBox="0 0 124 80" width="120" role="img" aria-label="Carimbo do EuTeAjudo"><circle cx="40" cy="40" r="35" fill="none" stroke="#24438F" stroke-width="4"/><circle cx="40" cy="40" r="27" fill="none" stroke="#24438F" stroke-width="1.6"/><path d="M30 46c3-9 7-14 10-14s5 4 2 8-9 6-9 10 5 4 8 1" fill="none" stroke="#24438F" stroke-width="3" stroke-linecap="round"/><path d="M64 28q7-6 14 0t14 0t14 0t14 0" fill="none" stroke="#24438F" stroke-width="3" stroke-linecap="round"/><path d="M64 40q7-6 14 0t14 0t14 0t14 0" fill="none" stroke="#24438F" stroke-width="3" stroke-linecap="round"/><path d="M64 52q7-6 14 0t14 0t14 0t14 0" fill="none" stroke="#24438F" stroke-width="3" stroke-linecap="round"/></svg></g><text x="70" y="30" font-family="Literata, Georgia, serif" font-size="25" font-weight="600" fill="#1B2A47">eu te ajudo</text></svg></a><div class="topbar-right"><nav class="topnav" aria-label="Principal"><a href="#" >Escrever</a><a href="#" aria-current=page>Meus pedidos</a><a href="#" >Conta</a></nav><span class="alias">Amigo 48213</span></div></header>
+<main class="content convo">
+  <a class="back" href="#">Meus pedidos</a>
+  <h1>Não consigo dormir desde que perdi o emprego</h1>
+  <p class="meta">Você escreveu em 18 de novembro</p>
+  <article class="msg msg-mine msg-request"><p>Faz três semanas que fui demitido. Durante o dia eu até disfarço: mando currículo, arrumo a casa, saio para caminhar. Mas quando deito a cabeça não para. Conta de luz, aluguel, o que vou dizer pros meus pais.</p><p>Acordo às 3h e não durmo mais. Me sinto um peso para todo mundo.</p></article>
+  <article class="msg msg-other">
+    <header class="msg-head"><span class="who">Amigo 70295</span><time>18 de nov., 21h40</time></header>
+    <p>Oi, Amigo 48213. Obrigado por contar isso com tanto detalhe.</p><p>Perder o emprego mexe com muita coisa ao mesmo tempo: o dinheiro, a rotina e também a forma como a gente se enxerga. Faz sentido que o sono tenha ido embora junto. Pelo que você escreveu, o que mais pesa à noite é a sensação de estar parado enquanto as contas continuam chegando.</p><p>Você está carregando isso sozinho, ou tem alguém em casa com quem consegue falar sobre o assunto? Se quiser, posso te ajudar a separar o que dá para resolver nesta semana do que pode esperar. Às vezes ver isso escrito já tira um pouco do peso da madrugada.</p>
+    <p class="signoff">Amigo 70295</p>
+    <div class="msg-actions"><button class="btn-quiet btn-thanks" type="button" aria-pressed="true">Isso me ajudou</button></div>
+  </article>
+  <article class="msg msg-mine">
+    <header class="msg-head"><span class="who">Você</span><time>19 de nov., 7h12</time></header>
+    <p>Moro com minha namorada, mas não quero preocupar ela mais do que já está.</p>
+  </article>
+  <p class="waiting">Mensagem enviada. A resposta pode levar algumas horas.</p>
+  <form class="reply-box" onsubmit="return false">
+    <label for="r-a-airmail">Responder</label>
+    <textarea id="r-a-airmail" rows="3" placeholder="Escreva quando quiser"></textarea>
+    <div class="row"><button class="btn" type="submit">Enviar resposta</button><button class="btn-quiet" type="button">Encerrar pedido</button></div>
+  </form>
+  <p class="disclosure">As respostas aqui são escritas por uma inteligência artificial criada para acolher. Se você corre risco agora, ligue 188.</p>
+</main>
+<nav class="tabbar" aria-label="Principal"><a href="#"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20h4L19 9l-4-4L4 16v4Z"/><path d="M13.5 6.5l4 4"/></svg><span>Escrever</span></a><a href="#" aria-current="page"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 6h12M8 12h12M8 18h12"/><circle cx="4" cy="6" r="1"/><circle cx="4" cy="12" r="1"/><circle cx="4" cy="18" r="1"/></svg><span>Meus pedidos</span></a><a href="#"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6"/></svg><span>Conta</span></a></nav>
+</div></div></div><figcaption class="cap">Conversa</figcaption></figure><figure class="phone"><div class="dev"><div class="inner"><div class="screen screen-list">
+<header class="topbar"><a class="brand" href="#" aria-label="EuTeAjudo.org, início"><svg viewBox="0 0 250 44" role="img" aria-label="EuTeAjudo.org"><g transform="translate(0 2) scale(.5)"><svg x="0" y="0" width="124" height="80" viewBox="0 0 124 80" width="120" role="img" aria-label="Carimbo do EuTeAjudo"><circle cx="40" cy="40" r="35" fill="none" stroke="#24438F" stroke-width="4"/><circle cx="40" cy="40" r="27" fill="none" stroke="#24438F" stroke-width="1.6"/><path d="M30 46c3-9 7-14 10-14s5 4 2 8-9 6-9 10 5 4 8 1" fill="none" stroke="#24438F" stroke-width="3" stroke-linecap="round"/><path d="M64 28q7-6 14 0t14 0t14 0t14 0" fill="none" stroke="#24438F" stroke-width="3" stroke-linecap="round"/><path d="M64 40q7-6 14 0t14 0t14 0t14 0" fill="none" stroke="#24438F" stroke-width="3" stroke-linecap="round"/><path d="M64 52q7-6 14 0t14 0t14 0t14 0" fill="none" stroke="#24438F" stroke-width="3" stroke-linecap="round"/></svg></g><text x="70" y="30" font-family="Literata, Georgia, serif" font-size="25" font-weight="600" fill="#1B2A47">eu te ajudo</text></svg></a><div class="topbar-right"><nav class="topnav" aria-label="Principal"><a href="#" >Escrever</a><a href="#" aria-current=page>Meus pedidos</a><a href="#" >Conta</a></nav><span class="alias">Amigo 48213</span></div></header>
+<main class="content list">
+  <div class="list-head"><h1>Meus pedidos</h1><a class="btn btn-small" href="#">Novo pedido</a></div>
+  <ul class="requests">
+    <li class="is-new"><a href="#"><span class="r-title">Não consigo dormir desde que perdi o emprego</span><span class="r-meta"><span class="status status-new">Resposta nova</span><time>18 de nov.</time></span></a></li>
+    <li><a href="#"><span class="r-title">Briga com minha irmã por causa da casa da nossa mãe</span><span class="r-meta"><span class="status">Aguardando resposta</span><time>2 de nov.</time></span></a></li>
+    <li class="is-closed"><a href="#"><span class="r-title">Ansiedade antes das provas</span><span class="r-meta"><span class="status">Encerrado</span><time>12 de out.</time></span></a></li>
+  </ul>
+  <p class="empty-example"><strong>Quando a lista estiver vazia:</strong> "Você ainda não escreveu nenhum pedido. Quando quiser, é só começar."</p>
+</main>
+<nav class="tabbar" aria-label="Principal"><a href="#"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20h4L19 9l-4-4L4 16v4Z"/><path d="M13.5 6.5l4 4"/></svg><span>Escrever</span></a><a href="#" aria-current="page"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 6h12M8 12h12M8 18h12"/><circle cx="4" cy="6" r="1"/><circle cx="4" cy="12" r="1"/><circle cx="4" cy="18" r="1"/></svg><span>Meus pedidos</span></a><a href="#"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6"/></svg><span>Conta</span></a></nav>
+</div></div></div><figcaption class="cap">Meus pedidos</figcaption></figure></div></section>
+<section class="sec"><h2>Telas no desktop</h2><p class="lead">As mesmas telas, em 1280 px de largura, reduzidas para caber aqui.</p><div class="desks"><figure><div class="desk-scroll"><div class="desk-wrap"><div class="desk"><div class="screen screen-home">
+<header class="topbar"><a class="brand" href="#" aria-label="EuTeAjudo.org, início"><svg viewBox="0 0 250 44" role="img" aria-label="EuTeAjudo.org"><g transform="translate(0 2) scale(.5)"><svg x="0" y="0" width="124" height="80" viewBox="0 0 124 80" width="120" role="img" aria-label="Carimbo do EuTeAjudo"><circle cx="40" cy="40" r="35" fill="none" stroke="#24438F" stroke-width="4"/><circle cx="40" cy="40" r="27" fill="none" stroke="#24438F" stroke-width="1.6"/><path d="M30 46c3-9 7-14 10-14s5 4 2 8-9 6-9 10 5 4 8 1" fill="none" stroke="#24438F" stroke-width="3" stroke-linecap="round"/><path d="M64 28q7-6 14 0t14 0t14 0t14 0" fill="none" stroke="#24438F" stroke-width="3" stroke-linecap="round"/><path d="M64 40q7-6 14 0t14 0t14 0t14 0" fill="none" stroke="#24438F" stroke-width="3" stroke-linecap="round"/><path d="M64 52q7-6 14 0t14 0t14 0t14 0" fill="none" stroke="#24438F" stroke-width="3" stroke-linecap="round"/></svg></g><text x="70" y="30" font-family="Literata, Georgia, serif" font-size="25" font-weight="600" fill="#1B2A47">eu te ajudo</text></svg></a><div class="topbar-right"><nav class="topnav topnav-public" aria-label="Principal"><a href="#">Como funciona</a><a href="#">Sobre</a><a href="#">Ajuda imediata</a></nav><a class="topbar-action" href="#">Entrar</a></div></header>
+<main class="content home">
+  <section class="hero"><div class="hero-text"><h1 class="display">Escreva como quem escreve para um amigo.</h1><p class="lede">Ninguém aqui sabe quem você é. Você conta o que está vivendo e recebe uma resposta escrita com cuidado, só para você.</p><div class="cta"><a class="btn" href="#">Começar a escrever</a><a class="link" href="#">Já tenho conta</a></div></div><div class="envelope" aria-hidden="true"><div class="stamp"><svg viewBox="0 0 124 80" width="54" role="img" aria-label="Carimbo do EuTeAjudo"><circle cx="40" cy="40" r="35" fill="none" stroke="#24438F" stroke-width="4"/><circle cx="40" cy="40" r="27" fill="none" stroke="#24438F" stroke-width="1.6"/><path d="M30 46c3-9 7-14 10-14s5 4 2 8-9 6-9 10 5 4 8 1" fill="none" stroke="#24438F" stroke-width="3" stroke-linecap="round"/><path d="M64 28q7-6 14 0t14 0t14 0t14 0" fill="none" stroke="#24438F" stroke-width="3" stroke-linecap="round"/><path d="M64 40q7-6 14 0t14 0t14 0t14 0" fill="none" stroke="#24438F" stroke-width="3" stroke-linecap="round"/><path d="M64 52q7-6 14 0t14 0t14 0t14 0" fill="none" stroke="#24438F" stroke-width="3" stroke-linecap="round"/></svg></div><p class="addr">Para Amigo 48213</p><p class="letter">Oi, Amigo 48213. Obrigado por contar isso com tanto detalhe. Faz sentido que o sono tenha ido embora junto…</p><p class="sig">Amigo 70295</p></div></section>
+  <section class="how">
+    <h2>Como funciona</h2>
+    <ol class="steps">
+      <li><strong>Crie uma conta só com e-mail.</strong> Aqui você vira um Amigo com número, como Amigo 48213. Ninguém sabe quem você é.</li>
+      <li><strong>Escreva o que está acontecendo.</strong> Do seu jeito, no seu tempo. Não precisa organizar nada.</li>
+      <li><strong>Receba uma resposta escrita com cuidado.</strong> Avisamos por e-mail, sem mostrar o conteúdo. Volte quando quiser.</li>
+    </ol>
+  </section>
+  <section class="urgent">
+    <h2>Precisa de ajuda agora?</h2>
+    <p>O CVV atende de graça, a qualquer hora, pelo telefone 188 ou pelo chat em cvv.org.br.</p>
+  </section>
+</main>
+<footer class="sitefoot"><a href="#">Sobre</a><a href="#">Termos de uso</a><a href="#">Privacidade</a></footer>
+</div></div></div></div><figcaption class="cap">Início no desktop</figcaption></figure><figure><div class="desk-scroll"><div class="desk-wrap"><div class="desk"><div class="screen screen-convo">
+<header class="topbar"><a class="brand" href="#" aria-label="EuTeAjudo.org, início"><svg viewBox="0 0 250 44" role="img" aria-label="EuTeAjudo.org"><g transform="translate(0 2) scale(.5)"><svg x="0" y="0" width="124" height="80" viewBox="0 0 124 80" width="120" role="img" aria-label="Carimbo do EuTeAjudo"><circle cx="40" cy="40" r="35" fill="none" stroke="#24438F" stroke-width="4"/><circle cx="40" cy="40" r="27" fill="none" stroke="#24438F" stroke-width="1.6"/><path d="M30 46c3-9 7-14 10-14s5 4 2 8-9 6-9 10 5 4 8 1" fill="none" stroke="#24438F" stroke-width="3" stroke-linecap="round"/><path d="M64 28q7-6 14 0t14 0t14 0t14 0" fill="none" stroke="#24438F" stroke-width="3" stroke-linecap="round"/><path d="M64 40q7-6 14 0t14 0t14 0t14 0" fill="none" stroke="#24438F" stroke-width="3" stroke-linecap="round"/><path d="M64 52q7-6 14 0t14 0t14 0t14 0" fill="none" stroke="#24438F" stroke-width="3" stroke-linecap="round"/></svg></g><text x="70" y="30" font-family="Literata, Georgia, serif" font-size="25" font-weight="600" fill="#1B2A47">eu te ajudo</text></svg></a><div class="topbar-right"><nav class="topnav" aria-label="Principal"><a href="#" >Escrever</a><a href="#" aria-current=page>Meus pedidos</a><a href="#" >Conta</a></nav><span class="alias">Amigo 48213</span></div></header>
+<main class="content convo">
+  <a class="back" href="#">Meus pedidos</a>
+  <h1>Não consigo dormir desde que perdi o emprego</h1>
+  <p class="meta">Você escreveu em 18 de novembro</p>
+  <article class="msg msg-mine msg-request"><p>Faz três semanas que fui demitido. Durante o dia eu até disfarço: mando currículo, arrumo a casa, saio para caminhar. Mas quando deito a cabeça não para. Conta de luz, aluguel, o que vou dizer pros meus pais.</p><p>Acordo às 3h e não durmo mais. Me sinto um peso para todo mundo.</p></article>
+  <article class="msg msg-other">
+    <header class="msg-head"><span class="who">Amigo 70295</span><time>18 de nov., 21h40</time></header>
+    <p>Oi, Amigo 48213. Obrigado por contar isso com tanto detalhe.</p><p>Perder o emprego mexe com muita coisa ao mesmo tempo: o dinheiro, a rotina e também a forma como a gente se enxerga. Faz sentido que o sono tenha ido embora junto. Pelo que você escreveu, o que mais pesa à noite é a sensação de estar parado enquanto as contas continuam chegando.</p><p>Você está carregando isso sozinho, ou tem alguém em casa com quem consegue falar sobre o assunto? Se quiser, posso te ajudar a separar o que dá para resolver nesta semana do que pode esperar. Às vezes ver isso escrito já tira um pouco do peso da madrugada.</p>
+    <p class="signoff">Amigo 70295</p>
+    <div class="msg-actions"><button class="btn-quiet btn-thanks" type="button" aria-pressed="true">Isso me ajudou</button></div>
+  </article>
+  <article class="msg msg-mine">
+    <header class="msg-head"><span class="who">Você</span><time>19 de nov., 7h12</time></header>
+    <p>Moro com minha namorada, mas não quero preocupar ela mais do que já está.</p>
+  </article>
+  <p class="waiting">Mensagem enviada. A resposta pode levar algumas horas.</p>
+  <form class="reply-box" onsubmit="return false">
+    <label for="r-a-airmail">Responder</label>
+    <textarea id="r-a-airmail" rows="3" placeholder="Escreva quando quiser"></textarea>
+    <div class="row"><button class="btn" type="submit">Enviar resposta</button><button class="btn-quiet" type="button">Encerrar pedido</button></div>
+  </form>
+  <p class="disclosure">As respostas aqui são escritas por uma inteligência artificial criada para acolher. Se você corre risco agora, ligue 188.</p>
+</main>
+<nav class="tabbar" aria-label="Principal"><a href="#"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20h4L19 9l-4-4L4 16v4Z"/><path d="M13.5 6.5l4 4"/></svg><span>Escrever</span></a><a href="#" aria-current="page"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 6h12M8 12h12M8 18h12"/><circle cx="4" cy="6" r="1"/><circle cx="4" cy="12" r="1"/><circle cx="4" cy="18" r="1"/></svg><span>Meus pedidos</span></a><a href="#"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6"/></svg><span>Conta</span></a></nav>
+</div></div></div></div><figcaption class="cap">Conversa no desktop</figcaption></figure></div></section>
+
+</div></body></html>

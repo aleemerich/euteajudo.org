@@ -12,22 +12,22 @@ Espaço anônimo onde Amigos desabafam e recebem Respostas de um Agente de IA (n
 |---|---|
 | [GLOSSARY.md](GLOSSARY.md) | Termos do domínio (PT) e o identificador de código oficial de cada um (EN). Fonte de verdade de nomes. |
 | [docs/mvp.md](docs/mvp.md) | O que o MVP faz. |
-| [docs/plano.md](docs/plano.md) | Entregas, ordem e critério de pronto. |
+| [docs/plan.md](docs/plan.md) | Entregas, ordem e critério de pronto. |
 | [docs/adr/](docs/adr/) | Decisões estruturais e o motivo de cada uma. Não reverter uma decisão registrada sem um ADR novo. |
-| `design/` | Identidade visual, tokens e propostas de tema (entrega ID). |
+| [design/identity.md](design/identity.md) | Identidade "Luz acesa": conceito, logo, cores Noite e Dia, tipografia, tom de voz. Valores em `design/tokens.json`. |
 | [.claude/skills/SOURCES.md](.claude/skills/SOURCES.md) | Skills de terceiros instaladas, origem e uso. |
 
 ## Limites: o que é público e o que não é
 
 - Este repositório é **público** (GPL-2.0-or-later). O Agente fica no repositório **privado** `aleemerich/euteajudo.org-agente`.
 - Nunca colocar aqui: prompts, regras de conduta, definições comentadas de Categoria e Gravidade, habilidades do Agente, chaves de API, `.env`, dados reais de Amigos, os Apelidos sorteados para Agentes.
-- A plataforma não contém IA. Ela expõe uma API para Agentes ([ADR 0001](docs/adr/0001-agentes-externos-via-api.md)).
+- A plataforma não contém IA. Ela expõe uma API para Agentes ([ADR 0001](docs/adr/0001-external-agents-via-api.md)).
 
 ## Stack e ambiente
 
-- WordPress clássico: plugin próprio (`plugin/`) e tema de blocos próprio (`theme/`), estruturas nativas ([ADR 0003](docs/adr/0003-wordpress-classico-cpt-e-comentarios.md)).
+- WordPress clássico: plugin próprio (`plugin/`) e tema de blocos próprio (`theme/`), estruturas nativas ([ADR 0003](docs/adr/0003-classic-wordpress-native-structures.md)).
 - Produção: hospedagem compartilhada cPanel, Apache, **PHP 8.5**, **MySQL 5.7**, sem SSH, publicação por FTPS.
-- Local: DDEV com as mesmas versões ([ADR 0004](docs/adr/0004-ddev-e-paridade-com-a-hospedagem.md)). Não usar recursos do MySQL 8 em SQL próprio.
+- Local: DDEV com as mesmas versões ([ADR 0004](docs/adr/0004-ddev-and-hosting-parity.md)). Não usar recursos do MySQL 8 em SQL próprio.
 - O repositório fica num disco NTFS: `core.fileMode=false`, `safe.directory` e `.gitattributes` com `eol=lf` já estão configurados. Não versionar mudanças de permissão de arquivo.
 
 ## Comandos
@@ -46,13 +46,14 @@ Disponíveis a partir da E0 parte B:
 
 ## Convenções de código
 
-- **Código em inglês**: identificadores, comentários, mensagens de commit e textos-fonte da interface. Documentação do domínio em português ([ADR 0006](docs/adr/0006-codigo-em-ingles-documentacao-em-portugues.md)).
+- **Código em inglês**: identificadores, comentários, mensagens de commit e textos-fonte da interface. Documentação do domínio em português ([ADR 0006](docs/adr/0006-english-code-portuguese-docs.md)).
+- **Nomes de pastas e arquivos em inglês**, sem acentos nem espaços, inclusive na documentação (ex.: `docs/plan.md`, `design/identity.md`). Só o conteúdo da documentação é em português.
 - **Nomes vêm do glossário**: use a linha _Código_ do termo. Não invente sinônimos (ex.: Pedido é sempre `help_request`, nunca `ticket` ou `post`).
 - Prefixo `eta_` em tudo o que é registrado no WordPress (post types, status, taxonomias, papéis, metadados com `_eta_`, opções, hooks próprios). Namespace PHP `EuTeAjudo\`, autoload PSR-4. Text domain `euteajudo`, tradução `pt_BR`.
 - Post type com até 20 caracteres; `post_status` cabe em 20 caracteres.
 - Segurança do WordPress sempre: capabilities em toda ação, nonces em formulários, sanitização na entrada, escape na saída, `$wpdb->prepare` em SQL.
 - Anonimato: nunca exibir nome ou e-mail; `display_name`, `nickname` e autor de comentário são sempre o Apelido. Ver as proteções obrigatórias do ADR 0003.
-- Acesso a Pedido por código aleatório e 404 para quem não tem acesso ([ADR 0005](docs/adr/0005-areas-publica-e-privada.md)).
+- Acesso a Pedido por código aleatório e 404 para quem não tem acesso ([ADR 0005](docs/adr/0005-public-and-private-areas.md)).
 - Migrações por versão do plugin (a publicação por FTP não executa o hook de ativação).
 
 ## Metodologia
@@ -80,6 +81,7 @@ Instaladas em `.claude/skills/` (origem e versão em `SOURCES.md`). Use a skill 
 | `wp-rest-api` | API dos Agentes, permissões, schema |
 | `wp-phpstan` | Configuração e correções do PHPStan |
 | `wp-wpcli-and-ops` | WP-CLI, dados de teste, operação |
+| `euteajudo-identity` (do projeto) | **Sempre** que mexer em algo visível: cores, tipografia, `theme.json`, CSS, textos da interface, e-mails, redes sociais, vídeos |
 | `frontend-design` | Identidade visual e direção das telas |
 | `theme-factory` | Aplicar a identidade em materiais de divulgação |
 | `webapp-testing` | Verificar o site local com Playwright |
