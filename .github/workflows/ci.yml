@@ -42,8 +42,11 @@ jobs:
       - name: PHPCS and PHPStan
         run: ddev composer lint
 
-      - name: Unit and integration tests
-        run: ddev composer test
+      - name: Unit tests
+        run: ddev exec vendor/bin/phpunit -c phpunit-unit.xml.dist
+
+      - name: Integration tests (WordPress test suite)
+        run: ddev exec vendor/bin/phpunit -c phpunit-integration.xml.dist
 
       - name: End-to-end tests (phone and desktop)
         run: npx playwright test
