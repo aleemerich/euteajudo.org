@@ -21,6 +21,12 @@ final class Migrations {
 	 * @return array<string, callable(): void>
 	 */
 	public static function all(): array {
-		return array();
+		return array(
+			'0.2.0' => static function (): void {
+				Accounts\Roles::install();
+				update_option( 'show_avatars', 0 );
+				Accounts\Aliases::backfill();
+			},
+		);
 	}
 }

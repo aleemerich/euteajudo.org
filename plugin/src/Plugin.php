@@ -24,6 +24,20 @@ final class Plugin {
 	 */
 	public static function boot(): void {
 		add_action( 'init', array( self::class, 'load_textdomain' ) );
+
+		Accounts\Aliases::register();
+		Accounts\AdminAccess::register();
+		Privacy\Avatars::register();
+		Privacy\UserDirectory::register();
+
+		// Migrations may translate strings, which WordPress only allows from init on.
+		add_action( 'init', array( self::class, 'migrate' ), 5 );
+	}
+
+	/**
+	 * Runs pending migrations.
+	 */
+	public static function migrate(): void {
 		self::migrator()->run();
 	}
 

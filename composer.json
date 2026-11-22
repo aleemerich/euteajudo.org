@@ -13,6 +13,7 @@
 		"phpcompatibility/phpcompatibility-wp": "^3.0@alpha",
 		"phpstan/extension-installer": "^1.4",
 		"phpstan/phpstan": "^2.1",
+		"phpstan/phpstan-phpunit": "^2.1",
 		"phpunit/phpunit": "^9.6",
 		"squizlabs/php_codesniffer": "^3.13",
 		"szepeviktor/phpstan-wordpress": "^2.0",
@@ -39,10 +40,24 @@
 	"scripts": {
 		"test:unit": "phpunit -c phpunit-unit.xml.dist",
 		"test:integration": "phpunit -c phpunit-integration.xml.dist",
-		"test": ["@test:unit", "@test:integration"],
+		"test": [
+			"@test:unit",
+			"@test:integration"
+		],
 		"phpcs": "phpcs",
 		"phpcbf": "phpcbf",
 		"phpstan": "phpstan analyse --memory-limit=1G",
-		"lint": ["@phpcs", "@phpstan"]
+		"lint": [
+			"@phpcs",
+			"@phpstan"
+		],
+		"i18n": [
+			"php -d error_reporting=24575 /usr/local/bin/wp --path=wordpress i18n make-pot plugin plugin/languages/euteajudo.pot --domain=euteajudo --skip-js",
+			"php -d error_reporting=24575 /usr/local/bin/wp --path=wordpress i18n update-po plugin/languages/euteajudo.pot plugin/languages",
+			"php -d error_reporting=24575 /usr/local/bin/wp --path=wordpress i18n make-mo plugin/languages",
+			"php -d error_reporting=24575 /usr/local/bin/wp --path=wordpress i18n make-pot theme theme/languages/euteajudo.pot --domain=euteajudo --skip-js",
+			"php -d error_reporting=24575 /usr/local/bin/wp --path=wordpress i18n update-po theme/languages/euteajudo.pot theme/languages",
+			"php -d error_reporting=24575 /usr/local/bin/wp --path=wordpress i18n make-mo theme/languages"
+		]
 	}
 }

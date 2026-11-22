@@ -1,0 +1,238 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: EuTeAjudo 0.1.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/theme/theme\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2026-11-22T16:11:42-03:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Language: \n"
+"X-Generator: WP-CLI 2.12.0\n"
+"X-Domain: euteajudo\n"
+
+#. Theme Name of the theme
+#: style.css
+msgid "EuTeAjudo"
+msgstr ""
+
+#. Theme URI of the theme
+#: style.css
+msgid "https://euteajudo.org"
+msgstr ""
+
+#. Description of the theme
+#: style.css
+msgid "Block theme for EuTeAjudo.org, with the \"Luz acesa\" identity in Night and Day color modes. Styles come from theme.json, generated from design/tokens.json."
+msgstr "Tema de blocos do EuTeAjudo.org, com a identidade \"Luz acesa\" nas versões Noite e Dia. Os estilos vêm do theme.json, gerado a partir de design/tokens.json."
+
+#. Author of the theme
+#: style.css
+msgid "EuTeAjudo.org"
+msgstr ""
+
+#: patterns/brand.php
+msgctxt "Pattern title"
+msgid "Brand"
+msgstr "Marca"
+
+#: patterns/brand.php
+msgctxt "Pattern description"
+msgid "Logo linking to the home page. The SVG uses currentColor, so it follows the text color in Night and Day."
+msgstr "Logo com link para a página inicial. O SVG usa currentColor e segue a cor do texto nas versões Noite e Dia."
+
+#: patterns/brand.php:14
+msgid "EuTeAjudo.org, home"
+msgstr "EuTeAjudo.org, início"
+
+#: theme.json
+msgctxt "Color name"
+msgid "Background"
+msgstr "Fundo"
+
+#: theme.json
+msgctxt "Color name"
+msgid "Surface"
+msgstr "Superfície"
+
+#: theme.json
+msgctxt "Color name"
+msgid "Field"
+msgstr "Campo"
+
+#: theme.json
+msgctxt "Color name"
+msgid "Text"
+msgstr "Texto"
+
+#: theme.json
+msgctxt "Color name"
+msgid "Text strong"
+msgstr "Texto forte"
+
+#: theme.json
+msgctxt "Color name"
+msgid "Text muted"
+msgstr "Texto secundário"
+
+#: theme.json
+msgctxt "Color name"
+msgid "Line"
+msgstr "Linha"
+
+#: theme.json
+msgctxt "Color name"
+msgid "Line strong"
+msgstr "Linha forte"
+
+#: theme.json
+msgctxt "Color name"
+msgid "Accent"
+msgstr "Destaque"
+
+#: theme.json
+msgctxt "Color name"
+msgid "On accent"
+msgstr "Sobre o destaque"
+
+#: theme.json
+msgctxt "Color name"
+msgid "Focus"
+msgstr "Foco"
+
+#: theme.json
+msgctxt "Color name"
+msgid "Notice text"
+msgstr "Texto de aviso"
+
+#: theme.json
+msgctxt "Color name"
+msgid "Thanks background"
+msgstr "Fundo do agradecimento"
+
+#: theme.json
+msgctxt "Color name"
+msgid "Brand lamp"
+msgstr "Marca: luminária"
+
+#: theme.json
+msgctxt "Color name"
+msgid "Brand lamp light"
+msgstr "Marca: luminária clara"
+
+#: theme.json
+msgctxt "Color name"
+msgid "Brand lamp deep"
+msgstr "Marca: luminária escura"
+
+#: theme.json
+msgctxt "Color name"
+msgid "Brand night"
+msgstr "Marca: noite"
+
+#: theme.json
+msgctxt "Color name"
+msgid "Brand moon"
+msgstr "Marca: luar"
+
+#: theme.json
+msgctxt "Font family name"
+msgid "Atkinson Hyperlegible Next"
+msgstr ""
+
+#: theme.json
+msgctxt "Font size name"
+msgid "Small"
+msgstr "Pequeno"
+
+#: theme.json
+msgctxt "Font size name"
+msgid "Body"
+msgstr "Texto"
+
+#: theme.json
+msgctxt "Font size name"
+msgid "Heading 2"
+msgstr "Título 2"
+
+#: theme.json
+msgctxt "Font size name"
+msgid "Heading 1"
+msgstr "Título 1"
+
+#: theme.json
+msgctxt "Font size name"
+msgid "Display"
+msgstr "Destaque grande"
+
+#: theme.json
+msgctxt "Space size name"
+msgid "4px"
+msgstr ""
+
+#: theme.json
+msgctxt "Space size name"
+msgid "8px"
+msgstr ""
+
+#: theme.json
+msgctxt "Space size name"
+msgid "12px"
+msgstr ""
+
+#: theme.json
+msgctxt "Space size name"
+msgid "16px"
+msgstr ""
+
+#: theme.json
+msgctxt "Space size name"
+msgid "24px"
+msgstr ""
+
+#: theme.json
+msgctxt "Space size name"
+msgid "32px"
+msgstr ""
+
+#: theme.json
+msgctxt "Space size name"
+msgid "48px"
+msgstr ""
+
+#: theme.json
+msgctxt "Space size name"
+msgid "64px"
+msgstr ""
+
+#: theme.json
+msgctxt "Border radius size name"
+msgid "Field"
+msgstr "Campo"
+
+#: theme.json
+msgctxt "Border radius size name"
+msgid "Button"
+msgstr "Botão"
+
+#: theme.json
+msgctxt "Border radius size name"
+msgid "Card"
+msgstr "Cartão"
+
+#: theme.json
+msgctxt "Border radius size name"
+msgid "Panel"
+msgstr "Painel"
+
+#: theme.json
+msgctxt "Template part name"
+msgid "Header"
+msgstr "Cabeçalho"
+
+#: theme.json
+msgctxt "Template part name"
+msgid "Footer"
+msgstr "Rodapé"
