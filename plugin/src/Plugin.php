@@ -55,6 +55,7 @@ final class Plugin {
 		Admin\AgentStatus::register();
 		Operations\Mail::register();
 		Operations\Hardening::register();
+		Site\ContentPages::register();
 		Cli::register();
 
 		// Migrations may translate strings, which WordPress only allows from init on.

@@ -75,6 +75,9 @@ final class Migrations {
 				HelpRequests\Conversations::add_rule();
 				flush_rewrite_rules( false );
 			},
+			'0.12.0' => static function (): void {
+				Site\ContentPages::install();
+			},
 		);
 	}
 

@@ -34,11 +34,6 @@
 	padding-top: var(--wp--preset--spacing--30);
 	border-top: 1px solid var(--wp--preset--color--line);
 }
-.eta-button-inline {
-	display: inline-flex;
-	width: auto;
-	margin-top: 0;
-}
 .eta-requests {
 	list-style: none;
 	margin: var(--wp--preset--spacing--40) 0 0;

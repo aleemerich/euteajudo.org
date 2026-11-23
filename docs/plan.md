@@ -172,4 +172,12 @@ Objetivo: abrir ao público.
 - Validação do profissional concluída e ajustes aplicados.
 - Remoção do help.euteajudo.org antigo.
 
+Já feito na plataforma:
+
+- Início público (`theme/templates/front-page.html` com o bloco `euteajudo/home`): janela acesa com a única animação do site (respeita `prefers-reduced-motion`), como funciona, aviso de IA e CVV.
+- Páginas Sobre (`/sobre/`), Termos de uso (`/termos-de-uso/`) e Política de privacidade (`/privacidade/`), criadas pela migração 0.12.0 a partir de `plugin/content/pt_BR/` e editáveis no painel. A de privacidade vira a página de privacidade do WordPress. Os textos são rascunhos: campos marcados com `[preencher: ...]` (controlador, contato, provedores, prazos, foro) geram um aviso no painel até serem preenchidos.
+- Consentimento do cadastro com links para os Termos e a Política.
+- Rodapé com os três links e o 188.
+- Exclusão de conta encerra os Pedidos abertos.
+
 Pronto quando: os itens acima estão feitos e o mantenedor aprova a abertura.
