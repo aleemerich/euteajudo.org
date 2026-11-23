@@ -31,7 +31,7 @@ Roteiro para pôr o site no ar na hospedagem compartilhada (cPanel, PHP 8.5, MyS
    ```
 
    No Google Cloud, a URI de redirecionamento autorizada passa a ser `https://euteajudo.org/wp-json/euteajudo/v1/auth/google/callback` (a mesma rota do ambiente local, com o domínio de produção).
-5. **Domínio de e-mail**: configurar SPF, DKIM e DMARC conforme o serviço transacional, e conferir com um e-mail de teste.
+5. **E-mail**: o envio usa o e-mail da própria HostGator. No cPanel > Contas de e-mail, criar `nao-responda@euteajudo.org` e usar o servidor SMTP, a porta, o usuário e a senha que o cPanel mostra em "Connect Devices" nas constantes `EUTEAJUDO_SMTP_*`. Criar também `contato@euteajudo.org`, o endereço de contato publicado nas páginas. Em Email Deliverability, conferir SPF e DKIM e acrescentar DMARC; depois mandar um e-mail de teste.
 6. **`.htaccess`** na raiz do site, acima das regras do WordPress:
 
    ```apache
