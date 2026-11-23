@@ -65,7 +65,7 @@ msgstr "Sair"
 #: blocks/account-link/render.php:18
 #: blocks/email-confirmation/render.php:30
 #: blocks/sign-in/render.php:37
-#: blocks/sign-up/render.php:39
+#: blocks/sign-up/render.php:40
 #: src/Accounts/Pages.php:129
 msgid "Sign in"
 msgstr "Entrar"
@@ -118,7 +118,7 @@ msgid "New password"
 msgstr "Nova senha"
 
 #: blocks/password-reset/render.php:30
-#: blocks/sign-up/render.php:67
+#: blocks/sign-up/render.php:75
 msgid "At least 10 characters."
 msgstr "Pelo menos 10 caracteres."
 
@@ -135,7 +135,7 @@ msgid "Good to have you back."
 msgstr "Bom ter você de volta."
 
 #: blocks/sign-in/render.php:36
-#: blocks/sign-up/render.php:67
+#: blocks/sign-up/render.php:75
 msgid "Password"
 msgstr "Senha"
 
@@ -148,86 +148,89 @@ msgstr "Esqueci minha senha"
 msgid "Don't have an account yet? Create account"
 msgstr "Ainda não tem conta? Criar conta"
 
-#: blocks/sign-up/render.php:20
+#: blocks/sign-up/render.php:21
 msgid "This space is for people 18 and over"
 msgstr "Este espaço é para maiores de 18 anos"
 
-#: blocks/sign-up/render.php:21
+#: blocks/sign-up/render.php:22
 msgid "You deserve to be heard now. These services help people under 18, for free and with trained people:"
 msgstr "Você merece ser ouvido agora. Estes serviços atendem quem tem menos de 18 anos, de graça e com pessoas preparadas:"
 
-#: blocks/sign-up/render.php:24
+#: blocks/sign-up/render.php:25
 msgid "Pode Falar (UNICEF)"
 msgstr "Pode Falar (UNICEF)"
 
-#: blocks/sign-up/render.php:25
+#: blocks/sign-up/render.php:26
 msgid "For people aged 13 to 24, on WhatsApp."
 msgstr "Para quem tem de 13 a 24 anos, por WhatsApp."
 
-#: blocks/sign-up/render.php:26
+#: blocks/sign-up/render.php:27
 msgid "Open Pode Falar"
 msgstr "Abrir o Pode Falar"
 
-#: blocks/sign-up/render.php:29
+#: blocks/sign-up/render.php:30
 msgid "CVV"
 msgstr "CVV"
 
-#: blocks/sign-up/render.php:30
+#: blocks/sign-up/render.php:31
 msgid "Any age, any time, by phone at 188 or by chat."
 msgstr "Qualquer idade, a qualquer hora, pelo telefone 188 ou pelo chat."
 
-#: blocks/sign-up/render.php:31
+#: blocks/home/render.php:53
+#: blocks/sign-up/render.php:32
 msgid "Call 188"
 msgstr "Ligar para o 188"
 
-#: blocks/sign-up/render.php:36
+#: blocks/sign-up/render.php:37
 msgid "Almost there"
 msgstr "Quase lá"
 
-#: blocks/sign-up/render.php:37
+#: blocks/sign-up/render.php:38
 msgid "We sent a link to the email you typed. Open the email and tap the link to confirm it. The link is valid for 48 hours."
 msgstr "Mandamos um link para o e-mail que você informou. Abra o e-mail e toque no link para confirmar. O link vale por 48 horas."
 
-#: blocks/sign-up/render.php:38
+#: blocks/sign-up/render.php:39
 msgid "The subject is \"EuTeAjudo: confirm your email\". If it does not arrive in a few minutes, check the spam folder. To get a new link, try to sign in."
 msgstr "O assunto é \"EuTeAjudo: confirme seu e-mail\". Se não chegar em alguns minutos, olhe a pasta de spam. Para receber um link novo, tente entrar."
 
-#: blocks/sign-up/render.php:42
+#: blocks/sign-up/render.php:43
 msgid "Here you are just a Friend with a number, like Friend 48213. Nobody sees your email."
 msgstr "Aqui você é só um Amigo com número, como Amigo 48213. Ninguém vê seu e-mail."
 
-#: blocks/sign-up/render.php:46
+#: blocks/sign-up/render.php:47
 msgid "Before you start"
 msgstr "Antes de começar"
 
-#: blocks/sign-up/render.php:47
+#: blocks/sign-up/render.php:48
 msgid "I am 18 or older"
 msgstr "Tenho 18 anos ou mais"
 
-#: blocks/sign-up/render.php:48
+#: blocks/sign-up/render.php:49
 msgid "I am under 18"
 msgstr "Tenho menos de 18 anos"
 
-#: blocks/sign-up/render.php:50
+#: blocks/sign-up/render.php:51
 msgid "I agree that what I write is read by an artificial intelligence made to welcome people, including services outside Brazil."
 msgstr "Concordo que o que eu escrever seja lido por uma inteligência artificial criada para acolher, inclusive em serviços fora do Brasil."
 
 #. translators: %s: link to the privacy policy.
-#: blocks/sign-up/render.php:55
+#: blocks/sign-up/render.php:63
 #, php-format
 msgid "I have read the %s."
 msgstr "Li a %s."
 
-#: blocks/sign-up/render.php:56
+#: blocks/sign-up/render.php:58
+#: blocks/sign-up/render.php:64
+#: src/Site/ContentPages.php:102
 msgid "Privacy policy"
 msgstr "Política de privacidade"
 
-#: blocks/sign-up/render.php:68
+#: blocks/sign-up/render.php:76
 #: src/Accounts/Pages.php:130
 msgid "Create account"
 msgstr "Criar conta"
 
-#: blocks/sign-up/render.php:72
+#: blocks/sign-up/render.php:80
 msgid "Already have an account? Sign in"
 msgstr "Já tem conta? Entrar"
 
@@ -687,6 +690,7 @@ msgid "Write"
 msgstr "Escrever"
 
 #: blocks/app-nav/render.php:17
+#: blocks/home/render.php:23
 #: blocks/my-requests/render.php:66
 #: src/Accounts/Pages.php:136
 msgid "My requests"
@@ -1212,3 +1216,109 @@ msgstr "Nenhum Pedido na lixeira."
 #: src/Admin/HelpRequestsAdmin.php:361
 msgid "Help request saved."
 msgstr "Pedido salvo."
+
+#: blocks/home/render.php:18
+msgid "There is a light on here."
+msgstr "Tem uma luz acesa aqui."
+
+#: blocks/home/render.php:19
+msgid "Write at any time, your way. Nobody knows who you are, and your words will be read with care."
+msgstr "Pode escrever a qualquer hora, do seu jeito. Ninguém sabe quem você é, e o que você escrever será lido com atenção."
+
+#: blocks/home/render.php:22
+#: blocks/home/render.php:25
+msgid "Start writing"
+msgstr "Começar a escrever"
+
+#: blocks/home/render.php:26
+msgid "I already have an account"
+msgstr "Já tenho conta"
+
+#: blocks/home/render.php:38
+msgid "How it works"
+msgstr "Como funciona"
+
+#: blocks/home/render.php:40
+msgid "Create an account with just an email."
+msgstr "Crie uma conta só com e-mail."
+
+#: blocks/home/render.php:40
+msgid "Here you become a Friend with a number, like Friend 48213. Nobody knows who you are."
+msgstr "Aqui você vira um Amigo com número, como Amigo 48213. Ninguém sabe quem você é."
+
+#: blocks/home/render.php:41
+msgid "Write what is happening."
+msgstr "Escreva o que está acontecendo."
+
+#: blocks/home/render.php:41
+msgid "Your way, in your time. Nothing needs to be organised."
+msgstr "Do seu jeito, no seu tempo. Não precisa organizar nada."
+
+#: blocks/home/render.php:42
+msgid "Get a reply written with care."
+msgstr "Receba uma resposta escrita com cuidado."
+
+#: blocks/home/render.php:42
+msgid "Replies are written by an artificial intelligence made to welcome people. We let you know by email, without showing the content."
+msgstr "As respostas são escritas por uma inteligência artificial criada para acolher. Avisamos por e-mail, sem mostrar o conteúdo."
+
+#: blocks/home/render.php:46
+msgid "More about how it works"
+msgstr "Mais sobre como funciona"
+
+#: blocks/home/render.php:51
+msgid "Need help right now?"
+msgstr "Precisa de ajuda agora?"
+
+#: blocks/home/render.php:52
+msgid "CVV answers for free, at any time, by phone at 188 or by chat at cvv.org.br."
+msgstr "O CVV atende de graça, a qualquer hora, pelo telefone 188 ou pelo chat em cvv.org.br."
+
+#. translators: 1: link to the terms of use, 2: link to the privacy policy.
+#: blocks/sign-up/render.php:56
+#, php-format
+msgid "I accept the %1$s and the %2$s."
+msgstr "Aceito os %1$s e a %2$s."
+
+#: blocks/sign-up/render.php:57
+#: src/Site/ContentPages.php:101
+msgid "Terms of use"
+msgstr "Termos de uso"
+
+#: blocks/site-links/render.php:13
+msgid "About the site"
+msgstr "Sobre o site"
+
+#: blocks/site-links/render.php:21
+msgid "At risk right now? Call 188 (CVV), free, at any time."
+msgstr "Em risco agora? Ligue 188 (CVV), de graça, a qualquer hora."
+
+#: src/Site/ContentPages.php:100
+msgid "About"
+msgstr "Sobre"
+
+#. translators: %s: links to pages.
+#: src/Site/ContentPages.php:138
+#, php-format
+msgid "EuTeAjudo: fill in the fields marked \"[preencher: ...]\" before launch: %s."
+msgstr "EuTeAjudo: preencha os campos marcados com \"[preencher: ...]\" antes do lançamento: %s."
+
+#: blocks/home/block.json
+msgctxt "block title"
+msgid "Home"
+msgstr ""
+
+#: blocks/home/block.json
+msgctxt "block description"
+msgid "Public home: the lit window, how it works and help right now."
+msgstr ""
+
+#: blocks/site-links/block.json
+msgctxt "block title"
+msgid "Site links"
+msgstr ""
+
+#: blocks/site-links/block.json
+msgctxt "block description"
+msgid "About, Terms of use, Privacy policy and the crisis line."
+msgstr ""

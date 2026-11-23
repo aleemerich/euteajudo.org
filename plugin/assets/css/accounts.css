@@ -58,8 +58,15 @@
 	cursor: pointer;
 	text-decoration: none;
 }
+.eta-button-inline {
+	display: inline-flex;
+	width: auto;
+	margin-top: 0;
+	padding-inline: var(--wp--preset--spacing--50);
+}
 .eta-account .eta-button-quiet,
-.eta-account .eta-button-quiet.wp-element-button {
+.eta-account .eta-button-quiet.wp-element-button,
+.eta-home .eta-button-quiet.wp-element-button {
 	background: transparent;
 	color: var(--wp--preset--color--text);
 	border: 1px solid var(--wp--preset--color--line-strong);

@@ -10,6 +10,9 @@ declare(strict_types=1);
 namespace EuTeAjudo\Accounts;
 
 use EuTeAjudo\Accounts\Google\GoogleAuth;
+use EuTeAjudo\Agents\AgentWork;
+use EuTeAjudo\HelpRequests\HelpRequests;
+use EuTeAjudo\HelpRequests\HelpRequestType;
 
 /**
  * Deletes an account logically (MVP decision): the email is replaced by an invalid, unique address
@@ -48,6 +51,30 @@ final class AccountDeletion {
 		);
 		$user->set_role( '' );
 		\WP_Session_Tokens::get_instance( $user_id )->destroy_all();
+		self::close_requests( $user_id );
+	}
+
+	/**
+	 * Closes the person's open requests, so no one keeps replying to an account that is gone.
+	 *
+	 * @param int $user_id User ID.
+	 */
+	private static function close_requests( int $user_id ): void {
+		$open = get_posts(
+			array(
+				'post_type'   => HelpRequestType::POST_TYPE,
+				'post_status' => AgentWork::OPEN_STATUSES,
+				'author'      => $user_id,
+				'numberposts' => -1,
+				'fields'      => 'ids',
+			)
+		);
+		foreach ( $open as $request_id ) {
+			HelpRequests::set_status( (int) $request_id, HelpRequestType::CLOSED );
+			update_post_meta( (int) $request_id, HelpRequests::CLOSED_REASON_META, 'account_deleted' );
+			update_post_meta( (int) $request_id, HelpRequests::CLOSED_AT_META, time() );
+			update_post_meta( (int) $request_id, HelpRequests::CLOSED_BY_META, 'system' );
+		}
 	}
 
 	/**

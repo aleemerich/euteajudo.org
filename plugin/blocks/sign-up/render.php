@@ -14,6 +14,7 @@ defined( 'ABSPATH' ) || exit;
 wp_enqueue_script( 'euteajudo-accounts' );
 $euteajudo_step    = Messages::current_step();
 $euteajudo_privacy = get_privacy_policy_url();
+$euteajudo_terms   = \EuTeAjudo\Site\ContentPages::url( \EuTeAjudo\Site\ContentPages::TERMS );
 ?>
 <div <?php echo get_block_wrapper_attributes( array( 'class' => 'eta-account' ) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Core escapes. ?>>
 <?php if ( 'minor' === $euteajudo_step ) : ?>
@@ -49,7 +50,14 @@ $euteajudo_privacy = get_privacy_policy_url();
 			<label class="eta-choice"><input type="checkbox" name="consent" value="1"> <span>
 				<?php esc_html_e( 'I agree that what I write is read by an artificial intelligence made to welcome people, including services outside Brazil.', 'euteajudo' ); ?>
 				<?php
-				if ( '' !== $euteajudo_privacy ) {
+				if ( '' !== $euteajudo_privacy && '' !== $euteajudo_terms ) {
+					printf(
+						/* translators: 1: link to the terms of use, 2: link to the privacy policy. */
+						esc_html__( 'I accept the %1$s and the %2$s.', 'euteajudo' ),
+						'<a href="' . esc_url( $euteajudo_terms ) . '">' . esc_html__( 'Terms of use', 'euteajudo' ) . '</a>',
+						'<a href="' . esc_url( $euteajudo_privacy ) . '">' . esc_html__( 'Privacy policy', 'euteajudo' ) . '</a>'
+					);
+				} elseif ( '' !== $euteajudo_privacy ) {
 					printf(
 						/* translators: %s: link to the privacy policy. */
 						esc_html__( 'I have read the %s.', 'euteajudo' ),

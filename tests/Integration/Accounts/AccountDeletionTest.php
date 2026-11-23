@@ -18,6 +18,8 @@ use EuTeAjudo\Accounts\Forms\SignUp;
 use EuTeAjudo\Accounts\Google\GoogleAuth;
 use EuTeAjudo\Accounts\Pages;
 use EuTeAjudo\Accounts\Roles;
+use EuTeAjudo\HelpRequests\HelpRequests;
+use EuTeAjudo\HelpRequests\HelpRequestType;
 use EuTeAjudo\Tests\Integration\TestCase;
 
 /**
@@ -63,6 +65,18 @@ final class AccountDeletionTest extends TestCase {
 		$this->assertSame( array(), \WP_Session_Tokens::get_instance( $user->ID )->get_all() );
 		$this->assertSame( $alias, Aliases::number_of( $user->ID ) );
 		$this->assertTrue( AccountDeletion::is_deleted( $user->ID ) );
+	}
+
+	public function test_deletion_closes_open_requests(): void {
+		$user = $this->new_user( array( 'role' => Roles::FRIEND ) );
+		EmailConfirmation::mark_confirmed( $user->ID );
+		$request = HelpRequests::create( $user->ID, 'Título', 'Texto' );
+		$this->assertIsInt( $request );
+
+		AccountDeletion::delete( $user->ID );
+
+		$this->assertSame( HelpRequestType::CLOSED, get_post_status( $request ) );
+		$this->assertSame( 'account_deleted', get_post_meta( $request, HelpRequests::CLOSED_REASON_META, true ) );
 	}
 
 	public function test_deleted_account_cannot_sign_in_and_the_email_can_start_a_new_account(): void {
