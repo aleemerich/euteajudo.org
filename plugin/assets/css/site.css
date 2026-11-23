@@ -106,20 +106,20 @@
 	align-items: center;
 }
 
-/* Desktop layout options (under review). */
+/* Desktop: the facade gives way to a night street across the page, with one lit window. */
 .eta-street {
 	display: none;
 }
 @media (min-width: 782px) {
-	.eta-home-street .eta-hero {
+	.eta-home .eta-hero {
 		grid-template-columns: 1fr;
 		min-height: 0;
 		text-align: left;
 	}
-	.eta-home-street .eta-facade {
+	.eta-home .eta-facade {
 		display: none;
 	}
-	.eta-home-street .eta-display {
+	.eta-home .eta-display {
 		font-size: 4.2rem;
 		max-width: 14ch;
 	}
@@ -136,8 +136,9 @@
 		width: 100%;
 		height: 100%;
 	}
+	/* Mixed from the text and page colors, so the street reads in Night and in Day. */
 	.eta-building {
-		fill: var(--wp--preset--color--surface);
+		fill: color-mix(in srgb, var(--wp--preset--color--text) 12%, var(--wp--preset--color--background));
 		stroke: var(--wp--preset--color--line);
 	}
 	.eta-street-window {
@@ -147,9 +148,6 @@
 		fill: var(--wp--preset--color--brand-lamp);
 		filter: drop-shadow(0 0 16px color-mix(in srgb, var(--wp--preset--color--brand-lamp) 80%, transparent));
 		animation: eta-light-on 1.4s ease-out 0.5s both;
-	}
-	.eta-home-grid .eta-facade {
-		max-width: 460px;
 	}
 	.eta-home .eta-how {
 		max-width: none;

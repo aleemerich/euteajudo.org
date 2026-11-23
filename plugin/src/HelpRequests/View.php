@@ -63,7 +63,7 @@ final class View {
 	 * The AI disclosure required by ADR 0002.
 	 */
 	public static function disclosure(): string {
-		return '<p class="eta-disclosure">' . esc_html__( 'The replies here are written by an artificial intelligence made to welcome people. If you are at risk right now, call 188.', 'euteajudo' ) . '</p>';
+		return '<p class="eta-disclosure">' . esc_html__( 'The replies here are written by an artificial intelligence made to welcome people, with care and rules of respect. If things are very hard right now, call 188 (CVV), at any time.', 'euteajudo' ) . '</p>';
 	}
 
 	/**

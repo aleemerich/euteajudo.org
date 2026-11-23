@@ -272,3 +272,6 @@
 .eta-account .eta-alias {
 	text-decoration: none;
 }
+.eta-consent-note {
+	margin: var(--wp--preset--spacing--10) 0 0 2.4em;
+}

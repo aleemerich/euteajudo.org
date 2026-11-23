@@ -29,10 +29,12 @@ Paths are relative to the `platform/` repository root.
 
 ## Tone of voice (Portuguese copy)
 
+The full voice, with what to put first and the limits it must keep, is the `euteajudo-voice` skill; use it for any text. In short:
+
 Low voice at night: short sentences, nothing that rushes. Address the person as "você"; use the Alias when it fits ("Oi, Amigo 48213").
 
 - Buttons say what happens, and the same action keeps the same name across the flow: "Começar a escrever", "Enviar pedido", "Encerrar pedido".
-- Waiting: "Enviado. A resposta pode levar algumas horas; avisamos por e-mail."
+- Waiting: "Seu pedido chegou e vai ser lido com atenção. A resposta pode levar algumas horas; a gente avisa por e-mail."
 - Errors explain and guide, without apologizing: "O texto está vazio. Escreva algumas linhas para enviar."
 - Empty states invite: "Nada por aqui ainda. Quando quiser escrever, é só começar."
 - Never: promises ("vai ficar tudo bem"), motivational slogans, exclamation marks, emojis, technical terms, uppercase labels.

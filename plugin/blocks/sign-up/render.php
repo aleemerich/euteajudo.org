@@ -19,8 +19,8 @@ $euteajudo_terms   = \EuTeAjudo\Site\ContentPages::url( \EuTeAjudo\Site\ContentP
 ?>
 <div <?php echo get_block_wrapper_attributes( array( 'class' => 'eta-account' ) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Core escapes. ?>>
 <?php if ( 'minor' === $euteajudo_step ) : ?>
-	<h2><?php esc_html_e( 'This space is for people 18 and over', 'euteajudo' ); ?></h2>
-	<p><?php esc_html_e( 'You deserve to be heard now. These services help people under 18, for free and with trained people:', 'euteajudo' ); ?></p>
+	<h2><?php esc_html_e( 'You deserve someone to talk to right now', 'euteajudo' ); ?></h2>
+	<p><?php esc_html_e( 'This space is for people 18 and over. These services talk with people under 18, for free and with trained people:', 'euteajudo' ); ?></p>
 	<div class="eta-services">
 		<div class="eta-service">
 			<strong><?php esc_html_e( 'Pode Falar (UNICEF)', 'euteajudo' ); ?></strong>
@@ -41,15 +41,15 @@ $euteajudo_terms   = \EuTeAjudo\Site\ContentPages::url( \EuTeAjudo\Site\ContentP
 	<?php echo View::links( array( Pages::url( Pages::SIGN_IN ) => __( 'Sign in', 'euteajudo' ) ) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Escaped in View. ?>
 <?php else : ?>
 	<?php echo View::error_notice(); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Escaped in View. ?>
-	<p class="eta-lead"><?php esc_html_e( 'Here you are just a Friend with a number, like Friend 48213. Nobody sees your email.', 'euteajudo' ); ?></p>
+	<p class="eta-lead"><?php esc_html_e( 'You do not need to give your name. Here we call you Friend, with a number that is only yours, like Friend 48213. Nobody sees your email.', 'euteajudo' ); ?></p>
 	<?php echo View::open( 'sign_up' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Escaped in View. ?>
 		<?php echo View::default_submit(); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Escaped in View. ?>
 		<fieldset class="eta-before">
 			<legend><?php esc_html_e( 'Before you start', 'euteajudo' ); ?></legend>
 			<label class="eta-choice"><input type="radio" name="age" value="adult"<?php checked( FormState::value( 'age' ), 'adult' ); ?><?php echo View::invalid_attr( 'age' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Static attribute. ?>> <?php esc_html_e( 'I am 18 or older', 'euteajudo' ); ?></label>
 			<label class="eta-choice"><input type="radio" name="age" value="minor"> <?php esc_html_e( 'I am under 18', 'euteajudo' ); ?></label>
-			<label class="eta-choice"><input type="checkbox" name="consent" value="1"<?php checked( FormState::value( 'consent' ), '1' ); ?><?php echo View::invalid_attr( 'consent' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Static attribute. ?>> <span>
-				<?php esc_html_e( 'I agree that what I write is read by an artificial intelligence made to welcome people, including services outside Brazil.', 'euteajudo' ); ?>
+			<label class="eta-choice"><input type="checkbox" name="consent" value="1" aria-describedby="eta-consent-note"<?php checked( FormState::value( 'consent' ), '1' ); ?><?php echo View::invalid_attr( 'consent' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Static attribute. ?>> <span>
+				<?php esc_html_e( 'I agree that an artificial intelligence made to welcome people reads what I write so it can reply to me, including through services outside Brazil.', 'euteajudo' ); ?>
 				<?php
 				if ( '' !== $euteajudo_privacy && '' !== $euteajudo_terms ) {
 					printf(
@@ -67,6 +67,7 @@ $euteajudo_terms   = \EuTeAjudo\Site\ContentPages::url( \EuTeAjudo\Site\ContentP
 				}
 				?>
 			</span></label>
+			<p class="eta-note eta-consent-note" id="eta-consent-note"><?php esc_html_e( 'Your email is never sent along, and phone numbers and documents are taken out of the text first.', 'euteajudo' ); ?></p>
 		</fieldset>
 		<?php
 		// phpcs:disable WordPress.Security.EscapeOutput.OutputNotEscaped -- Escaped in View.

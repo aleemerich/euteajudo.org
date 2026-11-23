@@ -18,5 +18,5 @@ defined( 'ABSPATH' ) || exit;
 			<?php endif; ?>
 		<?php endforeach; ?>
 	</nav>
-	<p><?php esc_html_e( 'At risk right now? Call 188 (CVV), free, at any time.', 'euteajudo' ); ?></p>
+	<p><?php esc_html_e( 'If things are hard right now, call 188 (CVV). It is free, at any time.', 'euteajudo' ); ?></p>
 </div>

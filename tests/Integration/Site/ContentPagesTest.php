@@ -64,7 +64,7 @@ final class ContentPagesTest extends TestCase {
 		$ids     = get_option( ContentPages::OPTION );
 		$privacy = get_post( (int) $ids[ ContentPages::PRIVACY ] )->post_content ?? '';
 
-		$this->assertStringContainsString( '[dado pessoal removido]', $privacy, 'Matches the mask placeholder.' );
+		$this->assertStringContainsString( '[removido para proteger você]', $privacy, 'Matches the mask placeholder.' );
 		$this->assertStringContainsString( '30 dias', get_post( (int) $ids[ ContentPages::TERMS ] )->post_content ?? '' );
 	}
 }

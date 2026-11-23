@@ -70,7 +70,7 @@ O **código** de um Pedido é a última parte do endereço da conversa: em `/meu
 
 - [ ] **Escrever**: com um Amigo, vá em Escrever. Use o título "Teste de pedido" e um texto com um telefone, como "me liga 11912345678", e um e-mail.
   - Esperado: a conversa abre com "Pedido enviado".
-  - O telefone e o e-mail viram "[dado pessoal removido]".
+  - O telefone e o e-mail viram "[removido para proteger você]".
   - O aviso sobre a IA aparece embaixo.
 - [ ] **Meus pedidos**: o Pedido aparece como "Aguardando resposta".
 - [ ] **Acesso de outra pessoa**: copie o endereço da conversa. Numa terceira janela anônima, entre com outro Amigo (use um do seed) e cole o endereço.

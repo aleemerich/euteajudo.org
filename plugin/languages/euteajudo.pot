@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-11-23T00:31:35-03:00\n"
+"POT-Creation-Date: 2026-11-23T00:48:20-03:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: euteajudo\n"
@@ -35,7 +35,7 @@ msgid "EuTeAjudo.org"
 msgstr ""
 
 #: blocks/account-link/render.php:16
-#: blocks/account/render.php:54
+#: blocks/account/render.php:43
 msgid "Sign out"
 msgstr ""
 
@@ -86,33 +86,33 @@ msgstr ""
 msgid "Appearance saved."
 msgstr ""
 
-#: blocks/account/render.php:43
-msgid "Delete account"
-msgstr ""
-
-#: blocks/account/render.php:45
-#: src/Accounts/Forms/Messages.php:41
-msgid "Accounts that manage the site cannot be deleted here."
-msgstr ""
-
-#: blocks/account/render.php:47
-msgid "Your email is removed from the site and nobody can sign in to this account anymore. What you wrote stays under your alias, without your email. You can create a new account later; it gets a new alias."
-msgstr ""
-
-#: blocks/account/render.php:49
-msgid "I understand and want to delete my account"
-msgstr ""
-
-#: blocks/account/render.php:50
-msgid "Delete my account"
-msgstr ""
-
-#: blocks/account/render.php:55
+#: blocks/account/render.php:44
 msgid "If other people use this device, sign out when you finish."
 msgstr ""
 
-#: blocks/account/render.php:55
+#: blocks/account/render.php:44
 msgid "Sign out of this device"
+msgstr ""
+
+#: blocks/account/render.php:46
+msgid "Delete account"
+msgstr ""
+
+#: blocks/account/render.php:48
+#: src/Accounts/Forms/Messages.php:42
+msgid "Accounts that manage the site cannot be deleted here."
+msgstr ""
+
+#: blocks/account/render.php:50
+msgid "Your email is removed from the site and nobody can sign in to this account anymore. What you wrote stays under your alias, without your email. You can create a new account later; it gets a new alias."
+msgstr ""
+
+#: blocks/account/render.php:52
+msgid "I understand and want to delete my account"
+msgstr ""
+
+#: blocks/account/render.php:53
+msgid "Delete my account"
 msgstr ""
 
 #: blocks/app-nav/render.php:16
@@ -121,7 +121,7 @@ msgid "Write"
 msgstr ""
 
 #: blocks/app-nav/render.php:17
-#: blocks/home/render.php:23
+#: blocks/home/render.php:25
 #: blocks/my-requests/render.php:66
 #: src/Accounts/Pages.php:136
 msgid "My requests"
@@ -149,64 +149,64 @@ msgstr ""
 msgid "Open the link we sent to your email to confirm it."
 msgstr ""
 
-#: blocks/home/render.php:18
+#: blocks/home/render.php:20
 msgid "There is a light on here."
 msgstr ""
 
-#: blocks/home/render.php:19
-msgid "Write at any time, your way. Nobody knows who you are, and your words will be read with care."
+#: blocks/home/render.php:21
+msgid "Write at any time, your way, without saying who you are. What you write is read with care."
 msgstr ""
 
-#: blocks/home/render.php:22
-#: blocks/home/render.php:25
+#: blocks/home/render.php:24
+#: blocks/home/render.php:27
 msgid "Start writing"
 msgstr ""
 
-#: blocks/home/render.php:26
+#: blocks/home/render.php:28
 msgid "I already have an account"
 msgstr ""
 
-#: blocks/home/render.php:38
+#: blocks/home/render.php:46
 msgid "How it works"
 msgstr ""
 
-#: blocks/home/render.php:40
+#: blocks/home/render.php:48
 msgid "Create an account with just an email."
 msgstr ""
 
-#: blocks/home/render.php:40
-msgid "Here you become a Friend with a number, like Friend 48213. Nobody knows who you are."
+#: blocks/home/render.php:48
+msgid "You do not need to give your name. Here we call you Friend, with a number that is only yours, like Friend 48213."
 msgstr ""
 
-#: blocks/home/render.php:41
-msgid "Write what is happening."
+#: blocks/home/render.php:49
+msgid "Tell what is happening."
 msgstr ""
 
-#: blocks/home/render.php:41
+#: blocks/home/render.php:49
 msgid "Your way, in your time. Nothing needs to be organised."
 msgstr ""
 
-#: blocks/home/render.php:42
+#: blocks/home/render.php:50
 msgid "Get a reply written with care."
 msgstr ""
 
-#: blocks/home/render.php:42
-msgid "Replies are written by an artificial intelligence made to welcome people. We let you know by email, without showing the content."
+#: blocks/home/render.php:50
+msgid "Replies are written by an artificial intelligence made to welcome people: it reads with care, does not judge and follows rules of respect. When a reply arrives, we let you know by email, without showing what you wrote."
 msgstr ""
 
-#: blocks/home/render.php:46
+#: blocks/home/render.php:54
 msgid "More about how it works"
 msgstr ""
 
-#: blocks/home/render.php:51
-msgid "Need help right now?"
+#: blocks/home/render.php:59
+msgid "If things are very hard right now"
 msgstr ""
 
-#: blocks/home/render.php:52
-msgid "CVV answers for free, at any time, by phone at 188 or by chat at cvv.org.br."
+#: blocks/home/render.php:60
+msgid "CVV talks with you for free, at any time, by phone at 188 or by chat at cvv.org.br."
 msgstr ""
 
-#: blocks/home/render.php:53
+#: blocks/home/render.php:61
 #: blocks/sign-up/render.php:33
 msgid "Call 188"
 msgstr ""
@@ -231,7 +231,7 @@ msgid "Written on %s"
 msgstr ""
 
 #: blocks/my-requests/render.php:78
-msgid "Request sent. The reply may take a few hours; we let you know by email."
+msgid "Your request arrived and will be read with care. The reply may take a few hours; we let you know by email."
 msgstr ""
 
 #: blocks/my-requests/render.php:87
@@ -251,7 +251,7 @@ msgid "Reopen request"
 msgstr ""
 
 #: blocks/my-requests/render.php:115
-msgid "Message sent. The reply may take a few hours."
+msgid "Your message arrived. The reply may take a few hours; we let you know by email."
 msgstr ""
 
 #: blocks/my-requests/render.php:120
@@ -274,7 +274,7 @@ msgid "Close request"
 msgstr ""
 
 #: blocks/my-requests/render.php:130
-msgid "Why are you closing? (optional)"
+msgid "If you want, tell us why you are closing"
 msgstr ""
 
 #: blocks/my-requests/render.php:131
@@ -282,7 +282,7 @@ msgid "I feel better"
 msgstr ""
 
 #: blocks/my-requests/render.php:132
-msgid "I do not want to receive more messages"
+msgid "I would rather stop here"
 msgstr ""
 
 #: blocks/my-requests/render.php:133
@@ -324,7 +324,7 @@ msgstr ""
 
 #. translators: %d: minimum number of characters.
 #: blocks/password-reset/render.php:30
-#: blocks/sign-up/render.php:76
+#: blocks/sign-up/render.php:77
 #, php-format
 msgid "At least %d characters."
 msgstr ""
@@ -339,7 +339,7 @@ msgid "Your password was changed. Sign in with the new password."
 msgstr ""
 
 #: blocks/sign-in/render.php:23
-msgid "Your account was deleted."
+msgid "Your account was deleted, as you asked. If you want to come back one day, just create a new account."
 msgstr ""
 
 #: blocks/sign-in/render.php:27
@@ -347,7 +347,7 @@ msgid "Good to have you back."
 msgstr ""
 
 #: blocks/sign-in/render.php:36
-#: blocks/sign-up/render.php:76
+#: blocks/sign-up/render.php:77
 msgid "Password"
 msgstr ""
 
@@ -361,11 +361,11 @@ msgid "Don't have an account yet? Create account"
 msgstr ""
 
 #: blocks/sign-up/render.php:22
-msgid "This space is for people 18 and over"
+msgid "You deserve someone to talk to right now"
 msgstr ""
 
 #: blocks/sign-up/render.php:23
-msgid "You deserve to be heard now. These services help people under 18, for free and with trained people:"
+msgid "This space is for people 18 and over. These services talk with people under 18, for free and with trained people:"
 msgstr ""
 
 #: blocks/sign-up/render.php:26
@@ -401,7 +401,7 @@ msgid "The subject is \"EuTeAjudo: confirm your email\". If it does not arrive i
 msgstr ""
 
 #: blocks/sign-up/render.php:44
-msgid "Here you are just a Friend with a number, like Friend 48213. Nobody sees your email."
+msgid "You do not need to give your name. Here we call you Friend, with a number that is only yours, like Friend 48213. Nobody sees your email."
 msgstr ""
 
 #: blocks/sign-up/render.php:48
@@ -417,7 +417,7 @@ msgid "I am under 18"
 msgstr ""
 
 #: blocks/sign-up/render.php:52
-msgid "I agree that what I write is read by an artificial intelligence made to welcome people, including services outside Brazil."
+msgid "I agree that an artificial intelligence made to welcome people reads what I write so it can reply to me, including through services outside Brazil."
 msgstr ""
 
 #. translators: 1: link to the terms of use, 2: link to the privacy policy.
@@ -443,13 +443,17 @@ msgstr ""
 msgid "I have read the %s."
 msgstr ""
 
+#: blocks/sign-up/render.php:70
+msgid "Your email is never sent along, and phone numbers and documents are taken out of the text first."
+msgstr ""
+
 #. translators: %d: minimum number of characters.
-#: blocks/sign-up/render.php:77
+#: blocks/sign-up/render.php:78
 #: src/Accounts/Pages.php:130
 msgid "Create account"
 msgstr ""
 
-#: blocks/sign-up/render.php:81
+#: blocks/sign-up/render.php:82
 msgid "Already have an account? Sign in"
 msgstr ""
 
@@ -458,7 +462,7 @@ msgid "About the site"
 msgstr ""
 
 #: blocks/site-links/render.php:21
-msgid "At risk right now? Call 188 (CVV), free, at any time."
+msgid "If things are hard right now, call 188 (CVV). It is free, at any time."
 msgstr ""
 
 #: blocks/write/render.php:25
@@ -477,15 +481,27 @@ msgstr ""
 msgid "What is happening?"
 msgstr ""
 
-#: blocks/write/render.php:33
-msgid "If it helps, think about how long this has been going on, what you have already tried and what you feel you need now. Write your way; nothing needs to be organised."
-msgstr ""
-
-#: blocks/write/render.php:35
-msgid "Phone numbers, emails and documents are removed before saving. The reply may take a few hours; we let you know by email."
+#: blocks/write/render.php:34
+msgid "Write your way; nothing needs to be organised. If you do not know where to start, these questions may help:"
 msgstr ""
 
 #: blocks/write/render.php:36
+msgid "How long has this been going on?"
+msgstr ""
+
+#: blocks/write/render.php:37
+msgid "What have you already tried?"
+msgstr ""
+
+#: blocks/write/render.php:38
+msgid "What do you feel you need now?"
+msgstr ""
+
+#: blocks/write/render.php:42
+msgid "To protect you, avoid writing names and addresses. We take phone numbers, emails and documents out of the text before saving. The reply may take a few hours, and we let you know by email."
+msgstr ""
+
+#: blocks/write/render.php:43
 msgid "Send request"
 msgstr ""
 
@@ -546,72 +562,74 @@ msgstr ""
 msgid "Type a valid email address."
 msgstr ""
 
-#: src/Accounts/Forms/Messages.php:30
-msgid "Use at least 6 characters in the password."
-msgstr ""
-
+#. translators: %d: minimum number of characters.
 #: src/Accounts/Forms/Messages.php:31
-msgid "This Google account has no account here yet. Create your account to continue."
+#, php-format
+msgid "The password needs at least %d characters."
 msgstr ""
 
 #: src/Accounts/Forms/Messages.php:32
-msgid "Sign in with Google is not available right now. Use your email and password."
+msgid "This Google account has no account here yet. Create your account to continue."
 msgstr ""
 
 #: src/Accounts/Forms/Messages.php:33
-msgid "Sign in with Google was cancelled."
+msgid "Sign in with Google is not available right now. Use your email and password."
 msgstr ""
 
 #: src/Accounts/Forms/Messages.php:34
-msgid "This Google account does not have a verified email. Use another account, or your email and password."
+msgid "Sign in with Google was cancelled."
 msgstr ""
 
 #: src/Accounts/Forms/Messages.php:35
-msgid "Sign in with Google did not finish. Try again."
+msgid "This Google account does not have a verified email. Use another account, or your email and password."
 msgstr ""
 
 #: src/Accounts/Forms/Messages.php:36
-msgid "This page stayed open for too long. Try again."
+msgid "Sign in with Google did not finish. Try again."
 msgstr ""
 
 #: src/Accounts/Forms/Messages.php:37
-msgid "This link is invalid or has expired. Ask for a new one below."
+msgid "This page stayed open for too long. Try again."
 msgstr ""
 
 #: src/Accounts/Forms/Messages.php:38
-msgid "This confirmation link is invalid or has expired. Sign in to get a new one."
+msgid "This link is invalid or has expired. Ask for a new one below."
 msgstr ""
 
 #: src/Accounts/Forms/Messages.php:39
-msgid "Something went wrong. Try again in a few minutes."
+msgid "This confirmation link is invalid or has expired. Sign in to get a new one."
 msgstr ""
 
 #: src/Accounts/Forms/Messages.php:40
+msgid "Something did not work on our side. Try again in a few minutes."
+msgstr ""
+
+#: src/Accounts/Forms/Messages.php:41
 msgid "Check the box to confirm that you want to delete your account."
 msgstr ""
 
-#: src/Accounts/Forms/Messages.php:42
+#: src/Accounts/Forms/Messages.php:43
 msgid "Give your request a title, so you can find it later."
 msgstr ""
 
-#: src/Accounts/Forms/Messages.php:43
+#: src/Accounts/Forms/Messages.php:44
 msgid "The text is empty. Write a few lines to send your request."
 msgstr ""
 
-#: src/Accounts/Forms/Messages.php:44
+#: src/Accounts/Forms/Messages.php:45
 msgid "The reply is empty. Write something to send it."
 msgstr ""
 
-#: src/Accounts/Forms/Messages.php:45
+#: src/Accounts/Forms/Messages.php:46
 msgid "This request is closed. Reopen it to keep talking."
 msgstr ""
 
-#: src/Accounts/Forms/Messages.php:46
-msgid "You cannot do this here."
+#: src/Accounts/Forms/Messages.php:47
+msgid "This cannot be done here. Your requests are in My requests."
 msgstr ""
 
-#: src/Accounts/Forms/Messages.php:47
-msgid "We could not find this request."
+#: src/Accounts/Forms/Messages.php:48
+msgid "We could not find this request. Your requests are in My requests."
 msgstr ""
 
 #: src/Accounts/Forms/Notices.php:27
@@ -869,7 +887,7 @@ msgid ""
 msgstr ""
 
 #: src/HelpRequests/HelpRequests.php:191
-msgid "[personal data removed]"
+msgid "[removed to protect you]"
 msgstr ""
 
 #: src/HelpRequests/HelpRequestType.php:62
@@ -1104,7 +1122,7 @@ msgid "M j, g:i a"
 msgstr ""
 
 #: src/HelpRequests/View.php:66
-msgid "The replies here are written by an artificial intelligence made to welcome people. If you are at risk right now, call 188."
+msgid "The replies here are written by an artificial intelligence made to welcome people, with care and rules of respect. If things are very hard right now, call 188 (CVV), at any time."
 msgstr ""
 
 #: src/Privacy/UserDirectory.php:43
