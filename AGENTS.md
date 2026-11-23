@@ -13,6 +13,7 @@ Espaço anônimo onde Amigos desabafam e recebem Respostas de um Agente de IA (n
 | [GLOSSARY.md](GLOSSARY.md) | Termos do domínio (PT) e o identificador de código oficial de cada um (EN). Fonte de verdade de nomes. |
 | [docs/mvp.md](docs/mvp.md) | O que o MVP faz. |
 | [docs/plan.md](docs/plan.md) | Entregas, ordem e critério de pronto. |
+| [docs/manual-tests.md](docs/manual-tests.md) | Roteiro de testes manuais de tudo o que está implementado. |
 | [docs/deploy.md](docs/deploy.md) | Publicação na hospedagem, `wp-config.php`, cron, FTP e operação. |
 | [docs/agent-api.md](docs/agent-api.md) | Contrato da API dos Agentes. |
 | [docs/adr/](docs/adr/) | Decisões estruturais e o motivo de cada uma. Não reverter uma decisão registrada sem um ADR novo. |
@@ -58,6 +59,8 @@ ddev composer install                 # ferramentas de PHP (dentro do DDEV, PHP 
 | `ddev wp ...` | WP-CLI no site local |
 | `ddev wp euteajudo seed [--friends=3]` / `--clean` | Cria Amigos e Pedidos fictícios para testar à mão (senha `seed password 123`); `--clean` remove só o que o seed criou |
 | `ddev wp euteajudo reply <código> "texto"` | Responde a um Pedido como o primeiro Administrador |
+| `ddev wp euteajudo age <código> --days=31` | Joga um Pedido para o passado, para testar os agendamentos (`ddev wp cron event run euteajudo_close_inactive`) |
+| `npm run texts:review` | Gera `docs/texts-review.md`, a lista de textos das telas para a revisão R1 |
 | `ddev wp euteajudo agent create` / `agent list` | Cria a conta de um Agente e mostra a Application Password uma vez; lista Agentes e a última consulta. Contrato da API em `docs/agent-api.md` |
 | `ddev export-db --file=backups/db-$(date +%F).sql.gz` | Cópia do banco local (pasta ignorada pelo git) |
 

@@ -12,7 +12,8 @@
 		"check:theme": "node scripts/build-theme.mjs --check",
 		"lint": "wp-scripts lint-js scripts tests/e2e playwright.config.js",
 		"format": "wp-scripts format scripts tests/e2e playwright.config.js",
-		"test:e2e": "playwright test"
+		"test:e2e": "playwright test",
+		"texts:review": "node scripts/texts-review.mjs"
 	},
 	"devDependencies": {
 		"@axe-core/playwright": "^4.14.0",

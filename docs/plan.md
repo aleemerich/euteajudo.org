@@ -155,7 +155,7 @@ Pronto quando: um Pedido criado no site publicado recebe Resposta e o e-mail che
 Objetivo: o mantenedor revisa e ajusta todos os textos que as pessoas leem.
 
 - Fonte única dos textos: os arquivos de tradução `plugin/languages/euteajudo-pt_BR.po` e `theme/languages/euteajudo-theme-pt_BR.po` (os textos-fonte do código são em inglês; o que aparece no site é o `msgstr`), mais os e-mails e as páginas criadas pelas migrações.
-- Gerar uma lista navegável de todos os textos, agrupados por tela, para a revisão.
+- Gerar uma lista navegável de todos os textos, agrupados por tela, para a revisão: `npm run texts:review` gera [texts-review.md](texts-review.md).
 - Aplicar os ajustes nos `.po`, compilar (`ddev composer i18n`) e conferir as telas.
 - Pode acontecer a qualquer momento depois da E2; obrigatória antes da E8.
 

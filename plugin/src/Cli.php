@@ -134,6 +134,70 @@ final class Cli {
 	}
 
 	/**
+	 * Moves a request and its replies into the past, to try the scheduled jobs by hand.
+	 *
+	 * ## OPTIONS
+	 *
+	 * <code>
+	 * : Request code (the last part of its address).
+	 *
+	 * [--days=<days>]
+	 * : How many days back.
+	 * ---
+	 * default: 0
+	 * ---
+	 *
+	 * [--hours=<hours>]
+	 * : How many hours back, added to the days.
+	 * ---
+	 * default: 0
+	 * ---
+	 *
+	 * ## EXAMPLES
+	 *
+	 *     wp euteajudo age abc123def456 --days=31
+	 *     wp cron event run euteajudo_close_inactive
+	 *
+	 * @param string[]              $args       Positional arguments.
+	 * @param array<string, string> $assoc_args Options.
+	 */
+	public function age( array $args, array $assoc_args ): void {
+		$request = HelpRequests::find_by_code( $args[0] ?? '' );
+		if ( null === $request ) {
+			\WP_CLI::error( 'Request not found.' );
+			return;
+		}
+		$seconds = (int) ( $assoc_args['days'] ?? 0 ) * DAY_IN_SECONDS + (int) ( $assoc_args['hours'] ?? 0 ) * HOUR_IN_SECONDS;
+		$gmt     = gmdate( 'Y-m-d H:i:s', time() - $seconds );
+		$local   = get_date_from_gmt( $gmt );
+		global $wpdb;
+		// phpcs:disable WordPress.DB.DirectDatabaseQuery -- Development command; caches are cleared below.
+		$wpdb->update(
+			$wpdb->posts,
+			array(
+				'post_date_gmt' => $gmt,
+				'post_date'     => $local,
+			),
+			array( 'ID' => $request->ID )
+		);
+		$wpdb->update(
+			$wpdb->comments,
+			array(
+				'comment_date_gmt' => $gmt,
+				'comment_date'     => $local,
+			),
+			array( 'comment_post_ID' => $request->ID )
+		);
+		$replies = $wpdb->get_col( $wpdb->prepare( "SELECT comment_ID FROM {$wpdb->comments} WHERE comment_post_ID = %d", $request->ID ) );
+		// phpcs:enable
+		clean_post_cache( $request->ID );
+		clean_comment_cache( array_map( 'intval', $replies ) );
+		update_post_meta( $request->ID, HelpRequests::AUTHOR_ACTIVE_META, time() - $seconds );
+		delete_post_meta( $request->ID, \EuTeAjudo\HelpRequests\Schedules::LATE_ALERTED_META );
+		\WP_CLI::success( sprintf( 'Request %s now dates from %s UTC.', $request->post_name, $gmt ) );
+	}
+
+	/**
 	 * Removes seeded data.
 	 */
 	private function clean(): void {
