@@ -43,12 +43,12 @@ msgstr "Amigo %s"
 msgid "Sorry, you are not allowed to list users."
 msgstr "Você não tem permissão para listar usuários."
 
-#: src/Accounts/Aliases.php:219
+#: src/Accounts/Aliases.php:226
 msgid "EuTeAjudo: alias range widened"
 msgstr "EuTeAjudo: faixa de Apelidos ampliada"
 
 #. translators: 1: previous maximum digits, 2: new maximum digits.
-#: src/Accounts/Aliases.php:222
+#: src/Accounts/Aliases.php:229
 #, php-format
 msgid "Aliases with up to %1$d digits were almost all taken, so new aliases can now have up to %2$d digits. Nothing else needs to be done."
 msgstr "Os Apelidos de até %1$d dígitos estavam quase todos ocupados, então os novos Apelidos podem ter até %2$d dígitos. Não é preciso fazer mais nada."
@@ -866,3 +866,92 @@ msgstr "Escrever um pedido"
 msgctxt "block description"
 msgid "Title and free text, with guide questions."
 msgstr ""
+
+#: src/Agents/AgentWork.php:392
+msgid "EuTeAjudo: an Agent reply failed verification"
+msgstr "EuTeAjudo: uma Resposta do Agente falhou na verificação"
+
+#. translators: %s: link to the request in the admin.
+#: src/Agents/AgentWork.php:395
+#, php-format
+msgid ""
+"The Agent could not write a reply that passed verification. It will try again later, with longer waits.\n"
+"\n"
+"Open the request: %s"
+msgstr "O Agente não conseguiu escrever uma Resposta que passasse na verificação. Ele tenta de novo mais tarde, com esperas cada vez maiores.\n\nAbrir o Pedido: %s"
+
+#: src/SupportServices/SupportServices.php:120
+msgid "24 hours, every day"
+msgstr "24 horas, todos os dias"
+
+#: src/SupportServices/SupportServices.php:124
+msgid "Emotional support and suicide prevention, free and confidential, by phone, chat and email."
+msgstr "Apoio emocional e prevenção do suicídio, gratuito e sigiloso, por telefone, chat e e-mail."
+
+#: src/SupportServices/SupportServices.php:134
+msgid "Mobile emergency medical service."
+msgstr "Serviço de atendimento móvel de urgência."
+
+#: src/SupportServices/SupportServices.php:144
+msgid "Police emergency, for violence happening now or immediate danger."
+msgstr "Emergência policial, para violência acontecendo agora ou perigo imediato."
+
+#: src/SupportServices/SupportServices.php:154
+msgid "Guidance and reports about violence against women, free and confidential."
+msgstr "Orientação e denúncias sobre violência contra a mulher, gratuito e sigiloso."
+
+#: src/SupportServices/SupportServices.php:164
+msgid "Reports of human rights violations, including against children, older people and people with disabilities."
+msgstr "Denúncias de violações de direitos humanos, inclusive contra crianças, idosos e pessoas com deficiência."
+
+#: src/SupportServices/SupportServices.php:174
+msgid "Online emotional support for teenagers and young people, by UNICEF and partners."
+msgstr "Apoio emocional on-line para adolescentes e jovens, do UNICEF e parceiros."
+
+#: src/SupportServices/SupportServiceType.php:61
+msgid "Support services"
+msgstr "Serviços de apoio"
+
+#: src/SupportServices/SupportServiceType.php:62
+msgid "Support service"
+msgstr "Serviço de apoio"
+
+#: src/SupportServices/SupportServiceType.php:63
+msgid "Add support service"
+msgstr "Adicionar Serviço de apoio"
+
+#: src/SupportServices/SupportServiceType.php:64
+msgid "Edit support service"
+msgstr "Editar Serviço de apoio"
+
+#: src/SupportServices/SupportServiceType.php:91
+msgid "Contact"
+msgstr "Contato"
+
+#: src/SupportServices/SupportServiceType.php:103
+msgid "Phone"
+msgstr "Telefone"
+
+#: src/SupportServices/SupportServiceType.php:105
+msgid "Website"
+msgstr "Site"
+
+#: src/SupportServices/SupportServiceType.php:107
+msgid "Opening hours"
+msgstr "Horário de atendimento"
+
+#: src/SupportServices/SupportServiceType.php:109
+msgid "Reach"
+msgstr "Alcance"
+
+#: src/SupportServices/SupportServiceType.php:111
+msgid "National"
+msgstr "Nacional"
+
+#: src/SupportServices/SupportServiceType.php:112
+msgid "Digital"
+msgstr "Digital"
+
+#: src/SupportServices/SupportServiceType.php:114
+msgid "Mark the categories, severities and risk signals this service fits. The Agent receives the services that match the triage of each request."
+msgstr "Marque as Categorias, Gravidades e Sinais de risco a que este serviço se aplica. O Agente recebe os serviços que combinam com a Triagem de cada Pedido."

@@ -56,6 +56,7 @@ ddev composer install                 # ferramentas de PHP (dentro do DDEV, PHP 
 | `ddev wp ...` | WP-CLI no site local |
 | `ddev wp euteajudo seed [--friends=3]` / `--clean` | Cria Amigos e Pedidos fictícios para testar à mão (senha `seed password 123`); `--clean` remove só o que o seed criou |
 | `ddev wp euteajudo reply <código> "texto"` | Responde a um Pedido como o primeiro Administrador |
+| `ddev wp euteajudo agent create` / `agent list` | Cria a conta de um Agente e mostra a Application Password uma vez; lista Agentes e a última consulta. Contrato da API em `docs/agent-api.md` |
 | `ddev export-db --file=backups/db-$(date +%F).sql.gz` | Cópia do banco local (pasta ignorada pelo git) |
 
 Logs: `wordpress/wp-content/debug.log` (PHP e WordPress) e `ddev logs`.

@@ -91,10 +91,10 @@ Pronto quando: o E2E cobre o caminho completo no tamanho de celular, e testes de
 
 Objetivo: um cliente externo autenticado consegue fazer todo o trabalho de um Agente usando a REST nativa (P5).
 
-- Capabilities do papel `eta_agent`: ler Pedidos nos status abertos, gravar taxonomias e excerpt, publicar Respostas, gravar metadados de controle.
-- Application Password para o usuário do Agente, só por HTTPS.
-- CPT `eta_support_service`, não público, com campos em metadados e as mesmas taxonomias do Pedido.
-- Metadados registrados com `register_post_meta` e `show_in_rest`: reserva (validade de 10 minutos), contador de falhas, horário da próxima tentativa, data da última manifestação do autor.
+- Rotas próprias em `/wp-json/euteajudo/v1` ([ADR 0007](adr/0007-agent-api-namespace.md)); contrato em [agent-api.md](agent-api.md). Capability `eta_work_as_agent` no papel `eta_agent`.
+- Application Password para o usuário do Agente, só por HTTPS (`wp euteajudo agent create`).
+- CPT `eta_support_service`, não público, com campos em metadados e as mesmas taxonomias do Pedido; catálogo inicial com CVV, SAMU, 190, 180, Disque 100 e Pode Falar.
+- Metadados de controle: reserva (validade de 10 minutos), contador de falhas, horário da próxima tentativa, data da última manifestação do autor.
 - Banco de Apelidos de Agente em `wp_options` sem autoload; um Apelido sorteado por Pedido.
 - Hook na publicação da Resposta do Agente: aplica o Apelido do Pedido e recusa se a Resposta do autor informada não for a última.
 - Registro da última consulta do Agente, para a tela de estado.

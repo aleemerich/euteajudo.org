@@ -126,7 +126,7 @@ final class HelpRequestType {
 		foreach ( $taxonomies as $taxonomy => $label ) {
 			register_taxonomy(
 				$taxonomy,
-				array( self::POST_TYPE ),
+				array( self::POST_TYPE, \EuTeAjudo\SupportServices\SupportServiceType::POST_TYPE ),
 				array(
 					'label'              => $label,
 					'public'             => false,
