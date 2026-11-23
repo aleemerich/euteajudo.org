@@ -38,9 +38,17 @@ final class ContentPagesTest extends TestCase {
 
 	public function test_pages_with_fields_to_fill_are_reported_until_filled(): void {
 		ContentPages::install();
-		$this->assertArrayHasKey( ContentPages::PRIVACY, ContentPages::with_placeholders() );
+		$this->assertSame( array(), ContentPages::with_placeholders(), 'The shipped pages are complete.' );
 
 		$id = (int) get_option( ContentPages::OPTION )[ ContentPages::PRIVACY ];
+		wp_update_post(
+			array(
+				'ID'           => $id,
+				'post_content' => '<!-- wp:paragraph --><p>Contato: [preencher: e-mail].</p><!-- /wp:paragraph -->',
+			)
+		);
+		$this->assertArrayHasKey( ContentPages::PRIVACY, ContentPages::with_placeholders() );
+
 		wp_update_post(
 			array(
 				'ID'           => $id,
