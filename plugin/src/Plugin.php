@@ -48,6 +48,11 @@ final class Plugin {
 		Agents\AgentWork::register();
 		Agents\AgentApi::register();
 		Agents\AgentCli::register();
+		HelpRequests\EditAudit::register();
+		HelpRequests\Notifications::register();
+		HelpRequests\Schedules::register();
+		Admin\HelpRequestsAdmin::register();
+		Admin\AgentStatus::register();
 		Cli::register();
 
 		// Migrations may translate strings, which WordPress only allows from init on.

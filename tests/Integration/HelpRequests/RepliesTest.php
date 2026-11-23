@@ -80,7 +80,11 @@ final class RepliesTest extends TestCase {
 		$this->reply( Replies::add( $this->request, $admin->ID, 'Estou aqui com você.' ) );
 
 		$this->assertSame( Type::IN_CONVERSATION, get_post_status( $this->request ) );
-		$this->assertTrue( $this->no_email_sent(), 'Core comment notifications would leak the reply text.' );
+		$mailer = tests_retrieve_phpmailer_instance();
+		$this->assertInstanceOf( \MockPHPMailer::class, $mailer );
+		$this->assertFalse( $mailer->get_sent( 1 ), 'Only our neutral email goes out; core comment notifications would leak the reply text.' );
+		$this->assertSame( $this->author->user_email, $this->last_email()['to'] );
+		$this->assertStringNotContainsString( 'Estou aqui', $this->last_email()['body'] );
 	}
 
 	public function test_other_friends_cannot_reply_and_closed_requests_take_no_replies(): void {

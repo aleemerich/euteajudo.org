@@ -117,6 +117,15 @@ Objetivo: operar o site pelo painel do WordPress.
 - Estado do Agente: última consulta e tamanho da fila.
 - Agendamentos no WP-Cron: Encerramento automático após 30 dias com aviso ao autor; alerta de 24h sem Resposta de Agente; e-mail único por Pedido com falha na verificação.
 
+Como ficou:
+
+- A lista usa colunas próprias (Autor pelo Apelido, status, falhas, última mensagem do autor) e filtros de Gravidade, Categoria e situação ("Sem Resposta do Agente há 24h", "Falha na verificação").
+- Na tela do Pedido, salvar nunca muda o status. As caixas nativas de comentários, autor e slug saem; entram "Pedido" (situação e histórico de edições), "Resumo (o autor não vê)" e "Conversa" (Respostas com a autoria real e formulário de Resposta com o próprio Apelido ou o do Agente). Pedidos não podem ser criados pelo painel.
+- O original de Pedidos e Respostas editados fica em `_eta_original_title`, `_eta_original_content` e `_eta_edit_log` (Pedido) e em `_eta_original_content`, `_eta_edited_by` e `_eta_edited_at` (Resposta).
+- Widget "EuTeAjudo: Agente" no Painel: última consulta à API (em vermelho depois de 30 minutos sem consulta), fila, atrasados e falhas.
+- E-mails neutros ao autor: Resposta nova e Encerramento automático. O e-mail de falha na verificação sai na hora, uma vez por Pedido (E3).
+- Agendamentos registrados no `init` (a publicação por FTP não roda a ativação): `euteajudo_close_inactive` (diário) e `euteajudo_alert_late` (de hora em hora, um aviso por mensagem do autor).
+
 Pronto quando: os testes de integração cobrem a edição com auditoria, a Resposta com cada Apelido e os agendamentos.
 
 ## E7. E-mail e operação
