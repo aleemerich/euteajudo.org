@@ -1,0 +1,61 @@
+<?php
+/**
+ * Logical account deletion.
+ *
+ * @package EuTeAjudo
+ */
+
+declare(strict_types=1);
+
+namespace EuTeAjudo\Accounts;
+
+use EuTeAjudo\Accounts\Google\GoogleAuth;
+
+/**
+ * Deletes an account logically (MVP decision): the email is replaced by an invalid, unique address
+ * and only a salted hash of it is kept; the Google link, the role, the password and every session
+ * go away. The alias stays, so what the person wrote keeps its author label. The same email can
+ * start a new account, which gets a new alias with no link to the old one.
+ */
+final class AccountDeletion {
+
+	public const DELETED_META    = '_eta_deleted_at';
+	public const EMAIL_HASH_META = '_eta_deleted_email_hash';
+
+	/**
+	 * Deletes an account.
+	 *
+	 * @param int $user_id User ID.
+	 */
+	public static function delete( int $user_id ): void {
+		$user = get_userdata( $user_id );
+		if ( ! $user instanceof \WP_User || self::is_deleted( $user_id ) ) {
+			return;
+		}
+		$hash = hash_hmac( 'sha256', strtolower( $user->user_email ), wp_salt( 'auth' ) );
+
+		update_user_meta( $user_id, self::EMAIL_HASH_META, $hash );
+		update_user_meta( $user_id, self::DELETED_META, time() );
+		delete_user_meta( $user_id, GoogleAuth::SUBJECT_META );
+		delete_user_meta( $user_id, EmailConfirmation::TOKEN_META );
+
+		wp_update_user(
+			array(
+				'ID'         => $user_id,
+				'user_email' => 'deleted-' . substr( $hash, 0, 24 ) . '@euteajudo.invalid',
+				'user_pass'  => wp_generate_password( 64, true, true ),
+			)
+		);
+		$user->set_role( '' );
+		\WP_Session_Tokens::get_instance( $user_id )->destroy_all();
+	}
+
+	/**
+	 * Whether an account was deleted.
+	 *
+	 * @param int $user_id User ID.
+	 */
+	public static function is_deleted( int $user_id ): bool {
+		return (int) get_user_meta( $user_id, self::DELETED_META, true ) > 0;
+	}
+}

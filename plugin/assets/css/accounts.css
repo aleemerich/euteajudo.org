@@ -1,0 +1,240 @@
+/* Account pages. Colors, radii and sizes come from the theme presets (design/tokens.json). */
+.eta-account {
+	max-width: 440px;
+	margin-inline: auto;
+}
+.eta-account .eta-lead {
+	color: var(--wp--preset--color--text-muted);
+}
+.eta-form label {
+	display: block;
+	font-weight: 600;
+	margin: var(--wp--preset--spacing--40) 0 var(--wp--preset--spacing--20);
+}
+.eta-form input[type="email"],
+.eta-form input[type="password"],
+.eta-form input[type="text"] {
+	box-sizing: border-box;
+	width: 100%;
+	min-height: var(--wp--custom--touch-target, 48px);
+	font: inherit;
+	color: var(--wp--preset--color--text);
+	background: var(--wp--preset--color--field);
+	border: 1px solid var(--wp--preset--color--line-strong);
+	border-radius: var(--wp--preset--border-radius--field);
+	padding: 10px 14px;
+}
+.eta-password {
+	position: relative;
+}
+.eta-password input {
+	padding-right: 84px;
+}
+.eta-password-toggle {
+	position: absolute;
+	right: 6px;
+	top: 6px;
+	min-height: 36px;
+	padding: 0 10px;
+	font: inherit;
+	font-size: var(--wp--preset--font-size--small);
+	color: var(--wp--preset--color--text-muted);
+	background: none;
+	border: 0;
+	cursor: pointer;
+}
+.eta-hint {
+	font-size: var(--wp--preset--font-size--small);
+	color: var(--wp--preset--color--text-muted);
+	margin: var(--wp--preset--spacing--20) 0 0;
+}
+.eta-button {
+	box-sizing: border-box;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	margin-top: var(--wp--preset--spacing--50);
+	cursor: pointer;
+	text-decoration: none;
+}
+.eta-account .eta-button-quiet,
+.eta-account .eta-button-quiet.wp-element-button {
+	background: transparent;
+	color: var(--wp--preset--color--text);
+	border: 1px solid var(--wp--preset--color--line-strong);
+	box-shadow: none;
+}
+/* Google's own button style (brand guidelines). */
+.eta-google {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 12px;
+	width: 100%;
+	min-height: var(--wp--custom--touch-target, 48px);
+	border-radius: var(--wp--preset--border-radius--button);
+	border: 1px solid #747775;
+	background: #fff;
+	color: #1f1f1f;
+	font: inherit;
+	font-weight: 600;
+	cursor: pointer;
+}
+.eta-google svg {
+	width: 20px;
+	height: 20px;
+}
+.eta-divider {
+	display: flex;
+	align-items: center;
+	gap: 12px;
+	color: var(--wp--preset--color--text-muted);
+	font-size: var(--wp--preset--font-size--small);
+	margin: var(--wp--preset--spacing--50) 0 var(--wp--preset--spacing--10);
+}
+.eta-divider::before,
+.eta-divider::after {
+	content: "";
+	flex: 1;
+	height: 1px;
+	background: var(--wp--preset--color--line);
+}
+.eta-links {
+	display: grid;
+	gap: var(--wp--preset--spacing--30);
+	margin-top: var(--wp--preset--spacing--50);
+}
+.eta-notice {
+	border: 1px solid var(--wp--preset--color--line-strong);
+	border-radius: var(--wp--preset--border-radius--field);
+	padding: 12px 14px;
+	margin: 0 0 var(--wp--preset--spacing--40);
+	background: var(--wp--preset--color--surface);
+}
+.eta-notice-error {
+	border-left: 4px solid var(--wp--preset--color--text-strong);
+}
+.eta-before {
+	border: 1px solid var(--wp--preset--color--line-strong);
+	border-radius: var(--wp--preset--border-radius--card);
+	padding: var(--wp--preset--spacing--40);
+	background: var(--wp--preset--color--surface);
+	margin-bottom: var(--wp--preset--spacing--50);
+}
+.eta-before legend {
+	/* Float keeps the legend inside the box instead of on its border. */
+	float: left;
+	width: 100%;
+	font-weight: 700;
+	color: var(--wp--preset--color--text-strong);
+	padding: 0;
+	margin-bottom: var(--wp--preset--spacing--20);
+}
+.eta-before legend + * {
+	clear: both;
+}
+.eta-account .eta-choice {
+	display: flex;
+	gap: 12px;
+	align-items: flex-start;
+	min-height: var(--wp--custom--touch-target, 48px);
+	padding: 4px 0;
+	margin: 0;
+	font-weight: 400;
+}
+.eta-choice input {
+	width: 22px;
+	height: 22px;
+	margin: 2px 0 0;
+	accent-color: var(--wp--preset--color--text-strong);
+	flex: none;
+}
+.eta-services {
+	display: grid;
+	gap: var(--wp--preset--spacing--30);
+	margin-top: var(--wp--preset--spacing--40);
+}
+.eta-service {
+	border: 1px solid var(--wp--preset--color--line-strong);
+	border-radius: var(--wp--preset--border-radius--card);
+	padding: var(--wp--preset--spacing--40);
+	background: var(--wp--preset--color--surface);
+}
+.eta-service p {
+	margin: var(--wp--preset--spacing--10) 0 var(--wp--preset--spacing--30);
+}
+.eta-service .eta-button {
+	margin-top: 0;
+}
+.eta-account-link {
+	display: flex;
+	align-items: center;
+	gap: var(--wp--preset--spacing--40);
+	font-size: var(--wp--preset--font-size--small);
+}
+.eta-account-link a {
+	color: var(--wp--preset--color--text);
+	font-weight: 600;
+}
+.eta-account-link .eta-alias {
+	color: var(--wp--preset--color--text-muted);
+}
+.eta-default-submit {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	overflow: hidden;
+	clip: rect(0 0 0 0);
+	white-space: nowrap;
+	border: 0;
+	padding: 0;
+}
+.eta-window {
+	width: 72px;
+	height: 76px;
+	border-radius: 12px;
+	border: 4px solid var(--wp--preset--color--text);
+	position: relative;
+	margin: var(--wp--preset--spacing--20) 0 var(--wp--preset--spacing--50);
+}
+.eta-window::before,
+.eta-window::after {
+	content: "";
+	position: absolute;
+	background: var(--wp--preset--color--text);
+}
+.eta-window::before {
+	left: 50%;
+	top: 0;
+	bottom: 0;
+	width: 3px;
+	transform: translateX(-50%);
+}
+.eta-window::after {
+	top: 50%;
+	left: 0;
+	right: 0;
+	height: 3px;
+	transform: translateY(-50%);
+}
+.eta-window span {
+	position: absolute;
+	left: 6px;
+	top: 6px;
+	width: 23px;
+	height: 25px;
+	border-radius: 3px;
+	background: var(--wp--preset--color--brand-lamp);
+}
+.eta-note {
+	font-size: var(--wp--preset--font-size--small);
+	color: var(--wp--preset--color--text-muted);
+}
+
+.eta-account h2 {
+	margin-top: var(--wp--preset--spacing--60);
+}
+.eta-account .eta-alias {
+	text-decoration: none;
+}

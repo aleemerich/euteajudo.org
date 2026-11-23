@@ -36,10 +36,21 @@ add_action( 'wp_enqueue_scripts', __NAMESPACE__ . '\enqueue_color_schemes' );
  * Adds theme supports and editor styles.
  */
 function setup(): void {
-	load_theme_textdomain( 'euteajudo', get_template_directory() . '/languages' );
+	load_theme_textdomain( 'euteajudo-theme', get_template_directory() . '/languages' );
 	add_editor_style( array( 'assets/css/color-schemes.css', 'assets/css/theme.css' ) );
 }
 add_action( 'after_setup_theme', __NAMESPACE__ . '\setup' );
+
+/**
+ * Applies the visitor's saved Night/Day choice before the page paints, to avoid a flash.
+ *
+ * The choice is stored only in the browser (localStorage key "eta-scheme"), never on the server.
+ * Without a choice, color-schemes.css follows the device preference, then Night.
+ */
+function print_scheme_script(): void {
+	echo "<script>try{var s=localStorage.getItem('eta-scheme');if(s==='night'||s==='day'){document.documentElement.setAttribute('data-eta-scheme',s);}}catch(e){}</script>\n";
+}
+add_action( 'wp_head', __NAMESPACE__ . '\\print_scheme_script', 0 );
 
 /**
  * Prints the favicon. Served from the theme, never from a third party.

@@ -1,0 +1,17 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "euteajudo/account-link",
+	"title": "Account link",
+	"category": "widgets",
+	"description": "Sign in link, or the alias and sign out link.",
+	"textdomain": "euteajudo",
+	"supports": {
+		"html": false,
+		"multiple": false,
+		"reusable": false
+	},
+	"editorScript": "euteajudo-blocks-editor",
+	"style": "euteajudo-accounts",
+	"render": "file:./render.php"
+}

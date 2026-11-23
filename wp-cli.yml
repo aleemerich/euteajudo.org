@@ -1,0 +1,5 @@
+# WP-CLI defaults for this project (used inside DDEV).
+path: wordpress
+# Lets `wp rewrite flush --hard` write wordpress/.htaccess, as on the Apache hosting.
+apache_modules:
+  - mod_rewrite

@@ -1,0 +1,17 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "euteajudo/email-confirmation",
+	"title": "Email confirmation",
+	"category": "widgets",
+	"description": "Result of the email confirmation link.",
+	"textdomain": "euteajudo",
+	"supports": {
+		"html": false,
+		"multiple": false,
+		"reusable": false
+	},
+	"editorScript": "euteajudo-blocks-editor",
+	"style": "euteajudo-accounts",
+	"render": "file:./render.php"
+}

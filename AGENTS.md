@@ -52,10 +52,13 @@ ddev composer install                 # ferramentas de PHP (dentro do DDEV, PHP 
 | `npm run check:theme` | Falha se os arquivos gerados estiverem desatualizados em relação a `design/tokens.json` |
 | `npm run lint` / `npm run format` | ESLint e Prettier (`@wordpress/scripts`) |
 | `npm run test:e2e` | Playwright no celular e no desktop, com o Google Chrome instalado e verificação de acessibilidade (axe) |
+| `ddev composer i18n` | Extrai os textos (`.pot`), atualiza `euteajudo-pt_BR.po` e compila o `.mo`, no plugin e no tema. Traduzir as linhas novas do `.po` e rodar de novo para compilar. |
 | `ddev wp ...` | WP-CLI no site local |
 | `ddev export-db --file=backups/db-$(date +%F).sql.gz` | Cópia do banco local (pasta ignorada pelo git) |
 
 Logs: `wordpress/wp-content/debug.log` (PHP e WordPress) e `ddev logs`.
+
+Segredos locais ficam em `.ddev/.env` (ignorado pelo git; o DDEV o carrega no container web; rodar `ddev restart` depois de editar). Hoje: `EUTEAJUDO_GOOGLE_CLIENT_ID` e `EUTEAJUDO_GOOGLE_CLIENT_SECRET`. Em produção, os mesmos nomes viram constantes no `wp-config.php` do servidor. Nunca colocar segredos em arquivos versionados nem no chat.
 
 Nunca editar à mão `theme/theme.json` nem `theme/assets/css/color-schemes.css`: mudar `design/tokens.json` e rodar `npm run build:theme`.
 

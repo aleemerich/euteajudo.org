@@ -23,6 +23,10 @@ final class PluginTest extends WP_UnitTestCase {
 		$this->assertSame( VERSION, get_option( Plugin::SCHEMA_OPTION ) );
 	}
 
+	public function test_migrations_run_on_init_after_translations_are_allowed(): void {
+		$this->assertSame( 5, has_action( 'init', array( Plugin::class, 'migrate' ) ) );
+	}
+
 	public function test_textdomain_loader_is_hooked_on_init(): void {
 		$this->assertSame( 10, has_action( 'init', array( Plugin::class, 'load_textdomain' ) ) );
 	}
