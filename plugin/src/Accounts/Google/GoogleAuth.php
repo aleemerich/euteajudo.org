@@ -270,11 +270,7 @@ final class GoogleAuth {
 	 * @param string $name Setting name.
 	 */
 	private static function setting( string $name ): string {
-		$value = getenv( $name );
-		if ( is_string( $value ) && '' !== $value ) {
-			return $value;
-		}
-		return defined( $name ) ? (string) constant( $name ) : '';
+		return \EuTeAjudo\Settings::get( $name );
 	}
 
 	/**

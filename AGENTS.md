@@ -13,6 +13,8 @@ Espaço anônimo onde Amigos desabafam e recebem Respostas de um Agente de IA (n
 | [GLOSSARY.md](GLOSSARY.md) | Termos do domínio (PT) e o identificador de código oficial de cada um (EN). Fonte de verdade de nomes. |
 | [docs/mvp.md](docs/mvp.md) | O que o MVP faz. |
 | [docs/plan.md](docs/plan.md) | Entregas, ordem e critério de pronto. |
+| [docs/deploy.md](docs/deploy.md) | Publicação na hospedagem, `wp-config.php`, cron, FTP e operação. |
+| [docs/agent-api.md](docs/agent-api.md) | Contrato da API dos Agentes. |
 | [docs/adr/](docs/adr/) | Decisões estruturais e o motivo de cada uma. Não reverter uma decisão registrada sem um ADR novo. |
 | [design/identity.md](design/identity.md) | Identidade "Luz acesa": conceito, logo, cores Noite e Dia, tipografia, tom de voz. Valores em `design/tokens.json`. |
 | [.claude/skills/SOURCES.md](.claude/skills/SOURCES.md) | Skills de terceiros instaladas, origem e uso. |

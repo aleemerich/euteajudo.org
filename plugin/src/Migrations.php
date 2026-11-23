@@ -67,6 +67,14 @@ final class Migrations {
 				Agents\AgentAliases::install();
 				SupportServices\SupportServices::install();
 			},
+			'0.11.0' => static function (): void {
+				// Conversation addresses need pretty permalinks; a fresh cPanel install has none.
+				if ( '' === (string) get_option( 'permalink_structure' ) ) {
+					update_option( 'permalink_structure', '/%postname%/' );
+				}
+				HelpRequests\Conversations::add_rule();
+				flush_rewrite_rules( false );
+			},
 		);
 	}
 
