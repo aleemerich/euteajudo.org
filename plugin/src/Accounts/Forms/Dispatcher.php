@@ -11,6 +11,7 @@ namespace EuTeAjudo\Accounts\Forms;
 
 use EuTeAjudo\Accounts\EmailConfirmation;
 use EuTeAjudo\Accounts\Pages;
+use EuTeAjudo\HelpRequests\RequestForms;
 
 /**
  * Account forms post to their own page; this class checks the nonce, calls the handler and
@@ -30,6 +31,11 @@ final class Dispatcher {
 		'password_request' => array( 'email' ),
 		'password_reset'   => array( 'login', 'key', 'password' ),
 		'delete_account'   => array( 'confirm' ),
+		'write'            => array( 'title', 'body' ),
+		'reply'            => array( 'code', 'text' ),
+		'thanks'           => array( 'code', 'reply' ),
+		'close'            => array( 'code', 'reason' ),
+		'reopen'           => array( 'code' ),
 	);
 
 	/**
@@ -60,7 +66,7 @@ final class Dispatcher {
 		}
 		nocache_headers();
 
-		if ( isset( $_SERVER['REQUEST_METHOD'] ) && 'POST' === $_SERVER['REQUEST_METHOD'] ) {
+		if ( isset( $_SERVER['REQUEST_METHOD'] ) && 'POST' === $_SERVER['REQUEST_METHOD'] && ( is_user_logged_in() || ! Pages::is_current( array( Pages::ACCOUNT, Pages::WRITE, Pages::MY_REQUESTS ) ) ) ) {
 			self::finish( self::dispatch_post() );
 		}
 
@@ -79,8 +85,9 @@ final class Dispatcher {
 			self::finish( home_url( '/' ) );
 		}
 
-		if ( ! is_user_logged_in() && Pages::is_current( array( Pages::ACCOUNT ) ) ) {
-			self::finish( Pages::url( Pages::SIGN_IN, array( 'redirect_to' => Pages::url( Pages::ACCOUNT ) ) ) );
+		if ( ! is_user_logged_in() && Pages::is_current( array( Pages::ACCOUNT, Pages::WRITE, Pages::MY_REQUESTS ) ) ) {
+			$here = isset( $_SERVER['REQUEST_URI'] ) ? home_url( esc_url_raw( wp_unslash( $_SERVER['REQUEST_URI'] ) ) ) : home_url( '/' );
+			self::finish( Pages::url( Pages::SIGN_IN, array( 'redirect_to' => $here ) ) );
 		}
 	}
 
@@ -109,6 +116,11 @@ final class Dispatcher {
 			'password_request' => PasswordReset::request( $input ),
 			'password_reset'   => PasswordReset::reset( $input ),
 			'delete_account'   => AccountForm::delete( $input ),
+			'write'            => RequestForms::write( $input ),
+			'reply'            => RequestForms::reply( $input ),
+			'thanks'           => RequestForms::thanks( $input ),
+			'close'            => RequestForms::close( $input ),
+			'reopen'           => RequestForms::reopen( $input ),
 		};
 	}
 

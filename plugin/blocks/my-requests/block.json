@@ -1,0 +1,20 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "euteajudo/my-requests",
+	"title": "My requests",
+	"category": "widgets",
+	"description": "List of the author's requests, or one conversation when the address has a code.",
+	"textdomain": "euteajudo",
+	"supports": {
+		"html": false,
+		"multiple": false,
+		"reusable": false
+	},
+	"editorScript": "euteajudo-blocks-editor",
+	"style": [
+		"euteajudo-accounts",
+		"euteajudo-requests"
+	],
+	"render": "file:./render.php"
+}

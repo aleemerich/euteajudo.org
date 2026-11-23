@@ -11,4 +11,6 @@ parameters:
 		- tests/bootstrap-integration.php
 	scanDirectories:
 		- vendor/wp-phpunit/wp-phpunit/includes
+	scanFiles:
+		- vendor/php-stubs/wp-cli-stubs/wp-cli-stubs.php
 	treatPhpDocTypesAsCertain: false

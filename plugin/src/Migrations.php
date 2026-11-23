@@ -57,6 +57,11 @@ final class Migrations {
 					}
 				}
 			},
+			'0.9.0' => static function (): void {
+				Accounts\Pages::install(); // Adds "Write" and "My requests".
+				HelpRequests\Conversations::add_rule();
+				flush_rewrite_rules( false );
+			},
 		);
 	}
 }

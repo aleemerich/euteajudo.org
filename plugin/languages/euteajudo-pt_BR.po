@@ -66,7 +66,7 @@ msgstr "Sair"
 #: blocks/email-confirmation/render.php:30
 #: blocks/sign-in/render.php:37
 #: blocks/sign-up/render.php:39
-#: src/Accounts/Pages.php:125
+#: src/Accounts/Pages.php:129
 msgid "Sign in"
 msgstr "Entrar"
 
@@ -113,7 +113,7 @@ msgid "Ask for a new link"
 msgstr "Pedir um link novo"
 
 #: blocks/password-reset/render.php:30
-#: src/Accounts/Pages.php:128
+#: src/Accounts/Pages.php:132
 msgid "New password"
 msgstr "Nova senha"
 
@@ -140,7 +140,7 @@ msgid "Password"
 msgstr "Senha"
 
 #: blocks/sign-in/render.php:45
-#: src/Accounts/Pages.php:127
+#: src/Accounts/Pages.php:131
 msgid "Forgot password"
 msgstr "Esqueci minha senha"
 
@@ -223,7 +223,7 @@ msgid "Privacy policy"
 msgstr "Política de privacidade"
 
 #: blocks/sign-up/render.php:68
-#: src/Accounts/Pages.php:126
+#: src/Accounts/Pages.php:130
 msgid "Create account"
 msgstr "Criar conta"
 
@@ -380,7 +380,7 @@ msgstr "Continuar com o Google"
 msgid "or with email"
 msgstr "ou com e-mail"
 
-#: src/Accounts/Pages.php:129
+#: src/Accounts/Pages.php:133
 msgid "Confirm email"
 msgstr "Confirmar e-mail"
 
@@ -503,7 +503,7 @@ msgstr "Sua conta foi excluída."
 msgid "Check the box to confirm that you want to delete your account."
 msgstr "Marque a caixa para confirmar que quer excluir sua conta."
 
-#: src/Accounts/Pages.php:130
+#: src/Accounts/Pages.php:134
 msgid "My account"
 msgstr "Minha conta"
 
@@ -542,6 +542,7 @@ msgstr[0] "Aguardando triagem <span class=\"count\">(%s)</span>"
 msgstr[1] "Aguardando triagem <span class=\"count\">(%s)</span>"
 
 #: src/HelpRequests/HelpRequestType.php:90
+#: src/HelpRequests/View.php:29
 msgid "Awaiting reply"
 msgstr "Aguardando resposta"
 
@@ -554,6 +555,7 @@ msgstr[0] "Aguardando resposta <span class=\"count\">(%s)</span>"
 msgstr[1] "Aguardando resposta <span class=\"count\">(%s)</span>"
 
 #: src/HelpRequests/HelpRequestType.php:95
+#: src/HelpRequests/View.php:27
 msgid "In conversation"
 msgstr "Em conversa"
 
@@ -566,6 +568,7 @@ msgstr[0] "Em conversa <span class=\"count\">(%s)</span>"
 msgstr[1] "Em conversa <span class=\"count\">(%s)</span>"
 
 #: src/HelpRequests/HelpRequestType.php:100
+#: src/HelpRequests/View.php:28
 msgid "Closed"
 msgstr "Encerrado"
 
@@ -676,3 +679,190 @@ msgstr "Pedido de dinheiro"
 #: src/HelpRequests/TriageTerms.php:51
 msgid "Personal data in the text"
 msgstr "Dado pessoal no texto"
+
+#: blocks/app-nav/render.php:16
+#: src/Accounts/Pages.php:135
+msgid "Write"
+msgstr "Escrever"
+
+#: blocks/app-nav/render.php:17
+#: blocks/my-requests/render.php:66
+#: src/Accounts/Pages.php:136
+msgid "My requests"
+msgstr "Meus pedidos"
+
+#: blocks/app-nav/render.php:18
+msgid "Account"
+msgstr "Conta"
+
+#: blocks/app-nav/render.php:21
+msgid "Main"
+msgstr "Principal"
+
+#: blocks/my-requests/render.php:40
+msgid "New request"
+msgstr "Novo pedido"
+
+#: blocks/my-requests/render.php:42
+msgid "Nothing here yet. When you want to write, just start."
+msgstr "Nada por aqui ainda. Quando quiser escrever, é só começar."
+
+#: blocks/my-requests/render.php:51
+#: src/HelpRequests/View.php:24
+msgid "New reply"
+msgstr "Resposta nova"
+
+#. translators: %s: date the request was written.
+#: blocks/my-requests/render.php:71
+#, php-format
+msgid "Written on %s"
+msgstr "Você escreveu em %s"
+
+#: blocks/my-requests/render.php:78
+msgid "Request sent. The reply may take a few hours; we let you know by email."
+msgstr "Pedido enviado. A resposta pode levar algumas horas; avisamos por e-mail."
+
+#: blocks/my-requests/render.php:87
+msgid "You"
+msgstr "Você"
+
+#: blocks/my-requests/render.php:96
+msgid "This helped me"
+msgstr "Isso me ajudou"
+
+#: blocks/my-requests/render.php:104
+msgid "This request is closed. You can reopen it whenever you want to keep talking."
+msgstr "Este pedido está encerrado. Você pode reabrir quando quiser continuar a conversa."
+
+#: blocks/my-requests/render.php:108
+msgid "Reopen request"
+msgstr "Reabrir pedido"
+
+#: blocks/my-requests/render.php:115
+msgid "Message sent. The reply may take a few hours."
+msgstr "Mensagem enviada. A resposta pode levar algumas horas."
+
+#: blocks/my-requests/render.php:120
+msgid "Reply"
+msgstr "Responder"
+
+#: blocks/my-requests/render.php:121
+msgid "Write whenever you want"
+msgstr "Escreva quando quiser"
+
+#: blocks/my-requests/render.php:122
+msgid "Send reply"
+msgstr "Enviar resposta"
+
+#: blocks/my-requests/render.php:126
+#: blocks/my-requests/render.php:135
+msgid "Close request"
+msgstr "Encerrar pedido"
+
+#: blocks/my-requests/render.php:130
+msgid "Why are you closing? (optional)"
+msgstr "Por que está encerrando? (opcional)"
+
+#: blocks/my-requests/render.php:131
+msgid "I feel better"
+msgstr "Estou melhor"
+
+#: blocks/my-requests/render.php:132
+msgid "I do not want to receive more messages"
+msgstr "Não quero mais receber mensagens"
+
+#: blocks/my-requests/render.php:133
+msgid "I prefer not to say"
+msgstr "Prefiro não dizer"
+
+#: blocks/write/render.php:21
+msgid "Title"
+msgstr "Título"
+
+#: blocks/write/render.php:21
+msgid "so you can find it later"
+msgstr "para você encontrar depois"
+
+#: blocks/write/render.php:23
+msgid "What is happening?"
+msgstr "O que está acontecendo?"
+
+#: blocks/write/render.php:25
+msgid "If it helps, think about how long this has been going on, what you have already tried and what you feel you need now. Write your way; nothing needs to be organised."
+msgstr "Se ajudar, pense em há quanto tempo isso acontece, no que você já tentou e no que sente que precisa agora. Escreva do seu jeito; não precisa organizar nada."
+
+#: blocks/write/render.php:26
+msgid "Phone numbers, emails and documents are removed before saving. The reply may take a few hours; we let you know by email."
+msgstr "Telefones, e-mails e documentos são removidos antes de salvar. A resposta pode levar algumas horas; avisamos por e-mail."
+
+#: blocks/write/render.php:27
+msgid "Send request"
+msgstr "Enviar pedido"
+
+#: src/Accounts/Forms/Messages.php:40
+msgid "Give your request a title, so you can find it later."
+msgstr "Dê um título ao seu pedido, para encontrá-lo depois."
+
+#: src/Accounts/Forms/Messages.php:41
+msgid "The text is empty. Write a few lines to send your request."
+msgstr "O texto está vazio. Escreva algumas linhas para enviar o pedido."
+
+#: src/Accounts/Forms/Messages.php:42
+msgid "The reply is empty. Write something to send it."
+msgstr "A resposta está vazia. Escreva algo para enviar."
+
+#: src/Accounts/Forms/Messages.php:43
+msgid "This request is closed. Reopen it to keep talking."
+msgstr "Este pedido está encerrado. Reabra para continuar a conversa."
+
+#: src/Accounts/Forms/Messages.php:44
+msgid "You cannot do this here."
+msgstr "Você não pode fazer isso aqui."
+
+#: src/Accounts/Forms/Messages.php:45
+msgid "We could not find this request."
+msgstr "Não encontramos este pedido."
+
+#. translators: Short date format, see https://www.php.net/manual/datetime.format.php
+#: src/HelpRequests/View.php:40
+msgid "F j"
+msgstr "j \\d\\e F"
+
+#. translators: Short date and time format, see https://www.php.net/manual/datetime.format.php
+#: src/HelpRequests/View.php:50
+msgid "M j, g:i a"
+msgstr "j \\d\\e M, H\\hi"
+
+#: src/HelpRequests/View.php:66
+msgid "The replies here are written by an artificial intelligence made to welcome people. If you are at risk right now, call 188."
+msgstr "As respostas aqui são escritas por uma inteligência artificial criada para acolher. Se você corre risco agora, ligue 188."
+
+#: blocks/app-nav/block.json
+msgctxt "block title"
+msgid "Friend navigation"
+msgstr "Navegação do Amigo"
+
+#: blocks/app-nav/block.json
+msgctxt "block description"
+msgid "Write, My requests and Account; a bottom bar on phones."
+msgstr ""
+
+#: blocks/my-requests/block.json
+msgctxt "block title"
+msgid "My requests"
+msgstr "Meus pedidos"
+
+#: blocks/my-requests/block.json
+msgctxt "block description"
+msgid "List of the author's requests, or one conversation when the address has a code."
+msgstr ""
+
+#: blocks/write/block.json
+msgctxt "block title"
+msgid "Write a help request"
+msgstr "Escrever um pedido"
+
+#: blocks/write/block.json
+msgctxt "block description"
+msgid "Title and free text, with guide questions."
+msgstr ""

@@ -3,7 +3,7 @@
  * Plugin Name:       EuTeAjudo
  * Plugin URI:        https://euteajudo.org
  * Description:       Anonymous help requests answered by support agents.
- * Version:           0.8.0
+ * Version:           0.9.0
  * Requires at least: 7.1
  * Requires PHP:      8.5
  * Author:            EuTeAjudo.org
@@ -21,7 +21,7 @@ namespace EuTeAjudo;
 
 defined( 'ABSPATH' ) || exit;
 
-const VERSION     = '0.8.0';
+const VERSION     = '0.9.0';
 const PLUGIN_FILE = __FILE__;
 
 /*

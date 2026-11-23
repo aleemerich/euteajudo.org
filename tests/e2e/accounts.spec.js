@@ -1,51 +1,11 @@
 import { test, expect } from '@playwright/test';
 import AxeBuilder from '@axe-core/playwright';
 
-/*
- * Account flows against the local site. Emails are read from Mailpit, which DDEV runs to capture
- * everything the site sends.
- */
-const MAILPIT = process.env.MAILPIT_URL || 'https://euteajudo.ddev.site:8026';
-
-const uniqueEmail = ( testInfo, label ) =>
-	`e2e-${ label }-${ testInfo.project.name }-${ Date.now() }@example.org`;
-
-async function linkFromLatestEmail( request, to, pathPart ) {
-	for ( let attempt = 0; attempt < 20; attempt++ ) {
-		const search = await request.get(
-			`${ MAILPIT }/api/v1/search?query=${ encodeURIComponent( 'to:' + to ) }`,
-			{ ignoreHTTPSErrors: true }
-		);
-		const { messages = [] } = await search.json();
-		if ( messages.length ) {
-			const message = await (
-				await request.get(
-					`${ MAILPIT }/api/v1/message/${ messages[ 0 ].ID }`,
-					{
-						ignoreHTTPSErrors: true,
-					}
-				)
-			).json();
-			const link = ( message.Text.match( /https:\/\/\S+/g ) || [] ).find(
-				( url ) => url.includes( pathPart )
-			);
-			if ( link ) {
-				return link;
-			}
-		}
-		await new Promise( ( resolve ) => setTimeout( resolve, 250 ) );
-	}
-	throw new Error( `No email with a ${ pathPart } link for ${ to }` );
-}
-
-async function signUpWithEmail( page, email, password ) {
-	await page.goto( '/criar-conta/' );
-	await page.getByLabel( 'Tenho 18 anos ou mais' ).check();
-	await page.getByRole( 'checkbox' ).check();
-	await page.getByLabel( 'E-mail' ).fill( email );
-	await page.getByLabel( 'Senha', { exact: true } ).fill( password );
-	await page.getByRole( 'button', { name: 'Criar conta' } ).click();
-}
+import {
+	linkFromLatestEmail,
+	signUpWithEmail,
+	uniqueEmail,
+} from './support/helpers.js';
 
 test.describe( 'Accounts', () => {
 	test( 'sign-up with email, confirm by link, sign out and sign in again', async ( {
