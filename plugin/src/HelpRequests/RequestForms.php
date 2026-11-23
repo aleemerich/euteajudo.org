@@ -9,6 +9,7 @@ declare(strict_types=1);
 
 namespace EuTeAjudo\HelpRequests;
 
+use EuTeAjudo\Accounts\Forms\FormState;
 use EuTeAjudo\Accounts\Pages;
 
 /**
@@ -22,9 +23,32 @@ final class RequestForms {
 	 * @param array<string, string> $input Fields: title, body.
 	 */
 	public static function write( array $input ): string {
-		$result = HelpRequests::create( get_current_user_id(), $input['title'] ?? '', $input['body'] ?? '' );
-		if ( is_wp_error( $result ) ) {
-			return Pages::url( Pages::WRITE, array( 'eta_auth_error' => (string) $result->get_error_code() ) );
+		$title  = $input['title'] ?? '';
+		$body   = $input['body'] ?? '';
+		$errors = array_keys(
+			array_filter(
+				array(
+					'title_required' => '' === trim( $title ),
+					'body_required'  => '' === trim( $body ),
+				)
+			)
+		);
+		$result = array() === $errors ? HelpRequests::create( get_current_user_id(), $title, $body ) : null;
+		if ( null === $result || is_wp_error( $result ) ) {
+			$errors = null === $result ? $errors : array( (string) $result->get_error_code() );
+			// Whatever was typed comes back: losing a long text would be cruel.
+			return Pages::url(
+				Pages::WRITE,
+				array(
+					FormState::PARAM => FormState::save(
+						$errors,
+						array(
+							'title' => $title,
+							'body'  => $body,
+						)
+					),
+				)
+			);
 		}
 		$post = HelpRequests::get( $result );
 		return null === $post ? Pages::url( Pages::MY_REQUESTS ) : add_query_arg( 'eta_step', 'sent', Conversations::url( $post ) );

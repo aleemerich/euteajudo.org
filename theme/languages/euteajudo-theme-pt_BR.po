@@ -236,3 +236,8 @@ msgstr "Cabeçalho"
 msgctxt "Template part name"
 msgid "Footer"
 msgstr "Rodapé"
+
+#: theme.json
+msgctxt "Color name"
+msgid "Field border"
+msgstr ""

@@ -27,7 +27,7 @@ $euteajudo_key   = isset( $_GET['key'] ) ? sanitize_text_field( wp_unslash( $_GE
 		<input type="hidden" name="key" value="<?php echo esc_attr( $euteajudo_key ); ?>">
 		<?php
 		// phpcs:disable WordPress.Security.EscapeOutput.OutputNotEscaped -- Escaped in View.
-		echo View::password( 'eta-new-password', __( 'New password', 'euteajudo' ), 'new-password', __( 'At least 10 characters.', 'euteajudo' ) );
+		echo View::password( 'eta-new-password', __( 'New password', 'euteajudo' ), 'new-password', sprintf( /* translators: %d: minimum number of characters. */ __( 'At least %d characters.', 'euteajudo' ), \EuTeAjudo\Accounts\Forms\SignUp::MIN_PASSWORD ) );
 		echo View::submit( __( 'Save new password', 'euteajudo' ) );
 		// phpcs:enable
 		?>

@@ -50,29 +50,29 @@ As páginas Sobre, Termos de uso e Política de privacidade não estão aqui: s�
 
 | Texto no site | Original (inglês) | Onde |
 |---|---|---|
-| Pelo menos 10 caracteres. | At least 10 characters. | `plugin/blocks/password-reset/render.php:30` |
 | Senha | Password | `plugin/blocks/sign-in/render.php:36` |
-| Este espaço é para maiores de 18 anos | This space is for people 18 and over | `plugin/blocks/sign-up/render.php:21` |
-| Você merece ser ouvido agora. Estes serviços atendem quem tem menos de 18 anos, de graça e com pessoas preparadas: | You deserve to be heard now. These services help people under 18, for free and with trained people: | `plugin/blocks/sign-up/render.php:22` |
-| Pode Falar (UNICEF) | Pode Falar (UNICEF) | `plugin/blocks/sign-up/render.php:25` |
-| Para quem tem de 13 a 24 anos, por WhatsApp. | For people aged 13 to 24, on WhatsApp. | `plugin/blocks/sign-up/render.php:26` |
-| Abrir o Pode Falar | Open Pode Falar | `plugin/blocks/sign-up/render.php:27` |
-| CVV | CVV | `plugin/blocks/sign-up/render.php:30` |
-| Qualquer idade, a qualquer hora, pelo telefone 188 ou pelo chat. | Any age, any time, by phone at 188 or by chat. | `plugin/blocks/sign-up/render.php:31` |
-| Quase lá | Almost there | `plugin/blocks/sign-up/render.php:37` |
-| Mandamos um link para o e-mail que você informou. Abra o e-mail e toque no link para confirmar. O link vale por 48 horas. | We sent a link to the email you typed. Open the email and tap the link to confirm it. The link is valid for 48 hours. | `plugin/blocks/sign-up/render.php:38` |
-| O assunto é "EuTeAjudo: confirme seu e-mail". Se não chegar em alguns minutos, olhe a pasta de spam. Para receber um link novo, tente entrar. | The subject is "EuTeAjudo: confirm your email". If it does not arrive in a few minutes, check the spam folder. To get a new link, try to sign in. | `plugin/blocks/sign-up/render.php:39` |
-| Aqui você é só um Amigo com número, como Amigo 48213. Ninguém vê seu e-mail. | Here you are just a Friend with a number, like Friend 48213. Nobody sees your email. | `plugin/blocks/sign-up/render.php:43` |
-| Antes de começar | Before you start | `plugin/blocks/sign-up/render.php:47` |
-| Tenho 18 anos ou mais | I am 18 or older | `plugin/blocks/sign-up/render.php:48` |
-| Tenho menos de 18 anos | I am under 18 | `plugin/blocks/sign-up/render.php:49` |
-| Concordo que o que eu escrever seja lido por uma inteligência artificial criada para acolher, inclusive em serviços fora do Brasil. | I agree that what I write is read by an artificial intelligence made to welcome people, including services outside Brazil. | `plugin/blocks/sign-up/render.php:51` |
-| Li a %s. | I have read the %s. | `plugin/blocks/sign-up/render.php:63` |
-| Política de privacidade | Privacy policy | `plugin/blocks/sign-up/render.php:58` |
-| Criar conta | Create account | `plugin/blocks/sign-up/render.php:76` |
-| Já tem conta? Entrar | Already have an account? Sign in | `plugin/blocks/sign-up/render.php:80` |
-| Aceito os %1$s e a %2$s. | I accept the %1$s and the %2$s. | `plugin/blocks/sign-up/render.php:56` |
-| Termos de uso | Terms of use | `plugin/blocks/sign-up/render.php:57` |
+| Este espaço é para maiores de 18 anos | This space is for people 18 and over | `plugin/blocks/sign-up/render.php:22` |
+| Você merece ser ouvido agora. Estes serviços atendem quem tem menos de 18 anos, de graça e com pessoas preparadas: | You deserve to be heard now. These services help people under 18, for free and with trained people: | `plugin/blocks/sign-up/render.php:23` |
+| Pode Falar (UNICEF) | Pode Falar (UNICEF) | `plugin/blocks/sign-up/render.php:26` |
+| Para quem tem de 13 a 24 anos, por WhatsApp. | For people aged 13 to 24, on WhatsApp. | `plugin/blocks/sign-up/render.php:27` |
+| Abrir o Pode Falar | Open Pode Falar | `plugin/blocks/sign-up/render.php:28` |
+| CVV | CVV | `plugin/blocks/sign-up/render.php:31` |
+| Qualquer idade, a qualquer hora, pelo telefone 188 ou pelo chat. | Any age, any time, by phone at 188 or by chat. | `plugin/blocks/sign-up/render.php:32` |
+| Quase lá | Almost there | `plugin/blocks/sign-up/render.php:38` |
+| Mandamos um link para o e-mail que você informou. Abra o e-mail e toque no link para confirmar. O link vale por 48 horas. | We sent a link to the email you typed. Open the email and tap the link to confirm it. The link is valid for 48 hours. | `plugin/blocks/sign-up/render.php:39` |
+| O assunto é "EuTeAjudo: confirme seu e-mail". Se não chegar em alguns minutos, olhe a pasta de spam. Para receber um link novo, tente entrar. | The subject is "EuTeAjudo: confirm your email". If it does not arrive in a few minutes, check the spam folder. To get a new link, try to sign in. | `plugin/blocks/sign-up/render.php:40` |
+| Aqui você é só um Amigo com número, como Amigo 48213. Ninguém vê seu e-mail. | Here you are just a Friend with a number, like Friend 48213. Nobody sees your email. | `plugin/blocks/sign-up/render.php:44` |
+| Antes de começar | Before you start | `plugin/blocks/sign-up/render.php:48` |
+| Tenho 18 anos ou mais | I am 18 or older | `plugin/blocks/sign-up/render.php:49` |
+| Tenho menos de 18 anos | I am under 18 | `plugin/blocks/sign-up/render.php:50` |
+| Concordo que o que eu escrever seja lido por uma inteligência artificial criada para acolher, inclusive em serviços fora do Brasil. | I agree that what I write is read by an artificial intelligence made to welcome people, including services outside Brazil. | `plugin/blocks/sign-up/render.php:52` |
+| Li a %s. | I have read the %s. | `plugin/blocks/sign-up/render.php:64` |
+| Política de privacidade | Privacy policy | `plugin/blocks/sign-up/render.php:59` |
+| Criar conta | Create account | `plugin/blocks/sign-up/render.php:77` |
+| Já tem conta? Entrar | Already have an account? Sign in | `plugin/blocks/sign-up/render.php:81` |
+| Aceito os %1$s e a %2$s. | I accept the %1$s and the %2$s. | `plugin/blocks/sign-up/render.php:57` |
+| Termos de uso | Terms of use | `plugin/blocks/sign-up/render.php:58` |
+| Pelo menos %d caracteres. | At least %d characters. | `plugin/blocks/password-reset/render.php:30` |
 
 ## Entrar
 
@@ -117,23 +117,27 @@ As páginas Sobre, Termos de uso e Política de privacidade não estão aqui: s�
 | Automática (segue o seu aparelho) | Automatic (follows your device) | `plugin/blocks/account/render.php:36` |
 | Noite | Night | `plugin/blocks/account/render.php:37` |
 | Dia | Day | `plugin/blocks/account/render.php:38` |
-| Esta escolha fica salva só neste navegador. | This choice is saved only in this browser. | `plugin/blocks/account/render.php:39` |
-| Excluir conta | Delete account | `plugin/blocks/account/render.php:44` |
-| Contas que administram o site não podem ser excluídas aqui. | Accounts that manage the site cannot be deleted here. | `plugin/blocks/account/render.php:46` |
-| Seu e-mail é removido do site e ninguém consegue mais entrar nesta conta. O que você escreveu continua com o seu Apelido, sem o seu e-mail. Você pode criar uma conta nova depois; ela recebe outro Apelido. | Your email is removed from the site and nobody can sign in to this account anymore. What you wrote stays under your alias, without your email. You can create a new account later; it gets a new alias. | `plugin/blocks/account/render.php:48` |
-| Entendo e quero excluir minha conta | I understand and want to delete my account | `plugin/blocks/account/render.php:50` |
-| Excluir minha conta | Delete my account | `plugin/blocks/account/render.php:51` |
+| Excluir conta | Delete account | `plugin/blocks/account/render.php:43` |
+| Contas que administram o site não podem ser excluídas aqui. | Accounts that manage the site cannot be deleted here. | `plugin/blocks/account/render.php:45` |
+| Seu e-mail é removido do site e ninguém consegue mais entrar nesta conta. O que você escreveu continua com o seu Apelido, sem o seu e-mail. Você pode criar uma conta nova depois; ela recebe outro Apelido. | Your email is removed from the site and nobody can sign in to this account anymore. What you wrote stays under your alias, without your email. You can create a new account later; it gets a new alias. | `plugin/blocks/account/render.php:47` |
+| Entendo e quero excluir minha conta | I understand and want to delete my account | `plugin/blocks/account/render.php:49` |
+| Excluir minha conta | Delete my account | `plugin/blocks/account/render.php:50` |
+| A mudança vale na hora e fica guardada só neste navegador. | The change is applied right away and saved only in this browser. | `plugin/blocks/account/render.php:39` |
+| Aparência salva. | Appearance saved. | `plugin/blocks/account/render.php:40` |
+| Se outras pessoas usam este aparelho, saia quando terminar. | If other people use this device, sign out when you finish. | `plugin/blocks/account/render.php:55` |
+| Sair deste aparelho | Sign out of this device | `plugin/blocks/account/render.php:55` |
 
 ## Escrever
 
 | Texto no site | Original (inglês) | Onde |
 |---|---|---|
-| Título | Title | `plugin/blocks/write/render.php:21` |
-| para você encontrar depois | so you can find it later | `plugin/blocks/write/render.php:21` |
-| O que está acontecendo? | What is happening? | `plugin/blocks/write/render.php:23` |
-| Se ajudar, pense em há quanto tempo isso acontece, no que você já tentou e no que sente que precisa agora. Escreva do seu jeito; não precisa organizar nada. | If it helps, think about how long this has been going on, what you have already tried and what you feel you need now. Write your way; nothing needs to be organised. | `plugin/blocks/write/render.php:25` |
-| Telefones, e-mails e documentos são removidos antes de salvar. A resposta pode levar algumas horas; avisamos por e-mail. | Phone numbers, emails and documents are removed before saving. The reply may take a few hours; we let you know by email. | `plugin/blocks/write/render.php:26` |
-| Enviar pedido | Send request | `plugin/blocks/write/render.php:27` |
+| Título | Title | `plugin/blocks/write/render.php:30` |
+| para você encontrar depois | so you can find it later | `plugin/blocks/write/render.php:30` |
+| O que está acontecendo? | What is happening? | `plugin/blocks/write/render.php:32` |
+| Se ajudar, pense em há quanto tempo isso acontece, no que você já tentou e no que sente que precisa agora. Escreva do seu jeito; não precisa organizar nada. | If it helps, think about how long this has been going on, what you have already tried and what you feel you need now. Write your way; nothing needs to be organised. | `plugin/blocks/write/render.php:33` |
+| Telefones, e-mails e documentos são removidos antes de salvar. A resposta pode levar algumas horas; avisamos por e-mail. | Phone numbers, emails and documents are removed before saving. The reply may take a few hours; we let you know by email. | `plugin/blocks/write/render.php:35` |
+| Enviar pedido | Send request | `plugin/blocks/write/render.php:36` |
+| Seu e-mail está confirmado. Quando quiser, escreva aqui o que está acontecendo. | Your email is confirmed. Whenever you are ready, write here what is happening. | `plugin/blocks/write/render.php:25` |
 
 ## Meus pedidos e Conversa
 
@@ -171,34 +175,37 @@ As páginas Sobre, Termos de uso e Política de privacidade não estão aqui: s�
 |---|---|---|
 | E-mail ou senha não conferem. Confira e tente de novo, ou use "Esqueci minha senha". | Email or password does not match. Check and try again, or use "Forgot password". | `plugin/src/Accounts/Forms/Messages.php:24` |
 | Confirme seu e-mail primeiro. Mandamos um link novo para sua caixa de entrada. | Confirm your email first. We sent a new link to your inbox. | `plugin/src/Accounts/Forms/Messages.php:25` |
-| Escolha sua idade e aceite os termos para continuar. | Choose your age and accept the terms to continue. | `plugin/src/Accounts/Forms/Messages.php:26` |
-| Informe um e-mail válido. | Type a valid email address. | `plugin/src/Accounts/Forms/Messages.php:27` |
-| Use pelo menos 10 caracteres na senha. | Use at least 10 characters in the password. | `plugin/src/Accounts/Forms/Messages.php:28` |
-| Essa conta do Google ainda não tem cadastro aqui. Crie sua conta para continuar. | This Google account has no account here yet. Create your account to continue. | `plugin/src/Accounts/Forms/Messages.php:29` |
-| Entrar com o Google não está disponível agora. Use seu e-mail e senha. | Sign in with Google is not available right now. Use your email and password. | `plugin/src/Accounts/Forms/Messages.php:30` |
-| A entrada com o Google foi cancelada. | Sign in with Google was cancelled. | `plugin/src/Accounts/Forms/Messages.php:31` |
-| Essa conta do Google não tem e-mail verificado. Use outra conta, ou seu e-mail e senha. | This Google account does not have a verified email. Use another account, or your email and password. | `plugin/src/Accounts/Forms/Messages.php:32` |
-| A entrada com o Google não terminou. Tente de novo. | Sign in with Google did not finish. Try again. | `plugin/src/Accounts/Forms/Messages.php:33` |
-| Esta página ficou aberta por muito tempo. Tente de novo. | This page stayed open for too long. Try again. | `plugin/src/Accounts/Forms/Messages.php:34` |
-| Este link é inválido ou venceu. Peça um novo abaixo. | This link is invalid or has expired. Ask for a new one below. | `plugin/src/Accounts/Forms/Messages.php:35` |
-| Este link de confirmação é inválido ou venceu. Entre para receber um novo. | This confirmation link is invalid or has expired. Sign in to get a new one. | `plugin/src/Accounts/Forms/Messages.php:36` |
-| Algo deu errado. Tente de novo em alguns minutos. | Something went wrong. Try again in a few minutes. | `plugin/src/Accounts/Forms/Messages.php:37` |
-| Marque a caixa para confirmar que quer excluir sua conta. | Check the box to confirm that you want to delete your account. | `plugin/src/Accounts/Forms/Messages.php:38` |
-| Dê um título ao seu pedido, para encontrá-lo depois. | Give your request a title, so you can find it later. | `plugin/src/Accounts/Forms/Messages.php:40` |
-| O texto está vazio. Escreva algumas linhas para enviar o pedido. | The text is empty. Write a few lines to send your request. | `plugin/src/Accounts/Forms/Messages.php:41` |
-| A resposta está vazia. Escreva algo para enviar. | The reply is empty. Write something to send it. | `plugin/src/Accounts/Forms/Messages.php:42` |
-| Este pedido está encerrado. Reabra para continuar a conversa. | This request is closed. Reopen it to keep talking. | `plugin/src/Accounts/Forms/Messages.php:43` |
-| Você não pode fazer isso aqui. | You cannot do this here. | `plugin/src/Accounts/Forms/Messages.php:44` |
-| Não encontramos este pedido. | We could not find this request. | `plugin/src/Accounts/Forms/Messages.php:45` |
+| Informe um e-mail válido. | Type a valid email address. | `plugin/src/Accounts/Forms/Messages.php:29` |
+| Essa conta do Google ainda não tem cadastro aqui. Crie sua conta para continuar. | This Google account has no account here yet. Create your account to continue. | `plugin/src/Accounts/Forms/Messages.php:31` |
+| Entrar com o Google não está disponível agora. Use seu e-mail e senha. | Sign in with Google is not available right now. Use your email and password. | `plugin/src/Accounts/Forms/Messages.php:32` |
+| A entrada com o Google foi cancelada. | Sign in with Google was cancelled. | `plugin/src/Accounts/Forms/Messages.php:33` |
+| Essa conta do Google não tem e-mail verificado. Use outra conta, ou seu e-mail e senha. | This Google account does not have a verified email. Use another account, or your email and password. | `plugin/src/Accounts/Forms/Messages.php:34` |
+| A entrada com o Google não terminou. Tente de novo. | Sign in with Google did not finish. Try again. | `plugin/src/Accounts/Forms/Messages.php:35` |
+| Esta página ficou aberta por muito tempo. Tente de novo. | This page stayed open for too long. Try again. | `plugin/src/Accounts/Forms/Messages.php:36` |
+| Este link é inválido ou venceu. Peça um novo abaixo. | This link is invalid or has expired. Ask for a new one below. | `plugin/src/Accounts/Forms/Messages.php:37` |
+| Este link de confirmação é inválido ou venceu. Entre para receber um novo. | This confirmation link is invalid or has expired. Sign in to get a new one. | `plugin/src/Accounts/Forms/Messages.php:38` |
+| Algo deu errado. Tente de novo em alguns minutos. | Something went wrong. Try again in a few minutes. | `plugin/src/Accounts/Forms/Messages.php:39` |
+| Marque a caixa para confirmar que quer excluir sua conta. | Check the box to confirm that you want to delete your account. | `plugin/src/Accounts/Forms/Messages.php:40` |
+| Dê um título ao seu pedido, para encontrá-lo depois. | Give your request a title, so you can find it later. | `plugin/src/Accounts/Forms/Messages.php:42` |
+| O texto está vazio. Escreva algumas linhas para enviar o pedido. | The text is empty. Write a few lines to send your request. | `plugin/src/Accounts/Forms/Messages.php:43` |
+| A resposta está vazia. Escreva algo para enviar. | The reply is empty. Write something to send it. | `plugin/src/Accounts/Forms/Messages.php:44` |
+| Este pedido está encerrado. Reabra para continuar a conversa. | This request is closed. Reopen it to keep talking. | `plugin/src/Accounts/Forms/Messages.php:45` |
+| Você não pode fazer isso aqui. | You cannot do this here. | `plugin/src/Accounts/Forms/Messages.php:46` |
+| Não encontramos este pedido. | We could not find this request. | `plugin/src/Accounts/Forms/Messages.php:47` |
+| Conte para a gente se você tem 18 anos ou mais. | Tell us whether you are 18 or older. | `plugin/src/Accounts/Forms/Messages.php:26` |
+| Marque a caixa de concordância para continuar. | Check the agreement box to continue. | `plugin/src/Accounts/Forms/Messages.php:27` |
+| Foram muitas tentativas seguidas. Espere 15 minutos e tente de novo, ou crie uma senha nova em "Esqueci minha senha". | Many attempts in a row. Wait 15 minutes and try again, or create a new password with "Forgot password". | `plugin/src/Accounts/Forms/Messages.php:28` |
+| Use pelo menos 6 caracteres na senha. | Use at least 6 characters in the password. | `plugin/src/Accounts/Forms/Messages.php:30` |
 
 ## Partes comuns dos formulários e login com Google
 
 | Texto no site | Original (inglês) | Onde |
 |---|---|---|
-| Mostrar | Show | `plugin/src/Accounts/Forms/View.php:82` |
-| Ocultar | Hide | `plugin/src/Accounts/Forms/View.php:82` |
-| Continuar com o Google | Continue with Google | `plugin/src/Accounts/Forms/View.php:98` |
-| ou com e-mail | or with email | `plugin/src/Accounts/Forms/View.php:105` |
+| Mostrar | Show | `plugin/src/Accounts/Forms/View.php:106` |
+| Ocultar | Hide | `plugin/src/Accounts/Forms/View.php:106` |
+| Continuar com o Google | Continue with Google | `plugin/src/Accounts/Forms/View.php:122` |
+| ou com e-mail | or with email | `plugin/src/Accounts/Forms/View.php:129` |
+| Antes de continuar, confira: | Before continuing: | `plugin/src/Accounts/Forms/View.php:50` |
 
 ## E-mails
 

@@ -47,6 +47,22 @@ document.querySelectorAll( '.eta-password-toggle' ).forEach( function ( button )
 			} else {
 				document.documentElement.setAttribute( 'data-eta-scheme', input.value );
 			}
+			const saved = fieldset.querySelector( '.eta-saved' );
+			if ( saved ) {
+				saved.textContent = saved.dataset.saved;
+			}
 		} );
 	} );
+} )();
+
+/**
+ * A form that came back with problems: bring the list into view and give it focus, so it is
+ * seen on small screens and read by screen readers.
+ */
+( function () {
+	const notice = document.querySelector( '.eta-notice-error' );
+	if ( notice ) {
+		notice.focus( { preventScroll: true } );
+		notice.scrollIntoView( { block: 'center' } );
+	}
 } )();

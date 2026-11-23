@@ -57,6 +57,23 @@ abstract class TestCase extends WP_UnitTestCase {
 	}
 
 	/**
+	 * Problems and values a form brought back, read from the token in the address.
+	 *
+	 * @param string $url Redirect URL.
+	 * @return array{errors: string[], values: array<string, string>}
+	 */
+	protected function form_state( string $url ): array {
+		parse_str( (string) wp_parse_url( $url, PHP_URL_QUERY ), $query );
+		$token = is_string( $query['eta_form'] ?? null ) ? $query['eta_form'] : '';
+		$state = get_transient( 'eta_form_' . $token );
+		$this->assertIsArray( $state, 'The address carries a form state.' );
+		return array(
+			'errors' => array_values( (array) $state['errors'] ),
+			'values' => (array) $state['values'],
+		);
+	}
+
+	/**
 	 * Reloads a user from the database.
 	 *
 	 * @param int $user_id User ID.

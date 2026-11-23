@@ -6,6 +6,7 @@
  */
 
 use EuTeAjudo\Accounts\Forms\Messages;
+use EuTeAjudo\Accounts\Forms\FormState;
 use EuTeAjudo\Accounts\Forms\View;
 use EuTeAjudo\Accounts\Pages;
 
@@ -45,9 +46,9 @@ $euteajudo_terms   = \EuTeAjudo\Site\ContentPages::url( \EuTeAjudo\Site\ContentP
 		<?php echo View::default_submit(); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Escaped in View. ?>
 		<fieldset class="eta-before">
 			<legend><?php esc_html_e( 'Before you start', 'euteajudo' ); ?></legend>
-			<label class="eta-choice"><input type="radio" name="age" value="adult"> <?php esc_html_e( 'I am 18 or older', 'euteajudo' ); ?></label>
+			<label class="eta-choice"><input type="radio" name="age" value="adult"<?php checked( FormState::value( 'age' ), 'adult' ); ?><?php echo View::invalid_attr( 'age' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Static attribute. ?>> <?php esc_html_e( 'I am 18 or older', 'euteajudo' ); ?></label>
 			<label class="eta-choice"><input type="radio" name="age" value="minor"> <?php esc_html_e( 'I am under 18', 'euteajudo' ); ?></label>
-			<label class="eta-choice"><input type="checkbox" name="consent" value="1"> <span>
+			<label class="eta-choice"><input type="checkbox" name="consent" value="1"<?php checked( FormState::value( 'consent' ), '1' ); ?><?php echo View::invalid_attr( 'consent' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Static attribute. ?>> <span>
 				<?php esc_html_e( 'I agree that what I write is read by an artificial intelligence made to welcome people, including services outside Brazil.', 'euteajudo' ); ?>
 				<?php
 				if ( '' !== $euteajudo_privacy && '' !== $euteajudo_terms ) {
@@ -72,7 +73,7 @@ $euteajudo_terms   = \EuTeAjudo\Site\ContentPages::url( \EuTeAjudo\Site\ContentP
 		echo View::google_button();
 		echo View::divider();
 		echo View::email( 'eta-sign-up-email' );
-		echo View::password( 'eta-sign-up-password', __( 'Password', 'euteajudo' ), 'new-password', __( 'At least 10 characters.', 'euteajudo' ) );
+		echo View::password( 'eta-sign-up-password', __( 'Password', 'euteajudo' ), 'new-password', sprintf( /* translators: %d: minimum number of characters. */ __( 'At least %d characters.', 'euteajudo' ), \EuTeAjudo\Accounts\Forms\SignUp::MIN_PASSWORD ) );
 		echo View::submit( __( 'Create account', 'euteajudo' ), 'email' );
 		// phpcs:enable
 		?>

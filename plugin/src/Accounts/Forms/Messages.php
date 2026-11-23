@@ -23,9 +23,11 @@ final class Messages {
 		return match ( $code ) {
 			'credentials'          => __( 'Email or password does not match. Check and try again, or use "Forgot password".', 'euteajudo' ),
 			'email_unconfirmed'    => __( 'Confirm your email first. We sent a new link to your inbox.', 'euteajudo' ),
-			'consent_required'     => __( 'Choose your age and accept the terms to continue.', 'euteajudo' ),
+			'age_required'         => __( 'Tell us whether you are 18 or older.', 'euteajudo' ),
+			'consent_required'     => __( 'Check the agreement box to continue.', 'euteajudo' ),
+			'too_many_attempts'    => __( 'Many attempts in a row. Wait 15 minutes and try again, or create a new password with "Forgot password".', 'euteajudo' ),
 			'email_invalid'        => __( 'Type a valid email address.', 'euteajudo' ),
-			'password_short'       => __( 'Use at least 10 characters in the password.', 'euteajudo' ),
+			'password_short'       => __( 'Use at least 6 characters in the password.', 'euteajudo' ),
 			'needs_registration'   => __( 'This Google account has no account here yet. Create your account to continue.', 'euteajudo' ),
 			'not_configured'       => __( 'Sign in with Google is not available right now. Use your email and password.', 'euteajudo' ),
 			'denied'               => __( 'Sign in with Google was cancelled.', 'euteajudo' ),

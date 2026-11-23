@@ -76,7 +76,7 @@ final class SignUpTest extends TestCase {
 	 */
 	public static function refused(): array {
 		return array(
-			'no age'         => array( array( 'age' => '' ), 'consent_required' ),
+			'no age'         => array( array( 'age' => '' ), 'age_required' ),
 			'no consent'     => array( array( 'consent' => '' ), 'consent_required' ),
 			'invalid email'  => array( array( 'email' => 'not-an-email' ), 'email_invalid' ),
 			'short password' => array( array( 'password' => 'short' ), 'password_short' ),
@@ -94,8 +94,32 @@ final class SignUpTest extends TestCase {
 	public function test_refuses_invalid_input( array $change, string $error ): void {
 		$url = SignUp::handle( array_merge( self::GOOD, $change ) );
 
-		$this->assertSame( $error, $this->param( $url, 'eta_auth_error' ) );
+		$this->assertSame( array( $error ), $this->form_state( $url )['errors'] );
 		$this->assertFalse( get_user_by( 'email', 'someone@example.org' ) );
+	}
+
+	public function test_every_problem_comes_back_at_once_with_the_fields_kept_except_the_password(): void {
+		$url = SignUp::handle(
+			array(
+				'age'      => 'adult',
+				'consent'  => '',
+				'method'   => 'email',
+				'email'    => 'teste1@example',
+				'password' => '123',
+			)
+		);
+
+		$state = $this->form_state( $url );
+		$this->assertSame( array( 'consent_required', 'email_invalid', 'password_short' ), $state['errors'] );
+		$this->assertSame( 'adult', $state['values']['age'] );
+		$this->assertSame( 'teste1@example', $state['values']['email'] );
+		$this->assertArrayNotHasKey( 'password', $state['values'] );
+	}
+
+	public function test_six_characters_are_enough(): void {
+		$url = SignUp::handle( array_merge( self::GOOD, array( 'password' => 'abc123' ) ) );
+
+		$this->assertSame( 'check_email', $this->param( $url, 'eta_step' ) );
 	}
 
 	public function test_existing_email_gets_the_same_answer_and_a_notice_instead_of_a_new_account(): void {

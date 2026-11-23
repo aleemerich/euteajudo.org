@@ -58,14 +58,14 @@ msgid "Alias"
 msgstr "Apelido"
 
 #: blocks/account-link/render.php:16
-#: blocks/account/render.php:42
+#: blocks/account/render.php:54
 msgid "Sign out"
 msgstr "Sair"
 
 #: blocks/account-link/render.php:18
 #: blocks/email-confirmation/render.php:30
 #: blocks/sign-in/render.php:37
-#: blocks/sign-up/render.php:40
+#: blocks/sign-up/render.php:41
 #: src/Accounts/Pages.php:129
 msgid "Sign in"
 msgstr "Entrar"
@@ -117,11 +117,7 @@ msgstr "Pedir um link novo"
 msgid "New password"
 msgstr "Nova senha"
 
-#: blocks/password-reset/render.php:30
-#: blocks/sign-up/render.php:75
-msgid "At least 10 characters."
-msgstr "Pelo menos 10 caracteres."
-
+#. translators: %d: minimum number of characters.
 #: blocks/password-reset/render.php:31
 msgid "Save new password"
 msgstr "Salvar senha nova"
@@ -135,7 +131,7 @@ msgid "Good to have you back."
 msgstr "Bom ter você de volta."
 
 #: blocks/sign-in/render.php:36
-#: blocks/sign-up/render.php:75
+#: blocks/sign-up/render.php:76
 msgid "Password"
 msgstr "Senha"
 
@@ -148,89 +144,90 @@ msgstr "Esqueci minha senha"
 msgid "Don't have an account yet? Create account"
 msgstr "Ainda não tem conta? Criar conta"
 
-#: blocks/sign-up/render.php:21
+#: blocks/sign-up/render.php:22
 msgid "This space is for people 18 and over"
 msgstr "Este espaço é para maiores de 18 anos"
 
-#: blocks/sign-up/render.php:22
+#: blocks/sign-up/render.php:23
 msgid "You deserve to be heard now. These services help people under 18, for free and with trained people:"
 msgstr "Você merece ser ouvido agora. Estes serviços atendem quem tem menos de 18 anos, de graça e com pessoas preparadas:"
 
-#: blocks/sign-up/render.php:25
+#: blocks/sign-up/render.php:26
 msgid "Pode Falar (UNICEF)"
 msgstr "Pode Falar (UNICEF)"
 
-#: blocks/sign-up/render.php:26
+#: blocks/sign-up/render.php:27
 msgid "For people aged 13 to 24, on WhatsApp."
 msgstr "Para quem tem de 13 a 24 anos, por WhatsApp."
 
-#: blocks/sign-up/render.php:27
+#: blocks/sign-up/render.php:28
 msgid "Open Pode Falar"
 msgstr "Abrir o Pode Falar"
 
-#: blocks/sign-up/render.php:30
+#: blocks/sign-up/render.php:31
 msgid "CVV"
 msgstr "CVV"
 
-#: blocks/sign-up/render.php:31
+#: blocks/sign-up/render.php:32
 msgid "Any age, any time, by phone at 188 or by chat."
 msgstr "Qualquer idade, a qualquer hora, pelo telefone 188 ou pelo chat."
 
 #: blocks/home/render.php:53
-#: blocks/sign-up/render.php:32
+#: blocks/sign-up/render.php:33
 msgid "Call 188"
 msgstr "Ligar para o 188"
 
-#: blocks/sign-up/render.php:37
+#: blocks/sign-up/render.php:38
 msgid "Almost there"
 msgstr "Quase lá"
 
-#: blocks/sign-up/render.php:38
+#: blocks/sign-up/render.php:39
 msgid "We sent a link to the email you typed. Open the email and tap the link to confirm it. The link is valid for 48 hours."
 msgstr "Mandamos um link para o e-mail que você informou. Abra o e-mail e toque no link para confirmar. O link vale por 48 horas."
 
-#: blocks/sign-up/render.php:39
+#: blocks/sign-up/render.php:40
 msgid "The subject is \"EuTeAjudo: confirm your email\". If it does not arrive in a few minutes, check the spam folder. To get a new link, try to sign in."
 msgstr "O assunto é \"EuTeAjudo: confirme seu e-mail\". Se não chegar em alguns minutos, olhe a pasta de spam. Para receber um link novo, tente entrar."
 
-#: blocks/sign-up/render.php:43
+#: blocks/sign-up/render.php:44
 msgid "Here you are just a Friend with a number, like Friend 48213. Nobody sees your email."
 msgstr "Aqui você é só um Amigo com número, como Amigo 48213. Ninguém vê seu e-mail."
 
-#: blocks/sign-up/render.php:47
+#: blocks/sign-up/render.php:48
 msgid "Before you start"
 msgstr "Antes de começar"
 
-#: blocks/sign-up/render.php:48
+#: blocks/sign-up/render.php:49
 msgid "I am 18 or older"
 msgstr "Tenho 18 anos ou mais"
 
-#: blocks/sign-up/render.php:49
+#: blocks/sign-up/render.php:50
 msgid "I am under 18"
 msgstr "Tenho menos de 18 anos"
 
-#: blocks/sign-up/render.php:51
+#: blocks/sign-up/render.php:52
 msgid "I agree that what I write is read by an artificial intelligence made to welcome people, including services outside Brazil."
 msgstr "Concordo que o que eu escrever seja lido por uma inteligência artificial criada para acolher, inclusive em serviços fora do Brasil."
 
 #. translators: %s: link to the privacy policy.
-#: blocks/sign-up/render.php:63
+#: blocks/sign-up/render.php:64
 #, php-format
 msgid "I have read the %s."
 msgstr "Li a %s."
 
-#: blocks/sign-up/render.php:58
-#: blocks/sign-up/render.php:64
+#: blocks/sign-up/render.php:59
+#: blocks/sign-up/render.php:65
 #: src/Site/ContentPages.php:102
 msgid "Privacy policy"
 msgstr "Política de privacidade"
 
-#: blocks/sign-up/render.php:76
+#. translators: %d: minimum number of characters.
+#: blocks/sign-up/render.php:77
 #: src/Accounts/Pages.php:130
 msgid "Create account"
 msgstr "Criar conta"
 
-#: blocks/sign-up/render.php:80
+#: blocks/sign-up/render.php:81
 msgid "Already have an account? Sign in"
 msgstr "Já tem conta? Entrar"
 
@@ -266,51 +263,43 @@ msgstr "E-mail ou senha não conferem. Confira e tente de novo, ou use \"Esqueci
 msgid "Confirm your email first. We sent a new link to your inbox."
 msgstr "Confirme seu e-mail primeiro. Mandamos um link novo para sua caixa de entrada."
 
-#: src/Accounts/Forms/Messages.php:26
-msgid "Choose your age and accept the terms to continue."
-msgstr "Escolha sua idade e aceite os termos para continuar."
-
-#: src/Accounts/Forms/Messages.php:27
+#: src/Accounts/Forms/Messages.php:29
 msgid "Type a valid email address."
 msgstr "Informe um e-mail válido."
 
-#: src/Accounts/Forms/Messages.php:28
-msgid "Use at least 10 characters in the password."
-msgstr "Use pelo menos 10 caracteres na senha."
-
-#: src/Accounts/Forms/Messages.php:29
+#: src/Accounts/Forms/Messages.php:31
 msgid "This Google account has no account here yet. Create your account to continue."
 msgstr "Essa conta do Google ainda não tem cadastro aqui. Crie sua conta para continuar."
 
-#: src/Accounts/Forms/Messages.php:30
+#: src/Accounts/Forms/Messages.php:32
 msgid "Sign in with Google is not available right now. Use your email and password."
 msgstr "Entrar com o Google não está disponível agora. Use seu e-mail e senha."
 
-#: src/Accounts/Forms/Messages.php:31
+#: src/Accounts/Forms/Messages.php:33
 msgid "Sign in with Google was cancelled."
 msgstr "A entrada com o Google foi cancelada."
 
-#: src/Accounts/Forms/Messages.php:32
+#: src/Accounts/Forms/Messages.php:34
 msgid "This Google account does not have a verified email. Use another account, or your email and password."
 msgstr "Essa conta do Google não tem e-mail verificado. Use outra conta, ou seu e-mail e senha."
 
-#: src/Accounts/Forms/Messages.php:33
+#: src/Accounts/Forms/Messages.php:35
 msgid "Sign in with Google did not finish. Try again."
 msgstr "A entrada com o Google não terminou. Tente de novo."
 
-#: src/Accounts/Forms/Messages.php:34
+#: src/Accounts/Forms/Messages.php:36
 msgid "This page stayed open for too long. Try again."
 msgstr "Esta página ficou aberta por muito tempo. Tente de novo."
 
-#: src/Accounts/Forms/Messages.php:35
+#: src/Accounts/Forms/Messages.php:37
 msgid "This link is invalid or has expired. Ask for a new one below."
 msgstr "Este link é inválido ou venceu. Peça um novo abaixo."
 
-#: src/Accounts/Forms/Messages.php:36
+#: src/Accounts/Forms/Messages.php:38
 msgid "This confirmation link is invalid or has expired. Sign in to get a new one."
 msgstr "Este link de confirmação é inválido ou venceu. Entre para receber um novo."
 
-#: src/Accounts/Forms/Messages.php:37
+#: src/Accounts/Forms/Messages.php:39
 msgid "Something went wrong. Try again in a few minutes."
 msgstr "Algo deu errado. Tente de novo em alguns minutos."
 
@@ -363,23 +352,23 @@ msgstr ""
 "Se você não pediu isso, pode ignorar esta mensagem. Sua senha continua a mesma."
 
 #: blocks/account/render.php:30
-#: src/Accounts/Forms/View.php:66
+#: src/Accounts/Forms/View.php:90
 msgid "Email"
 msgstr "E-mail"
 
-#: src/Accounts/Forms/View.php:82
+#: src/Accounts/Forms/View.php:106
 msgid "Show"
 msgstr "Mostrar"
 
-#: src/Accounts/Forms/View.php:82
+#: src/Accounts/Forms/View.php:106
 msgid "Hide"
 msgstr "Ocultar"
 
-#: src/Accounts/Forms/View.php:98
+#: src/Accounts/Forms/View.php:122
 msgid "Continue with Google"
 msgstr "Continuar com o Google"
 
-#: src/Accounts/Forms/View.php:105
+#: src/Accounts/Forms/View.php:129
 msgid "or with email"
 msgstr "ou com e-mail"
 
@@ -473,28 +462,24 @@ msgstr "Noite"
 msgid "Day"
 msgstr "Dia"
 
-#: blocks/account/render.php:39
-msgid "This choice is saved only in this browser."
-msgstr "Esta escolha fica salva só neste navegador."
-
-#: blocks/account/render.php:44
+#: blocks/account/render.php:43
 msgid "Delete account"
 msgstr "Excluir conta"
 
-#: blocks/account/render.php:46
-#: src/Accounts/Forms/Messages.php:39
+#: blocks/account/render.php:45
+#: src/Accounts/Forms/Messages.php:41
 msgid "Accounts that manage the site cannot be deleted here."
 msgstr "Contas que administram o site não podem ser excluídas aqui."
 
-#: blocks/account/render.php:48
+#: blocks/account/render.php:47
 msgid "Your email is removed from the site and nobody can sign in to this account anymore. What you wrote stays under your alias, without your email. You can create a new account later; it gets a new alias."
 msgstr "Seu e-mail é removido do site e ninguém consegue mais entrar nesta conta. O que você escreveu continua com o seu Apelido, sem o seu e-mail. Você pode criar uma conta nova depois; ela recebe outro Apelido."
 
-#: blocks/account/render.php:50
+#: blocks/account/render.php:49
 msgid "I understand and want to delete my account"
 msgstr "Entendo e quero excluir minha conta"
 
-#: blocks/account/render.php:51
+#: blocks/account/render.php:50
 msgid "Delete my account"
 msgstr "Excluir minha conta"
 
@@ -502,7 +487,7 @@ msgstr "Excluir minha conta"
 msgid "Your account was deleted."
 msgstr "Sua conta foi excluída."
 
-#: src/Accounts/Forms/Messages.php:38
+#: src/Accounts/Forms/Messages.php:40
 msgid "Check the box to confirm that you want to delete your account."
 msgstr "Marque a caixa para confirmar que quer excluir sua conta."
 
@@ -782,51 +767,51 @@ msgstr "Não quero mais receber mensagens"
 msgid "I prefer not to say"
 msgstr "Prefiro não dizer"
 
-#: blocks/write/render.php:21
+#: blocks/write/render.php:30
 msgid "Title"
 msgstr "Título"
 
-#: blocks/write/render.php:21
+#: blocks/write/render.php:30
 msgid "so you can find it later"
 msgstr "para você encontrar depois"
 
-#: blocks/write/render.php:23
+#: blocks/write/render.php:32
 msgid "What is happening?"
 msgstr "O que está acontecendo?"
 
-#: blocks/write/render.php:25
+#: blocks/write/render.php:33
 msgid "If it helps, think about how long this has been going on, what you have already tried and what you feel you need now. Write your way; nothing needs to be organised."
 msgstr "Se ajudar, pense em há quanto tempo isso acontece, no que você já tentou e no que sente que precisa agora. Escreva do seu jeito; não precisa organizar nada."
 
-#: blocks/write/render.php:26
+#: blocks/write/render.php:35
 msgid "Phone numbers, emails and documents are removed before saving. The reply may take a few hours; we let you know by email."
 msgstr "Telefones, e-mails e documentos são removidos antes de salvar. A resposta pode levar algumas horas; avisamos por e-mail."
 
-#: blocks/write/render.php:27
+#: blocks/write/render.php:36
 msgid "Send request"
 msgstr "Enviar pedido"
 
-#: src/Accounts/Forms/Messages.php:40
+#: src/Accounts/Forms/Messages.php:42
 msgid "Give your request a title, so you can find it later."
 msgstr "Dê um título ao seu pedido, para encontrá-lo depois."
 
-#: src/Accounts/Forms/Messages.php:41
+#: src/Accounts/Forms/Messages.php:43
 msgid "The text is empty. Write a few lines to send your request."
 msgstr "O texto está vazio. Escreva algumas linhas para enviar o pedido."
 
-#: src/Accounts/Forms/Messages.php:42
+#: src/Accounts/Forms/Messages.php:44
 msgid "The reply is empty. Write something to send it."
 msgstr "A resposta está vazia. Escreva algo para enviar."
 
-#: src/Accounts/Forms/Messages.php:43
+#: src/Accounts/Forms/Messages.php:45
 msgid "This request is closed. Reopen it to keep talking."
 msgstr "Este pedido está encerrado. Reabra para continuar a conversa."
 
-#: src/Accounts/Forms/Messages.php:44
+#: src/Accounts/Forms/Messages.php:46
 msgid "You cannot do this here."
 msgstr "Você não pode fazer isso aqui."
 
-#: src/Accounts/Forms/Messages.php:45
+#: src/Accounts/Forms/Messages.php:47
 msgid "We could not find this request."
 msgstr "Não encontramos este pedido."
 
@@ -1275,12 +1260,12 @@ msgid "CVV answers for free, at any time, by phone at 188 or by chat at cvv.org.
 msgstr "O CVV atende de graça, a qualquer hora, pelo telefone 188 ou pelo chat em cvv.org.br."
 
 #. translators: 1: link to the terms of use, 2: link to the privacy policy.
-#: blocks/sign-up/render.php:56
+#: blocks/sign-up/render.php:57
 #, php-format
 msgid "I accept the %1$s and the %2$s."
 msgstr "Aceito os %1$s e a %2$s."
 
-#: blocks/sign-up/render.php:57
+#: blocks/sign-up/render.php:58
 #: src/Site/ContentPages.php:101
 msgid "Terms of use"
 msgstr "Termos de uso"
@@ -1322,3 +1307,50 @@ msgstr ""
 msgctxt "block description"
 msgid "About, Terms of use, Privacy policy and the crisis line."
 msgstr ""
+
+#: blocks/account/render.php:39
+msgid "The change is applied right away and saved only in this browser."
+msgstr "A mudança vale na hora e fica guardada só neste navegador."
+
+#: blocks/account/render.php:40
+msgid "Appearance saved."
+msgstr "Aparência salva."
+
+#: blocks/account/render.php:55
+msgid "If other people use this device, sign out when you finish."
+msgstr "Se outras pessoas usam este aparelho, saia quando terminar."
+
+#: blocks/account/render.php:55
+msgid "Sign out of this device"
+msgstr "Sair deste aparelho"
+
+#. translators: %d: minimum number of characters.
+#: blocks/password-reset/render.php:30
+#: blocks/sign-up/render.php:76
+#, php-format
+msgid "At least %d characters."
+msgstr "Pelo menos %d caracteres."
+
+#: blocks/write/render.php:25
+msgid "Your email is confirmed. Whenever you are ready, write here what is happening."
+msgstr "Seu e-mail está confirmado. Quando quiser, escreva aqui o que está acontecendo."
+
+#: src/Accounts/Forms/Messages.php:26
+msgid "Tell us whether you are 18 or older."
+msgstr "Conte para a gente se você tem 18 anos ou mais."
+
+#: src/Accounts/Forms/Messages.php:27
+msgid "Check the agreement box to continue."
+msgstr "Marque a caixa de concordância para continuar."
+
+#: src/Accounts/Forms/Messages.php:28
+msgid "Many attempts in a row. Wait 15 minutes and try again, or create a new password with \"Forgot password\"."
+msgstr "Foram muitas tentativas seguidas. Espere 15 minutos e tente de novo, ou crie uma senha nova em \"Esqueci minha senha\"."
+
+#: src/Accounts/Forms/Messages.php:30
+msgid "Use at least 6 characters in the password."
+msgstr "Use pelo menos 6 caracteres na senha."
+
+#: src/Accounts/Forms/View.php:50
+msgid "Before continuing:"
+msgstr "Antes de continuar, confira:"

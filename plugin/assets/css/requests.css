@@ -14,18 +14,13 @@
 	line-height: 1.6;
 	color: var(--wp--preset--color--text);
 	background: var(--wp--preset--color--field);
-	border: 1px solid var(--wp--preset--color--line-strong);
+	border: 1px solid var(--wp--preset--color--field-border);
 	border-radius: var(--wp--preset--border-radius--field);
 	padding: 12px 14px;
 	resize: vertical;
 }
-/* The one warm light: a soft lamp glow over the writing area. */
-.eta-paper {
-	border-radius: var(--wp--preset--border-radius--card);
-	background: radial-gradient(120% 80% at 50% -20%, color-mix(in srgb, var(--wp--preset--color--brand-lamp) 20%, transparent), transparent 60%);
-}
-.eta-paper textarea {
-	background: transparent;
+.eta-hint-before {
+	margin: 0 0 var(--wp--preset--spacing--20);
 }
 .eta-disclosure {
 	font-size: var(--wp--preset--font-size--small);
@@ -181,7 +176,7 @@
 		display: grid;
 		grid-template-columns: repeat(3, 1fr);
 		gap: 0;
-		background: var(--wp--preset--color--field);
+		background: var(--wp--preset--color--surface);
 		border-top: 1px solid var(--wp--preset--color--line);
 		padding-bottom: env(safe-area-inset-bottom);
 	}

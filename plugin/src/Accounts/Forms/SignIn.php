@@ -27,20 +27,23 @@ final class SignIn {
 	 * @param array<string, string> $input Submitted fields: method, email, password, redirect_to.
 	 */
 	public static function handle( array $input ): string {
-		$redirect = Redirects::after_sign_in( $input['redirect_to'] ?? '' );
+		$requested = $input['redirect_to'] ?? '';
 
 		if ( 'google' === ( $input['method'] ?? '' ) ) {
-			return GoogleAuth::begin( 'login', $redirect );
+			return GoogleAuth::begin( 'login', $requested );
 		}
 
-		$user = get_user_by( 'email', sanitize_email( $input['email'] ?? '' ) );
-		if ( ! $user instanceof \WP_User ) {
-			return self::error( 'credentials' );
+		$email = sanitize_email( $input['email'] ?? '' );
+		if ( SignInAttempts::blocked( $email ) ) {
+			return self::error( 'too_many_attempts', $email );
 		}
-		$authenticated = wp_authenticate( $user->user_login, $input['password'] ?? '' );
+		$user          = get_user_by( 'email', $email );
+		$authenticated = $user instanceof \WP_User ? wp_authenticate( $user->user_login, $input['password'] ?? '' ) : null;
 		if ( ! $authenticated instanceof \WP_User ) {
-			return self::error( 'credentials' );
+			SignInAttempts::failed( $email );
+			return self::error( 'credentials', $email );
 		}
+		SignInAttempts::succeeded( $email );
 
 		if ( ! EmailConfirmation::is_confirmed( $authenticated->ID ) && ! user_can( $authenticated, 'edit_posts' ) ) {
 			self::resend_confirmation( $authenticated->ID );
@@ -51,7 +54,7 @@ final class SignIn {
 		wp_set_auth_cookie( $authenticated->ID, true, is_ssl() );
 		do_action( 'wp_login', $authenticated->user_login, $authenticated ); // phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHooknameFound -- Core action, fired as wp_signon does.
 
-		return $redirect;
+		return Redirects::after_sign_in( $requested, $authenticated->ID );
 	}
 
 	/**
@@ -69,11 +72,12 @@ final class SignIn {
 	}
 
 	/**
-	 * Back to the sign-in page with an error code.
+	 * Back to the sign-in page with an error, keeping the email typed.
 	 *
-	 * @param string $code Error code.
+	 * @param string $code  Error code.
+	 * @param string $email Email typed.
 	 */
-	private static function error( string $code ): string {
-		return Pages::url( Pages::SIGN_IN, array( 'eta_auth_error' => $code ) );
+	private static function error( string $code, string $email = '' ): string {
+		return Pages::url( Pages::SIGN_IN, array( FormState::PARAM => FormState::save( array( $code ), array( 'email' => $email ) ) ) );
 	}
 }

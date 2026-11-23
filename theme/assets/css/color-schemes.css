@@ -6,7 +6,8 @@
 :root {
 	--eta-color-background: #0F2529;
 	--eta-color-surface: #16343B;
-	--eta-color-field: #0B1E22;
+	--eta-color-field: #1B3D44;
+	--eta-color-field-border: #7A9692;
 	--eta-color-text: #E9EFEC;
 	--eta-color-text-strong: #FFFFFF;
 	--eta-color-text-muted: #9BB1AD;
@@ -25,6 +26,7 @@
 		--eta-color-background: #EEF3F1;
 		--eta-color-surface: #FFFFFF;
 		--eta-color-field: #FFFFFF;
+		--eta-color-field-border: #738884;
 		--eta-color-text: #10262A;
 		--eta-color-text-strong: #0A1B1E;
 		--eta-color-text-muted: #4A625E;
@@ -43,6 +45,7 @@
 	--eta-color-background: #EEF3F1;
 	--eta-color-surface: #FFFFFF;
 	--eta-color-field: #FFFFFF;
+	--eta-color-field-border: #738884;
 	--eta-color-text: #10262A;
 	--eta-color-text-strong: #0A1B1E;
 	--eta-color-text-muted: #4A625E;

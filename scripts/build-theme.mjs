@@ -35,6 +35,7 @@ const ROLE_NAMES = {
 	background: 'Background',
 	surface: 'Surface',
 	field: 'Field',
+	'field-border': 'Field border',
 	text: 'Text',
 	'text-strong': 'Text strong',
 	'text-muted': 'Text muted',

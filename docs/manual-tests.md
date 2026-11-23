@@ -43,14 +43,17 @@ O **código** de um Pedido é a última parte do endereço da conversa: em `/meu
   - Esperado: um aviso pede a idade e o aceite.
 - [ ] **Menor de 18**: marque "Tenho menos de 18 anos" e envie.
   - Esperado: a tela indica o Pode Falar e o CVV, e nenhuma conta é criada.
-- [ ] **Cadastro por e-mail**: marque 18+, aceite os termos e use um e-mail inventado, como `teste1@example.org`, com senha de 10 caracteres ou mais.
+- [ ] **Cadastro por e-mail**: marque 18+, aceite os termos e use um e-mail inventado, como `teste1@example.org`, com senha de 6 caracteres ou mais.
+  - Antes, teste os erros: sem marcar a concordância e com a senha `123`. Esperado: a lista mostra todos os problemas de uma vez, e a idade e o e-mail continuam preenchidos.
   - Esperado: tela "Quase lá".
   - O texto do aceite tem links para os Termos e a Política.
 - [ ] **Confirmação**: no Mailpit, abra o e-mail "EuTeAjudo: confirme seu e-mail" e clique no link.
-  - Esperado: você entra como "Amigo NNNNNN".
+  - Esperado: você entra e cai direto em Escrever, com a mensagem de e-mail confirmado.
   - No celular aparece a barra inferior (Escrever, Meus pedidos, Conta).
 - [ ] **Sair e entrar de novo**: clique em "Sair" e entre com o mesmo e-mail e senha. Tente também uma senha errada.
-  - Esperado: a senha errada mostra uma mensagem genérica, sem dizer se o e-mail existe.
+  - Esperado: sem pedidos, você cai em Escrever; com pedidos, em Meus pedidos.
+  - A senha errada mostra uma mensagem genérica, sem dizer se o e-mail existe, e o e-mail continua preenchido.
+  - Depois de 5 senhas erradas seguidas, o site pede para esperar 15 minutos.
 - [ ] **Esqueci minha senha**: peça o link, abra o e-mail no Mailpit, crie uma senha nova e entre com ela.
 - [ ] **Login com Google**: crie uma conta e entre com "Continuar com o Google".
   - Esperado: a conta Google também ganha um Apelido.

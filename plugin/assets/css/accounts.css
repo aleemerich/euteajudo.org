@@ -20,7 +20,7 @@
 	font: inherit;
 	color: var(--wp--preset--color--text);
 	background: var(--wp--preset--color--field);
-	border: 1px solid var(--wp--preset--color--line-strong);
+	border: 1px solid var(--wp--preset--color--field-border);
 	border-radius: var(--wp--preset--border-radius--field);
 	padding: 10px 14px;
 }
@@ -120,7 +120,34 @@
 	background: var(--wp--preset--color--surface);
 }
 .eta-notice-error {
-	border-left: 4px solid var(--wp--preset--color--text-strong);
+	border: 2px solid var(--wp--preset--color--text-strong);
+	font-weight: 600;
+}
+.eta-notice[tabindex="-1"]:focus {
+	outline: none;
+}
+.eta-notice-error p {
+	margin: 0 0 var(--wp--preset--spacing--20);
+}
+.eta-notice-error ul {
+	margin: 0;
+	padding-left: 1.2em;
+	font-weight: 400;
+}
+.eta-form [aria-invalid="true"] {
+	border: 2px solid var(--wp--preset--color--text-strong);
+}
+.eta-form input[type="radio"][aria-invalid="true"],
+.eta-form input[type="checkbox"][aria-invalid="true"] {
+	outline: 2px solid var(--wp--preset--color--text-strong);
+	outline-offset: 2px;
+}
+.eta-saved:empty {
+	display: none;
+}
+.eta-saved {
+	font-weight: 600;
+	margin: var(--wp--preset--spacing--20) 0 0;
 }
 .eta-before {
 	border: 1px solid var(--wp--preset--color--line-strong);
