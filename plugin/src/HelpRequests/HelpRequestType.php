@@ -59,8 +59,13 @@ final class HelpRequestType {
 			self::POST_TYPE,
 			array(
 				'labels'              => array(
-					'name'          => __( 'Help requests', 'euteajudo' ),
-					'singular_name' => __( 'Help request', 'euteajudo' ),
+					'name'               => __( 'Help requests', 'euteajudo' ),
+					'singular_name'      => __( 'Help request', 'euteajudo' ),
+					'edit_item'          => __( 'Help request', 'euteajudo' ),
+					'all_items'          => __( 'All help requests', 'euteajudo' ),
+					'search_items'       => __( 'Search help requests', 'euteajudo' ),
+					'not_found'          => __( 'No help requests found.', 'euteajudo' ),
+					'not_found_in_trash' => __( 'No help requests found in Trash.', 'euteajudo' ),
 				),
 				'public'              => false,
 				'publicly_queryable'  => false,
@@ -76,6 +81,7 @@ final class HelpRequestType {
 				'menu_icon'           => 'dashicons-format-chat',
 				'supports'            => array( 'title', 'editor', 'excerpt', 'comments', 'author' ),
 				'capability_type'     => array( 'eta_help_request', 'eta_help_requests' ),
+				'capabilities'        => array( 'create_posts' => 'do_not_allow' ), // Only Friends write requests, on the site.
 				'map_meta_cap'        => true,
 			)
 		);

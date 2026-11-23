@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-11-22T21:52:10-03:00\n"
+"POT-Creation-Date: 2026-11-22T22:05:56-03:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: euteajudo\n"
@@ -180,6 +180,7 @@ msgid "Message sent. The reply may take a few hours."
 msgstr ""
 
 #: blocks/my-requests/render.php:120
+#: src/Admin/HelpRequestsAdmin.php:312
 msgid "Reply"
 msgstr ""
 
@@ -188,6 +189,7 @@ msgid "Write whenever you want"
 msgstr ""
 
 #: blocks/my-requests/render.php:122
+#: src/Admin/HelpRequestsAdmin.php:320
 msgid "Send reply"
 msgstr ""
 
@@ -562,6 +564,181 @@ msgstr ""
 msgid "My account"
 msgstr ""
 
+#: src/Admin/AgentStatus.php:35
+msgid "EuTeAjudo: Agent"
+msgstr ""
+
+#: src/Admin/AgentStatus.php:69
+msgid "No Agent has called the API yet."
+msgstr ""
+
+#. translators: %s: time since the last call, e.g. "5 mins".
+#: src/Admin/AgentStatus.php:72
+#, php-format
+msgid "Last call from an Agent: %s ago."
+msgstr ""
+
+#. translators: %d: number of requests.
+#: src/Admin/AgentStatus.php:77
+#, php-format
+msgid "%d request waiting for an Agent"
+msgid_plural "%d requests waiting for an Agent"
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: %d: number of requests.
+#: src/Admin/AgentStatus.php:79
+#, php-format
+msgid "%d waiting more than 24h"
+msgid_plural "%d waiting more than 24h"
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: %d: number of requests.
+#: src/Admin/AgentStatus.php:81
+#, php-format
+msgid "%d with failed verification"
+msgid_plural "%d with failed verification"
+msgstr[0] ""
+msgstr[1] ""
+
+#: src/Admin/HelpRequestsAdmin.php:125
+#: src/Admin/HelpRequestsAdmin.php:256
+msgid "Author"
+msgstr ""
+
+#: src/Admin/HelpRequestsAdmin.php:126
+#: src/Admin/HelpRequestsAdmin.php:255
+msgid "Status"
+msgstr ""
+
+#: src/Admin/HelpRequestsAdmin.php:127
+msgid "Author last wrote"
+msgstr ""
+
+#: src/Admin/HelpRequestsAdmin.php:128
+msgid "Replies"
+msgstr ""
+
+#. translators: %d: number of failed verifications.
+#: src/Admin/HelpRequestsAdmin.php:153
+#, php-format
+msgid "%d failed verification"
+msgid_plural "%d failed verifications"
+msgstr[0] ""
+msgstr[1] ""
+
+#: src/Admin/HelpRequestsAdmin.php:176
+msgid "All severities"
+msgstr ""
+
+#: src/Admin/HelpRequestsAdmin.php:177
+msgid "All categories"
+msgstr ""
+
+#: src/Admin/HelpRequestsAdmin.php:192
+msgid "Any situation"
+msgstr ""
+
+#: src/Admin/HelpRequestsAdmin.php:194
+msgid "No Agent reply for 24h"
+msgstr ""
+
+#: src/Admin/HelpRequestsAdmin.php:195
+msgid "Failed verification"
+msgstr ""
+
+#: src/Admin/HelpRequestsAdmin.php:242
+msgid "Request"
+msgstr ""
+
+#: src/Admin/HelpRequestsAdmin.php:243
+msgid "Summary (not shown to the author)"
+msgstr ""
+
+#: src/Admin/HelpRequestsAdmin.php:244
+msgid "Conversation"
+msgstr ""
+
+#: src/Admin/HelpRequestsAdmin.php:257
+msgid "Agent alias"
+msgstr ""
+
+#: src/Admin/HelpRequestsAdmin.php:258
+msgid "Written on"
+msgstr ""
+
+#: src/Admin/HelpRequestsAdmin.php:259
+msgid "Failed verifications"
+msgstr ""
+
+#: src/Admin/HelpRequestsAdmin.php:263
+msgid "Closed by"
+msgstr ""
+
+#. translators: 1: who edited, 2: date.
+#: src/Admin/HelpRequestsAdmin.php:273
+#, php-format
+msgid "Edited by %1$s on %2$s"
+msgstr ""
+
+#: src/Admin/HelpRequestsAdmin.php:277
+#: src/Admin/HelpRequestsAdmin.php:302
+msgid "Original text"
+msgstr ""
+
+#: src/Admin/HelpRequestsAdmin.php:279
+msgid "The status changes with the conversation. Saving keeps the status and records the edit."
+msgstr ""
+
+#: src/Admin/HelpRequestsAdmin.php:280
+msgid "Save changes"
+msgstr ""
+
+#: src/Admin/HelpRequestsAdmin.php:292
+msgid "author"
+msgstr ""
+
+#: src/Admin/HelpRequestsAdmin.php:296
+msgid "marked \"this helped me\""
+msgstr ""
+
+#: src/Admin/HelpRequestsAdmin.php:298
+msgid "Edit"
+msgstr ""
+
+#: src/Admin/HelpRequestsAdmin.php:307
+msgid "This request is closed. Only the author can reopen it."
+msgstr ""
+
+#: src/Admin/HelpRequestsAdmin.php:314
+msgid "Reply as"
+msgstr ""
+
+#. translators: %s: administrator's alias.
+#: src/Admin/HelpRequestsAdmin.php:316
+#, php-format
+msgid "Reply as %s (you)"
+msgstr ""
+
+#. translators: %s: Agent alias of this request.
+#: src/Admin/HelpRequestsAdmin.php:318
+#, php-format
+msgid "Reply as %s (Agent alias in this request)"
+msgstr ""
+
+#: src/Admin/HelpRequestsAdmin.php:361
+msgid "Help request saved."
+msgstr ""
+
+#: src/Admin/HelpRequestsAdmin.php:379
+msgid "Reply sent."
+msgstr ""
+
+#: src/Admin/HelpRequestsAdmin.php:379
+msgid "The reply was not sent. Check that it is not empty and that the request is open."
+msgstr ""
+
 #: src/Admin/UsersList.php:46
 msgid "Alias"
 msgstr ""
@@ -588,70 +765,132 @@ msgid "Help requests"
 msgstr ""
 
 #: src/HelpRequests/HelpRequestType.php:63
+#: src/HelpRequests/HelpRequestType.php:64
 msgid "Help request"
 msgstr ""
 
-#: src/HelpRequests/HelpRequestType.php:85
+#: src/HelpRequests/HelpRequestType.php:65
+msgid "All help requests"
+msgstr ""
+
+#: src/HelpRequests/HelpRequestType.php:66
+msgid "Search help requests"
+msgstr ""
+
+#: src/HelpRequests/HelpRequestType.php:67
+msgid "No help requests found."
+msgstr ""
+
+#: src/HelpRequests/HelpRequestType.php:68
+msgid "No help requests found in Trash."
+msgstr ""
+
+#: src/HelpRequests/HelpRequestType.php:91
 msgid "Awaiting triage"
 msgstr ""
 
 #. translators: %s: number of help requests.
-#: src/HelpRequests/HelpRequestType.php:87
+#: src/HelpRequests/HelpRequestType.php:93
 #, php-format
 msgid "Awaiting triage <span class=\"count\">(%s)</span>"
 msgid_plural "Awaiting triage <span class=\"count\">(%s)</span>"
 msgstr[0] ""
 msgstr[1] ""
 
-#: src/HelpRequests/HelpRequestType.php:90
+#: src/HelpRequests/HelpRequestType.php:96
 #: src/HelpRequests/View.php:29
 msgid "Awaiting reply"
 msgstr ""
 
 #. translators: %s: number of help requests.
-#: src/HelpRequests/HelpRequestType.php:92
+#: src/HelpRequests/HelpRequestType.php:98
 #, php-format
 msgid "Awaiting reply <span class=\"count\">(%s)</span>"
 msgid_plural "Awaiting reply <span class=\"count\">(%s)</span>"
 msgstr[0] ""
 msgstr[1] ""
 
-#: src/HelpRequests/HelpRequestType.php:95
+#: src/HelpRequests/HelpRequestType.php:101
 #: src/HelpRequests/View.php:27
 msgid "In conversation"
 msgstr ""
 
 #. translators: %s: number of help requests.
-#: src/HelpRequests/HelpRequestType.php:97
+#: src/HelpRequests/HelpRequestType.php:103
 #, php-format
 msgid "In conversation <span class=\"count\">(%s)</span>"
 msgid_plural "In conversation <span class=\"count\">(%s)</span>"
 msgstr[0] ""
 msgstr[1] ""
 
-#: src/HelpRequests/HelpRequestType.php:100
+#: src/HelpRequests/HelpRequestType.php:106
 #: src/HelpRequests/View.php:28
 msgid "Closed"
 msgstr ""
 
 #. translators: %s: number of help requests.
-#: src/HelpRequests/HelpRequestType.php:102
+#: src/HelpRequests/HelpRequestType.php:108
 #, php-format
 msgid "Closed <span class=\"count\">(%s)</span>"
 msgid_plural "Closed <span class=\"count\">(%s)</span>"
 msgstr[0] ""
 msgstr[1] ""
 
-#: src/HelpRequests/HelpRequestType.php:122
+#: src/HelpRequests/HelpRequestType.php:128
 msgid "Categories"
 msgstr ""
 
-#: src/HelpRequests/HelpRequestType.php:123
+#: src/HelpRequests/HelpRequestType.php:129
 msgid "Severity"
 msgstr ""
 
-#: src/HelpRequests/HelpRequestType.php:124
+#: src/HelpRequests/HelpRequestType.php:130
 msgid "Risk signals"
+msgstr ""
+
+#: src/HelpRequests/Notifications.php:42
+msgid "EuTeAjudo: you have a new message"
+msgstr ""
+
+#. translators: 1: author's alias, 2: link to the conversation.
+#: src/HelpRequests/Notifications.php:44
+#, php-format
+msgid ""
+"Hi, %1$s.\n"
+"\n"
+"There is a new reply in one of your requests. To read it, sign in:\n"
+"%2$s\n"
+"\n"
+"EuTeAjudo.org"
+msgstr ""
+
+#: src/HelpRequests/Notifications.php:56
+msgid "EuTeAjudo: one of your requests was closed"
+msgstr ""
+
+#. translators: 1: author's alias, 2: link to the conversation.
+#: src/HelpRequests/Notifications.php:58
+#, php-format
+msgid ""
+"Hi, %1$s.\n"
+"\n"
+"One of your requests had no new messages for 30 days and was closed. You can reopen it whenever you want:\n"
+"%2$s\n"
+"\n"
+"EuTeAjudo.org"
+msgstr ""
+
+#: src/HelpRequests/Schedules.php:120
+msgid "EuTeAjudo: requests waiting more than 24 hours"
+msgstr ""
+
+#. translators: %s: list of links to requests in the admin.
+#: src/HelpRequests/Schedules.php:123
+#, php-format
+msgid ""
+"These requests have waited more than 24 hours for an Agent reply. Check whether the Agent is running (Dashboard) or reply yourself:\n"
+"\n"
+"%s"
 msgstr ""
 
 #: src/HelpRequests/TriageTerms.php:26
