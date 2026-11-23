@@ -8,6 +8,7 @@
 	},
 	"require-dev": {
 		"dealerdirect/phpcodesniffer-composer-installer": "^1.0",
+		"php-stubs/wp-cli-stubs": "^2.12",
 		"phpcompatibility/php-compatibility": "^10.0@alpha",
 		"phpcompatibility/phpcompatibility-paragonie": "^2.0@alpha",
 		"phpcompatibility/phpcompatibility-wp": "^3.0@alpha",

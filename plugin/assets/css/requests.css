@@ -1,0 +1,216 @@
+/* Help request screens. Colors, radii and sizes come from the theme presets (design/tokens.json). */
+.eta-app {
+	max-width: var(--wp--style--global--content-size, 720px);
+}
+.eta-hint-inline {
+	font-weight: 400;
+	color: var(--wp--preset--color--text-muted);
+	font-size: var(--wp--preset--font-size--small);
+}
+.eta-app textarea {
+	box-sizing: border-box;
+	width: 100%;
+	font: inherit;
+	line-height: 1.6;
+	color: var(--wp--preset--color--text);
+	background: var(--wp--preset--color--field);
+	border: 1px solid var(--wp--preset--color--line-strong);
+	border-radius: var(--wp--preset--border-radius--field);
+	padding: 12px 14px;
+	resize: vertical;
+}
+/* The one warm light: a soft lamp glow over the writing area. */
+.eta-paper {
+	border-radius: var(--wp--preset--border-radius--card);
+	background: radial-gradient(120% 80% at 50% -20%, color-mix(in srgb, var(--wp--preset--color--brand-lamp) 20%, transparent), transparent 60%);
+}
+.eta-paper textarea {
+	background: transparent;
+}
+.eta-disclosure {
+	font-size: var(--wp--preset--font-size--small);
+	color: var(--wp--preset--color--text-muted);
+	margin-top: var(--wp--preset--spacing--60);
+	padding-top: var(--wp--preset--spacing--30);
+	border-top: 1px solid var(--wp--preset--color--line);
+}
+.eta-button-inline {
+	display: inline-flex;
+	width: auto;
+	margin-top: 0;
+}
+.eta-requests {
+	list-style: none;
+	margin: var(--wp--preset--spacing--40) 0 0;
+	padding: 0;
+}
+.eta-requests li {
+	border-bottom: 1px solid var(--wp--preset--color--line);
+}
+.eta-requests a {
+	display: block;
+	padding: var(--wp--preset--spacing--40) 2px;
+	text-decoration: none;
+	color: var(--wp--preset--color--text);
+}
+.eta-r-title {
+	display: block;
+	font-weight: 600;
+	margin-bottom: var(--wp--preset--spacing--10);
+}
+.eta-r-meta {
+	display: flex;
+	gap: var(--wp--preset--spacing--30);
+	align-items: center;
+	font-size: var(--wp--preset--font-size--small);
+	color: var(--wp--preset--color--text-muted);
+}
+.eta-status-new {
+	color: var(--wp--preset--color--notice-text);
+	font-weight: 700;
+}
+.eta-status-new::before {
+	content: "";
+	display: inline-block;
+	width: 9px;
+	height: 9px;
+	border-radius: 50%;
+	background: var(--wp--preset--color--accent);
+	margin-right: 6px;
+	vertical-align: 1px;
+}
+.is-closed .eta-r-title {
+	color: var(--wp--preset--color--text-muted);
+	font-weight: 400;
+}
+.eta-back {
+	display: inline-block;
+	margin-bottom: var(--wp--preset--spacing--30);
+	color: var(--wp--preset--color--text-muted);
+	font-size: var(--wp--preset--font-size--small);
+}
+.eta-back::before {
+	content: "‹ ";
+}
+.eta-request-title {
+	margin-bottom: var(--wp--preset--spacing--10);
+}
+.eta-msg {
+	margin: var(--wp--preset--spacing--50) 0;
+	padding: var(--wp--preset--spacing--40);
+	border-radius: var(--wp--preset--border-radius--card);
+}
+.eta-msg p:last-child {
+	margin-bottom: 0;
+}
+.eta-msg-other {
+	background: var(--wp--preset--color--surface);
+	border: 1px solid var(--wp--preset--color--line);
+}
+.eta-msg-mine {
+	border: 1px dashed var(--wp--preset--color--line-strong);
+}
+.eta-msg-head {
+	display: flex;
+	justify-content: space-between;
+	gap: var(--wp--preset--spacing--30);
+	font-size: var(--wp--preset--font-size--small);
+	color: var(--wp--preset--color--text-muted);
+	margin-bottom: var(--wp--preset--spacing--30);
+}
+.eta-who {
+	font-weight: 700;
+	color: var(--wp--preset--color--text);
+}
+.eta-thanks {
+	margin-top: var(--wp--preset--spacing--30);
+	min-height: 44px;
+	padding: 0 18px;
+	border-radius: var(--wp--preset--border-radius--button);
+	border: 1px solid var(--wp--preset--color--line-strong);
+	background: transparent;
+	color: var(--wp--preset--color--text);
+	font: inherit;
+	font-size: var(--wp--preset--font-size--small);
+	cursor: pointer;
+}
+.eta-thanks[aria-pressed="true"] {
+	background: var(--wp--preset--color--thanks-background);
+	border-color: var(--wp--preset--color--thanks-background);
+	color: var(--wp--preset--color--notice-text);
+	font-weight: 600;
+}
+.eta-close {
+	margin-top: var(--wp--preset--spacing--50);
+}
+.eta-close summary {
+	cursor: pointer;
+	min-height: 44px;
+	display: flex;
+	align-items: center;
+	color: var(--wp--preset--color--text-muted);
+}
+/* Friend navigation: header links on wide screens, bottom bar on phones. */
+.eta-app-nav {
+	display: flex;
+	gap: var(--wp--preset--spacing--50);
+}
+.eta-app-nav a {
+	display: flex;
+	align-items: center;
+	gap: 6px;
+	color: var(--wp--preset--color--text-muted);
+	text-decoration: none;
+	font-size: var(--wp--preset--font-size--small);
+}
+.eta-app-nav a[aria-current="page"] {
+	color: var(--wp--preset--color--text);
+	font-weight: 700;
+}
+.eta-app-nav svg {
+	width: 22px;
+	height: 22px;
+	fill: none;
+	stroke: currentColor;
+	stroke-width: 1.8;
+	stroke-linecap: round;
+	stroke-linejoin: round;
+}
+@media (max-width: 781px) {
+	.eta-app-nav {
+		position: fixed;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		z-index: 50;
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 0;
+		background: var(--wp--preset--color--field);
+		border-top: 1px solid var(--wp--preset--color--line);
+		padding-bottom: env(safe-area-inset-bottom);
+	}
+	.eta-app-nav a {
+		flex-direction: column;
+		justify-content: center;
+		min-height: 56px;
+		font-size: 0.78rem;
+	}
+	.eta-app-nav a {
+		position: relative;
+	}
+	/* Amber marks the active tab as a bar, never as text: amber text fails contrast in Day. */
+	.eta-app-nav a[aria-current="page"]::before {
+		content: "";
+		position: absolute;
+		top: 0;
+		left: 25%;
+		right: 25%;
+		height: 3px;
+		border-radius: 0 0 3px 3px;
+		background: var(--wp--preset--color--accent);
+	}
+	body:has(.eta-app-nav) {
+		padding-bottom: 72px;
+	}
+}

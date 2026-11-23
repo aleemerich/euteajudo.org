@@ -40,6 +40,11 @@ final class Plugin {
 		Admin\UsersList::register();
 		Privacy\Avatars::register();
 		Privacy\UserDirectory::register();
+		Privacy\Comments::register();
+		HelpRequests\HelpRequestType::register();
+		HelpRequests\Replies::register();
+		HelpRequests\Conversations::register();
+		Cli::register();
 
 		// Migrations may translate strings, which WordPress only allows from init on.
 		add_action( 'init', array( self::class, 'migrate' ), 5 );

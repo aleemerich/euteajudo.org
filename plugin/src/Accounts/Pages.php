@@ -23,6 +23,8 @@ final class Pages {
 	public const PASSWORD_RESET     = 'password_reset';
 	public const EMAIL_CONFIRMATION = 'email_confirmation';
 	public const ACCOUNT            = 'account';
+	public const WRITE              = 'write';
+	public const MY_REQUESTS        = 'my_requests';
 
 	public const BLOCKS = array(
 		self::SIGN_IN            => 'euteajudo/sign-in',
@@ -31,6 +33,8 @@ final class Pages {
 		self::PASSWORD_RESET     => 'euteajudo/password-reset',
 		self::EMAIL_CONFIRMATION => 'euteajudo/email-confirmation',
 		self::ACCOUNT            => 'euteajudo/account',
+		self::WRITE              => 'euteajudo/write',
+		self::MY_REQUESTS        => 'euteajudo/my-requests',
 	);
 
 	/**
@@ -128,6 +132,8 @@ final class Pages {
 			self::PASSWORD_RESET     => __( 'New password', 'euteajudo' ),
 			self::EMAIL_CONFIRMATION => __( 'Confirm email', 'euteajudo' ),
 			self::ACCOUNT            => __( 'My account', 'euteajudo' ),
+			self::WRITE              => __( 'Write', 'euteajudo' ),
+			self::MY_REQUESTS        => __( 'My requests', 'euteajudo' ),
 			default                  => $key,
 		};
 	}

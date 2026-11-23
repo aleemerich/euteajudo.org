@@ -26,6 +26,20 @@
 		<exclude name="WordPress.Files.FileName"/>
 	</rule>
 
+	<rule ref="WordPress.WP.Capabilities">
+		<properties>
+			<property name="custom_capabilities" type="array">
+				<element value="edit_eta_help_requests"/>
+				<element value="edit_others_eta_help_requests"/>
+				<element value="read_private_eta_help_requests"/>
+				<element value="delete_eta_help_requests"/>
+				<element value="delete_others_eta_help_requests"/>
+				<element value="delete_private_eta_help_requests"/>
+				<element value="edit_private_eta_help_requests"/>
+			</property>
+		</properties>
+	</rule>
+
 	<rule ref="WordPress.WP.I18n">
 		<properties>
 			<property name="text_domain" type="array">

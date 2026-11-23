@@ -79,7 +79,9 @@ Objetivo: o Amigo publica um Pedido, conversa nele e o encerra, ainda sem Agente
 - Status `eta_awaiting_triage`, `eta_awaiting_reply`, `eta_in_conversation`, `eta_closed`, mudados por hooks ([ADR 0003](adr/0003-classic-wordpress-native-structures.md)).
 - Taxonomias `eta_category`, `eta_severity`, `eta_risk_signal`, com os termos iniciais.
 - Mascaramento de dados pessoais (telefone, e-mail, CPF, CEP, links) aplicado ao Pedido e às Respostas antes de gravar. É a parte com mais casos de teste de unidade.
-- Blocos dinâmicos com Interactivity API: Desabafar, Conversa (Respostas `eta_reply`, Agradecimento, Encerramento com motivo, reabertura) e Meus Pedidos.
+- Blocos dinâmicos renderizados no servidor, com formulários comuns que funcionam sem JavaScript: Escrever (`/escrever/`), Meus Pedidos (`/meus-pedidos/`) e Conversa no mesmo bloco (Respostas `eta_reply`, Agradecimento, Encerramento com motivo, reabertura). Interactivity API fica para quando uma interação pedir atualização sem recarregar a página.
+- Barra de navegação do Amigo (Escrever, Meus pedidos, Conta): links no cabeçalho em telas largas, barra inferior no celular.
+- Comando `wp euteajudo seed` para criar Amigos e Pedidos fictícios no ambiente local (`--clean` remove) e `wp euteajudo reply <código> <texto>` para responder como Administrador enquanto não há Agente.
 - Endereço `/meus-pedidos/{código}/` com 404 para quem não tem acesso ([ADR 0005](adr/0005-public-and-private-areas.md)).
 - Proteções do ADR 0003: feeds, sitemaps e busca sem Pedidos, sem e-mails nativos de comentário, sem IP e user agent nos comentários, sem Akismet.
 

@@ -37,6 +37,12 @@ final class Messages {
 			'unexpected'           => __( 'Something went wrong. Try again in a few minutes.', 'euteajudo' ),
 			'delete_unconfirmed'   => __( 'Check the box to confirm that you want to delete your account.', 'euteajudo' ),
 			'delete_not_allowed'   => __( 'Accounts that manage the site cannot be deleted here.', 'euteajudo' ),
+			'title_required'       => __( 'Give your request a title, so you can find it later.', 'euteajudo' ),
+			'body_required'        => __( 'The text is empty. Write a few lines to send your request.', 'euteajudo' ),
+			'empty'                => __( 'The reply is empty. Write something to send it.', 'euteajudo' ),
+			'closed'               => __( 'This request is closed. Reopen it to keep talking.', 'euteajudo' ),
+			'not_allowed'          => __( 'You cannot do this here.', 'euteajudo' ),
+			'not_found'            => __( 'We could not find this request.', 'euteajudo' ),
 			default                => '',
 		};
 	}
