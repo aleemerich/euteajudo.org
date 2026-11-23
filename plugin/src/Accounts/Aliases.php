@@ -186,6 +186,13 @@ final class Aliases {
 	}
 
 	/**
+	 * A free alias number (not used by anyone nor in the Agent alias bank).
+	 */
+	public static function free_number(): string {
+		return self::draw();
+	}
+
+	/**
 	 * Draws a free alias number, widening the range by one digit when it is full.
 	 *
 	 * @throws AliasSpaceExhausted When the range is full and already at the maximum width.
@@ -234,7 +241,7 @@ final class Aliases {
 	private static function generator( AliasRange $range ): AliasGenerator {
 		return new AliasGenerator(
 			static fn ( int $min, int $max ): int => random_int( $min, $max ),
-			static fn ( string $number ): bool => array() !== get_users(
+			static fn ( string $number ): bool => \EuTeAjudo\Agents\AgentAliases::contains( $number ) || array() !== get_users(
 				array(
 					'fields'     => 'ID',
 					'number'     => 1,

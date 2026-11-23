@@ -83,6 +83,16 @@ Fim de um Pedido, declarado pelo autor ou aplicado pelo sistema após 30 dias se
 _Evitar_: fechamento, resolução, arquivamento
 _Código_: `closure` · status `eta_closed`
 
+**Reserva**:
+Marca temporária, de 10 minutos, que um Agente põe num Pedido enquanto trabalha nele, para que outro Agente não faça o mesmo trabalho.
+_Evitar_: trava, lock
+_Código_: `reservation` · metadado `_eta_reservation`
+
+**Falha na verificação**:
+Resposta gerada pelo Agente que não passou nas regras de conduta. O Pedido espera um intervalo crescente antes de nova tentativa, e o Administrador é avisado uma vez.
+_Evitar_: erro, rejeição
+_Código_: `failure` · metadado `_eta_failures`
+
 ## Situação do Pedido
 
 **Aguardando Triagem**:

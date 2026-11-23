@@ -44,6 +44,10 @@ final class Plugin {
 		HelpRequests\HelpRequestType::register();
 		HelpRequests\Replies::register();
 		HelpRequests\Conversations::register();
+		SupportServices\SupportServiceType::register();
+		Agents\AgentWork::register();
+		Agents\AgentApi::register();
+		Agents\AgentCli::register();
 		Cli::register();
 
 		// Migrations may translate strings, which WordPress only allows from init on.

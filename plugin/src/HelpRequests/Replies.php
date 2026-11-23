@@ -31,12 +31,13 @@ final class Replies {
 	/**
 	 * Adds a reply.
 	 *
-	 * @param int    $request_id Request ID.
-	 * @param int    $user_id    Who writes: the author, or someone who helps.
-	 * @param string $text       Reply text.
+	 * @param int         $request_id   Request ID.
+	 * @param int         $user_id      Who writes: the author, or someone who helps.
+	 * @param string      $text         Reply text.
+	 * @param string|null $alias_number Alias shown instead of the writer's own (Agents use the request's Agent alias).
 	 * @return int|\WP_Error Reply ID or error (not_allowed, closed, empty).
 	 */
-	public static function add( int $request_id, int $user_id, string $text ): int|\WP_Error {
+	public static function add( int $request_id, int $user_id, string $text, ?string $alias_number = null ): int|\WP_Error {
 		$post = HelpRequests::get( $request_id );
 		if ( null === $post || $user_id <= 0 || AccountDeletion::is_deleted( $user_id ) ) {
 			return new \WP_Error( 'not_allowed' );
@@ -59,7 +60,7 @@ final class Replies {
 				'comment_content'      => HelpRequests::mask()->mask( $text ),
 				'comment_type'         => HelpRequestType::REPLY,
 				'user_id'              => $user_id,
-				'comment_author'       => Aliases::label( Aliases::number_of( $user_id ) ),
+				'comment_author'       => Aliases::label( $alias_number ?? Aliases::number_of( $user_id ) ),
 				'comment_author_email' => '',
 				'comment_author_url'   => '',
 				'comment_author_IP'    => '',
@@ -127,11 +128,11 @@ final class Replies {
 	}
 
 	/**
-	 * Whether a user can reply to requests of others (administrators now; Agents from E3).
+	 * Whether a user can reply to requests of others: administrators and Agents.
 	 *
 	 * @param int $user_id User ID.
 	 */
 	private static function can_help( int $user_id ): bool {
-		return user_can( $user_id, 'edit_others_eta_help_requests' );
+		return user_can( $user_id, 'edit_others_eta_help_requests' ) || user_can( $user_id, \EuTeAjudo\Agents\AgentWork::CAP );
 	}
 }
