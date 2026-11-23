@@ -20,7 +20,14 @@
 	resize: vertical;
 }
 .eta-hint-before {
-	margin: 0 0 var(--wp--preset--spacing--20);
+	margin: 0 0 var(--wp--preset--spacing--30);
+}
+.eta-hint-before p {
+	margin: 0 0 var(--wp--preset--spacing--10);
+}
+.eta-hint-before ul {
+	margin: 0;
+	padding-left: 1.2em;
 }
 .eta-disclosure {
 	font-size: var(--wp--preset--font-size--small);

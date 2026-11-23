@@ -20,10 +20,10 @@ test.describe( 'Help requests', () => {
 		await page.getByRole( 'button', { name: 'Enviar pedido' } ).click();
 
 		await expect( page.getByRole( 'status' ) ).toContainText(
-			'Pedido enviado'
+			'Seu pedido chegou'
 		);
 		await expect( page.locator( '.eta-msg-request' ) ).toContainText(
-			'[dado pessoal removido]'
+			'[removido para proteger você]'
 		);
 		await expect( page.locator( '.eta-msg-request' ) ).not.toContainText(
 			'11912345678'
@@ -35,7 +35,7 @@ test.describe( 'Help requests', () => {
 		const item = page.locator( '.eta-requests li', {
 			hasText: 'Não consigo dormir',
 		} );
-		await expect( item ).toContainText( 'Aguardando resposta' );
+		await expect( item ).toContainText( 'Esperando resposta' );
 
 		wp( 'euteajudo', 'reply', code, 'Oi. Estou aqui com você.' );
 		await page.reload();

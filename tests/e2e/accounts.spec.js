@@ -23,7 +23,7 @@ test.describe( 'Accounts', () => {
 		);
 		await expect( page ).toHaveURL( /\/escrever\/\?eta_step=welcome$/ );
 		await expect( page.getByRole( 'status' ) ).toContainText(
-			'Seu e-mail está confirmado'
+			'E-mail confirmado'
 		);
 		await expect(
 			page.locator( '.eta-account-link .eta-alias' )
@@ -73,7 +73,7 @@ test.describe( 'Accounts', () => {
 		await page.getByRole( 'button', { name: 'Criar conta' } ).click();
 		await expect(
 			page.getByRole( 'heading', {
-				name: 'Este espaço é para maiores de 18 anos',
+				name: 'Você merece ter com quem falar agora',
 			} )
 		).toBeVisible();
 		await expect(
@@ -89,7 +89,7 @@ test.describe( 'Accounts', () => {
 			.fill( 'whatever password' );
 		await page.getByRole( 'button', { name: 'Entrar' } ).click();
 		await expect( page.getByRole( 'alert' ) ).toContainText(
-			'E-mail ou senha não conferem'
+			'Não encontramos uma conta com esse e-mail'
 		);
 	} );
 
@@ -108,7 +108,7 @@ test.describe( 'Accounts', () => {
 		await page.getByLabel( 'E-mail' ).fill( email );
 		await page.getByRole( 'button', { name: 'Enviar link' } ).click();
 		await expect( page.getByRole( 'status' ) ).toContainText(
-			'Se esse e-mail tiver conta'
+			'Se esse e-mail tiver uma conta aqui'
 		);
 
 		await page.goto(
@@ -117,7 +117,7 @@ test.describe( 'Accounts', () => {
 		await page.getByLabel( 'Nova senha' ).fill( 'second long secret' );
 		await page.getByRole( 'button', { name: 'Salvar senha nova' } ).click();
 		await expect( page.getByRole( 'status' ) ).toContainText(
-			'Sua senha foi alterada'
+			'Senha nova guardada'
 		);
 
 		await page.getByLabel( 'E-mail' ).fill( email );
@@ -179,7 +179,7 @@ test.describe( 'Accounts', () => {
 			.fill( 'long enough secret' );
 		await page.getByRole( 'button', { name: 'Entrar' } ).click();
 		await expect( page.getByRole( 'alert' ) ).toContainText(
-			'E-mail ou senha não conferem'
+			'Não encontramos uma conta com esse e-mail'
 		);
 	} );
 

@@ -188,7 +188,7 @@ final class HelpRequests {
 	 */
 	public static function mask(): PersonalDataMask {
 		$switched    = switch_to_locale( get_locale() );
-		$placeholder = __( '[personal data removed]', 'euteajudo' );
+		$placeholder = __( '[removed to protect you]', 'euteajudo' );
 		if ( $switched ) {
 			restore_previous_locale();
 		}

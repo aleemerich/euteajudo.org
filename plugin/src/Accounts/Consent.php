@@ -19,7 +19,7 @@ final class Consent {
 	 * Version of the consent text. Change it whenever the text changes, so new acceptances can
 	 * be told apart from old ones.
 	 */
-	public const VERSION = '2026-11-22';
+	public const VERSION = '2026-11-23';
 
 	public const META = '_eta_consent';
 

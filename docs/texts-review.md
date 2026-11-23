@@ -9,29 +9,29 @@ As páginas Sobre, Termos de uso e Política de privacidade não estão aqui: s�
 
 | Texto no site | Original (inglês) | Onde |
 |---|---|---|
-| Ligar para o 188 | Call 188 | `plugin/blocks/home/render.php:53` |
+| Ligar para o 188 | Call 188 | `plugin/blocks/home/render.php:61` |
 | Meus pedidos | My requests | `plugin/blocks/app-nav/render.php:17` |
-| Tem uma luz acesa aqui. | There is a light on here. | `plugin/blocks/home/render.php:18` |
-| Pode escrever a qualquer hora, do seu jeito. Ninguém sabe quem você é, e o que você escrever será lido com atenção. | Write at any time, your way. Nobody knows who you are, and your words will be read with care. | `plugin/blocks/home/render.php:19` |
-| Começar a escrever | Start writing | `plugin/blocks/home/render.php:22` |
-| Já tenho conta | I already have an account | `plugin/blocks/home/render.php:26` |
-| Como funciona | How it works | `plugin/blocks/home/render.php:38` |
-| Crie uma conta só com e-mail. | Create an account with just an email. | `plugin/blocks/home/render.php:40` |
-| Aqui você vira um Amigo com número, como Amigo 48213. Ninguém sabe quem você é. | Here you become a Friend with a number, like Friend 48213. Nobody knows who you are. | `plugin/blocks/home/render.php:40` |
-| Escreva o que está acontecendo. | Write what is happening. | `plugin/blocks/home/render.php:41` |
-| Do seu jeito, no seu tempo. Não precisa organizar nada. | Your way, in your time. Nothing needs to be organised. | `plugin/blocks/home/render.php:41` |
-| Receba uma resposta escrita com cuidado. | Get a reply written with care. | `plugin/blocks/home/render.php:42` |
-| As respostas são escritas por uma inteligência artificial criada para acolher. Avisamos por e-mail, sem mostrar o conteúdo. | Replies are written by an artificial intelligence made to welcome people. We let you know by email, without showing the content. | `plugin/blocks/home/render.php:42` |
-| Mais sobre como funciona | More about how it works | `plugin/blocks/home/render.php:46` |
-| Precisa de ajuda agora? | Need help right now? | `plugin/blocks/home/render.php:51` |
-| O CVV atende de graça, a qualquer hora, pelo telefone 188 ou pelo chat em cvv.org.br. | CVV answers for free, at any time, by phone at 188 or by chat at cvv.org.br. | `plugin/blocks/home/render.php:52` |
+| Tem uma luz acesa aqui. | There is a light on here. | `plugin/blocks/home/render.php:20` |
+| Começar a escrever | Start writing | `plugin/blocks/home/render.php:24` |
+| Já tenho conta | I already have an account | `plugin/blocks/home/render.php:28` |
+| Como funciona | How it works | `plugin/blocks/home/render.php:46` |
+| Crie uma conta só com e-mail. | Create an account with just an email. | `plugin/blocks/home/render.php:48` |
+| Do seu jeito, no seu tempo. Não precisa organizar nada. | Your way, in your time. Nothing needs to be organised. | `plugin/blocks/home/render.php:49` |
+| Receba uma resposta escrita com cuidado. | Get a reply written with care. | `plugin/blocks/home/render.php:50` |
+| Mais sobre como funciona | More about how it works | `plugin/blocks/home/render.php:54` |
+| Pode escrever a qualquer hora, do seu jeito, sem dizer quem você é. O que você escrever é lido com atenção. | Write at any time, your way, without saying who you are. What you write is read with care. | `plugin/blocks/home/render.php:21` |
+| Você não precisa dizer seu nome. Aqui chamamos você de Amigo, com um número que é só seu, como Amigo 48213. | You do not need to give your name. Here we call you Friend, with a number that is only yours, like Friend 48213. | `plugin/blocks/home/render.php:48` |
+| Conte o que está acontecendo. | Tell what is happening. | `plugin/blocks/home/render.php:49` |
+| As respostas são escritas por uma inteligência artificial feita para acolher: ela lê com atenção, não julga e segue regras de respeito. Quando chegar uma resposta, a gente avisa por e-mail, sem mostrar o que você escreveu. | Replies are written by an artificial intelligence made to welcome people: it reads with care, does not judge and follows rules of respect. When a reply arrives, we let you know by email, without showing what you wrote. | `plugin/blocks/home/render.php:50` |
+| Se estiver muito difícil agora | If things are very hard right now | `plugin/blocks/home/render.php:59` |
+| O CVV conversa com você de graça, a qualquer hora, pelo telefone 188 ou pelo chat em cvv.org.br. | CVV talks with you for free, at any time, by phone at 188 or by chat at cvv.org.br. | `plugin/blocks/home/render.php:60` |
 
 ## Rodapé
 
 | Texto no site | Original (inglês) | Onde |
 |---|---|---|
 | Sobre o site | About the site | `plugin/blocks/site-links/render.php:13` |
-| Em risco agora? Ligue 188 (CVV), de graça, a qualquer hora. | At risk right now? Call 188 (CVV), free, at any time. | `plugin/blocks/site-links/render.php:21` |
+| Se estiver difícil agora, ligue 188 (CVV). É de graça, a qualquer hora. | If things are hard right now, call 188 (CVV). It is free, at any time. | `plugin/blocks/site-links/render.php:21` |
 
 ## Cabeçalho e navegação
 
@@ -51,49 +51,50 @@ As páginas Sobre, Termos de uso e Política de privacidade não estão aqui: s�
 | Texto no site | Original (inglês) | Onde |
 |---|---|---|
 | Senha | Password | `plugin/blocks/sign-in/render.php:36` |
-| Este espaço é para maiores de 18 anos | This space is for people 18 and over | `plugin/blocks/sign-up/render.php:22` |
-| Você merece ser ouvido agora. Estes serviços atendem quem tem menos de 18 anos, de graça e com pessoas preparadas: | You deserve to be heard now. These services help people under 18, for free and with trained people: | `plugin/blocks/sign-up/render.php:23` |
 | Pode Falar (UNICEF) | Pode Falar (UNICEF) | `plugin/blocks/sign-up/render.php:26` |
 | Para quem tem de 13 a 24 anos, por WhatsApp. | For people aged 13 to 24, on WhatsApp. | `plugin/blocks/sign-up/render.php:27` |
 | Abrir o Pode Falar | Open Pode Falar | `plugin/blocks/sign-up/render.php:28` |
 | CVV | CVV | `plugin/blocks/sign-up/render.php:31` |
 | Qualquer idade, a qualquer hora, pelo telefone 188 ou pelo chat. | Any age, any time, by phone at 188 or by chat. | `plugin/blocks/sign-up/render.php:32` |
 | Quase lá | Almost there | `plugin/blocks/sign-up/render.php:38` |
-| Mandamos um link para o e-mail que você informou. Abra o e-mail e toque no link para confirmar. O link vale por 48 horas. | We sent a link to the email you typed. Open the email and tap the link to confirm it. The link is valid for 48 hours. | `plugin/blocks/sign-up/render.php:39` |
-| O assunto é "EuTeAjudo: confirme seu e-mail". Se não chegar em alguns minutos, olhe a pasta de spam. Para receber um link novo, tente entrar. | The subject is "EuTeAjudo: confirm your email". If it does not arrive in a few minutes, check the spam folder. To get a new link, try to sign in. | `plugin/blocks/sign-up/render.php:40` |
-| Aqui você é só um Amigo com número, como Amigo 48213. Ninguém vê seu e-mail. | Here you are just a Friend with a number, like Friend 48213. Nobody sees your email. | `plugin/blocks/sign-up/render.php:44` |
+| Mandamos um link para o seu e-mail. Toque nele para confirmar que o e-mail é seu. Ele vale por 48 horas. | We sent a link to the email you typed. Open the email and tap the link to confirm it. The link is valid for 48 hours. | `plugin/blocks/sign-up/render.php:39` |
+| O assunto é "EuTeAjudo: confirme seu e-mail". Se não aparecer em alguns minutos, vale olhar a pasta de spam. Para receber outro link, é só entrar com seu e-mail e senha. | The subject is "EuTeAjudo: confirm your email". If it does not arrive in a few minutes, check the spam folder. To get a new link, try to sign in. | `plugin/blocks/sign-up/render.php:40` |
 | Antes de começar | Before you start | `plugin/blocks/sign-up/render.php:48` |
 | Tenho 18 anos ou mais | I am 18 or older | `plugin/blocks/sign-up/render.php:49` |
 | Tenho menos de 18 anos | I am under 18 | `plugin/blocks/sign-up/render.php:50` |
-| Concordo que o que eu escrever seja lido por uma inteligência artificial criada para acolher, inclusive em serviços fora do Brasil. | I agree that what I write is read by an artificial intelligence made to welcome people, including services outside Brazil. | `plugin/blocks/sign-up/render.php:52` |
 | Li a %s. | I have read the %s. | `plugin/blocks/sign-up/render.php:64` |
 | Política de privacidade | Privacy policy | `plugin/blocks/sign-up/render.php:59` |
-| Criar conta | Create account | `plugin/blocks/sign-up/render.php:77` |
-| Já tem conta? Entrar | Already have an account? Sign in | `plugin/blocks/sign-up/render.php:81` |
+| Criar conta | Create account | `plugin/blocks/sign-up/render.php:78` |
+| Já tem conta? Entrar | Already have an account? Sign in | `plugin/blocks/sign-up/render.php:82` |
 | Aceito os %1$s e a %2$s. | I accept the %1$s and the %2$s. | `plugin/blocks/sign-up/render.php:57` |
 | Termos de uso | Terms of use | `plugin/blocks/sign-up/render.php:58` |
-| Pelo menos %d caracteres. | At least %d characters. | `plugin/blocks/password-reset/render.php:30` |
+| Use pelo menos %d caracteres. | At least %d characters. | `plugin/blocks/password-reset/render.php:30` |
+| Você merece ter com quem falar agora | You deserve someone to talk to right now | `plugin/blocks/sign-up/render.php:22` |
+| Este espaço é para quem tem 18 anos ou mais. Estes serviços conversam com quem tem menos de 18, de graça e com pessoas preparadas: | This space is for people 18 and over. These services talk with people under 18, for free and with trained people: | `plugin/blocks/sign-up/render.php:23` |
+| Você não precisa dizer seu nome. Aqui chamamos você de Amigo, com um número que é só seu, como Amigo 48213. Ninguém vê o seu e-mail. | You do not need to give your name. Here we call you Friend, with a number that is only yours, like Friend 48213. Nobody sees your email. | `plugin/blocks/sign-up/render.php:44` |
+| Concordo que uma inteligência artificial feita para acolher leia o que eu escrever, para poder me responder, inclusive usando serviços fora do Brasil. | I agree that an artificial intelligence made to welcome people reads what I write so it can reply to me, including through services outside Brazil. | `plugin/blocks/sign-up/render.php:52` |
+| Seu e-mail nunca vai junto, e telefones e documentos são tirados do texto antes. | Your email is never sent along, and phone numbers and documents are taken out of the text first. | `plugin/blocks/sign-up/render.php:70` |
 
 ## Entrar
 
 | Texto no site | Original (inglês) | Onde |
 |---|---|---|
-| Sua senha foi alterada. Entre com a senha nova. | Your password was changed. Sign in with the new password. | `plugin/blocks/sign-in/render.php:20` |
+| Senha nova guardada. Agora é só entrar com ela. | Your password was changed. Sign in with the new password. | `plugin/blocks/sign-in/render.php:20` |
 | Bom ter você de volta. | Good to have you back. | `plugin/blocks/sign-in/render.php:27` |
 | Esqueci minha senha | Forgot password | `plugin/blocks/sign-in/render.php:45` |
 | Ainda não tem conta? Criar conta | Don't have an account yet? Create account | `plugin/blocks/sign-in/render.php:46` |
-| Sua conta foi excluída. | Your account was deleted. | `plugin/blocks/sign-in/render.php:23` |
+| Sua conta foi excluída, como você pediu. Se quiser voltar um dia, é só criar uma conta nova. | Your account was deleted, as you asked. If you want to come back one day, just create a new account. | `plugin/blocks/sign-in/render.php:23` |
 
 ## Esqueci minha senha e nova senha
 
 | Texto no site | Original (inglês) | Onde |
 |---|---|---|
-| Se esse e-mail tiver conta, mandamos um link para criar uma senha nova. Olhe a caixa de entrada e a pasta de spam. | If this email has an account, we sent a link to create a new password. Check your inbox and the spam folder. | `plugin/blocks/password-request/render.php:18` |
-| Informe o e-mail da sua conta. Se ele estiver cadastrado, mandamos um link para criar uma senha nova. | Type the email of your account. If it is registered, we send a link to create a new password. | `plugin/blocks/password-request/render.php:23` |
+| Se esse e-mail tiver uma conta aqui, mandamos um link para criar uma senha nova. Vale olhar a caixa de entrada e a pasta de spam. | If this email has an account, we sent a link to create a new password. Check your inbox and the spam folder. | `plugin/blocks/password-request/render.php:18` |
+| Escreva o e-mail que você usa para entrar. Se ele tiver uma conta aqui, a gente manda um link para criar uma senha nova. | Type the email of your account. If it is registered, we send a link to create a new password. | `plugin/blocks/password-request/render.php:23` |
 | Enviar link | Send link | `plugin/blocks/password-request/render.php:28` |
-| Conta criada com o Google? Volte e use "Continuar com o Google". | Account created with Google? Go back and use "Continue with Google". | `plugin/blocks/password-request/render.php:32` |
+| Se você entra com o Google, não precisa de senha: volte e use "Continuar com o Google". | Account created with Google? Go back and use "Continue with Google". | `plugin/blocks/password-request/render.php:32` |
 | Voltar para Entrar | Back to sign in | `plugin/blocks/password-request/render.php:33` |
-| Abra esta página pelo link que mandamos para o seu e-mail. | Open this page from the link we sent to your email. | `plugin/blocks/password-reset/render.php:21` |
+| Para criar uma senha nova, abra esta página pelo link que mandamos para o seu e-mail. | Open this page from the link we sent to your email. | `plugin/blocks/password-reset/render.php:21` |
 | Pedir um link novo | Ask for a new link | `plugin/blocks/password-reset/render.php:22` |
 | Nova senha | New password | `plugin/blocks/password-reset/render.php:30` |
 | Salvar senha nova | Save new password | `plugin/blocks/password-reset/render.php:31` |
@@ -102,9 +103,9 @@ As páginas Sobre, Termos de uso e Política de privacidade não estão aqui: s�
 
 | Texto no site | Original (inglês) | Onde |
 |---|---|---|
-| E-mail confirmado. Você entrou como %s. | Email confirmed. You are signed in as %s. | `plugin/blocks/email-confirmation/render.php:22` |
+| E-mail confirmado. Bom ter você aqui, %s. | Email confirmed. You are signed in as %s. | `plugin/blocks/email-confirmation/render.php:22` |
 | Ir para o início | Go to the home page | `plugin/blocks/email-confirmation/render.php:27` |
-| Abra o link que mandamos para o seu e-mail para confirmar. | Open the link we sent to your email to confirm it. | `plugin/blocks/email-confirmation/render.php:32` |
+| Para confirmar seu e-mail, toque no link que mandamos para ele. | Open the link we sent to your email to confirm it. | `plugin/blocks/email-confirmation/render.php:32` |
 
 ## Minha conta
 
@@ -112,20 +113,20 @@ As páginas Sobre, Termos de uso e Política de privacidade não estão aqui: s�
 |---|---|---|
 | E-mail | Email | `plugin/blocks/account/render.php:30` |
 | Aqui você é %s. | Here you are %s. | `plugin/blocks/account/render.php:24` |
-| Só você vê este e-mail. Ele serve para entrar e para avisar quando chega uma resposta. | Only you see this email. It is used to sign in and to tell you when a reply arrives. | `plugin/blocks/account/render.php:32` |
+| Só você vê este e-mail. Ele serve para você entrar e para a gente avisar quando chegar uma resposta. | Only you see this email. It is used to sign in and to tell you when a reply arrives. | `plugin/blocks/account/render.php:32` |
 | Aparência | Appearance | `plugin/blocks/account/render.php:35` |
 | Automática (segue o seu aparelho) | Automatic (follows your device) | `plugin/blocks/account/render.php:36` |
 | Noite | Night | `plugin/blocks/account/render.php:37` |
 | Dia | Day | `plugin/blocks/account/render.php:38` |
-| Excluir conta | Delete account | `plugin/blocks/account/render.php:43` |
-| Contas que administram o site não podem ser excluídas aqui. | Accounts that manage the site cannot be deleted here. | `plugin/blocks/account/render.php:45` |
-| Seu e-mail é removido do site e ninguém consegue mais entrar nesta conta. O que você escreveu continua com o seu Apelido, sem o seu e-mail. Você pode criar uma conta nova depois; ela recebe outro Apelido. | Your email is removed from the site and nobody can sign in to this account anymore. What you wrote stays under your alias, without your email. You can create a new account later; it gets a new alias. | `plugin/blocks/account/render.php:47` |
-| Entendo e quero excluir minha conta | I understand and want to delete my account | `plugin/blocks/account/render.php:49` |
-| Excluir minha conta | Delete my account | `plugin/blocks/account/render.php:50` |
+| Excluir conta | Delete account | `plugin/blocks/account/render.php:46` |
+| Contas que administram o site não podem ser excluídas aqui. | Accounts that manage the site cannot be deleted here. | `plugin/blocks/account/render.php:48` |
+| Se você excluir a conta, a gente apaga o seu e-mail e ninguém mais consegue entrar nela. O que você escreveu fica guardado com o seu Apelido, sem o seu e-mail. Se quiser voltar depois, pode criar uma conta nova, que recebe outro Apelido. | Your email is removed from the site and nobody can sign in to this account anymore. What you wrote stays under your alias, without your email. You can create a new account later; it gets a new alias. | `plugin/blocks/account/render.php:50` |
+| Entendo e quero excluir minha conta | I understand and want to delete my account | `plugin/blocks/account/render.php:52` |
+| Excluir minha conta | Delete my account | `plugin/blocks/account/render.php:53` |
 | A mudança vale na hora e fica guardada só neste navegador. | The change is applied right away and saved only in this browser. | `plugin/blocks/account/render.php:39` |
-| Aparência salva. | Appearance saved. | `plugin/blocks/account/render.php:40` |
-| Se outras pessoas usam este aparelho, saia quando terminar. | If other people use this device, sign out when you finish. | `plugin/blocks/account/render.php:55` |
-| Sair deste aparelho | Sign out of this device | `plugin/blocks/account/render.php:55` |
+| Aparência guardada. | Appearance saved. | `plugin/blocks/account/render.php:40` |
+| Se outras pessoas usam este aparelho, saia da conta quando terminar. Assim o que você escreveu fica só com você. | If other people use this device, sign out when you finish. | `plugin/blocks/account/render.php:44` |
+| Sair neste aparelho | Sign out of this device | `plugin/blocks/account/render.php:44` |
 
 ## Escrever
 
@@ -134,68 +135,71 @@ As páginas Sobre, Termos de uso e Política de privacidade não estão aqui: s�
 | Título | Title | `plugin/blocks/write/render.php:30` |
 | para você encontrar depois | so you can find it later | `plugin/blocks/write/render.php:30` |
 | O que está acontecendo? | What is happening? | `plugin/blocks/write/render.php:32` |
-| Se ajudar, pense em há quanto tempo isso acontece, no que você já tentou e no que sente que precisa agora. Escreva do seu jeito; não precisa organizar nada. | If it helps, think about how long this has been going on, what you have already tried and what you feel you need now. Write your way; nothing needs to be organised. | `plugin/blocks/write/render.php:33` |
-| Telefones, e-mails e documentos são removidos antes de salvar. A resposta pode levar algumas horas; avisamos por e-mail. | Phone numbers, emails and documents are removed before saving. The reply may take a few hours; we let you know by email. | `plugin/blocks/write/render.php:35` |
-| Enviar pedido | Send request | `plugin/blocks/write/render.php:36` |
-| Seu e-mail está confirmado. Quando quiser, escreva aqui o que está acontecendo. | Your email is confirmed. Whenever you are ready, write here what is happening. | `plugin/blocks/write/render.php:25` |
+| Enviar pedido | Send request | `plugin/blocks/write/render.php:43` |
+| E-mail confirmado. Quando você quiser, conte aqui o que está acontecendo. | Your email is confirmed. Whenever you are ready, write here what is happening. | `plugin/blocks/write/render.php:25` |
+| Escreva do seu jeito, não precisa organizar nada. Se não souber por onde começar, estas perguntas podem ajudar: | Write your way; nothing needs to be organised. If you do not know where to start, these questions may help: | `plugin/blocks/write/render.php:34` |
+| Há quanto tempo isso acontece? | How long has this been going on? | `plugin/blocks/write/render.php:36` |
+| O que você já tentou? | What have you already tried? | `plugin/blocks/write/render.php:37` |
+| Do que você sente que precisa agora? | What do you feel you need now? | `plugin/blocks/write/render.php:38` |
+| Para proteger você, evite escrever nomes e endereços. Telefones, e-mails e documentos a gente tira do texto antes de guardar. A resposta pode levar algumas horas, e a gente avisa por e-mail. | To protect you, avoid writing names and addresses. We take phone numbers, emails and documents out of the text before saving. The reply may take a few hours, and we let you know by email. | `plugin/blocks/write/render.php:42` |
 
 ## Meus pedidos e Conversa
 
 | Texto no site | Original (inglês) | Onde |
 |---|---|---|
-| [dado pessoal removido] | [personal data removed] | `plugin/src/HelpRequests/HelpRequests.php:191` |
-| Aguardando resposta | Awaiting reply | `plugin/src/HelpRequests/HelpRequestType.php:96` |
+| Esperando resposta | Awaiting reply | `plugin/src/HelpRequests/HelpRequestType.php:96` |
 | Em conversa | In conversation | `plugin/src/HelpRequests/HelpRequestType.php:101` |
 | Encerrado | Closed | `plugin/src/HelpRequests/HelpRequestType.php:106` |
 | Novo pedido | New request | `plugin/blocks/my-requests/render.php:40` |
 | Nada por aqui ainda. Quando quiser escrever, é só começar. | Nothing here yet. When you want to write, just start. | `plugin/blocks/my-requests/render.php:42` |
 | Resposta nova | New reply | `plugin/blocks/my-requests/render.php:51` |
 | Você escreveu em %s | Written on %s | `plugin/blocks/my-requests/render.php:71` |
-| Pedido enviado. A resposta pode levar algumas horas; avisamos por e-mail. | Request sent. The reply may take a few hours; we let you know by email. | `plugin/blocks/my-requests/render.php:78` |
 | Você | You | `plugin/blocks/my-requests/render.php:87` |
 | Isso me ajudou | This helped me | `plugin/blocks/my-requests/render.php:96` |
 | Este pedido está encerrado. Você pode reabrir quando quiser continuar a conversa. | This request is closed. You can reopen it whenever you want to keep talking. | `plugin/blocks/my-requests/render.php:104` |
 | Reabrir pedido | Reopen request | `plugin/blocks/my-requests/render.php:108` |
-| Mensagem enviada. A resposta pode levar algumas horas. | Message sent. The reply may take a few hours. | `plugin/blocks/my-requests/render.php:115` |
 | Responder | Reply | `plugin/blocks/my-requests/render.php:120` |
 | Escreva quando quiser | Write whenever you want | `plugin/blocks/my-requests/render.php:121` |
 | Enviar resposta | Send reply | `plugin/blocks/my-requests/render.php:122` |
 | Encerrar pedido | Close request | `plugin/blocks/my-requests/render.php:126` |
-| Por que está encerrando? (opcional) | Why are you closing? (optional) | `plugin/blocks/my-requests/render.php:130` |
 | Estou melhor | I feel better | `plugin/blocks/my-requests/render.php:131` |
-| Não quero mais receber mensagens | I do not want to receive more messages | `plugin/blocks/my-requests/render.php:132` |
 | Prefiro não dizer | I prefer not to say | `plugin/blocks/my-requests/render.php:133` |
 | j \d\e F | F j | `plugin/src/HelpRequests/View.php:40` |
 | j \d\e M, H\hi | M j, g:i a | `plugin/src/HelpRequests/View.php:50` |
-| As respostas aqui são escritas por uma inteligência artificial criada para acolher. Se você corre risco agora, ligue 188. | The replies here are written by an artificial intelligence made to welcome people. If you are at risk right now, call 188. | `plugin/src/HelpRequests/View.php:66` |
+| Seu pedido chegou e vai ser lido com atenção. A resposta pode levar algumas horas; a gente avisa por e-mail. | Your request arrived and will be read with care. The reply may take a few hours; we let you know by email. | `plugin/blocks/my-requests/render.php:78` |
+| Sua mensagem chegou. A resposta pode levar algumas horas; a gente avisa por e-mail. | Your message arrived. The reply may take a few hours; we let you know by email. | `plugin/blocks/my-requests/render.php:115` |
+| Se quiser, conte por que está encerrando | If you want, tell us why you are closing | `plugin/blocks/my-requests/render.php:130` |
+| Prefiro parar por aqui | I would rather stop here | `plugin/blocks/my-requests/render.php:132` |
+| [removido para proteger você] | [removed to protect you] | `plugin/src/HelpRequests/HelpRequests.php:191` |
+| As respostas daqui são escritas por uma inteligência artificial feita para acolher, com atenção e com regras de respeito. Se estiver muito difícil agora, ligue 188 (CVV), a qualquer hora. | The replies here are written by an artificial intelligence made to welcome people, with care and rules of respect. If things are very hard right now, call 188 (CVV), at any time. | `plugin/src/HelpRequests/View.php:66` |
 
 ## Mensagens de erro e de aviso (todas as telas)
 
 | Texto no site | Original (inglês) | Onde |
 |---|---|---|
-| E-mail ou senha não conferem. Confira e tente de novo, ou use "Esqueci minha senha". | Email or password does not match. Check and try again, or use "Forgot password". | `plugin/src/Accounts/Forms/Messages.php:24` |
-| Confirme seu e-mail primeiro. Mandamos um link novo para sua caixa de entrada. | Confirm your email first. We sent a new link to your inbox. | `plugin/src/Accounts/Forms/Messages.php:25` |
-| Informe um e-mail válido. | Type a valid email address. | `plugin/src/Accounts/Forms/Messages.php:29` |
-| Essa conta do Google ainda não tem cadastro aqui. Crie sua conta para continuar. | This Google account has no account here yet. Create your account to continue. | `plugin/src/Accounts/Forms/Messages.php:31` |
-| Entrar com o Google não está disponível agora. Use seu e-mail e senha. | Sign in with Google is not available right now. Use your email and password. | `plugin/src/Accounts/Forms/Messages.php:32` |
-| A entrada com o Google foi cancelada. | Sign in with Google was cancelled. | `plugin/src/Accounts/Forms/Messages.php:33` |
-| Essa conta do Google não tem e-mail verificado. Use outra conta, ou seu e-mail e senha. | This Google account does not have a verified email. Use another account, or your email and password. | `plugin/src/Accounts/Forms/Messages.php:34` |
-| A entrada com o Google não terminou. Tente de novo. | Sign in with Google did not finish. Try again. | `plugin/src/Accounts/Forms/Messages.php:35` |
-| Esta página ficou aberta por muito tempo. Tente de novo. | This page stayed open for too long. Try again. | `plugin/src/Accounts/Forms/Messages.php:36` |
-| Este link é inválido ou venceu. Peça um novo abaixo. | This link is invalid or has expired. Ask for a new one below. | `plugin/src/Accounts/Forms/Messages.php:37` |
-| Este link de confirmação é inválido ou venceu. Entre para receber um novo. | This confirmation link is invalid or has expired. Sign in to get a new one. | `plugin/src/Accounts/Forms/Messages.php:38` |
-| Algo deu errado. Tente de novo em alguns minutos. | Something went wrong. Try again in a few minutes. | `plugin/src/Accounts/Forms/Messages.php:39` |
-| Marque a caixa para confirmar que quer excluir sua conta. | Check the box to confirm that you want to delete your account. | `plugin/src/Accounts/Forms/Messages.php:40` |
-| Dê um título ao seu pedido, para encontrá-lo depois. | Give your request a title, so you can find it later. | `plugin/src/Accounts/Forms/Messages.php:42` |
-| O texto está vazio. Escreva algumas linhas para enviar o pedido. | The text is empty. Write a few lines to send your request. | `plugin/src/Accounts/Forms/Messages.php:43` |
-| A resposta está vazia. Escreva algo para enviar. | The reply is empty. Write something to send it. | `plugin/src/Accounts/Forms/Messages.php:44` |
-| Este pedido está encerrado. Reabra para continuar a conversa. | This request is closed. Reopen it to keep talking. | `plugin/src/Accounts/Forms/Messages.php:45` |
-| Você não pode fazer isso aqui. | You cannot do this here. | `plugin/src/Accounts/Forms/Messages.php:46` |
-| Não encontramos este pedido. | We could not find this request. | `plugin/src/Accounts/Forms/Messages.php:47` |
+| Não encontramos uma conta com esse e-mail e essa senha. Confira os dois e tente de novo, ou use "Esqueci minha senha". | Email or password does not match. Check and try again, or use "Forgot password". | `plugin/src/Accounts/Forms/Messages.php:24` |
+| Falta só confirmar seu e-mail. Mandamos um link novo para ele; é só tocar no link. | Confirm your email first. We sent a new link to your inbox. | `plugin/src/Accounts/Forms/Messages.php:25` |
+| Confira o e-mail. Ele precisa ter o formato nome@exemplo.com. | Type a valid email address. | `plugin/src/Accounts/Forms/Messages.php:29` |
+| Ainda não existe uma conta aqui com esse Google. Crie sua conta para começar. | This Google account has no account here yet. Create your account to continue. | `plugin/src/Accounts/Forms/Messages.php:32` |
+| Entrar com o Google não está funcionando agora. Você pode usar seu e-mail e senha. | Sign in with Google is not available right now. Use your email and password. | `plugin/src/Accounts/Forms/Messages.php:33` |
+| Você saiu da tela do Google antes de terminar. Pode tentar de novo quando quiser. | Sign in with Google was cancelled. | `plugin/src/Accounts/Forms/Messages.php:34` |
+| Essa conta do Google ainda não confirmou o e-mail dela. Você pode usar outra conta do Google, ou seu e-mail e senha. | This Google account does not have a verified email. Use another account, or your email and password. | `plugin/src/Accounts/Forms/Messages.php:35` |
+| A entrada com o Google não terminou. Tente de novo. | Sign in with Google did not finish. Try again. | `plugin/src/Accounts/Forms/Messages.php:36` |
+| Esta página ficou aberta por muito tempo. Tente de novo. | This page stayed open for too long. Try again. | `plugin/src/Accounts/Forms/Messages.php:37` |
+| Este link não vale mais. Peça um novo logo abaixo. | This link is invalid or has expired. Ask for a new one below. | `plugin/src/Accounts/Forms/Messages.php:38` |
+| Este link de confirmação não vale mais. Entre com seu e-mail e senha para receber um novo. | This confirmation link is invalid or has expired. Sign in to get a new one. | `plugin/src/Accounts/Forms/Messages.php:39` |
+| Marque a caixa para confirmar que quer excluir sua conta. | Check the box to confirm that you want to delete your account. | `plugin/src/Accounts/Forms/Messages.php:41` |
+| Falta um título. Pode ser qualquer palavra que ajude você a encontrar este pedido depois. | Give your request a title, so you can find it later. | `plugin/src/Accounts/Forms/Messages.php:43` |
+| O texto está vazio. Escreva algumas linhas para enviar o pedido. | The text is empty. Write a few lines to send your request. | `plugin/src/Accounts/Forms/Messages.php:44` |
+| A resposta está vazia. Escreva algo para enviar. | The reply is empty. Write something to send it. | `plugin/src/Accounts/Forms/Messages.php:45` |
+| Este pedido está encerrado. Reabra para continuar a conversa. | This request is closed. Reopen it to keep talking. | `plugin/src/Accounts/Forms/Messages.php:46` |
 | Conte para a gente se você tem 18 anos ou mais. | Tell us whether you are 18 or older. | `plugin/src/Accounts/Forms/Messages.php:26` |
-| Marque a caixa de concordância para continuar. | Check the agreement box to continue. | `plugin/src/Accounts/Forms/Messages.php:27` |
-| Foram muitas tentativas seguidas. Espere 15 minutos e tente de novo, ou crie uma senha nova em "Esqueci minha senha". | Many attempts in a row. Wait 15 minutes and try again, or create a new password with "Forgot password". | `plugin/src/Accounts/Forms/Messages.php:28` |
-| Use pelo menos 6 caracteres na senha. | Use at least 6 characters in the password. | `plugin/src/Accounts/Forms/Messages.php:30` |
+| Marque a caixa de concordância em "Antes de começar". | Check the agreement box to continue. | `plugin/src/Accounts/Forms/Messages.php:27` |
+| Foram muitas tentativas seguidas. Para proteger sua conta, espere 15 minutos e tente de novo, ou crie uma senha nova em "Esqueci minha senha". | Many attempts in a row. Wait 15 minutes and try again, or create a new password with "Forgot password". | `plugin/src/Accounts/Forms/Messages.php:28` |
+| A senha precisa de pelo menos %d caracteres. | The password needs at least %d characters. | `plugin/src/Accounts/Forms/Messages.php:31` |
+| Alguma coisa não funcionou do nosso lado. Tente de novo em alguns minutos. | Something did not work on our side. Try again in a few minutes. | `plugin/src/Accounts/Forms/Messages.php:40` |
+| Isso não pode ser feito por aqui. Seus pedidos estão em Meus pedidos. | This cannot be done here. Your requests are in My requests. | `plugin/src/Accounts/Forms/Messages.php:47` |
+| Não encontramos este pedido. Seus pedidos estão em Meus pedidos. | We could not find this request. Your requests are in My requests. | `plugin/src/Accounts/Forms/Messages.php:48` |
 
 ## Partes comuns dos formulários e login com Google
 
@@ -205,7 +209,7 @@ As páginas Sobre, Termos de uso e Política de privacidade não estão aqui: s�
 | Ocultar | Hide | `plugin/src/Accounts/Forms/View.php:106` |
 | Continuar com o Google | Continue with Google | `plugin/src/Accounts/Forms/View.php:122` |
 | ou com e-mail | or with email | `plugin/src/Accounts/Forms/View.php:129` |
-| Antes de continuar, confira: | Before continuing: | `plugin/src/Accounts/Forms/View.php:50` |
+| Falta pouco: | Before continuing: | `plugin/src/Accounts/Forms/View.php:50` |
 
 ## E-mails
 
@@ -215,17 +219,17 @@ As páginas Sobre, Termos de uso e Política de privacidade não estão aqui: s�
 | EuTeAjudo: faixa de Apelidos ampliada | EuTeAjudo: alias range widened | `plugin/src/Accounts/Aliases.php:226` |
 | Os Apelidos de até %1$d dígitos estavam quase todos ocupados, então os novos Apelidos podem ter até %2$d dígitos. Não é preciso fazer mais nada. | Aliases with up to %1$d digits were almost all taken, so new aliases can now have up to %2$d digits. Nothing else needs to be done. | `plugin/src/Accounts/Aliases.php:229` |
 | EuTeAjudo: confirme seu e-mail | EuTeAjudo: confirm your email | `plugin/src/Accounts/EmailConfirmation.php:52` |
-| Olá, %1$s.<br><br>Para confirmar este e-mail no EuTeAjudo.org, abra o link abaixo em até 48 horas:<br><br>%2$s<br><br>Se você não criou uma conta, pode ignorar esta mensagem. | Hello, %1$s.<br><br>To confirm this email at EuTeAjudo.org, open the link below within 48 hours:<br><br>%2$s<br><br>If you did not create an account, you can ignore this message. | `plugin/src/Accounts/EmailConfirmation.php:55` |
+| Oi, %1$s.<br><br>Falta só confirmar este e-mail para você começar no EuTeAjudo.org. Abra o link abaixo em até 48 horas:<br><br>%2$s<br><br>Se não foi você quem criou a conta, pode ignorar esta mensagem.<br><br>EuTeAjudo.org | Hello, %1$s.<br><br>To confirm this email at EuTeAjudo.org, open the link below within 48 hours:<br><br>%2$s<br><br>If you did not create an account, you can ignore this message. | `plugin/src/Accounts/EmailConfirmation.php:55` |
 | EuTeAjudo: acesso à conta | EuTeAjudo: account access | `plugin/src/Accounts/Forms/Notices.php:27` |
-| Alguém tentou criar uma conta no EuTeAjudo.org com este e-mail, que já tem cadastro.<br><br>Se foi você, entre aqui:<br>%1$s<br><br>Esqueceu a senha? Crie uma nova aqui:<br>%2$s<br><br>Se não foi você, pode ignorar esta mensagem. Nada foi alterado. | Someone tried to create an account at EuTeAjudo.org with this email, which already has one.<br><br>If it was you, sign in here:<br>%1$s<br><br>Forgot your password? Create a new one here:<br>%2$s<br><br>If it was not you, you can ignore this message. Nothing was changed. | `plugin/src/Accounts/Forms/Notices.php:30` |
+| Alguém tentou criar uma conta no EuTeAjudo.org com este e-mail, mas ele já tem uma conta aqui.<br><br>Se foi você, é só entrar:<br>%1$s<br><br>Esqueceu a senha? Crie uma nova aqui:<br>%2$s<br><br>Se não foi você, pode ignorar esta mensagem. Nada foi alterado. | Someone tried to create an account at EuTeAjudo.org with this email, which already has one.<br><br>If it was you, sign in here:<br>%1$s<br><br>Forgot your password? Create a new one here:<br>%2$s<br><br>If it was not you, you can ignore this message. Nothing was changed. | `plugin/src/Accounts/Forms/Notices.php:30` |
 | EuTeAjudo: crie uma senha nova | EuTeAjudo: create a new password | `plugin/src/Accounts/Forms/Notices.php:46` |
 | Para criar uma senha nova no EuTeAjudo.org, abra o link abaixo:<br><br>%s<br><br>Se você não pediu isso, pode ignorar esta mensagem. Sua senha continua a mesma. | To create a new password at EuTeAjudo.org, open the link below:<br><br>%s<br><br>If you did not ask for this, you can ignore this message. Your password stays the same. | `plugin/src/Accounts/Forms/Notices.php:49` |
 | EuTeAjudo: uma Resposta do Agente falhou na verificação | EuTeAjudo: an Agent reply failed verification | `plugin/src/Agents/AgentWork.php:392` |
 | O Agente não conseguiu escrever uma Resposta que passasse na verificação. Ele tenta de novo mais tarde, com esperas cada vez maiores.<br><br>Abrir o Pedido: %s | The Agent could not write a reply that passed verification. It will try again later, with longer waits.<br><br>Open the request: %s | `plugin/src/Agents/AgentWork.php:395` |
 | EuTeAjudo: você tem uma nova mensagem | EuTeAjudo: you have a new message | `plugin/src/HelpRequests/Notifications.php:42` |
-| Oi, %1$s.<br><br>Há uma Resposta nova em um dos seus pedidos. Para ler, entre no site:<br>%2$s<br><br>EuTeAjudo.org | Hi, %1$s.<br><br>There is a new reply in one of your requests. To read it, sign in:<br>%2$s<br><br>EuTeAjudo.org | `plugin/src/HelpRequests/Notifications.php:44` |
+| Oi, %1$s.<br><br>Chegou uma resposta em um dos seus pedidos. Ela fica guardada lá para quando você quiser ler:<br>%2$s<br><br>EuTeAjudo.org | Hi, %1$s.<br><br>There is a new reply in one of your requests. To read it, sign in:<br>%2$s<br><br>EuTeAjudo.org | `plugin/src/HelpRequests/Notifications.php:44` |
 | EuTeAjudo: um pedido seu foi encerrado | EuTeAjudo: one of your requests was closed | `plugin/src/HelpRequests/Notifications.php:56` |
-| Oi, %1$s.<br><br>Um dos seus pedidos ficou 30 dias sem mensagens novas e foi encerrado. Você pode reabrir quando quiser:<br>%2$s<br><br>EuTeAjudo.org | Hi, %1$s.<br><br>One of your requests had no new messages for 30 days and was closed. You can reopen it whenever you want:<br>%2$s<br><br>EuTeAjudo.org | `plugin/src/HelpRequests/Notifications.php:58` |
+| Oi, %1$s.<br><br>Um dos seus pedidos ficou 30 dias sem mensagens novas, então ele foi encerrado. A conversa continua guardada, e você pode reabrir quando quiser:<br>%2$s<br><br>EuTeAjudo.org | Hi, %1$s.<br><br>One of your requests had no new messages for 30 days and was closed. You can reopen it whenever you want:<br>%2$s<br><br>EuTeAjudo.org | `plugin/src/HelpRequests/Notifications.php:58` |
 | EuTeAjudo: pedidos esperando há mais de 24 horas | EuTeAjudo: requests waiting more than 24 hours | `plugin/src/HelpRequests/Schedules.php:120` |
 | Estes pedidos esperam há mais de 24 horas por uma Resposta do Agente. Confira se o Agente está rodando (Painel) ou responda você mesmo:<br><br>%s | These requests have waited more than 24 hours for an Agent reply. Check whether the Agent is running (Dashboard) or reply yourself:<br><br>%s | `plugin/src/HelpRequests/Schedules.php:123` |
 

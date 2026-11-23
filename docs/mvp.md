@@ -18,7 +18,7 @@ Amigos desabafam de forma anônima e um Agente de IA responde a todos. Ajudadore
 ## Pedido e conversa
 
 - Pedido com título obrigatório e texto livre, numa área limpa. Perguntas-guia aparecem como sugestão, sem campos.
-- Telefone, e-mail, CPF, CEP e links detectados viram "[dado pessoal removido]".
+- Telefone, e-mail, CPF, CEP e links detectados viram "[removido para proteger você]".
 - Conversa assíncrona, uma thread por Pedido. Sem mensagens privadas, sem curtidas, ranking ou contadores públicos.
 - Agradecimento numa Resposta, visível só para quem a escreveu.
 - Encerramento com um clique e motivo opcional ("Estou melhor", "Não quero mais receber mensagens", "Prefiro não dizer"). Encerramento automático após 30 dias sem Respostas novas. O autor pode reabrir.

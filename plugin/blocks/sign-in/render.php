@@ -20,7 +20,7 @@ $euteajudo_redirect = isset( $_GET['redirect_to'] ) ? esc_url_raw( wp_unslash( $
 		echo View::notice( __( 'Your password was changed. Sign in with the new password.', 'euteajudo' ) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Escaped in View.
 	}
 	if ( 'account_deleted' === Messages::current_step() ) {
-		echo View::notice( __( 'Your account was deleted.', 'euteajudo' ) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Escaped in View.
+		echo View::notice( __( 'Your account was deleted, as you asked. If you want to come back one day, just create a new account.', 'euteajudo' ) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Escaped in View.
 	}
 	echo View::error_notice(); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Escaped in View.
 	?>

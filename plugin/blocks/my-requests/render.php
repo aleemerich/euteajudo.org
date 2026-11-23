@@ -75,7 +75,7 @@ $euteajudo_viewer  = get_current_user_id();
 	// phpcs:disable WordPress.Security.EscapeOutput.OutputNotEscaped -- Escaped in the view helpers.
 	echo FormView::error_notice();
 	if ( 'sent' === $euteajudo_step ) {
-		echo FormView::notice( __( 'Request sent. The reply may take a few hours; we let you know by email.', 'euteajudo' ) );
+		echo FormView::notice( __( 'Your request arrived and will be read with care. The reply may take a few hours; we let you know by email.', 'euteajudo' ) );
 	}
 	// phpcs:enable
 	?>
@@ -112,7 +112,7 @@ $euteajudo_viewer  = get_current_user_id();
 		<?php
 		$euteajudo_last = end( $euteajudo_replies );
 		if ( $euteajudo_is_author && ( false === $euteajudo_last || (int) $euteajudo_last->user_id === $euteajudo_viewer ) && 'sent' !== $euteajudo_step ) {
-			echo '<p class="eta-note">' . esc_html__( 'Message sent. The reply may take a few hours.', 'euteajudo' ) . '</p>';
+			echo '<p class="eta-note">' . esc_html__( 'Your message arrived. The reply may take a few hours; we let you know by email.', 'euteajudo' ) . '</p>';
 		}
 		?>
 		<?php echo FormView::open( 'reply' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Escaped in View. ?>
@@ -127,9 +127,9 @@ $euteajudo_viewer  = get_current_user_id();
 				<?php echo FormView::open( 'close' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Escaped in View. ?>
 					<input type="hidden" name="code" value="<?php echo esc_attr( $euteajudo_request->post_name ); ?>">
 					<fieldset class="eta-before">
-						<legend><?php esc_html_e( 'Why are you closing? (optional)', 'euteajudo' ); ?></legend>
+						<legend><?php esc_html_e( 'If you want, tell us why you are closing', 'euteajudo' ); ?></legend>
 						<label class="eta-choice"><input type="radio" name="reason" value="better"> <?php esc_html_e( 'I feel better', 'euteajudo' ); ?></label>
-						<label class="eta-choice"><input type="radio" name="reason" value="no_more"> <?php esc_html_e( 'I do not want to receive more messages', 'euteajudo' ); ?></label>
+						<label class="eta-choice"><input type="radio" name="reason" value="no_more"> <?php esc_html_e( 'I would rather stop here', 'euteajudo' ); ?></label>
 						<label class="eta-choice"><input type="radio" name="reason" value="unspecified" checked> <?php esc_html_e( 'I prefer not to say', 'euteajudo' ); ?></label>
 					</fieldset>
 					<button class="eta-button eta-button-quiet wp-element-button" type="submit"><?php esc_html_e( 'Close request', 'euteajudo' ); ?></button>

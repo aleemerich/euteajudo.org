@@ -40,7 +40,7 @@ final class PersonalDataMask {
 	/**
 	 * Creates a mask.
 	 *
-	 * @param string $placeholder Text that replaces each match, e.g. "[dado pessoal removido]".
+	 * @param string $placeholder Text that replaces each match, e.g. "[removido para proteger você]".
 	 */
 	public function __construct( private readonly string $placeholder ) {}
 

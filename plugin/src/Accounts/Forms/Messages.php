@@ -27,7 +27,8 @@ final class Messages {
 			'consent_required'     => __( 'Check the agreement box to continue.', 'euteajudo' ),
 			'too_many_attempts'    => __( 'Many attempts in a row. Wait 15 minutes and try again, or create a new password with "Forgot password".', 'euteajudo' ),
 			'email_invalid'        => __( 'Type a valid email address.', 'euteajudo' ),
-			'password_short'       => __( 'Use at least 6 characters in the password.', 'euteajudo' ),
+			/* translators: %d: minimum number of characters. */
+			'password_short'       => sprintf( __( 'The password needs at least %d characters.', 'euteajudo' ), SignUp::MIN_PASSWORD ),
 			'needs_registration'   => __( 'This Google account has no account here yet. Create your account to continue.', 'euteajudo' ),
 			'not_configured'       => __( 'Sign in with Google is not available right now. Use your email and password.', 'euteajudo' ),
 			'denied'               => __( 'Sign in with Google was cancelled.', 'euteajudo' ),
@@ -36,15 +37,15 @@ final class Messages {
 			'expired_form'         => __( 'This page stayed open for too long. Try again.', 'euteajudo' ),
 			'reset_link_invalid'   => __( 'This link is invalid or has expired. Ask for a new one below.', 'euteajudo' ),
 			'confirmation_invalid' => __( 'This confirmation link is invalid or has expired. Sign in to get a new one.', 'euteajudo' ),
-			'unexpected'           => __( 'Something went wrong. Try again in a few minutes.', 'euteajudo' ),
+			'unexpected'           => __( 'Something did not work on our side. Try again in a few minutes.', 'euteajudo' ),
 			'delete_unconfirmed'   => __( 'Check the box to confirm that you want to delete your account.', 'euteajudo' ),
 			'delete_not_allowed'   => __( 'Accounts that manage the site cannot be deleted here.', 'euteajudo' ),
 			'title_required'       => __( 'Give your request a title, so you can find it later.', 'euteajudo' ),
 			'body_required'        => __( 'The text is empty. Write a few lines to send your request.', 'euteajudo' ),
 			'empty'                => __( 'The reply is empty. Write something to send it.', 'euteajudo' ),
 			'closed'               => __( 'This request is closed. Reopen it to keep talking.', 'euteajudo' ),
-			'not_allowed'          => __( 'You cannot do this here.', 'euteajudo' ),
-			'not_found'            => __( 'We could not find this request.', 'euteajudo' ),
+			'not_allowed'          => __( 'This cannot be done here. Your requests are in My requests.', 'euteajudo' ),
+			'not_found'            => __( 'We could not find this request. Your requests are in My requests.', 'euteajudo' ),
 			default                => '',
 		};
 	}
