@@ -58,7 +58,7 @@ msgid "Alias"
 msgstr "Apelido"
 
 #: blocks/account-link/render.php:16
-#: blocks/account/render.php:43
+#: blocks/account/render.php:42
 msgid "Sign out"
 msgstr "Sair"
 
@@ -359,7 +359,7 @@ msgstr ""
 "\n"
 "Se você não pediu isso, pode ignorar esta mensagem. Sua senha continua a mesma."
 
-#: blocks/account/render.php:31
+#: blocks/account/render.php:30
 #: src/Accounts/Forms/View.php:66
 msgid "Email"
 msgstr "E-mail"
@@ -445,53 +445,53 @@ msgid "Age, consent and account creation with email or Google."
 msgstr ""
 
 #. translators: %s: alias label, e.g. "Friend 48213".
-#: blocks/account/render.php:25
+#: blocks/account/render.php:24
 #, php-format
 msgid "Here you are %s."
 msgstr "Aqui você é %s."
 
-#: blocks/account/render.php:33
+#: blocks/account/render.php:32
 msgid "Only you see this email. It is used to sign in and to tell you when a reply arrives."
 msgstr "Só você vê este e-mail. Ele serve para entrar e para avisar quando chega uma resposta."
 
-#: blocks/account/render.php:36
+#: blocks/account/render.php:35
 msgid "Appearance"
 msgstr "Aparência"
 
-#: blocks/account/render.php:37
+#: blocks/account/render.php:36
 msgid "Automatic (follows your device)"
 msgstr "Automática (segue o seu aparelho)"
 
-#: blocks/account/render.php:38
+#: blocks/account/render.php:37
 msgid "Night"
 msgstr "Noite"
 
-#: blocks/account/render.php:39
+#: blocks/account/render.php:38
 msgid "Day"
 msgstr "Dia"
 
-#: blocks/account/render.php:40
+#: blocks/account/render.php:39
 msgid "This choice is saved only in this browser."
 msgstr "Esta escolha fica salva só neste navegador."
 
-#: blocks/account/render.php:45
+#: blocks/account/render.php:44
 msgid "Delete account"
 msgstr "Excluir conta"
 
-#: blocks/account/render.php:47
+#: blocks/account/render.php:46
 #: src/Accounts/Forms/Messages.php:39
 msgid "Accounts that manage the site cannot be deleted here."
 msgstr "Contas que administram o site não podem ser excluídas aqui."
 
-#: blocks/account/render.php:49
+#: blocks/account/render.php:48
 msgid "Your email is removed from the site and nobody can sign in to this account anymore. What you wrote stays under your alias, without your email. You can create a new account later; it gets a new alias."
 msgstr "Seu e-mail é removido do site e ninguém consegue mais entrar nesta conta. O que você escreveu continua com o seu Apelido, sem o seu e-mail. Você pode criar uma conta nova depois; ela recebe outro Apelido."
 
-#: blocks/account/render.php:51
+#: blocks/account/render.php:50
 msgid "I understand and want to delete my account"
 msgstr "Entendo e quero excluir minha conta"
 
-#: blocks/account/render.php:52
+#: blocks/account/render.php:51
 msgid "Delete my account"
 msgstr "Excluir minha conta"
 
@@ -516,3 +516,163 @@ msgstr "Minha conta"
 msgctxt "block description"
 msgid "Alias, email, appearance, sign out and account deletion."
 msgstr ""
+
+#: src/HelpRequests/HelpRequests.php:191
+msgid "[personal data removed]"
+msgstr "[dado pessoal removido]"
+
+#: src/HelpRequests/HelpRequestType.php:62
+msgid "Help requests"
+msgstr "Pedidos"
+
+#: src/HelpRequests/HelpRequestType.php:63
+msgid "Help request"
+msgstr "Pedido"
+
+#: src/HelpRequests/HelpRequestType.php:85
+msgid "Awaiting triage"
+msgstr "Aguardando triagem"
+
+#. translators: %s: number of help requests.
+#: src/HelpRequests/HelpRequestType.php:87
+#, php-format
+msgid "Awaiting triage <span class=\"count\">(%s)</span>"
+msgid_plural "Awaiting triage <span class=\"count\">(%s)</span>"
+msgstr[0] "Aguardando triagem <span class=\"count\">(%s)</span>"
+msgstr[1] "Aguardando triagem <span class=\"count\">(%s)</span>"
+
+#: src/HelpRequests/HelpRequestType.php:90
+msgid "Awaiting reply"
+msgstr "Aguardando resposta"
+
+#. translators: %s: number of help requests.
+#: src/HelpRequests/HelpRequestType.php:92
+#, php-format
+msgid "Awaiting reply <span class=\"count\">(%s)</span>"
+msgid_plural "Awaiting reply <span class=\"count\">(%s)</span>"
+msgstr[0] "Aguardando resposta <span class=\"count\">(%s)</span>"
+msgstr[1] "Aguardando resposta <span class=\"count\">(%s)</span>"
+
+#: src/HelpRequests/HelpRequestType.php:95
+msgid "In conversation"
+msgstr "Em conversa"
+
+#. translators: %s: number of help requests.
+#: src/HelpRequests/HelpRequestType.php:97
+#, php-format
+msgid "In conversation <span class=\"count\">(%s)</span>"
+msgid_plural "In conversation <span class=\"count\">(%s)</span>"
+msgstr[0] "Em conversa <span class=\"count\">(%s)</span>"
+msgstr[1] "Em conversa <span class=\"count\">(%s)</span>"
+
+#: src/HelpRequests/HelpRequestType.php:100
+msgid "Closed"
+msgstr "Encerrado"
+
+#. translators: %s: number of help requests.
+#: src/HelpRequests/HelpRequestType.php:102
+#, php-format
+msgid "Closed <span class=\"count\">(%s)</span>"
+msgid_plural "Closed <span class=\"count\">(%s)</span>"
+msgstr[0] "Encerrados <span class=\"count\">(%s)</span>"
+msgstr[1] "Encerrados <span class=\"count\">(%s)</span>"
+
+#: src/HelpRequests/HelpRequestType.php:122
+msgid "Categories"
+msgstr "Categorias"
+
+#: src/HelpRequests/HelpRequestType.php:123
+msgid "Severity"
+msgstr "Gravidade"
+
+#: src/HelpRequests/HelpRequestType.php:124
+msgid "Risk signals"
+msgstr "Sinais de risco"
+
+#: src/HelpRequests/TriageTerms.php:26
+msgid "Emotional"
+msgstr "Emocional"
+
+#: src/HelpRequests/TriageTerms.php:27
+msgid "Relationships"
+msgstr "Relacionamentos"
+
+#: src/HelpRequests/TriageTerms.php:28
+msgid "Work and study"
+msgstr "Trabalho e estudo"
+
+#: src/HelpRequests/TriageTerms.php:29
+msgid "Financial"
+msgstr "Financeiro"
+
+#: src/HelpRequests/TriageTerms.php:30
+msgid "Material needs"
+msgstr "Necessidades materiais"
+
+#: src/HelpRequests/TriageTerms.php:31
+msgid "Health"
+msgstr "Saúde"
+
+#: src/HelpRequests/TriageTerms.php:32
+msgid "Violence"
+msgstr "Violência"
+
+#: src/HelpRequests/TriageTerms.php:33
+msgid "Other"
+msgstr "Outros"
+
+#: src/HelpRequests/TriageTerms.php:36
+msgid "Low"
+msgstr "Baixa"
+
+#: src/HelpRequests/TriageTerms.php:37
+msgid "Medium"
+msgstr "Média"
+
+#: src/HelpRequests/TriageTerms.php:38
+msgid "High"
+msgstr "Alta"
+
+#: src/HelpRequests/TriageTerms.php:39
+msgid "Critical"
+msgstr "Crítica"
+
+#: src/HelpRequests/TriageTerms.php:42
+msgid "Suicidal ideation"
+msgstr "Ideação suicida"
+
+#: src/HelpRequests/TriageTerms.php:43
+msgid "Self-harm"
+msgstr "Autolesão"
+
+#: src/HelpRequests/TriageTerms.php:44
+msgid "Violence suffered"
+msgstr "Violência sofrida"
+
+#: src/HelpRequests/TriageTerms.php:45
+msgid "Risk to others"
+msgstr "Risco a terceiros"
+
+#: src/HelpRequests/TriageTerms.php:46
+msgid "Medical emergency"
+msgstr "Emergência médica"
+
+#: src/HelpRequests/TriageTerms.php:47
+msgid "Substance use crisis"
+msgstr "Uso de substâncias em crise"
+
+#: src/HelpRequests/TriageTerms.php:48
+msgid "Lack of food or housing"
+msgstr "Falta de alimento ou moradia"
+
+#: src/HelpRequests/TriageTerms.php:49
+msgid "Possibly under 18"
+msgstr "Possível menor de idade"
+
+#: src/HelpRequests/TriageTerms.php:50
+msgid "Money request"
+msgstr "Pedido de dinheiro"
+
+#: src/HelpRequests/TriageTerms.php:51
+msgid "Personal data in the text"
+msgstr "Dado pessoal no texto"

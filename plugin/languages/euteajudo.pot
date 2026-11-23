@@ -2,14 +2,14 @@
 # This file is distributed under the GPL-2.0-or-later.
 msgid ""
 msgstr ""
-"Project-Id-Version: EuTeAjudo 0.7.0\n"
+"Project-Id-Version: EuTeAjudo 0.8.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/plugin\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-11-22T20:43:17-03:00\n"
+"POT-Creation-Date: 2026-11-22T21:16:40-03:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: euteajudo\n"
@@ -35,7 +35,7 @@ msgid "EuTeAjudo.org"
 msgstr ""
 
 #: blocks/account-link/render.php:16
-#: blocks/account/render.php:43
+#: blocks/account/render.php:42
 msgid "Sign out"
 msgstr ""
 
@@ -48,58 +48,58 @@ msgid "Sign in"
 msgstr ""
 
 #. translators: %s: alias label, e.g. "Friend 48213".
-#: blocks/account/render.php:25
+#: blocks/account/render.php:24
 #, php-format
 msgid "Here you are %s."
 msgstr ""
 
-#: blocks/account/render.php:31
+#: blocks/account/render.php:30
 #: src/Accounts/Forms/View.php:66
 msgid "Email"
 msgstr ""
 
-#: blocks/account/render.php:33
+#: blocks/account/render.php:32
 msgid "Only you see this email. It is used to sign in and to tell you when a reply arrives."
 msgstr ""
 
-#: blocks/account/render.php:36
+#: blocks/account/render.php:35
 msgid "Appearance"
 msgstr ""
 
-#: blocks/account/render.php:37
+#: blocks/account/render.php:36
 msgid "Automatic (follows your device)"
 msgstr ""
 
-#: blocks/account/render.php:38
+#: blocks/account/render.php:37
 msgid "Night"
 msgstr ""
 
-#: blocks/account/render.php:39
+#: blocks/account/render.php:38
 msgid "Day"
 msgstr ""
 
-#: blocks/account/render.php:40
+#: blocks/account/render.php:39
 msgid "This choice is saved only in this browser."
 msgstr ""
 
-#: blocks/account/render.php:45
+#: blocks/account/render.php:44
 msgid "Delete account"
 msgstr ""
 
-#: blocks/account/render.php:47
+#: blocks/account/render.php:46
 #: src/Accounts/Forms/Messages.php:39
 msgid "Accounts that manage the site cannot be deleted here."
 msgstr ""
 
-#: blocks/account/render.php:49
+#: blocks/account/render.php:48
 msgid "Your email is removed from the site and nobody can sign in to this account anymore. What you wrote stays under your alias, without your email. You can create a new account later; it gets a new alias."
 msgstr ""
 
-#: blocks/account/render.php:51
+#: blocks/account/render.php:50
 msgid "I understand and want to delete my account"
 msgstr ""
 
-#: blocks/account/render.php:52
+#: blocks/account/render.php:51
 msgid "Delete my account"
 msgstr ""
 
@@ -421,6 +421,166 @@ msgstr ""
 
 #: src/Admin/UsersList.php:46
 msgid "Alias"
+msgstr ""
+
+#: src/HelpRequests/HelpRequests.php:191
+msgid "[personal data removed]"
+msgstr ""
+
+#: src/HelpRequests/HelpRequestType.php:62
+msgid "Help requests"
+msgstr ""
+
+#: src/HelpRequests/HelpRequestType.php:63
+msgid "Help request"
+msgstr ""
+
+#: src/HelpRequests/HelpRequestType.php:85
+msgid "Awaiting triage"
+msgstr ""
+
+#. translators: %s: number of help requests.
+#: src/HelpRequests/HelpRequestType.php:87
+#, php-format
+msgid "Awaiting triage <span class=\"count\">(%s)</span>"
+msgid_plural "Awaiting triage <span class=\"count\">(%s)</span>"
+msgstr[0] ""
+msgstr[1] ""
+
+#: src/HelpRequests/HelpRequestType.php:90
+msgid "Awaiting reply"
+msgstr ""
+
+#. translators: %s: number of help requests.
+#: src/HelpRequests/HelpRequestType.php:92
+#, php-format
+msgid "Awaiting reply <span class=\"count\">(%s)</span>"
+msgid_plural "Awaiting reply <span class=\"count\">(%s)</span>"
+msgstr[0] ""
+msgstr[1] ""
+
+#: src/HelpRequests/HelpRequestType.php:95
+msgid "In conversation"
+msgstr ""
+
+#. translators: %s: number of help requests.
+#: src/HelpRequests/HelpRequestType.php:97
+#, php-format
+msgid "In conversation <span class=\"count\">(%s)</span>"
+msgid_plural "In conversation <span class=\"count\">(%s)</span>"
+msgstr[0] ""
+msgstr[1] ""
+
+#: src/HelpRequests/HelpRequestType.php:100
+msgid "Closed"
+msgstr ""
+
+#. translators: %s: number of help requests.
+#: src/HelpRequests/HelpRequestType.php:102
+#, php-format
+msgid "Closed <span class=\"count\">(%s)</span>"
+msgid_plural "Closed <span class=\"count\">(%s)</span>"
+msgstr[0] ""
+msgstr[1] ""
+
+#: src/HelpRequests/HelpRequestType.php:122
+msgid "Categories"
+msgstr ""
+
+#: src/HelpRequests/HelpRequestType.php:123
+msgid "Severity"
+msgstr ""
+
+#: src/HelpRequests/HelpRequestType.php:124
+msgid "Risk signals"
+msgstr ""
+
+#: src/HelpRequests/TriageTerms.php:26
+msgid "Emotional"
+msgstr ""
+
+#: src/HelpRequests/TriageTerms.php:27
+msgid "Relationships"
+msgstr ""
+
+#: src/HelpRequests/TriageTerms.php:28
+msgid "Work and study"
+msgstr ""
+
+#: src/HelpRequests/TriageTerms.php:29
+msgid "Financial"
+msgstr ""
+
+#: src/HelpRequests/TriageTerms.php:30
+msgid "Material needs"
+msgstr ""
+
+#: src/HelpRequests/TriageTerms.php:31
+msgid "Health"
+msgstr ""
+
+#: src/HelpRequests/TriageTerms.php:32
+msgid "Violence"
+msgstr ""
+
+#: src/HelpRequests/TriageTerms.php:33
+msgid "Other"
+msgstr ""
+
+#: src/HelpRequests/TriageTerms.php:36
+msgid "Low"
+msgstr ""
+
+#: src/HelpRequests/TriageTerms.php:37
+msgid "Medium"
+msgstr ""
+
+#: src/HelpRequests/TriageTerms.php:38
+msgid "High"
+msgstr ""
+
+#: src/HelpRequests/TriageTerms.php:39
+msgid "Critical"
+msgstr ""
+
+#: src/HelpRequests/TriageTerms.php:42
+msgid "Suicidal ideation"
+msgstr ""
+
+#: src/HelpRequests/TriageTerms.php:43
+msgid "Self-harm"
+msgstr ""
+
+#: src/HelpRequests/TriageTerms.php:44
+msgid "Violence suffered"
+msgstr ""
+
+#: src/HelpRequests/TriageTerms.php:45
+msgid "Risk to others"
+msgstr ""
+
+#: src/HelpRequests/TriageTerms.php:46
+msgid "Medical emergency"
+msgstr ""
+
+#: src/HelpRequests/TriageTerms.php:47
+msgid "Substance use crisis"
+msgstr ""
+
+#: src/HelpRequests/TriageTerms.php:48
+msgid "Lack of food or housing"
+msgstr ""
+
+#: src/HelpRequests/TriageTerms.php:49
+msgid "Possibly under 18"
+msgstr ""
+
+#: src/HelpRequests/TriageTerms.php:50
+msgid "Money request"
+msgstr ""
+
+#: src/HelpRequests/TriageTerms.php:51
+msgid "Personal data in the text"
 msgstr ""
 
 #: src/Privacy/UserDirectory.php:43

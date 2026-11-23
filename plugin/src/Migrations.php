@@ -48,6 +48,15 @@ final class Migrations {
 			'0.7.0' => static function (): void {
 				Accounts\Pages::install(); // Adds "My account".
 			},
+			'0.8.0' => static function (): void {
+				HelpRequests\TriageTerms::install();
+				$admin = get_role( 'administrator' );
+				if ( null !== $admin ) {
+					foreach ( HelpRequests\HelpRequestType::ADMIN_CAPS as $cap ) {
+						$admin->add_cap( $cap );
+					}
+				}
+			},
 		);
 	}
 }
