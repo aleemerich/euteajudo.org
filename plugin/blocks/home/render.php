@@ -11,8 +11,10 @@ use EuTeAjudo\Site\ContentPages;
 defined( 'ABSPATH' ) || exit;
 
 $euteajudo_signed_in = is_user_logged_in();
+// Desktop layout options under review; ?inicio=rua or ?inicio=reorganizada, local site only.
+$euteajudo_variant = 'local' === wp_get_environment_type() && isset( $_GET['inicio'] ) && 'reorganizada' === $_GET['inicio'] ? 'grid' : 'street'; // phpcs:ignore WordPress.Security.NonceVerification.Recommended -- Preview switch.
 ?>
-<div <?php echo get_block_wrapper_attributes( array( 'class' => 'eta-home' ) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Core escapes. ?>>
+<div <?php echo get_block_wrapper_attributes( array( 'class' => 'eta-home eta-home-' . $euteajudo_variant ) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Core escapes. ?>>
 	<section class="eta-hero">
 		<div class="eta-hero-text">
 			<h1 class="eta-display"><?php esc_html_e( 'There is a light on here.', 'euteajudo' ); ?></h1>
@@ -33,6 +35,12 @@ $euteajudo_signed_in = is_user_logged_in();
 			<?php endfor; ?>
 		</div>
 	</section>
+
+	<?php if ( 'street' === $euteajudo_variant ) : ?>
+		<div class="eta-street" aria-hidden="true">
+			<?php echo \EuTeAjudo\Site\Street::svg(); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Static SVG built from numbers. ?>
+		</div>
+	<?php endif; ?>
 
 	<section class="eta-how">
 		<h2><?php esc_html_e( 'How it works', 'euteajudo' ); ?></h2>
