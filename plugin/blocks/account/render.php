@@ -36,10 +36,12 @@ $euteajudo_user = wp_get_current_user();
 		<label class="eta-choice"><input type="radio" name="eta-scheme" value="auto"> <?php esc_html_e( 'Automatic (follows your device)', 'euteajudo' ); ?></label>
 		<label class="eta-choice"><input type="radio" name="eta-scheme" value="night"> <?php esc_html_e( 'Night', 'euteajudo' ); ?></label>
 		<label class="eta-choice"><input type="radio" name="eta-scheme" value="day"> <?php esc_html_e( 'Day', 'euteajudo' ); ?></label>
-		<p class="eta-note"><?php esc_html_e( 'This choice is saved only in this browser.', 'euteajudo' ); ?></p>
+		<p class="eta-note"><?php esc_html_e( 'The change is applied right away and saved only in this browser.', 'euteajudo' ); ?></p>
+		<p class="eta-saved" role="status" aria-live="polite" data-saved="<?php esc_attr_e( 'Appearance saved.', 'euteajudo' ); ?>"></p>
 	</fieldset>
 
-	<a class="eta-button eta-button-quiet wp-element-button" href="<?php echo esc_url( wp_logout_url( home_url( '/' ) ) ); ?>"><?php esc_html_e( 'Sign out', 'euteajudo' ); ?></a>
+	<h2 class="eta-section"><?php esc_html_e( 'Sign out', 'euteajudo' ); ?></h2>
+	<p><?php esc_html_e( 'If other people use this device, sign out when you finish.', 'euteajudo' ); ?> <a href="<?php echo esc_url( wp_logout_url( home_url( '/' ) ) ); ?>"><?php esc_html_e( 'Sign out of this device', 'euteajudo' ); ?></a></p>
 
 	<h2 class="eta-section"><?php esc_html_e( 'Delete account', 'euteajudo' ); ?></h2>
 	<?php if ( user_can( $euteajudo_user, 'edit_posts' ) ) : ?>

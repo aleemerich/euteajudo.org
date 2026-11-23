@@ -35,7 +35,8 @@ Duas versões com os mesmos papéis. Contraste medido pelo WCAG 2.2; todo texto 
 |---|---|---|
 | Fundo | `#0F2529` | `#EEF3F1` |
 | Cartões e Respostas | `#16343B` | `#FFFFFF` |
-| Campos de texto | `#0B1E22` | `#FFFFFF` |
+| Campos de texto | `#1B3D44` | `#FFFFFF` |
+| Borda dos campos | `#7A9692` | `#738884` |
 | Texto | `#E9EFEC` (13,7:1) | `#10262A` (14,1:1) |
 | Texto secundário | `#9BB1AD` (7,1:1) | `#4A625E` (5,9:1) |
 | Linhas | `#24444B` | `#D3DEDB` |

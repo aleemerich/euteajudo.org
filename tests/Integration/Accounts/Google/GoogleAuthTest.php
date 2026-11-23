@@ -39,6 +39,7 @@ final class GoogleAuthTest extends TestCase {
 
 	public function set_up(): void {
 		parent::set_up();
+		\EuTeAjudo\Accounts\Pages::install();
 		putenv( 'EUTEAJUDO_GOOGLE_CLIENT_ID=' . FakeGoogle::CLIENT_ID );
 		putenv( 'EUTEAJUDO_GOOGLE_CLIENT_SECRET=secret-xyz' );
 		add_filter( 'send_auth_cookies', '__return_false' );
@@ -199,7 +200,7 @@ final class GoogleAuthTest extends TestCase {
 
 		$url = $this->return_from_google( $query['state'] );
 
-		$this->assertSame( home_url( '/' ), $url, 'Without redirect_to, goes home (never to an empty URL).' );
+		$this->assertSame( \EuTeAjudo\Accounts\Pages::url( \EuTeAjudo\Accounts\Pages::WRITE ), $url, 'A new account goes straight to Write.' );
 		$user = get_user_by( 'email', 'someone@example.org' );
 		$this->assertInstanceOf( \WP_User::class, $user );
 		$this->assertSame( array( Roles::FRIEND ), $user->roles );

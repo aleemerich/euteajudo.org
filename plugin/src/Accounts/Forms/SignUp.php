@@ -21,7 +21,7 @@ use EuTeAjudo\Accounts\Roles;
  */
 final class SignUp {
 
-	public const MIN_PASSWORD = 10;
+	public const MIN_PASSWORD = 6;
 
 	/**
 	 * Handles a submission and returns where to send the browser.
@@ -33,21 +33,40 @@ final class SignUp {
 		if ( 'minor' === $age ) {
 			return Pages::url( Pages::SIGN_UP, array( 'eta_step' => 'minor' ) );
 		}
-		if ( 'adult' !== $age || '1' !== ( $input['consent'] ?? '' ) ) {
-			return self::error( 'consent_required' );
-		}
-
-		if ( 'google' === ( $input['method'] ?? '' ) ) {
-			return GoogleAuth::begin( 'register', '' );
-		}
-
+		$google   = 'google' === ( $input['method'] ?? '' );
 		$email    = sanitize_email( $input['email'] ?? '' );
 		$password = $input['password'] ?? '';
-		if ( ! is_email( $email ) ) {
-			return self::error( 'email_invalid' );
+		$errors   = array();
+		if ( 'adult' !== $age ) {
+			$errors[] = 'age_required';
 		}
-		if ( mb_strlen( $password ) < self::MIN_PASSWORD ) {
-			return self::error( 'password_short' );
+		if ( '1' !== ( $input['consent'] ?? '' ) ) {
+			$errors[] = 'consent_required';
+		}
+		if ( ! $google && ! is_email( $email ) ) {
+			$errors[] = 'email_invalid';
+		}
+		if ( ! $google && mb_strlen( $password ) < self::MIN_PASSWORD ) {
+			$errors[] = 'password_short';
+		}
+		if ( array() !== $errors ) {
+			return Pages::url(
+				Pages::SIGN_UP,
+				array(
+					FormState::PARAM => FormState::save(
+						$errors,
+						array(
+							'age'     => in_array( $age, array( 'adult' ), true ) ? $age : '',
+							'consent' => '1' === ( $input['consent'] ?? '' ) ? '1' : '',
+							'email'   => mb_substr( (string) ( $input['email'] ?? '' ), 0, 200 ),
+						)
+					),
+				)
+			);
+		}
+
+		if ( $google ) {
+			return GoogleAuth::begin( 'register', '' );
 		}
 
 		$done = Pages::url( Pages::SIGN_UP, array( 'eta_step' => 'check_email' ) );

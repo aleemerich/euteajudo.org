@@ -27,6 +27,11 @@
 					"color": "var(--eta-color-field)"
 				},
 				{
+					"slug": "field-border",
+					"name": "Field border",
+					"color": "var(--eta-color-field-border)"
+				},
+				{
 					"slug": "text",
 					"name": "Text",
 					"color": "var(--eta-color-text)"

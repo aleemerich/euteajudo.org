@@ -90,7 +90,7 @@ final class AccountDeletionTest extends TestCase {
 				'password' => 'long enough secret',
 			)
 		);
-		$this->assertStringContainsString( 'eta_auth_error=credentials', $url );
+		$this->assertSame( array( 'credentials' ), $this->form_state( $url )['errors'] );
 
 		SignUp::handle(
 			array(

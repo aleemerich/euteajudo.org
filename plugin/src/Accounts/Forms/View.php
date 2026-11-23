@@ -31,8 +31,32 @@ final class View {
 	 * Error notice for the current URL, if any.
 	 */
 	public static function error_notice(): string {
-		$message = Messages::error( Messages::current_error() );
-		return '' === $message ? '' : '<div class="eta-notice eta-notice-error" role="alert">' . esc_html( $message ) . '</div>';
+		$codes = FormState::current()['errors'];
+		if ( array() === $codes && '' !== Messages::current_error() ) {
+			$codes = array( Messages::current_error() );
+		}
+		$messages = array_values( array_filter( array_unique( array_map( array( Messages::class, 'error' ), $codes ) ) ) );
+		if ( array() === $messages ) {
+			return '';
+		}
+		wp_enqueue_script( 'euteajudo-accounts' ); // Moves focus to the notice, so it is seen and read.
+		if ( 1 === count( $messages ) ) {
+			return '<div class="eta-notice eta-notice-error" role="alert" tabindex="-1">' . esc_html( $messages[0] ) . '</div>';
+		}
+		$items = '';
+		foreach ( $messages as $message ) {
+			$items .= '<li>' . esc_html( $message ) . '</li>';
+		}
+		return '<div class="eta-notice eta-notice-error" role="alert" tabindex="-1"><p>' . esc_html__( 'Before continuing:', 'euteajudo' ) . '</p><ul>' . $items . '</ul></div>';
+	}
+
+	/**
+	 * Attributes that mark a field with a problem.
+	 *
+	 * @param string $field Field name.
+	 */
+	public static function invalid_attr( string $field ): string {
+		return FormState::invalid( $field ) ? ' aria-invalid="true"' : '';
 	}
 
 	/**
@@ -64,7 +88,7 @@ final class View {
 	 */
 	public static function email( string $id ): string {
 		return '<label for="' . esc_attr( $id ) . '">' . esc_html__( 'Email', 'euteajudo' ) . '</label>'
-			. '<input id="' . esc_attr( $id ) . '" name="email" type="email" autocomplete="email" inputmode="email">';
+			. '<input id="' . esc_attr( $id ) . '" name="email" type="email" autocomplete="email" inputmode="email" value="' . esc_attr( FormState::value( 'email' ) ) . '"' . self::invalid_attr( 'email' ) . '>';
 	}
 
 	/**
@@ -78,7 +102,7 @@ final class View {
 	public static function password( string $id, string $label, string $autocomplete, string $hint = '' ): string {
 		$hint_id = $id . '-hint';
 		return '<label for="' . esc_attr( $id ) . '">' . esc_html( $label ) . '</label>'
-			. '<div class="eta-password"><input id="' . esc_attr( $id ) . '" name="password" type="password" autocomplete="' . esc_attr( $autocomplete ) . '"' . ( '' !== $hint ? ' aria-describedby="' . esc_attr( $hint_id ) . '"' : '' ) . '>'
+			. '<div class="eta-password"><input id="' . esc_attr( $id ) . '" name="password" type="password" autocomplete="' . esc_attr( $autocomplete ) . '"' . self::invalid_attr( 'password' ) . ( '' !== $hint ? ' aria-describedby="' . esc_attr( $hint_id ) . '"' : '' ) . '>'
 			. '<button type="button" class="eta-password-toggle" data-show="' . esc_attr__( 'Show', 'euteajudo' ) . '" data-hide="' . esc_attr__( 'Hide', 'euteajudo' ) . '" aria-controls="' . esc_attr( $id ) . '" hidden>' . esc_html__( 'Show', 'euteajudo' ) . '</button></div>'
 			. ( '' !== $hint ? '<p class="eta-hint" id="' . esc_attr( $hint_id ) . '">' . esc_html( $hint ) . '</p>' : '' );
 	}

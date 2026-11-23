@@ -76,13 +76,13 @@ final class Dispatcher {
 			if ( EmailConfirmation::confirm( $user_id, $token ) ) {
 				wp_set_current_user( $user_id );
 				wp_set_auth_cookie( $user_id, true, is_ssl() );
-				self::finish( Pages::url( Pages::EMAIL_CONFIRMATION, array( 'eta_step' => 'email_confirmed' ) ) );
+				self::finish( Pages::url( Pages::WRITE, array( 'eta_step' => 'welcome' ) ) ); // First time here: straight to writing.
 			}
 			self::finish( Pages::url( Pages::EMAIL_CONFIRMATION, array( 'eta_auth_error' => 'confirmation_invalid' ) ) );
 		}
 
 		if ( is_user_logged_in() && Pages::is_current( array( Pages::SIGN_IN, Pages::SIGN_UP ) ) ) {
-			self::finish( home_url( '/' ) );
+			self::finish( \EuTeAjudo\Accounts\Redirects::landing( get_current_user_id() ) );
 		}
 
 		if ( ! is_user_logged_in() && Pages::is_current( array( Pages::ACCOUNT, Pages::WRITE, Pages::MY_REQUESTS ) ) ) {

@@ -75,15 +75,17 @@ final class RequestFormsTest extends TestCase {
 		$this->assertSame( trailingslashit( Pages::url( Pages::MY_REQUESTS ) ) . $post->post_name . '/', Conversations::url( $post ) );
 	}
 
-	public function test_writing_errors_come_back_to_the_write_page(): void {
+	public function test_writing_errors_come_back_with_the_text_kept(): void {
 		$url = RequestForms::write(
 			array(
 				'title' => '',
-				'body'  => 'Texto',
+				'body'  => 'Um texto longo que não pode se perder.',
 			)
 		);
 
-		$this->assertSame( 'title_required', $this->param( $url, 'eta_auth_error' ) );
+		$state = $this->form_state( $url );
+		$this->assertSame( array( 'title_required' ), $state['errors'] );
+		$this->assertSame( 'Um texto longo que não pode se perder.', $state['values']['body'] );
 		$this->assertStringStartsWith( Pages::url( Pages::WRITE ), $url );
 	}
 

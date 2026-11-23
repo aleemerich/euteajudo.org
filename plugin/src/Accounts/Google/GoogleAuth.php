@@ -185,7 +185,7 @@ final class GoogleAuth {
 		wp_set_current_user( $user_id );
 		wp_set_auth_cookie( $user_id, true, is_ssl() );
 
-		return self::redirect( Redirects::after_sign_in( (string) $pending['redirect_to'] ) );
+		return self::redirect( Redirects::after_sign_in( (string) $pending['redirect_to'], $user_id ) );
 	}
 
 	/**

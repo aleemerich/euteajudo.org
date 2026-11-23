@@ -21,9 +21,10 @@ test.describe( 'Accounts', () => {
 		await page.goto(
 			await linkFromLatestEmail( request, email, '/confirmar-e-mail/' )
 		);
-		await expect(
-			page.getByText( /E-mail confirmado\. Você entrou como Amigo \d+\./ )
-		).toBeVisible();
+		await expect( page ).toHaveURL( /\/escrever\/\?eta_step=welcome$/ );
+		await expect( page.getByRole( 'status' ) ).toContainText(
+			'Seu e-mail está confirmado'
+		);
 		await expect(
 			page.locator( '.eta-account-link .eta-alias' )
 		).toHaveText( /^Amigo \d+$/ );
@@ -40,11 +41,27 @@ test.describe( 'Accounts', () => {
 		).toHaveText( /^Amigo \d+$/ );
 	} );
 
-	test( 'sign-up asks for age and consent', async ( { page } ) => {
+	test( 'sign-up lists every problem and keeps what was typed', async ( {
+		page,
+	} ) => {
 		await page.goto( '/criar-conta/' );
+		await page.getByLabel( 'Tenho 18 anos ou mais' ).check();
+		await page.getByLabel( 'E-mail' ).fill( 'teste1@example' );
+		await page.getByLabel( 'Senha', { exact: true } ).fill( '123' );
 		await page.getByRole( 'button', { name: 'Criar conta' } ).click();
-		await expect( page.getByRole( 'alert' ) ).toContainText(
-			'Escolha sua idade e aceite os termos'
+
+		const alert = page.getByRole( 'alert' );
+		await expect( alert ).toContainText( 'caixa de concordância' );
+		await expect( alert ).toContainText( 'pelo menos 6 caracteres' );
+		await expect( alert ).toBeFocused();
+		await expect(
+			page.getByLabel( 'Tenho 18 anos ou mais' )
+		).toBeChecked();
+		await expect( page.getByLabel( 'E-mail' ) ).toHaveValue(
+			'teste1@example'
+		);
+		await expect( page.getByLabel( 'Senha', { exact: true } ) ).toHaveValue(
+			''
 		);
 	} );
 
