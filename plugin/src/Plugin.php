@@ -53,6 +53,8 @@ final class Plugin {
 		HelpRequests\Schedules::register();
 		Admin\HelpRequestsAdmin::register();
 		Admin\AgentStatus::register();
+		Operations\Mail::register();
+		Operations\Hardening::register();
 		Cli::register();
 
 		// Migrations may translate strings, which WordPress only allows from init on.

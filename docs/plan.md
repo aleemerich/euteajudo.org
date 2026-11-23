@@ -141,6 +141,13 @@ Objetivo: o site roda na hospedagem compartilhada com e-mails confiáveis.
 - Teste do Agente contra a REST de produção (ModSecurity).
 - Agente rodando na máquina do mantenedor contra o site publicado, com reinício automático.
 
+Como ficou na plataforma (o restante é configuração do servidor, em [deploy.md](deploy.md)):
+
+- SMTP sem plugin de terceiros: `EuTeAjudo\Operations\Mail` lê `EUTEAJUDO_SMTP_*` e `EUTEAJUDO_MAIL_FROM` do `wp-config.php`; remetente "EuTeAjudo".
+- Endurecimento: XML-RPC desligado, versão do WordPress fora do `<head>`, Application Passwords só para Agentes e Administradores.
+- Workflow manual `Deploy` (FTPS com `lftp`, só da `main`), que envia `plugin/` e `theme/` e visita o site para rodar as migrações.
+- Migração 0.11.0 liga os links permanentes `/%postname%/` numa instalação nova.
+
 Pronto quando: um Pedido criado no site publicado recebe Resposta e o e-mail chega com remetente e assunto neutros.
 
 ## R1. Revisão dos textos da interface

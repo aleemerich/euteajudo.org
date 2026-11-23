@@ -1,0 +1,62 @@
+# Publishes the plugin and the theme to the hosting over FTPS (docs/deploy.md).
+# Manual only: run it from the Actions tab after the CI of main is green.
+# Secrets (Settings > Secrets and variables > Actions, environment "production"):
+#   FTP_HOST, FTP_USER, FTP_PASSWORD. The FTP account should only reach the site's wp-content.
+# Variable: FTP_WP_CONTENT, the wp-content path as seen by that account (default ".").
+name: Deploy
+
+on:
+  workflow_dispatch:
+
+concurrency:
+  group: deploy
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    name: Upload plugin and theme
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    environment: production
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v5
+
+      - name: Check settings
+        env:
+          FTP_HOST: ${{ secrets.FTP_HOST }}
+          FTP_USER: ${{ secrets.FTP_USER }}
+          FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
+        run: |
+          missing=0
+          for name in FTP_HOST FTP_USER FTP_PASSWORD; do
+            if [ -z "${!name}" ]; then echo "::error::Secret $name is not set"; missing=1; fi
+          done
+          exit $missing
+
+      - name: Install lftp
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq lftp
+
+      - name: Upload over FTPS
+        env:
+          FTP_HOST: ${{ secrets.FTP_HOST }}
+          FTP_USER: ${{ secrets.FTP_USER }}
+          LFTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
+          TARGET: ${{ vars.FTP_WP_CONTENT || '.' }}
+        run: |
+          lftp --env-password -u "$FTP_USER" "$FTP_HOST" <<EOF
+          set ftp:ssl-force true
+          set ftp:ssl-protect-data true
+          set ssl:verify-certificate true
+          set net:max-retries 3
+          mirror --reverse --delete --verbose --parallel=4 plugin "$TARGET/plugins/euteajudo"
+          mirror --reverse --delete --verbose --parallel=4 theme "$TARGET/themes/euteajudo-theme"
+          bye
+          EOF
+
+      - name: Run migrations
+        env:
+          SITE_URL: ${{ vars.SITE_URL }}
+        run: |
+          # Migrations run on the first request after the new version arrives.
+          if [ -n "$SITE_URL" ]; then curl -fsS -o /dev/null "$SITE_URL/" && echo "Site answered."; fi
