@@ -48,7 +48,7 @@ Roteiro para pôr o site no ar na hospedagem compartilhada (cPanel, PHP 8.5, MyS
 
    O caminho do `ea-php85` pode variar; o cPanel mostra o correto em "MultiPHP Manager".
 8. **FTP**: criar uma conta de FTP com diretório raiz no `wp-content` do site. No GitHub (Settings > Environments > `production`), cadastrar os segredos `FTP_HOST`, `FTP_USER` e `FTP_PASSWORD`, e as variáveis `FTP_WP_CONTENT` (normalmente `.`) e `SITE_URL` (`https://euteajudo.org`).
-9. **Primeira publicação**: em Actions > Deploy > Run workflow (branch `main`). Depois, em Plugins, ativar "EuTeAjudo" e, em Aparência > Temas, ativar "EuTeAjudo". A primeira visita roda as migrações: papéis, páginas, termos de Triagem, Serviços de apoio, banco de Apelidos de Agente e links permanentes `/%postname%/`.
+9. **Primeira publicação**: em Actions > Deploy > Run workflow (branch `main`). Depois, em Plugins, ativar "EuTeAjudo" e, em Aparência > Temas, ativar "EuTeAjudo". A primeira visita roda as migrações: papéis, páginas, termos de Triagem, Serviços de apoio, banco de Apelidos de Agente e links permanentes `/%postname%/`. O tema cria a página Início e a define como página inicial estática.
 10. **Agente**: em Usuários > Adicionar novo, criar um usuário com a função "Agent" (e-mail qualquer, sem enviar notificação). O login vira o Apelido. Editar esse usuário e, em "Senhas de aplicativo", criar uma senha chamada `agente`. Login, senha e `https://euteajudo.org/wp-json/euteajudo/v1` vão para o `.env` do Agente. Contrato da API: [agent-api.md](agent-api.md).
 11. **Backup**: conferir no cPanel que o backup diário inclui o banco e o `wp-content`.
 

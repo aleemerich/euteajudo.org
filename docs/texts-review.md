@@ -5,34 +5,6 @@ Gerado por `npm run texts:review` a partir dos arquivos de tradução. Não edit
 As páginas Sobre, Termos de uso e Política de privacidade não estão aqui: são conteúdo, editado direto no painel (Páginas).
 
 
-## Início
-
-| Texto no site | Original (inglês) | Onde |
-|---|---|---|
-| Ligar para o 188 | Call 188 | `plugin/blocks/home/render.php:61` |
-| Meus pedidos | My requests | `plugin/blocks/app-nav/render.php:17` |
-| Tem uma luz acesa aqui. | There is a light on here. | `plugin/blocks/home/render.php:20` |
-| Começar a escrever | Start writing | `plugin/blocks/home/render.php:24` |
-| Já tenho conta | I already have an account | `plugin/blocks/home/render.php:28` |
-| Como funciona | How it works | `plugin/blocks/home/render.php:46` |
-| Crie uma conta só com e-mail. | Create an account with just an email. | `plugin/blocks/home/render.php:48` |
-| Do seu jeito, no seu tempo. Não precisa organizar nada. | Your way, in your time. Nothing needs to be organised. | `plugin/blocks/home/render.php:49` |
-| Receba uma resposta escrita com cuidado. | Get a reply written with care. | `plugin/blocks/home/render.php:50` |
-| Mais sobre como funciona | More about how it works | `plugin/blocks/home/render.php:54` |
-| Pode escrever a qualquer hora, do seu jeito, sem dizer quem você é. O que você escrever é lido com atenção. | Write at any time, your way, without saying who you are. What you write is read with care. | `plugin/blocks/home/render.php:21` |
-| Você não precisa dizer seu nome. Aqui chamamos você de Amigo, com um número que é só seu, como Amigo 48213. | You do not need to give your name. Here we call you Friend, with a number that is only yours, like Friend 48213. | `plugin/blocks/home/render.php:48` |
-| Conte o que está acontecendo. | Tell what is happening. | `plugin/blocks/home/render.php:49` |
-| As respostas são escritas por uma inteligência artificial feita para acolher: ela lê com atenção, não julga e segue regras de respeito. Quando chegar uma resposta, a gente avisa por e-mail, sem mostrar o que você escreveu. | Replies are written by an artificial intelligence made to welcome people: it reads with care, does not judge and follows rules of respect. When a reply arrives, we let you know by email, without showing what you wrote. | `plugin/blocks/home/render.php:50` |
-| Se estiver muito difícil agora | If things are very hard right now | `plugin/blocks/home/render.php:59` |
-| O CVV conversa com você de graça, a qualquer hora, pelo telefone 188 ou pelo chat em cvv.org.br. | CVV talks with you for free, at any time, by phone at 188 or by chat at cvv.org.br. | `plugin/blocks/home/render.php:60` |
-
-## Rodapé
-
-| Texto no site | Original (inglês) | Onde |
-|---|---|---|
-| Sobre o site | About the site | `plugin/blocks/site-links/render.php:13` |
-| Se estiver difícil agora, ligue 188 (CVV). É de graça, a qualquer hora. | If things are hard right now, call 188 (CVV). It is free, at any time. | `plugin/blocks/site-links/render.php:21` |
-
 ## Cabeçalho e navegação
 
 | Texto no site | Original (inglês) | Onde |
@@ -40,6 +12,7 @@ As páginas Sobre, Termos de uso e Política de privacidade não estão aqui: s�
 | Sair | Sign out | `plugin/blocks/account-link/render.php:16` |
 | Entrar | Sign in | `plugin/blocks/account-link/render.php:18` |
 | Escrever | Write | `plugin/blocks/app-nav/render.php:16` |
+| Meus pedidos | My requests | `plugin/blocks/app-nav/render.php:17` |
 | Conta | Account | `plugin/blocks/app-nav/render.php:18` |
 | Principal | Main | `plugin/blocks/app-nav/render.php:21` |
 | Marca | Brand | `theme/patterns/brand.php` |
@@ -56,6 +29,7 @@ As páginas Sobre, Termos de uso e Política de privacidade não estão aqui: s�
 | Abrir o Pode Falar | Open Pode Falar | `plugin/blocks/sign-up/render.php:28` |
 | CVV | CVV | `plugin/blocks/sign-up/render.php:31` |
 | Qualquer idade, a qualquer hora, pelo telefone 188 ou pelo chat. | Any age, any time, by phone at 188 or by chat. | `plugin/blocks/sign-up/render.php:32` |
+| Ligar para o 188 | Call 188 | `plugin/blocks/sign-up/render.php:33` |
 | Quase lá | Almost there | `plugin/blocks/sign-up/render.php:38` |
 | Mandamos um link para o seu e-mail. Toque nele para confirmar que o e-mail é seu. Ele vale por 48 horas. | We sent a link to the email you typed. Open the email and tap the link to confirm it. The link is valid for 48 hours. | `plugin/blocks/sign-up/render.php:39` |
 | O assunto é "EuTeAjudo: confirme seu e-mail". Se não aparecer em alguns minutos, vale olhar a pasta de spam. Para receber outro link, é só entrar com seu e-mail e senha. | The subject is "EuTeAjudo: confirm your email". If it does not arrive in a few minutes, check the spam folder. To get a new link, try to sign in. | `plugin/blocks/sign-up/render.php:40` |
@@ -340,3 +314,37 @@ As páginas Sobre, Termos de uso e Política de privacidade não estão aqui: s�
 | Nenhum Pedido encontrado. | No help requests found. | `plugin/src/HelpRequests/HelpRequestType.php:67` |
 | Nenhum Pedido na lixeira. | No help requests found in Trash. | `plugin/src/HelpRequests/HelpRequestType.php:68` |
 | Pedido salvo. | Help request saved. | `plugin/src/Admin/HelpRequestsAdmin.php:361` |
+
+## Outros
+
+| Texto no site | Original (inglês) | Onde |
+|---|---|---|
+| **(sem tradução)** | EuTeAjudo | `theme/functions.php:83` |
+| Link | Link | `theme/functions.php:88` |
+| Início | Home | `theme/functions.php:125` |
+| Links do rodapé | Footer links | `theme/patterns/footer.php` |
+| Sobre, Termos de uso e Política de privacidade, e a linha de crise. | About, Terms of use and Privacy policy, and the crisis line. | `theme/patterns/footer.php` |
+| Sobre | About | `theme/patterns/footer.php:13` |
+| Termos de uso | Terms of use | `theme/patterns/footer.php:14` |
+| Política de privacidade | Privacy policy | `theme/patterns/footer.php:15` |
+| Sobre o site | About the site | `theme/patterns/footer.php:19` |
+| Se estiver difícil agora, ligue 188 (CVV). É de graça, a qualquer hora. | If things are hard right now, call 188 (CVV). It is free, at any time. | `theme/patterns/footer.php:27` |
+| Início | Home | `theme/patterns/home.php` |
+| Conteúdo da página Início: boas-vindas, a janela acesa, como funciona e ajuda agora. O tema cria a página Início a partir dele uma vez; depois, a página é editada em Páginas. | Content of the Home page: welcome, the lit window, how it works and help right now. The theme creates the Home page from it once; after that, the page is edited in Pages. | `theme/patterns/home.php` |
+| Tem uma luz acesa aqui. | There is a light on here. | `theme/patterns/home.php:16` |
+| Pode escrever a qualquer hora, do seu jeito, sem dizer quem você é. O que você escrever é lido com atenção. | Write at any time, your way, without saying who you are. What you write is read with care. | `theme/patterns/home.php:20` |
+| Começar a escrever | Start writing | `theme/patterns/home.php:25` |
+| Já tenho conta | I already have an account | `theme/patterns/home.php:29` |
+| Como funciona | How it works | `theme/patterns/home.php:38` |
+| Crie uma conta só com e-mail. | Create an account with just an email. | `theme/patterns/home.php:44` |
+| Você não precisa dizer seu nome. Aqui chamamos você de Amigo, com um número que é só seu, como Amigo 48213. | You do not need to give your name. Here we call you Friend, with a number that is only yours, like Friend 48213. | `theme/patterns/home.php:48` |
+| Conte o que está acontecendo. | Tell what is happening. | `theme/patterns/home.php:54` |
+| Do seu jeito, no seu tempo. Não precisa organizar nada. | Your way, in your time. Nothing needs to be organised. | `theme/patterns/home.php:58` |
+| Receba uma resposta escrita com cuidado. | Get a reply written with care. | `theme/patterns/home.php:64` |
+| As respostas são escritas por uma inteligência artificial feita para acolher: ela lê com atenção, não julga e segue regras de respeito. Quando chegar uma resposta, a gente avisa por e-mail, sem mostrar o que você escreveu. | Replies are written by an artificial intelligence made to welcome people: it reads with care, does not judge and follows rules of respect. When a reply arrives, we let you know by email, without showing what you wrote. | `theme/patterns/home.php:68` |
+| Mais sobre como funciona | More about how it works | `theme/patterns/home.php:74` |
+| Se estiver muito difícil agora | If things are very hard right now | `theme/patterns/home.php:80` |
+| O CVV conversa com você de graça, a qualquer hora, pelo telefone 188 ou pelo chat em cvv.org.br. | CVV talks with you for free, at any time, by phone at 188 or by chat at cvv.org.br. | `theme/patterns/home.php:84` |
+| Ligar para o 188 | Call 188 | `theme/patterns/home.php:89` |
+| Janela acesa | Lit window | `theme/patterns/lit-window.php` |
+| Ilustração da identidade: uma fachada com uma janela acesa no celular e uma rua à noite de ponta a ponta em telas largas. A janela acende uma vez, a única animação automática do site. | The identity's illustration: a facade with one lit window on phones, a night street across the page on wide screens. The lit window turns on once, the only automatic animation of the site. | `theme/patterns/lit-window.php` |

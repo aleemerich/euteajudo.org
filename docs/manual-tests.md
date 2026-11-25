@@ -28,7 +28,10 @@ O **código** de um Pedido é a última parte do endereço da conversa: em `/meu
 
 ## A. Início, identidade e páginas públicas
 
-- [ ] **Início sem login** (janela anônima): título "Tem uma luz acesa aqui.", a janela âmbar acende uma vez, o bloco "Como funciona" diz que as respostas são de uma inteligência artificial, e há a caixa "Precisa de ajuda agora?" com "Ligar para o 188".
+- [ ] **Início sem login** (janela anônima): título "Tem uma luz acesa aqui.", a janela âmbar acende uma vez, o bloco "Como funciona" diz que as respostas são de uma inteligência artificial, e há a caixa "Se estiver muito difícil agora" com "Ligar para o 188".
+- [ ] **Início no painel**: em Páginas, a página "Início" aparece como página inicial. Edite uma frase e salve.
+  - Esperado: a mudança aparece no site; a rua e a janela acesa continuam lá.
+- [ ] **Imagem do tema**: em Aparência > Temas, o tema EuTeAjudo mostra a rua à noite com a janela acesa.
   - Esperado: só os botões e a janela usam âmbar.
 - [ ] **Noite e Dia**: troque o tema do sistema operacional (ou, no DevTools, Rendering > `prefers-color-scheme`).
   - Esperado: o site segue o aparelho, e Noite é o padrão.

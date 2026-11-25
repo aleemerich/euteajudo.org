@@ -15,6 +15,7 @@ msgstr ""
 
 #. Theme Name of the theme
 #: style.css
+#: functions.php:83
 msgid "EuTeAjudo"
 msgstr ""
 
@@ -240,4 +241,122 @@ msgstr "Rodapé"
 #: theme.json
 msgctxt "Color name"
 msgid "Field border"
-msgstr ""
+msgstr "Borda dos campos"
+
+#: functions.php:88
+msgid "Link"
+msgstr "Link"
+
+#: functions.php:125
+msgid "Home"
+msgstr "Início"
+
+#: patterns/footer.php
+msgctxt "Pattern title"
+msgid "Footer links"
+msgstr "Links do rodapé"
+
+#: patterns/footer.php
+msgctxt "Pattern description"
+msgid "About, Terms of use and Privacy policy, and the crisis line."
+msgstr "Sobre, Termos de uso e Política de privacidade, e a linha de crise."
+
+#: patterns/footer.php:13
+msgid "About"
+msgstr "Sobre"
+
+#: patterns/footer.php:14
+msgid "Terms of use"
+msgstr "Termos de uso"
+
+#: patterns/footer.php:15
+msgid "Privacy policy"
+msgstr "Política de privacidade"
+
+#: patterns/footer.php:19
+msgid "About the site"
+msgstr "Sobre o site"
+
+#: patterns/footer.php:27
+msgid "If things are hard right now, call 188 (CVV). It is free, at any time."
+msgstr "Se estiver difícil agora, ligue 188 (CVV). É de graça, a qualquer hora."
+
+#: patterns/home.php
+msgctxt "Pattern title"
+msgid "Home"
+msgstr "Início"
+
+#: patterns/home.php
+msgctxt "Pattern description"
+msgid "Content of the Home page: welcome, the lit window, how it works and help right now. The theme creates the Home page from it once; after that, the page is edited in Pages."
+msgstr "Conteúdo da página Início: boas-vindas, a janela acesa, como funciona e ajuda agora. O tema cria a página Início a partir dele uma vez; depois, a página é editada em Páginas."
+
+#: patterns/home.php:16
+msgid "There is a light on here."
+msgstr "Tem uma luz acesa aqui."
+
+#: patterns/home.php:20
+msgid "Write at any time, your way, without saying who you are. What you write is read with care."
+msgstr "Pode escrever a qualquer hora, do seu jeito, sem dizer quem você é. O que você escrever é lido com atenção."
+
+#: patterns/home.php:25
+msgid "Start writing"
+msgstr "Começar a escrever"
+
+#: patterns/home.php:29
+msgid "I already have an account"
+msgstr "Já tenho conta"
+
+#: patterns/home.php:38
+msgid "How it works"
+msgstr "Como funciona"
+
+#: patterns/home.php:44
+msgid "Create an account with just an email."
+msgstr "Crie uma conta só com e-mail."
+
+#: patterns/home.php:48
+msgid "You do not need to give your name. Here we call you Friend, with a number that is only yours, like Friend 48213."
+msgstr "Você não precisa dizer seu nome. Aqui chamamos você de Amigo, com um número que é só seu, como Amigo 48213."
+
+#: patterns/home.php:54
+msgid "Tell what is happening."
+msgstr "Conte o que está acontecendo."
+
+#: patterns/home.php:58
+msgid "Your way, in your time. Nothing needs to be organised."
+msgstr "Do seu jeito, no seu tempo. Não precisa organizar nada."
+
+#: patterns/home.php:64
+msgid "Get a reply written with care."
+msgstr "Receba uma resposta escrita com cuidado."
+
+#: patterns/home.php:68
+msgid "Replies are written by an artificial intelligence made to welcome people: it reads with care, does not judge and follows rules of respect. When a reply arrives, we let you know by email, without showing what you wrote."
+msgstr "As respostas são escritas por uma inteligência artificial feita para acolher: ela lê com atenção, não julga e segue regras de respeito. Quando chegar uma resposta, a gente avisa por e-mail, sem mostrar o que você escreveu."
+
+#: patterns/home.php:74
+msgid "More about how it works"
+msgstr "Mais sobre como funciona"
+
+#: patterns/home.php:80
+msgid "If things are very hard right now"
+msgstr "Se estiver muito difícil agora"
+
+#: patterns/home.php:84
+msgid "CVV talks with you for free, at any time, by phone at 188 or by chat at cvv.org.br."
+msgstr "O CVV conversa com você de graça, a qualquer hora, pelo telefone 188 ou pelo chat em cvv.org.br."
+
+#: patterns/home.php:89
+msgid "Call 188"
+msgstr "Ligar para o 188"
+
+#: patterns/lit-window.php
+msgctxt "Pattern title"
+msgid "Lit window"
+msgstr "Janela acesa"
+
+#: patterns/lit-window.php
+msgctxt "Pattern description"
+msgid "The identity's illustration: a facade with one lit window on phones, a night street across the page on wide screens. The lit window turns on once, the only automatic animation of the site."
+msgstr "Ilustração da identidade: uma fachada com uma janela acesa no celular e uma rua à noite de ponta a ponta em telas largas. A janela acende uma vez, a única animação automática do site."

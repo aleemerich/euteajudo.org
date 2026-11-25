@@ -29,6 +29,7 @@ Espaço anônimo onde Amigos desabafam e recebem Respostas de um Agente de IA (n
 ## Stack e ambiente
 
 - WordPress clássico: plugin próprio (`plugin/`) e tema de blocos próprio (`theme/`), estruturas nativas ([ADR 0003](docs/adr/0003-classic-wordpress-native-structures.md)).
+- O plugin cuida do funcionamento e o tema cuida da aparência ([ADR 0008](docs/adr/0008-plugin-behaviour-theme-presentation.md)): conteúdo igual para todos vai para patterns do tema; o que depende de login, Pedido ou regra é bloco do plugin. Ao criar ou renomear um pattern, subir a versão do tema.
 - Produção: hospedagem compartilhada cPanel, Apache, **PHP 8.5**, **MySQL 5.7**, sem SSH, publicação por FTPS.
 - Local: DDEV com as mesmas versões ([ADR 0004](docs/adr/0004-ddev-and-hosting-parity.md)). Não usar recursos do MySQL 8 em SQL próprio.
 - O repositório fica num disco NTFS: `core.fileMode=false`, `safe.directory` e `.gitattributes` com `eol=lf` já estão configurados. Não versionar mudanças de permissão de arquivo.
