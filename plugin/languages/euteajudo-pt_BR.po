@@ -131,7 +131,7 @@ msgid "Good to have you back."
 msgstr "Bom ter você de volta."
 
 #: blocks/sign-in/render.php:36
-#: blocks/sign-up/render.php:77
+#: blocks/sign-up/render.php:79
 msgid "Password"
 msgstr "Senha"
 
@@ -184,33 +184,33 @@ msgstr "O assunto é \"EuTeAjudo: confirme seu e-mail\". Se não aparecer em alg
 msgid "Before you start"
 msgstr "Antes de começar"
 
-#: blocks/sign-up/render.php:49
+#: blocks/sign-up/render.php:50
 msgid "I am 18 or older"
 msgstr "Tenho 18 anos ou mais"
 
-#: blocks/sign-up/render.php:50
+#: blocks/sign-up/render.php:51
 msgid "I am under 18"
 msgstr "Tenho menos de 18 anos"
 
 #. translators: %s: link to the privacy policy.
-#: blocks/sign-up/render.php:64
+#: blocks/sign-up/render.php:65
 #, php-format
 msgid "I have read the %s."
 msgstr "Li a %s."
 
-#: blocks/sign-up/render.php:59
-#: blocks/sign-up/render.php:65
+#: blocks/sign-up/render.php:60
+#: blocks/sign-up/render.php:66
 #: src/Site/ContentPages.php:102
 msgid "Privacy policy"
 msgstr "Política de privacidade"
 
 #. translators: %d: minimum number of characters.
-#: blocks/sign-up/render.php:78
+#: blocks/sign-up/render.php:80
 #: src/Accounts/Pages.php:130
 msgid "Create account"
 msgstr "Criar conta"
 
-#: blocks/sign-up/render.php:82
+#: blocks/sign-up/render.php:84
 msgid "Already have an account? Sign in"
 msgstr "Já tem conta? Entrar"
 
@@ -333,23 +333,23 @@ msgstr ""
 "Se você não pediu isso, pode ignorar esta mensagem. Sua senha continua a mesma."
 
 #: blocks/account/render.php:30
-#: src/Accounts/Forms/View.php:90
+#: src/Accounts/Forms/View.php:115
 msgid "Email"
 msgstr "E-mail"
 
-#: src/Accounts/Forms/View.php:106
+#: src/Accounts/Forms/View.php:133
 msgid "Show"
 msgstr "Mostrar"
 
-#: src/Accounts/Forms/View.php:106
+#: src/Accounts/Forms/View.php:133
 msgid "Hide"
 msgstr "Ocultar"
 
-#: src/Accounts/Forms/View.php:122
+#: src/Accounts/Forms/View.php:149
 msgid "Continue with Google"
 msgstr "Continuar com o Google"
 
-#: src/Accounts/Forms/View.php:129
+#: src/Accounts/Forms/View.php:156
 msgid "or with email"
 msgstr "ou com e-mail"
 
@@ -731,11 +731,11 @@ msgstr "Título"
 msgid "so you can find it later"
 msgstr "para você encontrar depois"
 
-#: blocks/write/render.php:32
+#: blocks/write/render.php:33
 msgid "What is happening?"
 msgstr "O que está acontecendo?"
 
-#: blocks/write/render.php:43
+#: blocks/write/render.php:45
 msgid "Send request"
 msgstr "Enviar pedido"
 
@@ -1139,12 +1139,12 @@ msgid "Help request saved."
 msgstr "Pedido salvo."
 
 #. translators: 1: link to the terms of use, 2: link to the privacy policy.
-#: blocks/sign-up/render.php:57
+#: blocks/sign-up/render.php:58
 #, php-format
 msgid "I accept the %1$s and the %2$s."
 msgstr "Aceito os %1$s e a %2$s."
 
-#: blocks/sign-up/render.php:58
+#: blocks/sign-up/render.php:59
 #: src/Site/ContentPages.php:101
 msgid "Terms of use"
 msgstr "Termos de uso"
@@ -1177,7 +1177,7 @@ msgstr "Sair neste aparelho"
 
 #. translators: %d: minimum number of characters.
 #: blocks/password-reset/render.php:30
-#: blocks/sign-up/render.php:77
+#: blocks/sign-up/render.php:79
 #, php-format
 msgid "At least %d characters."
 msgstr "Use pelo menos %d caracteres."
@@ -1234,31 +1234,31 @@ msgstr "Este espaço é para quem tem 18 anos ou mais. Estes serviços conversam
 msgid "You do not need to give your name. Here we call you Friend, with a number that is only yours, like Friend 48213. Nobody sees your email."
 msgstr "Você não precisa dizer seu nome. Aqui chamamos você de Amigo, com um número que é só seu, como Amigo 48213. Ninguém vê o seu e-mail."
 
-#: blocks/sign-up/render.php:52
+#: blocks/sign-up/render.php:53
 msgid "I agree that an artificial intelligence made to welcome people reads what I write so it can reply to me, including through services outside Brazil."
 msgstr "Concordo que uma inteligência artificial feita para acolher leia o que eu escrever, para poder me responder, inclusive usando serviços fora do Brasil."
 
-#: blocks/sign-up/render.php:70
+#: blocks/sign-up/render.php:72
 msgid "Your email is never sent along, and phone numbers and documents are taken out of the text first."
 msgstr "Seu e-mail nunca vai junto, e telefones e documentos são tirados do texto antes."
 
-#: blocks/write/render.php:34
+#: blocks/write/render.php:35
 msgid "Write your way; nothing needs to be organised. If you do not know where to start, these questions may help:"
 msgstr "Escreva do seu jeito, não precisa organizar nada. Se não souber por onde começar, estas perguntas podem ajudar:"
 
-#: blocks/write/render.php:36
+#: blocks/write/render.php:37
 msgid "How long has this been going on?"
 msgstr "Há quanto tempo isso acontece?"
 
-#: blocks/write/render.php:37
+#: blocks/write/render.php:38
 msgid "What have you already tried?"
 msgstr "O que você já tentou?"
 
-#: blocks/write/render.php:38
+#: blocks/write/render.php:39
 msgid "What do you feel you need now?"
 msgstr "Do que você sente que precisa agora?"
 
-#: blocks/write/render.php:42
+#: blocks/write/render.php:44
 msgid "To protect you, avoid writing names and addresses. We take phone numbers, emails and documents out of the text before saving. The reply may take a few hours, and we let you know by email."
 msgstr "Para proteger você, evite escrever nomes e endereços. Telefones, e-mails e documentos a gente tira do texto antes de guardar. A resposta pode levar algumas horas, e a gente avisa por e-mail."
 
@@ -1287,3 +1287,16 @@ msgstr "[removido para proteger você]"
 #: src/HelpRequests/View.php:66
 msgid "The replies here are written by an artificial intelligence made to welcome people, with care and rules of respect. If things are very hard right now, call 188 (CVV), at any time."
 msgstr "As respostas daqui são escritas por uma inteligência artificial feita para acolher, com atenção e com regras de respeito. Se estiver muito difícil agora, ligue 188 (CVV), a qualquer hora."
+
+#: src/Accounts/AccountDeletion.php:65
+msgid "EuTeAjudo: your account was deleted"
+msgstr "EuTeAjudo: sua conta foi excluída"
+
+#: src/Accounts/AccountDeletion.php:66
+msgid ""
+"Hi.\n"
+"\n"
+"Your account at EuTeAjudo.org was deleted, as you asked.\n"
+"\n"
+"EuTeAjudo.org"
+msgstr "Oi.\n\nSua conta no EuTeAjudo.org foi excluída, como você pediu.\n\nEuTeAjudo.org"
