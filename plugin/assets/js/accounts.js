@@ -56,13 +56,28 @@ document.querySelectorAll( '.eta-password-toggle' ).forEach( function ( button )
 } )();
 
 /**
- * A form that came back with problems: bring the list into view and give it focus, so it is
- * seen on small screens and read by screen readers.
+ * A form that came back with problems: take the person to the first field to fix, with its
+ * message right above it. The browser would otherwise restore the scroll position from before
+ * sending (near the button), leaving the messages out of view.
  */
 ( function () {
 	const notice = document.querySelector( '.eta-notice-error' );
-	if ( notice ) {
-		notice.focus( { preventScroll: true } );
-		notice.scrollIntoView( { block: 'center' } );
+	if ( ! notice ) {
+		return;
+	}
+	if ( 'scrollRestoration' in window.history ) {
+		window.history.scrollRestoration = 'manual';
+	}
+	const show = function () {
+		const field = document.querySelector( '.eta-form [aria-invalid="true"]' );
+		const target = field || notice;
+		const message = field && field.closest( 'fieldset' ) ? field.closest( 'fieldset' ) : target;
+		message.scrollIntoView( { block: 'center' } );
+		target.focus( { preventScroll: true } );
+	};
+	if ( document.readyState === 'complete' ) {
+		show();
+	} else {
+		window.addEventListener( 'load', show );
 	}
 } )();

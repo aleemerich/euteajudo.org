@@ -3,21 +3,20 @@ import AxeBuilder from '@axe-core/playwright';
 import { signedInFriend } from './support/helpers.js';
 
 test.describe( 'Public site', () => {
-	test( 'home leads guests to sign up and tells that an AI replies', async ( {
+	// The Home page is content edited in Pages, so these tests follow its links, not its words.
+	const startLink = ( page ) =>
+		page.locator( '.eta-hero a[href$="/criar-conta/"]' ).first();
+
+	test( 'home leads guests to sign up, where the AI is disclosed', async ( {
 		page,
 	} ) => {
 		await page.goto( '/' );
-		await expect(
-			page.getByRole( 'heading', {
-				level: 1,
-				name: 'Tem uma luz acesa aqui.',
-			} )
-		).toBeVisible();
-		await expect( page.locator( '.eta-how' ) ).toContainText(
+		await expect( page.getByRole( 'heading', { level: 1 } ) ).toBeVisible();
+		await startLink( page ).click();
+		await expect( page ).toHaveURL( /\/criar-conta\/$/ );
+		await expect( page.locator( '.eta-before' ) ).toContainText(
 			'inteligência artificial'
 		);
-		await page.getByRole( 'link', { name: 'Começar a escrever' } ).click();
-		await expect( page ).toHaveURL( /\/criar-conta\/$/ );
 		await expect(
 			page.getByRole( 'link', { name: 'Termos de uso' } ).first()
 		).toBeVisible();
@@ -29,7 +28,7 @@ test.describe( 'Public site', () => {
 	}, testInfo ) => {
 		await signedInFriend( page, request, testInfo, 'home' );
 		await page.goto( '/' );
-		await page.getByRole( 'link', { name: 'Começar a escrever' } ).click();
+		await startLink( page ).click();
 		await expect( page ).toHaveURL( /\/escrever\/$/ );
 	} );
 

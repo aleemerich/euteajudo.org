@@ -46,9 +46,10 @@ $euteajudo_terms   = \EuTeAjudo\Site\ContentPages::url( \EuTeAjudo\Site\ContentP
 		<?php echo View::default_submit(); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Escaped in View. ?>
 		<fieldset class="eta-before">
 			<legend><?php esc_html_e( 'Before you start', 'euteajudo' ); ?></legend>
+			<?php echo View::field_error( 'age' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Escaped in View. ?>
 			<label class="eta-choice"><input type="radio" name="age" value="adult"<?php checked( FormState::value( 'age' ), 'adult' ); ?><?php echo View::invalid_attr( 'age' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Static attribute. ?>> <?php esc_html_e( 'I am 18 or older', 'euteajudo' ); ?></label>
 			<label class="eta-choice"><input type="radio" name="age" value="minor"> <?php esc_html_e( 'I am under 18', 'euteajudo' ); ?></label>
-			<label class="eta-choice"><input type="checkbox" name="consent" value="1" aria-describedby="eta-consent-note"<?php checked( FormState::value( 'consent' ), '1' ); ?><?php echo View::invalid_attr( 'consent' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Static attribute. ?>> <span>
+			<label class="eta-choice"><input type="checkbox" name="consent" value="1"<?php checked( FormState::value( 'consent' ), '1' ); ?><?php echo View::invalid_attr( 'consent', 'eta-consent-note' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Escaped in View. ?>> <span>
 				<?php esc_html_e( 'I agree that an artificial intelligence made to welcome people reads what I write so it can reply to me, including through services outside Brazil.', 'euteajudo' ); ?>
 				<?php
 				if ( '' !== $euteajudo_privacy && '' !== $euteajudo_terms ) {
@@ -67,6 +68,7 @@ $euteajudo_terms   = \EuTeAjudo\Site\ContentPages::url( \EuTeAjudo\Site\ContentP
 				}
 				?>
 			</span></label>
+			<?php echo View::field_error( 'consent' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Escaped in View. ?>
 			<p class="eta-note eta-consent-note" id="eta-consent-note"><?php esc_html_e( 'Your email is never sent along, and phone numbers and documents are taken out of the text first.', 'euteajudo' ); ?></p>
 		</fieldset>
 		<?php

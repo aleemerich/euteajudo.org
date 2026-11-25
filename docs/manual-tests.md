@@ -47,7 +47,7 @@ O **código** de um Pedido é a última parte do endereço da conversa: em `/meu
 - [ ] **Menor de 18**: marque "Tenho menos de 18 anos" e envie.
   - Esperado: a tela indica o Pode Falar e o CVV, e nenhuma conta é criada.
 - [ ] **Cadastro por e-mail**: marque 18+, aceite os termos e use um e-mail inventado, como `teste1@example.org`, com senha de 6 caracteres ou mais.
-  - Antes, teste os erros: sem marcar a concordância e com a senha `123`. Esperado: a lista mostra todos os problemas de uma vez, e a idade e o e-mail continuam preenchidos.
+  - Antes, teste os erros: sem marcar a concordância e com a senha `123`, rolando a página até o botão antes de enviar. Esperado: cada problema aparece logo acima do seu campo, o cursor vai para o primeiro campo a corrigir, a lista completa fica no topo, e a idade e o e-mail continuam preenchidos.
   - Esperado: tela "Quase lá".
   - O texto do aceite tem links para os Termos e a Política.
 - [ ] **Confirmação**: no Mailpit, abra o e-mail "EuTeAjudo: confirme seu e-mail" e clique no link.

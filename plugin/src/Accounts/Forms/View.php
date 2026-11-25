@@ -53,10 +53,35 @@ final class View {
 	/**
 	 * Attributes that mark a field with a problem.
 	 *
+	 * @param string $field   Field name.
+	 * @param string $hint_id ID of a hint that also describes the field, if any.
+	 */
+	public static function invalid_attr( string $field, string $hint_id = '' ): string {
+		$described = trim( ( FormState::invalid( $field ) ? self::error_id( $field ) : '' ) . ' ' . $hint_id );
+		return ( FormState::invalid( $field ) ? ' aria-invalid="true"' : '' )
+			. ( '' !== $described ? ' aria-describedby="' . esc_attr( $described ) . '"' : '' );
+	}
+
+	/**
+	 * The problem of one field, shown right next to it.
+	 *
 	 * @param string $field Field name.
 	 */
-	public static function invalid_attr( string $field ): string {
-		return FormState::invalid( $field ) ? ' aria-invalid="true"' : '';
+	public static function field_error( string $field ): string {
+		$messages = array_filter( array_map( array( Messages::class, 'error' ), FormState::errors_for( $field ) ) );
+		if ( array() === $messages ) {
+			return '';
+		}
+		return '<p class="eta-field-error" id="' . esc_attr( self::error_id( $field ) ) . '">' . esc_html( implode( ' ', $messages ) ) . '</p>';
+	}
+
+	/**
+	 * ID of a field's error message.
+	 *
+	 * @param string $field Field name.
+	 */
+	private static function error_id( string $field ): string {
+		return 'eta-error-' . $field;
 	}
 
 	/**
@@ -88,6 +113,7 @@ final class View {
 	 */
 	public static function email( string $id ): string {
 		return '<label for="' . esc_attr( $id ) . '">' . esc_html__( 'Email', 'euteajudo' ) . '</label>'
+			. self::field_error( 'email' )
 			. '<input id="' . esc_attr( $id ) . '" name="email" type="email" autocomplete="email" inputmode="email" value="' . esc_attr( FormState::value( 'email' ) ) . '"' . self::invalid_attr( 'email' ) . '>';
 	}
 
@@ -102,7 +128,8 @@ final class View {
 	public static function password( string $id, string $label, string $autocomplete, string $hint = '' ): string {
 		$hint_id = $id . '-hint';
 		return '<label for="' . esc_attr( $id ) . '">' . esc_html( $label ) . '</label>'
-			. '<div class="eta-password"><input id="' . esc_attr( $id ) . '" name="password" type="password" autocomplete="' . esc_attr( $autocomplete ) . '"' . self::invalid_attr( 'password' ) . ( '' !== $hint ? ' aria-describedby="' . esc_attr( $hint_id ) . '"' : '' ) . '>'
+			. self::field_error( 'password' )
+			. '<div class="eta-password"><input id="' . esc_attr( $id ) . '" name="password" type="password" autocomplete="' . esc_attr( $autocomplete ) . '"' . self::invalid_attr( 'password', '' !== $hint ? $hint_id : '' ) . '>'
 			. '<button type="button" class="eta-password-toggle" data-show="' . esc_attr__( 'Show', 'euteajudo' ) . '" data-hide="' . esc_attr__( 'Hide', 'euteajudo' ) . '" aria-controls="' . esc_attr( $id ) . '" hidden>' . esc_html__( 'Show', 'euteajudo' ) . '</button></div>'
 			. ( '' !== $hint ? '<p class="eta-hint" id="' . esc_attr( $hint_id ) . '">' . esc_html( $hint ) . '</p>' : '' );
 	}
