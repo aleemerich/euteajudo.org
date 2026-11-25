@@ -53,7 +53,12 @@ test.describe( 'Accounts', () => {
 		const alert = page.getByRole( 'alert' );
 		await expect( alert ).toContainText( 'caixa de concordância' );
 		await expect( alert ).toContainText( 'pelo menos 6 caracteres' );
-		await expect( alert ).toBeFocused();
+		// The first field to fix gets focus, with its message in view next to it.
+		await expect( page.getByRole( 'checkbox' ) ).toBeFocused();
+		await expect( page.locator( '#eta-error-consent' ) ).toBeInViewport();
+		await expect( page.locator( '#eta-error-password' ) ).toContainText(
+			'pelo menos 6 caracteres'
+		);
 		await expect(
 			page.getByLabel( 'Tenho 18 anos ou mais' )
 		).toBeChecked();

@@ -28,6 +28,7 @@ if ( ! is_user_logged_in() ) {
 	// phpcs:enable
 	?>
 		<label for="eta-write-title"><?php esc_html_e( 'Title', 'euteajudo' ); ?> <span class="eta-hint-inline"><?php esc_html_e( 'so you can find it later', 'euteajudo' ); ?></span></label>
+		<?php echo FormView::field_error( 'title' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Escaped in View. ?>
 		<input id="eta-write-title" name="title" type="text" maxlength="<?php echo (int) HelpRequests::MAX_TITLE; ?>" required value="<?php echo esc_attr( FormState::value( 'title' ) ); ?>"<?php echo FormView::invalid_attr( 'title' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Static attribute. ?>>
 		<label for="eta-write-body"><?php esc_html_e( 'What is happening?', 'euteajudo' ); ?></label>
 		<div class="eta-hint eta-hint-before" id="eta-write-guides">
@@ -38,7 +39,8 @@ if ( ! is_user_logged_in() ) {
 				<li><?php esc_html_e( 'What do you feel you need now?', 'euteajudo' ); ?></li>
 			</ul>
 		</div>
-		<textarea id="eta-write-body" name="body" rows="10" required aria-describedby="eta-write-guides"<?php echo FormView::invalid_attr( 'body' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Static attribute. ?>><?php echo esc_textarea( FormState::value( 'body' ) ); ?></textarea>
+		<?php echo FormView::field_error( 'body' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Escaped in View. ?>
+		<textarea id="eta-write-body" name="body" rows="10" required<?php echo FormView::invalid_attr( 'body', 'eta-write-guides' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Escaped in View. ?>><?php echo esc_textarea( FormState::value( 'body' ) ); ?></textarea>
 		<p class="eta-note"><?php esc_html_e( 'To protect you, avoid writing names and addresses. We take phone numbers, emails and documents out of the text before saving. The reply may take a few hours, and we let you know by email.', 'euteajudo' ); ?></p>
 		<button class="eta-button wp-element-button" type="submit"><?php esc_html_e( 'Send request', 'euteajudo' ); ?></button>
 	</form>

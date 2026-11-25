@@ -88,15 +88,25 @@ final class FormState {
 	 * @param string $field Field name.
 	 */
 	public static function invalid( string $field ): bool {
+		return array() !== self::errors_for( $field );
+	}
+
+	/**
+	 * Error codes that belong to a field, in the order they were found.
+	 *
+	 * @param string $field Field name.
+	 * @return string[]
+	 */
+	public static function errors_for( string $field ): array {
 		$map = array(
 			'age'      => array( 'age_required' ),
 			'consent'  => array( 'consent_required' ),
-			'email'    => array( 'email_invalid', 'credentials' ),
+			'email'    => array( 'email_invalid' ),
 			'password' => array( 'password_short', 'credentials' ),
 			'title'    => array( 'title_required' ),
 			'body'     => array( 'body_required' ),
 		);
-		return array() !== array_intersect( $map[ $field ] ?? array(), self::current()['errors'] );
+		return array_values( array_intersect( self::current()['errors'], $map[ $field ] ?? array() ) );
 	}
 
 	/**
