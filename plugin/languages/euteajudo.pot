@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-11-23T00:48:20-03:00\n"
+"POT-Creation-Date: 2026-11-25T13:44:23-03:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: euteajudo\n"
@@ -121,7 +121,6 @@ msgid "Write"
 msgstr ""
 
 #: blocks/app-nav/render.php:17
-#: blocks/home/render.php:25
 #: blocks/my-requests/render.php:66
 #: src/Accounts/Pages.php:136
 msgid "My requests"
@@ -147,68 +146,6 @@ msgstr ""
 
 #: blocks/email-confirmation/render.php:32
 msgid "Open the link we sent to your email to confirm it."
-msgstr ""
-
-#: blocks/home/render.php:20
-msgid "There is a light on here."
-msgstr ""
-
-#: blocks/home/render.php:21
-msgid "Write at any time, your way, without saying who you are. What you write is read with care."
-msgstr ""
-
-#: blocks/home/render.php:24
-#: blocks/home/render.php:27
-msgid "Start writing"
-msgstr ""
-
-#: blocks/home/render.php:28
-msgid "I already have an account"
-msgstr ""
-
-#: blocks/home/render.php:46
-msgid "How it works"
-msgstr ""
-
-#: blocks/home/render.php:48
-msgid "Create an account with just an email."
-msgstr ""
-
-#: blocks/home/render.php:48
-msgid "You do not need to give your name. Here we call you Friend, with a number that is only yours, like Friend 48213."
-msgstr ""
-
-#: blocks/home/render.php:49
-msgid "Tell what is happening."
-msgstr ""
-
-#: blocks/home/render.php:49
-msgid "Your way, in your time. Nothing needs to be organised."
-msgstr ""
-
-#: blocks/home/render.php:50
-msgid "Get a reply written with care."
-msgstr ""
-
-#: blocks/home/render.php:50
-msgid "Replies are written by an artificial intelligence made to welcome people: it reads with care, does not judge and follows rules of respect. When a reply arrives, we let you know by email, without showing what you wrote."
-msgstr ""
-
-#: blocks/home/render.php:54
-msgid "More about how it works"
-msgstr ""
-
-#: blocks/home/render.php:59
-msgid "If things are very hard right now"
-msgstr ""
-
-#: blocks/home/render.php:60
-msgid "CVV talks with you for free, at any time, by phone at 188 or by chat at cvv.org.br."
-msgstr ""
-
-#: blocks/home/render.php:61
-#: blocks/sign-up/render.php:33
-msgid "Call 188"
 msgstr ""
 
 #: blocks/my-requests/render.php:40
@@ -388,6 +325,10 @@ msgstr ""
 msgid "Any age, any time, by phone at 188 or by chat."
 msgstr ""
 
+#: blocks/sign-up/render.php:33
+msgid "Call 188"
+msgstr ""
+
 #: blocks/sign-up/render.php:38
 msgid "Almost there"
 msgstr ""
@@ -455,14 +396,6 @@ msgstr ""
 
 #: blocks/sign-up/render.php:82
 msgid "Already have an account? Sign in"
-msgstr ""
-
-#: blocks/site-links/render.php:13
-msgid "About the site"
-msgstr ""
-
-#: blocks/site-links/render.php:21
-msgid "If things are hard right now, call 188 (CVV). It is free, at any time."
 msgstr ""
 
 #: blocks/write/render.php:25
@@ -1255,16 +1188,6 @@ msgctxt "block description"
 msgid "Result of the email confirmation link."
 msgstr ""
 
-#: blocks/home/block.json
-msgctxt "block title"
-msgid "Home"
-msgstr ""
-
-#: blocks/home/block.json
-msgctxt "block description"
-msgid "Public home: the lit window, how it works and help right now."
-msgstr ""
-
 #: blocks/my-requests/block.json
 msgctxt "block title"
 msgid "My requests"
@@ -1313,16 +1236,6 @@ msgstr ""
 #: blocks/sign-up/block.json
 msgctxt "block description"
 msgid "Age, consent and account creation with email or Google."
-msgstr ""
-
-#: blocks/site-links/block.json
-msgctxt "block title"
-msgid "Site links"
-msgstr ""
-
-#: blocks/site-links/block.json
-msgctxt "block description"
-msgid "About, Terms of use, Privacy policy and the crisis line."
 msgstr ""
 
 #: blocks/write/block.json

@@ -164,7 +164,6 @@ msgstr "CVV"
 msgid "Any age, any time, by phone at 188 or by chat."
 msgstr "Qualquer idade, a qualquer hora, pelo telefone 188 ou pelo chat."
 
-#: blocks/home/render.php:61
 #: blocks/sign-up/render.php:33
 msgid "Call 188"
 msgstr "Ligar para o 188"
@@ -230,7 +229,16 @@ msgid ""
 "%2$s\n"
 "\n"
 "If you did not create an account, you can ignore this message."
-msgstr "Oi, %1$s.\n\nFalta só confirmar este e-mail para você começar no EuTeAjudo.org. Abra o link abaixo em até 48 horas:\n\n%2$s\n\nSe não foi você quem criou a conta, pode ignorar esta mensagem.\n\nEuTeAjudo.org"
+msgstr ""
+"Oi, %1$s.\n"
+"\n"
+"Falta só confirmar este e-mail para você começar no EuTeAjudo.org. Abra o link abaixo em até 48 horas:\n"
+"\n"
+"%2$s\n"
+"\n"
+"Se não foi você quem criou a conta, pode ignorar esta mensagem.\n"
+"\n"
+"EuTeAjudo.org"
 
 #: src/Accounts/Forms/Messages.php:24
 msgid "Email or password does not match. Check and try again, or use \"Forgot password\"."
@@ -293,7 +301,16 @@ msgid ""
 "%2$s\n"
 "\n"
 "If it was not you, you can ignore this message. Nothing was changed."
-msgstr "Alguém tentou criar uma conta no EuTeAjudo.org com este e-mail, mas ele já tem uma conta aqui.\n\nSe foi você, é só entrar:\n%1$s\n\nEsqueceu a senha? Crie uma nova aqui:\n%2$s\n\nSe não foi você, pode ignorar esta mensagem. Nada foi alterado."
+msgstr ""
+"Alguém tentou criar uma conta no EuTeAjudo.org com este e-mail, mas ele já tem uma conta aqui.\n"
+"\n"
+"Se foi você, é só entrar:\n"
+"%1$s\n"
+"\n"
+"Esqueceu a senha? Crie uma nova aqui:\n"
+"%2$s\n"
+"\n"
+"Se não foi você, pode ignorar esta mensagem. Nada foi alterado."
 
 #: src/Accounts/Forms/Notices.php:46
 msgid "EuTeAjudo: create a new password"
@@ -631,7 +648,6 @@ msgid "Write"
 msgstr "Escrever"
 
 #: blocks/app-nav/render.php:17
-#: blocks/home/render.php:25
 #: blocks/my-requests/render.php:66
 #: src/Accounts/Pages.php:136
 msgid "My requests"
@@ -1056,7 +1072,13 @@ msgid ""
 "%2$s\n"
 "\n"
 "EuTeAjudo.org"
-msgstr "Oi, %1$s.\n\nChegou uma resposta em um dos seus pedidos. Ela fica guardada lá para quando você quiser ler:\n%2$s\n\nEuTeAjudo.org"
+msgstr ""
+"Oi, %1$s.\n"
+"\n"
+"Chegou uma resposta em um dos seus pedidos. Ela fica guardada lá para quando você quiser ler:\n"
+"%2$s\n"
+"\n"
+"EuTeAjudo.org"
 
 #: src/HelpRequests/Notifications.php:56
 msgid "EuTeAjudo: one of your requests was closed"
@@ -1072,7 +1094,13 @@ msgid ""
 "%2$s\n"
 "\n"
 "EuTeAjudo.org"
-msgstr "Oi, %1$s.\n\nUm dos seus pedidos ficou 30 dias sem mensagens novas, então ele foi encerrado. A conversa continua guardada, e você pode reabrir quando quiser:\n%2$s\n\nEuTeAjudo.org"
+msgstr ""
+"Oi, %1$s.\n"
+"\n"
+"Um dos seus pedidos ficou 30 dias sem mensagens novas, então ele foi encerrado. A conversa continua guardada, e você pode reabrir quando quiser:\n"
+"%2$s\n"
+"\n"
+"EuTeAjudo.org"
 
 #: src/HelpRequests/Schedules.php:120
 msgid "EuTeAjudo: requests waiting more than 24 hours"
@@ -1110,39 +1138,6 @@ msgstr "Nenhum Pedido na lixeira."
 msgid "Help request saved."
 msgstr "Pedido salvo."
 
-#: blocks/home/render.php:20
-msgid "There is a light on here."
-msgstr "Tem uma luz acesa aqui."
-
-#: blocks/home/render.php:24
-#: blocks/home/render.php:27
-msgid "Start writing"
-msgstr "Começar a escrever"
-
-#: blocks/home/render.php:28
-msgid "I already have an account"
-msgstr "Já tenho conta"
-
-#: blocks/home/render.php:46
-msgid "How it works"
-msgstr "Como funciona"
-
-#: blocks/home/render.php:48
-msgid "Create an account with just an email."
-msgstr "Crie uma conta só com e-mail."
-
-#: blocks/home/render.php:49
-msgid "Your way, in your time. Nothing needs to be organised."
-msgstr "Do seu jeito, no seu tempo. Não precisa organizar nada."
-
-#: blocks/home/render.php:50
-msgid "Get a reply written with care."
-msgstr "Receba uma resposta escrita com cuidado."
-
-#: blocks/home/render.php:54
-msgid "More about how it works"
-msgstr "Mais sobre como funciona"
-
 #. translators: 1: link to the terms of use, 2: link to the privacy policy.
 #: blocks/sign-up/render.php:57
 #, php-format
@@ -1154,10 +1149,6 @@ msgstr "Aceito os %1$s e a %2$s."
 msgid "Terms of use"
 msgstr "Termos de uso"
 
-#: blocks/site-links/render.php:13
-msgid "About the site"
-msgstr "Sobre o site"
-
 #: src/Site/ContentPages.php:100
 msgid "About"
 msgstr "Sobre"
@@ -1167,26 +1158,6 @@ msgstr "Sobre"
 #, php-format
 msgid "EuTeAjudo: fill in the fields marked \"[preencher: ...]\" before launch: %s."
 msgstr "EuTeAjudo: preencha os campos marcados com \"[preencher: ...]\" antes do lançamento: %s."
-
-#: blocks/home/block.json
-msgctxt "block title"
-msgid "Home"
-msgstr ""
-
-#: blocks/home/block.json
-msgctxt "block description"
-msgid "Public home: the lit window, how it works and help right now."
-msgstr ""
-
-#: blocks/site-links/block.json
-msgctxt "block title"
-msgid "Site links"
-msgstr ""
-
-#: blocks/site-links/block.json
-msgctxt "block description"
-msgid "About, Terms of use, Privacy policy and the crisis line."
-msgstr ""
 
 #: blocks/account/render.php:39
 msgid "The change is applied right away and saved only in this browser."
@@ -1231,30 +1202,6 @@ msgstr "Foram muitas tentativas seguidas. Para proteger sua conta, espere 15 min
 msgid "Before continuing:"
 msgstr "Falta pouco:"
 
-#: blocks/home/render.php:21
-msgid "Write at any time, your way, without saying who you are. What you write is read with care."
-msgstr "Pode escrever a qualquer hora, do seu jeito, sem dizer quem você é. O que você escrever é lido com atenção."
-
-#: blocks/home/render.php:48
-msgid "You do not need to give your name. Here we call you Friend, with a number that is only yours, like Friend 48213."
-msgstr "Você não precisa dizer seu nome. Aqui chamamos você de Amigo, com um número que é só seu, como Amigo 48213."
-
-#: blocks/home/render.php:49
-msgid "Tell what is happening."
-msgstr "Conte o que está acontecendo."
-
-#: blocks/home/render.php:50
-msgid "Replies are written by an artificial intelligence made to welcome people: it reads with care, does not judge and follows rules of respect. When a reply arrives, we let you know by email, without showing what you wrote."
-msgstr "As respostas são escritas por uma inteligência artificial feita para acolher: ela lê com atenção, não julga e segue regras de respeito. Quando chegar uma resposta, a gente avisa por e-mail, sem mostrar o que você escreveu."
-
-#: blocks/home/render.php:59
-msgid "If things are very hard right now"
-msgstr "Se estiver muito difícil agora"
-
-#: blocks/home/render.php:60
-msgid "CVV talks with you for free, at any time, by phone at 188 or by chat at cvv.org.br."
-msgstr "O CVV conversa com você de graça, a qualquer hora, pelo telefone 188 ou pelo chat em cvv.org.br."
-
 #: blocks/my-requests/render.php:78
 msgid "Your request arrived and will be read with care. The reply may take a few hours; we let you know by email."
 msgstr "Seu pedido chegou e vai ser lido com atenção. A resposta pode levar algumas horas; a gente avisa por e-mail."
@@ -1294,10 +1241,6 @@ msgstr "Concordo que uma inteligência artificial feita para acolher leia o que 
 #: blocks/sign-up/render.php:70
 msgid "Your email is never sent along, and phone numbers and documents are taken out of the text first."
 msgstr "Seu e-mail nunca vai junto, e telefones e documentos são tirados do texto antes."
-
-#: blocks/site-links/render.php:21
-msgid "If things are hard right now, call 188 (CVV). It is free, at any time."
-msgstr "Se estiver difícil agora, ligue 188 (CVV). É de graça, a qualquer hora."
 
 #: blocks/write/render.php:34
 msgid "Write your way; nothing needs to be organised. If you do not know where to start, these questions may help:"

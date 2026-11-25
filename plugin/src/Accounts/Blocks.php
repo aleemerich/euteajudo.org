@@ -18,7 +18,7 @@ use const EuTeAjudo\VERSION;
  */
 final class Blocks {
 
-	public const NAMES = array( 'sign-in', 'sign-up', 'password-request', 'password-reset', 'email-confirmation', 'account-link', 'account', 'write', 'my-requests', 'app-nav', 'home', 'site-links' );
+	public const NAMES = array( 'sign-in', 'sign-up', 'password-request', 'password-reset', 'email-confirmation', 'account-link', 'account', 'write', 'my-requests', 'app-nav' );
 
 	/**
 	 * Hooks block registration.
@@ -34,7 +34,6 @@ final class Blocks {
 		$base = plugin_dir_url( PLUGIN_FILE );
 		wp_register_style( 'euteajudo-accounts', $base . 'assets/css/accounts.css', array(), VERSION );
 		wp_register_style( 'euteajudo-requests', $base . 'assets/css/requests.css', array( 'euteajudo-accounts' ), VERSION );
-		wp_register_style( 'euteajudo-site', $base . 'assets/css/site.css', array( 'euteajudo-accounts' ), VERSION );
 		wp_register_script( 'euteajudo-accounts', $base . 'assets/js/accounts.js', array(), VERSION, array( 'strategy' => 'defer' ) );
 		wp_register_script( 'euteajudo-blocks-editor', $base . 'assets/js/blocks-editor.js', array( 'wp-blocks', 'wp-element', 'wp-server-side-render' ), VERSION, true );
 		wp_add_inline_script(

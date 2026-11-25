@@ -174,7 +174,7 @@ Objetivo: abrir ao público.
 
 Já feito na plataforma:
 
-- Início público (`theme/templates/front-page.html` com o bloco `euteajudo/home`): janela acesa com a única animação do site (respeita `prefers-reduced-motion`), como funciona, aviso de IA e CVV.
+- Início público: uma Página "Início" criada pelo tema a partir do pattern `euteajudo/home` e editável em Páginas ([ADR 0008](adr/0008-plugin-behaviour-theme-presentation.md)). Rua à noite com uma janela acesa no desktop, fachada no celular, a única animação do site (respeita `prefers-reduced-motion`), como funciona, aviso de IA e CVV.
 - Páginas Sobre (`/sobre/`), Termos de uso (`/termos-de-uso/`) e Política de privacidade (`/privacidade/`), criadas pela migração 0.12.0 a partir de `plugin/content/pt_BR/` e editáveis no painel. A de privacidade vira a página de privacidade do WordPress. Os campos do mantenedor foram preenchidos em 22/11/2026 (responsável, contato@euteajudo.org, foro de São Paulo/SP, HostGator para hospedagem e e-mail, registros de acesso por 7 dias). Se alguém deixar `[preencher: ...]` numa dessas páginas, o painel mostra um aviso. Os textos ainda não passaram por revisão jurídica.
 - Consentimento do cadastro com links para os Termos e a Política.
 - Rodapé com os três links e o 188.
