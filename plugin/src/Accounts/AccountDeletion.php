@@ -42,6 +42,11 @@ final class AccountDeletion {
 		delete_user_meta( $user_id, GoogleAuth::SUBJECT_META );
 		delete_user_meta( $user_id, EmailConfirmation::TOKEN_META );
 
+		$address = $user->user_email;
+		// Core would announce an "email changed" and a "password changed" here, with the
+		// replacement address. The person only needs to know the account is gone.
+		add_filter( 'send_email_change_email', '__return_false' );
+		add_filter( 'send_password_change_email', '__return_false' );
 		wp_update_user(
 			array(
 				'ID'         => $user_id,
@@ -49,9 +54,18 @@ final class AccountDeletion {
 				'user_pass'  => wp_generate_password( 64, true, true ),
 			)
 		);
+		remove_filter( 'send_email_change_email', '__return_false' );
+		remove_filter( 'send_password_change_email', '__return_false' );
 		$user->set_role( '' );
 		\WP_Session_Tokens::get_instance( $user_id )->destroy_all();
 		self::close_requests( $user_id );
+		if ( is_email( $address ) ) {
+			wp_mail(
+				$address,
+				__( 'EuTeAjudo: your account was deleted', 'euteajudo' ),
+				__( "Hi.\n\nYour account at EuTeAjudo.org was deleted, as you asked.\n\nEuTeAjudo.org", 'euteajudo' )
+			);
+		}
 	}
 
 	/**

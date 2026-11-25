@@ -15,7 +15,7 @@ msgstr ""
 
 #. Theme Name of the theme
 #: style.css
-#: functions.php:83
+#: functions.php:85
 msgid "EuTeAjudo"
 msgstr ""
 
@@ -243,11 +243,11 @@ msgctxt "Color name"
 msgid "Field border"
 msgstr "Borda dos campos"
 
-#: functions.php:88
+#: functions.php:90
 msgid "Link"
 msgstr "Link"
 
-#: functions.php:125
+#: functions.php:127
 msgid "Home"
 msgstr "Início"
 

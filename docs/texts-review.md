@@ -34,20 +34,20 @@ As páginas Sobre, Termos de uso e Política de privacidade não estão aqui: s�
 | Mandamos um link para o seu e-mail. Toque nele para confirmar que o e-mail é seu. Ele vale por 48 horas. | We sent a link to the email you typed. Open the email and tap the link to confirm it. The link is valid for 48 hours. | `plugin/blocks/sign-up/render.php:39` |
 | O assunto é "EuTeAjudo: confirme seu e-mail". Se não aparecer em alguns minutos, vale olhar a pasta de spam. Para receber outro link, é só entrar com seu e-mail e senha. | The subject is "EuTeAjudo: confirm your email". If it does not arrive in a few minutes, check the spam folder. To get a new link, try to sign in. | `plugin/blocks/sign-up/render.php:40` |
 | Antes de começar | Before you start | `plugin/blocks/sign-up/render.php:48` |
-| Tenho 18 anos ou mais | I am 18 or older | `plugin/blocks/sign-up/render.php:49` |
-| Tenho menos de 18 anos | I am under 18 | `plugin/blocks/sign-up/render.php:50` |
-| Li a %s. | I have read the %s. | `plugin/blocks/sign-up/render.php:64` |
-| Política de privacidade | Privacy policy | `plugin/blocks/sign-up/render.php:59` |
-| Criar conta | Create account | `plugin/blocks/sign-up/render.php:78` |
-| Já tem conta? Entrar | Already have an account? Sign in | `plugin/blocks/sign-up/render.php:82` |
-| Aceito os %1$s e a %2$s. | I accept the %1$s and the %2$s. | `plugin/blocks/sign-up/render.php:57` |
-| Termos de uso | Terms of use | `plugin/blocks/sign-up/render.php:58` |
+| Tenho 18 anos ou mais | I am 18 or older | `plugin/blocks/sign-up/render.php:50` |
+| Tenho menos de 18 anos | I am under 18 | `plugin/blocks/sign-up/render.php:51` |
+| Li a %s. | I have read the %s. | `plugin/blocks/sign-up/render.php:65` |
+| Política de privacidade | Privacy policy | `plugin/blocks/sign-up/render.php:60` |
+| Criar conta | Create account | `plugin/blocks/sign-up/render.php:80` |
+| Já tem conta? Entrar | Already have an account? Sign in | `plugin/blocks/sign-up/render.php:84` |
+| Aceito os %1$s e a %2$s. | I accept the %1$s and the %2$s. | `plugin/blocks/sign-up/render.php:58` |
+| Termos de uso | Terms of use | `plugin/blocks/sign-up/render.php:59` |
 | Use pelo menos %d caracteres. | At least %d characters. | `plugin/blocks/password-reset/render.php:30` |
 | Você merece ter com quem falar agora | You deserve someone to talk to right now | `plugin/blocks/sign-up/render.php:22` |
 | Este espaço é para quem tem 18 anos ou mais. Estes serviços conversam com quem tem menos de 18, de graça e com pessoas preparadas: | This space is for people 18 and over. These services talk with people under 18, for free and with trained people: | `plugin/blocks/sign-up/render.php:23` |
 | Você não precisa dizer seu nome. Aqui chamamos você de Amigo, com um número que é só seu, como Amigo 48213. Ninguém vê o seu e-mail. | You do not need to give your name. Here we call you Friend, with a number that is only yours, like Friend 48213. Nobody sees your email. | `plugin/blocks/sign-up/render.php:44` |
-| Concordo que uma inteligência artificial feita para acolher leia o que eu escrever, para poder me responder, inclusive usando serviços fora do Brasil. | I agree that an artificial intelligence made to welcome people reads what I write so it can reply to me, including through services outside Brazil. | `plugin/blocks/sign-up/render.php:52` |
-| Seu e-mail nunca vai junto, e telefones e documentos são tirados do texto antes. | Your email is never sent along, and phone numbers and documents are taken out of the text first. | `plugin/blocks/sign-up/render.php:70` |
+| Concordo que uma inteligência artificial feita para acolher leia o que eu escrever, para poder me responder, inclusive usando serviços fora do Brasil. | I agree that an artificial intelligence made to welcome people reads what I write so it can reply to me, including through services outside Brazil. | `plugin/blocks/sign-up/render.php:53` |
+| Seu e-mail nunca vai junto, e telefones e documentos são tirados do texto antes. | Your email is never sent along, and phone numbers and documents are taken out of the text first. | `plugin/blocks/sign-up/render.php:72` |
 
 ## Entrar
 
@@ -108,14 +108,14 @@ As páginas Sobre, Termos de uso e Política de privacidade não estão aqui: s�
 |---|---|---|
 | Título | Title | `plugin/blocks/write/render.php:30` |
 | para você encontrar depois | so you can find it later | `plugin/blocks/write/render.php:30` |
-| O que está acontecendo? | What is happening? | `plugin/blocks/write/render.php:32` |
-| Enviar pedido | Send request | `plugin/blocks/write/render.php:43` |
+| O que está acontecendo? | What is happening? | `plugin/blocks/write/render.php:33` |
+| Enviar pedido | Send request | `plugin/blocks/write/render.php:45` |
 | E-mail confirmado. Quando você quiser, conte aqui o que está acontecendo. | Your email is confirmed. Whenever you are ready, write here what is happening. | `plugin/blocks/write/render.php:25` |
-| Escreva do seu jeito, não precisa organizar nada. Se não souber por onde começar, estas perguntas podem ajudar: | Write your way; nothing needs to be organised. If you do not know where to start, these questions may help: | `plugin/blocks/write/render.php:34` |
-| Há quanto tempo isso acontece? | How long has this been going on? | `plugin/blocks/write/render.php:36` |
-| O que você já tentou? | What have you already tried? | `plugin/blocks/write/render.php:37` |
-| Do que você sente que precisa agora? | What do you feel you need now? | `plugin/blocks/write/render.php:38` |
-| Para proteger você, evite escrever nomes e endereços. Telefones, e-mails e documentos a gente tira do texto antes de guardar. A resposta pode levar algumas horas, e a gente avisa por e-mail. | To protect you, avoid writing names and addresses. We take phone numbers, emails and documents out of the text before saving. The reply may take a few hours, and we let you know by email. | `plugin/blocks/write/render.php:42` |
+| Escreva do seu jeito, não precisa organizar nada. Se não souber por onde começar, estas perguntas podem ajudar: | Write your way; nothing needs to be organised. If you do not know where to start, these questions may help: | `plugin/blocks/write/render.php:35` |
+| Há quanto tempo isso acontece? | How long has this been going on? | `plugin/blocks/write/render.php:37` |
+| O que você já tentou? | What have you already tried? | `plugin/blocks/write/render.php:38` |
+| Do que você sente que precisa agora? | What do you feel you need now? | `plugin/blocks/write/render.php:39` |
+| Para proteger você, evite escrever nomes e endereços. Telefones, e-mails e documentos a gente tira do texto antes de guardar. A resposta pode levar algumas horas, e a gente avisa por e-mail. | To protect you, avoid writing names and addresses. We take phone numbers, emails and documents out of the text before saving. The reply may take a few hours, and we let you know by email. | `plugin/blocks/write/render.php:44` |
 
 ## Meus pedidos e Conversa
 
@@ -179,10 +179,10 @@ As páginas Sobre, Termos de uso e Política de privacidade não estão aqui: s�
 
 | Texto no site | Original (inglês) | Onde |
 |---|---|---|
-| Mostrar | Show | `plugin/src/Accounts/Forms/View.php:106` |
-| Ocultar | Hide | `plugin/src/Accounts/Forms/View.php:106` |
-| Continuar com o Google | Continue with Google | `plugin/src/Accounts/Forms/View.php:122` |
-| ou com e-mail | or with email | `plugin/src/Accounts/Forms/View.php:129` |
+| Mostrar | Show | `plugin/src/Accounts/Forms/View.php:133` |
+| Ocultar | Hide | `plugin/src/Accounts/Forms/View.php:133` |
+| Continuar com o Google | Continue with Google | `plugin/src/Accounts/Forms/View.php:149` |
+| ou com e-mail | or with email | `plugin/src/Accounts/Forms/View.php:156` |
 | Falta pouco: | Before continuing: | `plugin/src/Accounts/Forms/View.php:50` |
 
 ## E-mails
@@ -319,9 +319,11 @@ As páginas Sobre, Termos de uso e Política de privacidade não estão aqui: s�
 
 | Texto no site | Original (inglês) | Onde |
 |---|---|---|
-| **(sem tradução)** | EuTeAjudo | `theme/functions.php:83` |
-| Link | Link | `theme/functions.php:88` |
-| Início | Home | `theme/functions.php:125` |
+| EuTeAjudo: sua conta foi excluída | EuTeAjudo: your account was deleted | `plugin/src/Accounts/AccountDeletion.php:65` |
+| Oi.<br><br>Sua conta no EuTeAjudo.org foi excluída, como você pediu.<br><br>EuTeAjudo.org | Hi.<br><br>Your account at EuTeAjudo.org was deleted, as you asked.<br><br>EuTeAjudo.org | `plugin/src/Accounts/AccountDeletion.php:66` |
+| **(sem tradução)** | EuTeAjudo | `theme/functions.php:85` |
+| Link | Link | `theme/functions.php:90` |
+| Início | Home | `theme/functions.php:127` |
 | Links do rodapé | Footer links | `theme/patterns/footer.php` |
 | Sobre, Termos de uso e Política de privacidade, e a linha de crise. | About, Terms of use and Privacy policy, and the crisis line. | `theme/patterns/footer.php` |
 | Sobre | About | `theme/patterns/footer.php:13` |

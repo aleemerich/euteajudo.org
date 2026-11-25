@@ -67,6 +67,22 @@ final class AccountDeletionTest extends TestCase {
 		$this->assertTrue( AccountDeletion::is_deleted( $user->ID ) );
 	}
 
+	public function test_only_one_short_email_says_the_account_was_deleted(): void {
+		$user = $this->friend();
+		reset_phpmailer_instance();
+
+		AccountDeletion::delete( $user->ID );
+
+		$mailer = tests_retrieve_phpmailer_instance();
+		$this->assertInstanceOf( \MockPHPMailer::class, $mailer );
+		$this->assertFalse( $mailer->get_sent( 1 ), 'Core email and password change notices stay off.' );
+		$email = $this->last_email();
+		$this->assertSame( 'someone@example.org', $email['to'] );
+		$this->assertStringContainsString( 'EuTeAjudo', $email['subject'] );
+		$this->assertStringNotContainsString( 'invalid', $email['body'] );
+		$this->assertStringNotContainsString( 'deleted-', $email['body'] );
+	}
+
 	public function test_deletion_closes_open_requests(): void {
 		$user = $this->new_user( array( 'role' => Roles::FRIEND ) );
 		EmailConfirmation::mark_confirmed( $user->ID );
